@@ -5,7 +5,8 @@ or msgAssistBustupParam.dat (data.cpk\font\assist) and selecting a bustup,
 you can change the values for X and Y positioning of the mouth, eyes, or the entire bustup itself.
 
 ![Image](https://i.imgur.com/080ZbZ4.png)
-##Features
+
+## Features
 - Provide a path to your corresponding folder of bustup .BIN files to automatically extract the DDS images.
 - Extracted DDS files are automatically converted to PNG.
 - Preview the bustup parameters in real time while editing the positional values.
@@ -13,7 +14,7 @@ you can change the values for X and Y positioning of the mouth, eyes, or the ent
 - Edit the extracted images and even repack them into a new .BIN file when you're satisfied.
 - Quickly copy and paste positional values between bustups using the Edit menu.
 
-##Disclaimers
+## Disclaimers
 -Be sure to make copies of the original files before using this program!
 Changes are saved directly to the selected BIN files and cannot be undone.
 You have to edit the combined PNG files to preview custom bustup images in the program. (The preview doesn't use the uncombined DDS images).
