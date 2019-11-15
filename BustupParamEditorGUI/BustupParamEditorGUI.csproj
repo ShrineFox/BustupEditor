@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddParam.Designer.cs">
+      <DependentUpon>AddParam.cs</DependentUpon>
+    </Compile>
     <Compile Include="BustupParamEditor\Endian\AlignmentHelper.cs" />
     <Compile Include="BustupParamEditor\Endian\EndianBinaryReader.cs" />
     <Compile Include="BustupParamEditor\Endian\EndianBinaryWriter.cs" />
@@ -92,7 +98,6 @@
     <Compile Include="DDS2Tool\DDS2.cs" />
     <Compile Include="DDS2Tool\DDSImage.cs" />
     <Compile Include="DDS2Tool\PNG.cs" />
-    <Compile Include="Filenames.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddParam.resx">
+      <DependentUpon>AddParam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

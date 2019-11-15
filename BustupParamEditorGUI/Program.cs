@@ -54,6 +54,7 @@ namespace BustupParamEditorGUI
                 ParamEntry.Write(pEntry.EntryData, 20, pEntry.EyepositionY);
                 ParamEntry.Write(pEntry.EntryData, 24, pEntry.MouthPositionX);
                 ParamEntry.Write(pEntry.EntryData, 28, pEntry.MouthPositionY);
+                ParamEntry.WriteShort(pEntry.EntryData, 34, pEntry.InitialAnimation);
             }
             else
             {
@@ -61,6 +62,7 @@ namespace BustupParamEditorGUI
                 ParamEntry.Write(pEntry.EntryData, 16, pEntry.EyepositionY);
                 ParamEntry.Write(pEntry.EntryData, 20, pEntry.MouthPositionX);
                 ParamEntry.Write(pEntry.EntryData, 28, pEntry.MouthPositionY);
+                ParamEntry.WriteShort(pEntry.EntryData, 30, pEntry.InitialAnimation);
             }
             pEntry.Replace(pEntry.EntryData, pEntry.EntryIndex, paramFilePath, pEntry.Type);
         }

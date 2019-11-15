@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BustupParamEditor.IO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -149,6 +150,75 @@ namespace DDS2ToolGUI
             }
         }
 
+        public static void Create(string filePath, string fileName, bool isAssist)
+        {
+            string ddsName = Path.GetFileNameWithoutExtension(fileName);
+            using (FileStream stream = new FileStream($"{filePath}\\{fileName}", FileMode.Create))
+            {
+                using (EndianBinaryWriter writer = new EndianBinaryWriter(stream, Endianness.LittleEndian))
+                {
+                    writer.Write(6);
+                    int x = 0;
+                    for (int i = 0; i < 6; i++)
+                    {
+                        if (!isAssist)
+                        {
+                            //DDS2 name and size
+                            PadDefaultName32(writer, ddsName, i, x, isAssist, true);
+                            writer.Write(232);
+                            writer.Write(ConvertInt32(2));
+
+                            //DDS2 first filename, size and image
+                            PadDefaultName32(writer, ddsName, i, x, isAssist, false);
+                            writer.Write(ConvertInt32(136));
+                            writer.Write(defaultDDS);
+                            x++;
+
+                            //DDS2 second filename, size and image
+                            PadDefaultName32(writer, ddsName, i, x, isAssist, false);
+                            writer.Write(ConvertInt32(136));
+                            writer.Write(defaultDDS);
+                            x++;
+                            writer.Write(new byte[20]);
+                        }
+                        else
+                        {
+                            //dds size and image
+                            PadDefaultName32(writer, ddsName, i, x, isAssist, false);
+                            writer.Write(ConvertInt32(136));
+                            writer.Write(defaultDDS);
+                            x++;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void PadDefaultName32(BinaryWriter writer, string filename, int i, int x, bool isAssist, bool dds2)
+        {
+            List<string> endingsAssist = new List<string>() { "", "_e1", "_e2", "_m1", "_m2", "_m3", "" };
+            List<string> endings = new List<string>() { "", "_b", "_e1", "_e1_b", "_e2", "_e2_b", "_m1", "_m1_b", "_m2", "_m2_b", "_m3", "_m3_b", "" };
+
+            if (!isAssist)
+            {
+                filename = filename + endings[x] + ".dds";
+                if (dds2)
+                    filename = filename + "2 ";
+            }
+            else
+                filename = filename + endingsAssist[x] + ".dds";
+
+            byte[] newFileName = Encoding.ASCII.GetBytes(filename);
+            writer.Write(newFileName);
+            int padAmount = 32 - newFileName.Length;
+            writer.Write(new byte[padAmount]);
+        }
+
+        public static bool IsOdd(int value)
+        {
+            return value % 2 != 0;
+        }
+
         public static void Repack(string filePath)
         {
             //Get all DDS files in folder
@@ -177,7 +247,7 @@ namespace DDS2ToolGUI
                 {
                     writer.Write(ConvertInt32(dds2Count));
                     int x = 0;
-                    for (int i = dds2Count; i >0; i--)
+                    for (int i = dds2Count; i > 0; i--)
                     {
                         int ddsSize1 = 0;
                         int ddsSize2 = 0;
@@ -236,6 +306,7 @@ namespace DDS2ToolGUI
             return Encoding.ASCII.GetString(reader.ReadBytes(32)).TrimEnd('\0');
         }
 
+
         public static void PadDdsName32(BinaryWriter writer, List<string> ddsFiles, int x)
         {
             writer.Write(Encoding.ASCII.GetBytes(Path.GetFileName(ddsFiles[x])));
@@ -267,6 +338,8 @@ namespace DDS2ToolGUI
                 }
             }
         }
+
+        public static byte[] defaultDDS = new byte[] { 0x44, 0x44, 0x53, 0x20, 0x7C, 0x00, 0x00, 0x00, 0x07, 0x10, 0x0A, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x44, 0x58, 0x54, 0x31, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00 };
 
     }
 }

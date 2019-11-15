@@ -25,7 +25,7 @@ namespace BustupParamEditor
         public float MouthPositionX { get; set; }
         public float MouthPositionY { get; set; }
 
-        public short Unknown { get; set; }
+        public short InitialAnimation { get; set; }
 
         public enum ParamType { Normal, Assist }
 
@@ -52,7 +52,7 @@ namespace BustupParamEditor
                     MouthPositionX = reader.ReadSingle(); //24
                     MouthPositionY = reader.ReadSingle(); //28
                     reader.ReadBytes(2); //30
-                    Unknown = reader.ReadInt16(); //32
+                    InitialAnimation = reader.ReadInt16(); //32
                     Type = ParamType.Assist;
                 }
                 else if (reader.BaseStream.Length == 40)
@@ -61,9 +61,9 @@ namespace BustupParamEditor
                     EyePositionX = reader.ReadSingle(); //20
                     EyepositionY = reader.ReadSingle(); //24
                     MouthPositionX = reader.ReadSingle(); //28
-                    MouthPositionY = reader.ReadSingle(); ; //32
+                    MouthPositionY = reader.ReadSingle(); //32
                     reader.ReadBytes(2); //34
-                    Unknown = reader.ReadInt16(); //38
+                    InitialAnimation = reader.ReadInt16(); //36
                     reader.ReadSingle(); //40
                     Type = ParamType.Normal;
                 }
@@ -89,6 +89,17 @@ namespace BustupParamEditor
         }
 
         public static byte[] Write(byte[] entry, long position, float newValue)
+        {
+            using (MemoryStream memStream = new MemoryStream(entry))
+            using (EndianBinaryWriter writer = new EndianBinaryWriter(memStream, Endianness.BigEndian))
+            {
+                writer.BaseStream.Seek(position, SeekOrigin.Begin);
+                writer.Write(newValue);
+            }
+            return entry;
+        }
+
+        public static byte[] WriteShort(byte[] entry, long position, short newValue)
         {
             using (MemoryStream memStream = new MemoryStream(entry))
             using (EndianBinaryWriter writer = new EndianBinaryWriter(memStream, Endianness.BigEndian))

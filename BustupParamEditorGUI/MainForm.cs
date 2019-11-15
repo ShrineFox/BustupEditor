@@ -13,19 +13,30 @@ namespace BustupParamEditorGUI
         public MainForm()
         {
             InitializeComponent();
+            if (File.Exists("LastOpenedParamsPath.txt"))
+            try
+            {
+                LoadParams(File.ReadAllText("LastOpenedParamsPath.txt"));
+                bustupDirPath = File.ReadAllText("LastOpenedBustupsPath.txt");
+            }
+            catch { }
         }
 
         //List of all bustup parameter entries
-        public List<byte[]> paramEntries = new List<byte[]>();
+        public static List<byte[]> paramEntries = new List<byte[]>();
         //Currently selected parameter entry
         ParamEntry pEntry = new ParamEntry();
+        //Latest opened parameter file type
+        public static ParamEntry.ParamType pType;
         //Copied parameter entry
         ParamEntry copiedParamEntry = new ParamEntry();
         //Currently opened param file path
         public string paramFilePath;
+        //List of bin names
+        List<string> fileNames = new List<string>();
 
         //Currently selected bustup folder
-        public string bustupDirPath;
+        public static string bustupDirPath;
         public string selectedBustup;
         public string extractedBustupDir;
 
@@ -36,27 +47,39 @@ namespace BustupParamEditorGUI
         private void OpenParams_Click(object sender, EventArgs e)
         {
             string filePath = Program.OpenFile();
+            LoadParams(filePath);
+            File.WriteAllText("LastOpenedParamsPath.txt", filePath);
+        }
+
+        private void LoadParams(string filePath)
+        {
             if (filePath != "")
             {
                 listBox1.Items.Clear();
                 if (Validation.ParamFilePath(filePath, out paramEntries))
                 {
+                    //List bin names to choose from
                     ParamEntry testParamEntry = new ParamEntry();
-                    testParamEntry.Read(paramEntries, 0);
-                    if (testParamEntry.Type == ParamEntry.ParamType.Normal)
-                        foreach (var fileName in Filenames.NormalBustups())
-                        {
-                            listBox1.Items.Add(fileName);
-                        }
-                    else if (testParamEntry.Type == ParamEntry.ParamType.Assist)
-                        foreach (var fileName in Filenames.AssistBustups())
-                        {
-                            listBox1.Items.Add(fileName);
-                        }
-                    listBox1.Enabled = true;
+                    fileNames.Clear();
+                    int i = 0;
+                    foreach (var entry in paramEntries)
+                    {
+                        testParamEntry.Read(paramEntries, i);
+                        pType = testParamEntry.Type;
+                        if (pType == ParamEntry.ParamType.Normal)
+                            fileNames.Add($"b{Int32.Parse(testParamEntry.CharacterId.ToString(), System.Globalization.NumberStyles.HexNumber).ToString("X3")}_{Int32.Parse(testParamEntry.ExpressionId.ToString(), System.Globalization.NumberStyles.HexNumber).ToString("X3")}_{Int32.Parse(testParamEntry.OutfitId.ToString(), System.Globalization.NumberStyles.HexNumber).ToString("X2")}.bin");
+                        else if (pType == ParamEntry.ParamType.Assist)
+                            fileNames.Add($"b{Int32.Parse(testParamEntry.CharacterId.ToString(), System.Globalization.NumberStyles.HexNumber).ToString("X3")}_{Int32.Parse(testParamEntry.ExpressionId.ToString(), System.Globalization.NumberStyles.HexNumber).ToString("X3")}.bin");
+                        i++;
+                    }
+                    foreach (var fileName in fileNames)
+                        listBox1.Items.Add(fileName);
 
+                    listBox1.Enabled = true;
+                    //Enable controls
                     saveToolStripMenuItem.Enabled = true;
                     openBustupDirectoryToolStripMenuItem.Enabled = true;
+                    comboBox_InitAnim.Enabled = true;
                     listBox1.SelectedIndex = 0;
                     paramFilePath = filePath;
                 }
@@ -71,18 +94,22 @@ namespace BustupParamEditorGUI
             {
                 numUpDwn_MouthFrame.Value = 0;
                 numUpDwn_EyeFrame.Value = 0;
+                btn_CreateBin.Enabled = false;
                 btn_OpenImgFolder.Enabled = false;
                 btn_RepackBin.Enabled = false;
                 numUpDwn_EyeFrame.Enabled = false;
                 numUpDwn_MouthFrame.Enabled = false;
+                comboBox_InitAnim.Enabled = false;
                 if (previousSelectedIndex != -1)
                 {
+                    // Prompt to save changes if form != data entry on leave
                     if (numUpDwn_OffsetX.Text != pEntry.OffsetX.ToString() ||
                         numUpDwn_OffsetY.Text != pEntry.OffsetY.ToString() ||
                         numUpDwn_EyePosX.Text != pEntry.EyePositionX.ToString() ||
                         numUpDwn_EyePosY.Text != pEntry.EyepositionY.ToString() ||
                         numUpDwn_MouthPosX.Text != pEntry.MouthPositionX.ToString() ||
-                        numUpDwn_MouthPosY.Text != pEntry.MouthPositionY.ToString())
+                        numUpDwn_MouthPosY.Text != pEntry.MouthPositionY.ToString() || 
+                        comboBox_InitAnim.SelectedIndex != Params.GetInitAnim(pEntry.InitialAnimation))
                     {
                         DialogResult result = MessageBox.Show($"Save changes to {listBox1.Items[previousSelectedIndex].ToString()}?\nYour changes will be discarded if you select No.", "Unsaved Changes", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
@@ -90,31 +117,35 @@ namespace BustupParamEditorGUI
                             pEntry.OffsetX = float.Parse(numUpDwn_OffsetX.Text); pEntry.OffsetY = float.Parse(numUpDwn_OffsetY.Text);
                             pEntry.EyePositionX = float.Parse(numUpDwn_EyePosX.Text); pEntry.EyepositionY = float.Parse(numUpDwn_EyePosY.Text);
                             pEntry.MouthPositionX = float.Parse(numUpDwn_MouthPosX.Text); pEntry.MouthPositionY = float.Parse(numUpDwn_MouthPosY.Text);
+                            pEntry.InitialAnimation = Params.SetInitAnim(comboBox_InitAnim.SelectedIndex);
                             if (pEntry.EntryData != null)
                                 Program.Save(pEntry, paramFilePath);
                         }
                     }
                 }
+                // Attempt to load new data from selected param entry into form
                 try {
-                    numUpDwn_OffsetX.Enabled = true; numUpDwn_OffsetY.Enabled = true;
-                    numUpDwn_EyePosX.Enabled = true; numUpDwn_EyePosY.Enabled = true;
-                    numUpDwn_MouthPosX.Enabled = true; numUpDwn_MouthPosY.Enabled = true;
                     pEntry = Validation.SelectedEntry(paramEntries, listBox1.SelectedItem.ToString());
                     numUpDwn_OffsetX.Text = pEntry.OffsetX.ToString(); numUpDwn_OffsetY.Text = pEntry.OffsetY.ToString();
                     numUpDwn_EyePosX.Text = pEntry.EyePositionX.ToString(); numUpDwn_EyePosY.Text = pEntry.EyepositionY.ToString();
                     numUpDwn_MouthPosX.Text = pEntry.MouthPositionX.ToString(); numUpDwn_MouthPosY.Text = pEntry.MouthPositionY.ToString();
+                    comboBox_InitAnim.SelectedIndex = Params.GetInitAnim(pEntry.InitialAnimation);
                     previousSelectedIndex = listBox1.SelectedIndex;
+                    numUpDwn_OffsetX.Enabled = true; numUpDwn_OffsetY.Enabled = true;
+                    numUpDwn_EyePosX.Enabled = true; numUpDwn_EyePosY.Enabled = true;
+                    numUpDwn_MouthPosX.Enabled = true; numUpDwn_MouthPosY.Enabled = true;
+                    comboBox_InitAnim.Enabled = true;
 
-                    if (pEntry.Type == ParamEntry.ParamType.Normal)
-                        selectedBustup = $"{bustupDirPath}\\b{pEntry.CharacterId.ToString("D3")}_{pEntry.ExpressionId.ToString("D3")}_{pEntry.OutfitId.ToString("D2")}.bin";
-                    else
-                        selectedBustup = $"{bustupDirPath}\\b{pEntry.CharacterId.ToString("D3")}_{pEntry.ExpressionId.ToString("D3")}.bin";
+                    selectedBustup = $"{bustupDirPath}\\{listBox1.SelectedItem.ToString()}";
+                    
                     if (bustupDirPath != "" && File.Exists(selectedBustup))
                     {
                         btn_OpenImgFolder.Enabled = true;
                         btn_RepackBin.Enabled = true;
+                        btn_CreateBin.Enabled = false;
                         numUpDwn_EyeFrame.Enabled = true;
                         numUpDwn_MouthFrame.Enabled = true;
+                        
                         extractedBustupDir = DDS2.Extract(selectedBustup);
                         pngs = Directory.GetFiles($"{extractedBustupDir}\\PNG");
                         pictureBox_Base.ImageLocation = pngs[0];
@@ -132,6 +163,7 @@ namespace BustupParamEditorGUI
                         pictureBox_Base.ImageLocation = null;
                         pictureBox_Mouth.ImageLocation = null;
                         pictureBox_Eyes.ImageLocation = null;
+                        btn_CreateBin.Enabled = true;
                     }
                 }
                 catch
@@ -149,6 +181,7 @@ namespace BustupParamEditorGUI
             pEntry.OffsetX = float.Parse(numUpDwn_OffsetX.Text); pEntry.OffsetY = float.Parse(numUpDwn_OffsetY.Text);
             pEntry.EyePositionX = float.Parse(numUpDwn_EyePosX.Text); pEntry.EyepositionY = float.Parse(numUpDwn_EyePosY.Text);
             pEntry.MouthPositionX = float.Parse(numUpDwn_MouthPosX.Text); pEntry.MouthPositionY = float.Parse(numUpDwn_MouthPosY.Text);
+            pEntry.InitialAnimation = Params.SetInitAnim(comboBox_InitAnim.SelectedIndex);
             if (pEntry.EntryData != null)
                 Program.Save(pEntry, paramFilePath);
         }
@@ -160,6 +193,7 @@ namespace BustupParamEditorGUI
                 pEntry.OffsetX = float.Parse(numUpDwn_OffsetX.Text); pEntry.OffsetY = float.Parse(numUpDwn_OffsetY.Text);
                 pEntry.EyePositionX = float.Parse(numUpDwn_EyePosX.Text); pEntry.EyepositionY = float.Parse(numUpDwn_EyePosY.Text);
                 pEntry.MouthPositionX = float.Parse(numUpDwn_MouthPosX.Text); pEntry.MouthPositionY = float.Parse(numUpDwn_MouthPosY.Text);
+                pEntry.InitialAnimation = Params.SetInitAnim(comboBox_InitAnim.SelectedIndex);
                 if (pEntry.EntryData != null)
                     Program.Save(pEntry, paramFilePath);
             }
@@ -171,6 +205,7 @@ namespace BustupParamEditorGUI
             if (folderPath != "")
             {
                 bustupDirPath = folderPath;
+                File.WriteAllText("LastOpenedBustupsPath.txt", folderPath);
             }
         }
 
@@ -179,6 +214,7 @@ namespace BustupParamEditorGUI
             copiedParamEntry.OffsetX = Convert.ToSingle(numUpDwn_OffsetX.Text); copiedParamEntry.OffsetY = Convert.ToSingle(numUpDwn_OffsetY.Text);
             copiedParamEntry.EyePositionX = Convert.ToSingle(numUpDwn_EyePosX.Text); copiedParamEntry.EyepositionY = Convert.ToSingle(numUpDwn_EyePosY.Text);
             copiedParamEntry.MouthPositionX = Convert.ToSingle(numUpDwn_MouthPosX.Text); copiedParamEntry.MouthPositionY = Convert.ToSingle(numUpDwn_MouthPosY.Text);
+            copiedParamEntry.InitialAnimation = Params.SetInitAnim(comboBox_InitAnim.SelectedIndex);
         }
 
         private void Paste_Click(object sender, EventArgs e)
@@ -186,6 +222,7 @@ namespace BustupParamEditorGUI
             numUpDwn_OffsetX.Text = copiedParamEntry.OffsetX.ToString(); numUpDwn_OffsetY.Text = copiedParamEntry.OffsetY.ToString();
             numUpDwn_EyePosX.Text = copiedParamEntry.EyePositionX.ToString(); numUpDwn_EyePosY.Text = copiedParamEntry.EyepositionY.ToString();
             numUpDwn_MouthPosX.Text = copiedParamEntry.MouthPositionX.ToString(); numUpDwn_MouthPosY.Text = copiedParamEntry.MouthPositionY.ToString();
+            comboBox_InitAnim.SelectedIndex = Params.GetInitAnim(copiedParamEntry.InitialAnimation);
         }
 
         private void OpenImgFolder_Click(object sender, EventArgs e)
@@ -242,7 +279,7 @@ namespace BustupParamEditorGUI
 
         private void About_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"BustupParamEditor GUI by ShrineFox\nBased on DDS2Tool and BustupParamEditor\nUsing TGEnigma's EndianHelper library\namicitia.github.io\n\nFor use with Persona 5's bustup parameter .bin files.", "BustupParamEditor GUI - About", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show($"BustupParamEditor GUI by ShrineFox\nBased on DDS2Tool and BustupParamEditor\nUsing TGEnigma's EndianHelper library\nshrinefox.com\n\nFor use with Persona 5's bustup parameter .bin files.", "About BustupParamEditorGUI", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void EyePositionX_ValueChanged(object sender, EventArgs e)
@@ -267,6 +304,119 @@ namespace BustupParamEditorGUI
         {
             if (bustupDirPath != "" && File.Exists(selectedBustup))
                 pictureBox_Mouth.Location = new System.Drawing.Point(Convert.ToInt32(numUpDwn_MouthPosX.Text), Convert.ToInt32(numUpDwn_MouthPosY.Text));
+        }
+
+        private void ParameterEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Make sure params file is open
+            if (paramEntries.Count <= 0)
+                return;
+
+            //Open param entry creation form
+            bool alreadyExists = false;
+            bool createBin = false;
+            string fileName = "";
+            if (bustupDirPath != null)
+            {
+                using (var entryDialog = new AddParam())
+                {
+                    if (entryDialog.ShowDialog() != DialogResult.OK)
+                        return;
+                    try
+                    {
+                        createBin = AddParam.Result.createBin;
+                        fileName = AddParam.Result.fileName;
+                        alreadyExists = AddParam.Result.alreadyExists;
+                    }
+                    catch
+                    {
+                    }
+                }
+                if (alreadyExists)
+                    return;
+
+                //Create .bin and/or add entry
+                if (pType == BustupParamEditor.ParamEntry.ParamType.Assist)
+                {
+                    if (createBin && !File.Exists($"{bustupDirPath}\\{fileName}"))
+                        DDS2.Create(bustupDirPath, fileName, true);
+                    Params.AddEntry(paramFilePath, fileName, true);
+                }
+                else if (pType == BustupParamEditor.ParamEntry.ParamType.Normal)
+                {
+                    if (createBin && !File.Exists($"{bustupDirPath}\\{fileName}"))
+                        DDS2.Create(bustupDirPath, fileName, false);
+                    Params.AddEntry(paramFilePath, fileName, false);
+                }
+                //Reload file and select new entry
+                LoadParams(paramFilePath);
+                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            }
+            else
+                MessageBox.Show("Please set your Bustup .bin Directory path first!");
+        }
+
+        private void CreateBustupBin_Click(object sender, EventArgs e)
+        {
+            int lastSelectedIndex = listBox1.SelectedIndex;
+            //Create BIN based on selected entry
+            if (pType == BustupParamEditor.ParamEntry.ParamType.Assist)
+                DDS2.Create(bustupDirPath, listBox1.SelectedItem.ToString(), true);
+            else if (pType == BustupParamEditor.ParamEntry.ParamType.Normal)
+                DDS2.Create(bustupDirPath, listBox1.SelectedItem.ToString(), false);
+            //Reload file at previously selected index
+            LoadParams(paramFilePath);
+            listBox1.SelectedIndex = lastSelectedIndex;
+        }
+
+        private void ToolstripRenameEntry_Click(object sender, EventArgs e)
+        {
+            //Make sure params file is open
+            if (paramEntries.Count <= 0)
+                return;
+
+            //Open param entry creation form
+            bool alreadyExists = false;
+            bool createBin = false;
+            string fileName = "";
+            if (bustupDirPath != null)
+            {
+                using (var entryDialog = new AddParam())
+                {
+                    if (entryDialog.ShowDialog() != DialogResult.OK)
+                        return;
+                    try
+                    {
+                        createBin = AddParam.Result.createBin;
+                        fileName = AddParam.Result.fileName;
+                        alreadyExists = AddParam.Result.alreadyExists;
+                    }
+                    catch
+                    {
+                    }
+                }
+                if (alreadyExists)
+                    return;
+
+                //Create .bin and/or add entry
+                if (pType == BustupParamEditor.ParamEntry.ParamType.Assist)
+                {
+                    if (createBin && !File.Exists($"{bustupDirPath}\\{fileName}"))
+                        DDS2.Create(bustupDirPath, fileName, true);
+                    Params.RenameEntry(paramFilePath, fileName, true, listBox1.SelectedIndex);
+                }
+                else if (pType == BustupParamEditor.ParamEntry.ParamType.Normal)
+                {
+                    if (createBin && !File.Exists($"{bustupDirPath}\\{fileName}"))
+                        DDS2.Create(bustupDirPath, fileName, false);
+                    Params.RenameEntry(paramFilePath, fileName, false, listBox1.SelectedIndex);
+                }
+                //Reload file and select new entry
+                LoadParams(paramFilePath);
+                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            }
+            else
+                MessageBox.Show("Please set your Bustup .bin Directory path first!");
         }
     }
 }

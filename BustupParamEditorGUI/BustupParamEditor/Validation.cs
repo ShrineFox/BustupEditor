@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BustupParamEditor.IO;
+using BustupParamEditorGUI;
 
 namespace BustupParamEditor
 {
@@ -16,13 +17,14 @@ namespace BustupParamEditor
             paramEntries = new List<byte[]>();
 
             byte[] paramFile = File.ReadAllBytes(path);
-            if (paramFile.Length == 9216)
-            {
-                paramEntries = Params.GetParams(paramFile, 32);
-            }
-            else if (paramFile.Length == 43840)
+            
+            if (paramFile.Length >= 43840)
             {
                 paramEntries = Params.GetParams(paramFile, 40);
+            }
+            else if (paramFile.Length >= 9216 && paramFile.Length < 43840)
+            {
+                paramEntries = Params.GetParams(paramFile, 32);
             }
             else
             {
@@ -49,8 +51,8 @@ namespace BustupParamEditor
             catch
             {
             }
-
-            paramId = Params.GetEntryIndex(paramEntries, characterId, expressionId, outfitId);
+            bool isAssist = MainForm.pType == BustupParamEditor.ParamEntry.ParamType.Assist;
+            paramId = Params.GetEntryIndex(paramEntries, characterId, expressionId, outfitId, isAssist);
             pEntry.Read(paramEntries, paramId);
 
             return pEntry;

@@ -52,6 +52,8 @@ namespace BustupParamEditorGUI
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyParametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteParametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parameterEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_OpenImgFolder = new System.Windows.Forms.Button();
             this.numUpDwn_OffsetX = new System.Windows.Forms.NumericUpDown();
@@ -63,6 +65,10 @@ namespace BustupParamEditorGUI
             this.numUpDwn_EyeFrame = new System.Windows.Forms.NumericUpDown();
             this.numUpDwn_MouthFrame = new System.Windows.Forms.NumericUpDown();
             this.btn_RepackBin = new System.Windows.Forms.Button();
+            this.lbl_InitAnim = new System.Windows.Forms.Label();
+            this.comboBox_InitAnim = new System.Windows.Forms.ComboBox();
+            this.btn_CreateBin = new System.Windows.Forms.Button();
+            this.renameEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_OffsetX)).BeginInit();
@@ -98,7 +104,7 @@ namespace BustupParamEditorGUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 353);
+            this.label1.Location = new System.Drawing.Point(22, 353);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 3;
@@ -125,7 +131,7 @@ namespace BustupParamEditorGUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 473);
+            this.label4.Location = new System.Drawing.Point(15, 461);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 13);
             this.label4.TabIndex = 8;
@@ -134,7 +140,7 @@ namespace BustupParamEditorGUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 454);
+            this.label5.Location = new System.Drawing.Point(15, 442);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 13);
             this.label5.TabIndex = 7;
@@ -143,7 +149,7 @@ namespace BustupParamEditorGUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 433);
+            this.label6.Location = new System.Drawing.Point(22, 421);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 6;
@@ -152,7 +158,7 @@ namespace BustupParamEditorGUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(109, 473);
+            this.label7.Location = new System.Drawing.Point(109, 461);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 13);
             this.label7.TabIndex = 11;
@@ -161,7 +167,7 @@ namespace BustupParamEditorGUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 454);
+            this.label8.Location = new System.Drawing.Point(109, 442);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 13);
             this.label8.TabIndex = 10;
@@ -170,7 +176,7 @@ namespace BustupParamEditorGUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(123, 433);
+            this.label9.Location = new System.Drawing.Point(115, 421);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 9;
@@ -179,7 +185,7 @@ namespace BustupParamEditorGUI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(29, 500);
+            this.label10.Location = new System.Drawing.Point(22, 488);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 13);
             this.label10.TabIndex = 18;
@@ -188,7 +194,7 @@ namespace BustupParamEditorGUI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(123, 499);
+            this.label11.Location = new System.Drawing.Point(115, 488);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 13);
             this.label11.TabIndex = 19;
@@ -199,6 +205,7 @@ namespace BustupParamEditorGUI
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.addToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -243,7 +250,8 @@ namespace BustupParamEditorGUI
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyParametersToolStripMenuItem,
-            this.pasteParametersToolStripMenuItem});
+            this.pasteParametersToolStripMenuItem,
+            this.renameEntryToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -251,16 +259,31 @@ namespace BustupParamEditorGUI
             // copyParametersToolStripMenuItem
             // 
             this.copyParametersToolStripMenuItem.Name = "copyParametersToolStripMenuItem";
-            this.copyParametersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.copyParametersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyParametersToolStripMenuItem.Text = "Copy Parameters";
             this.copyParametersToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
             // 
             // pasteParametersToolStripMenuItem
             // 
             this.pasteParametersToolStripMenuItem.Name = "pasteParametersToolStripMenuItem";
-            this.pasteParametersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.pasteParametersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteParametersToolStripMenuItem.Text = "Paste Parameters";
             this.pasteParametersToolStripMenuItem.Click += new System.EventHandler(this.Paste_Click);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parameterEntryToolStripMenuItem});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.addToolStripMenuItem.Text = "Add...";
+            // 
+            // parameterEntryToolStripMenuItem
+            // 
+            this.parameterEntryToolStripMenuItem.Name = "parameterEntryToolStripMenuItem";
+            this.parameterEntryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.parameterEntryToolStripMenuItem.Text = "Parameter Entry";
+            this.parameterEntryToolStripMenuItem.Click += new System.EventHandler(this.ParameterEntryToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -272,7 +295,7 @@ namespace BustupParamEditorGUI
             // btn_OpenImgFolder
             // 
             this.btn_OpenImgFolder.Enabled = false;
-            this.btn_OpenImgFolder.Location = new System.Drawing.Point(103, 366);
+            this.btn_OpenImgFolder.Location = new System.Drawing.Point(103, 346);
             this.btn_OpenImgFolder.Name = "btn_OpenImgFolder";
             this.btn_OpenImgFolder.Size = new System.Drawing.Size(110, 23);
             this.btn_OpenImgFolder.TabIndex = 27;
@@ -319,7 +342,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_EyePosY
             // 
             this.numUpDwn_EyePosY.Enabled = false;
-            this.numUpDwn_EyePosY.Location = new System.Drawing.Point(32, 471);
+            this.numUpDwn_EyePosY.Location = new System.Drawing.Point(32, 459);
             this.numUpDwn_EyePosY.Maximum = new decimal(new int[] {
             2048,
             0,
@@ -338,7 +361,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_EyePosX
             // 
             this.numUpDwn_EyePosX.Enabled = false;
-            this.numUpDwn_EyePosX.Location = new System.Drawing.Point(32, 449);
+            this.numUpDwn_EyePosX.Location = new System.Drawing.Point(32, 437);
             this.numUpDwn_EyePosX.Maximum = new decimal(new int[] {
             2048,
             0,
@@ -357,7 +380,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_MouthPosY
             // 
             this.numUpDwn_MouthPosY.Enabled = false;
-            this.numUpDwn_MouthPosY.Location = new System.Drawing.Point(126, 471);
+            this.numUpDwn_MouthPosY.Location = new System.Drawing.Point(126, 459);
             this.numUpDwn_MouthPosY.Maximum = new decimal(new int[] {
             2048,
             0,
@@ -376,7 +399,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_MouthPosX
             // 
             this.numUpDwn_MouthPosX.Enabled = false;
-            this.numUpDwn_MouthPosX.Location = new System.Drawing.Point(126, 449);
+            this.numUpDwn_MouthPosX.Location = new System.Drawing.Point(126, 437);
             this.numUpDwn_MouthPosX.Maximum = new decimal(new int[] {
             2048,
             0,
@@ -395,7 +418,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_EyeFrame
             // 
             this.numUpDwn_EyeFrame.Enabled = false;
-            this.numUpDwn_EyeFrame.Location = new System.Drawing.Point(32, 516);
+            this.numUpDwn_EyeFrame.Location = new System.Drawing.Point(32, 504);
             this.numUpDwn_EyeFrame.Maximum = new decimal(new int[] {
             2,
             0,
@@ -409,7 +432,7 @@ namespace BustupParamEditorGUI
             // numUpDwn_MouthFrame
             // 
             this.numUpDwn_MouthFrame.Enabled = false;
-            this.numUpDwn_MouthFrame.Location = new System.Drawing.Point(126, 516);
+            this.numUpDwn_MouthFrame.Location = new System.Drawing.Point(126, 504);
             this.numUpDwn_MouthFrame.Maximum = new decimal(new int[] {
             3,
             0,
@@ -423,7 +446,7 @@ namespace BustupParamEditorGUI
             // btn_RepackBin
             // 
             this.btn_RepackBin.Enabled = false;
-            this.btn_RepackBin.Location = new System.Drawing.Point(103, 392);
+            this.btn_RepackBin.Location = new System.Drawing.Point(103, 372);
             this.btn_RepackBin.Name = "btn_RepackBin";
             this.btn_RepackBin.Size = new System.Drawing.Size(110, 23);
             this.btn_RepackBin.TabIndex = 36;
@@ -431,11 +454,57 @@ namespace BustupParamEditorGUI
             this.btn_RepackBin.UseVisualStyleBackColor = true;
             this.btn_RepackBin.Click += new System.EventHandler(this.RepackBin_Click);
             // 
-            // Form1
+            // lbl_InitAnim
+            // 
+            this.lbl_InitAnim.AutoSize = true;
+            this.lbl_InitAnim.Location = new System.Drawing.Point(10, 537);
+            this.lbl_InitAnim.Name = "lbl_InitAnim";
+            this.lbl_InitAnim.Size = new System.Drawing.Size(83, 13);
+            this.lbl_InitAnim.TabIndex = 37;
+            this.lbl_InitAnim.Text = "Initial Animation:";
+            // 
+            // comboBox_InitAnim
+            // 
+            this.comboBox_InitAnim.Enabled = false;
+            this.comboBox_InitAnim.FormattingEnabled = true;
+            this.comboBox_InitAnim.Items.AddRange(new object[] {
+            "None",
+            "Eyes",
+            "Mouth",
+            "F08",
+            "Eyes_Mouth",
+            "Eyes_Mouth_F08"});
+            this.comboBox_InitAnim.Location = new System.Drawing.Point(99, 532);
+            this.comboBox_InitAnim.Name = "comboBox_InitAnim";
+            this.comboBox_InitAnim.Size = new System.Drawing.Size(114, 21);
+            this.comboBox_InitAnim.TabIndex = 39;
+            // 
+            // btn_CreateBin
+            // 
+            this.btn_CreateBin.Enabled = false;
+            this.btn_CreateBin.Location = new System.Drawing.Point(103, 397);
+            this.btn_CreateBin.Name = "btn_CreateBin";
+            this.btn_CreateBin.Size = new System.Drawing.Size(110, 23);
+            this.btn_CreateBin.TabIndex = 40;
+            this.btn_CreateBin.Text = "Create Bustup .bin";
+            this.btn_CreateBin.UseVisualStyleBackColor = true;
+            this.btn_CreateBin.Click += new System.EventHandler(this.CreateBustupBin_Click);
+            // 
+            // renameEntryToolStripMenuItem
+            // 
+            this.renameEntryToolStripMenuItem.Name = "renameEntryToolStripMenuItem";
+            this.renameEntryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameEntryToolStripMenuItem.Text = "Rename Entry";
+            this.renameEntryToolStripMenuItem.Click += new System.EventHandler(this.ToolstripRenameEntry_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 559);
+            this.Controls.Add(this.btn_CreateBin);
+            this.Controls.Add(this.comboBox_InitAnim);
+            this.Controls.Add(this.lbl_InitAnim);
             this.Controls.Add(this.btn_RepackBin);
             this.Controls.Add(this.numUpDwn_MouthFrame);
             this.Controls.Add(this.numUpDwn_EyeFrame);
@@ -465,7 +534,7 @@ namespace BustupParamEditorGUI
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(755, 598);
             this.MinimumSize = new System.Drawing.Size(755, 598);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "BustupParamEditor GUI";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base)).EndInit();
@@ -518,6 +587,12 @@ namespace BustupParamEditorGUI
         private ToolStripMenuItem copyParametersToolStripMenuItem;
         private ToolStripMenuItem pasteParametersToolStripMenuItem;
         private Button btn_RepackBin;
+        private Label lbl_InitAnim;
+        private ComboBox comboBox_InitAnim;
+        private ToolStripMenuItem addToolStripMenuItem;
+        private ToolStripMenuItem parameterEntryToolStripMenuItem;
+        private Button btn_CreateBin;
+        private ToolStripMenuItem renameEntryToolStripMenuItem;
     }
 }
 
