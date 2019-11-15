@@ -16,7 +16,7 @@ you can change the values for X and Y positioning of the mouth, eyes, or the ent
 - Add parameters for brand new bustups or edit the ids of existing entries to fit your needs.
 
 ## Disclaimers
--Be sure to make copies of the original files before using this program!  
+**Be sure to make copies of the original files before using this program!** 
 Changes are saved directly to your selected files and cannot be undone.  
 You have to edit the combined PNG files to preview custom bustup images in the program. (The preview doesn't use the uncombined DDS images).  
 You must save over the original DDS files with your edits if you want to repack your custom bustup as a BIN. (The PNG files do not get converted back to DDS or repacked into the BIN.)
