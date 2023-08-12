@@ -127,18 +127,18 @@ namespace BustupEditor
             this.tlp_Main.ColumnCount = 2;
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.Controls.Add(this.groupBox_PreviewSettings, 1, 1);
             this.tlp_Main.Controls.Add(this.listBox_Sprites, 0, 0);
             this.tlp_Main.Controls.Add(this.groupBox_BustupSettings, 0, 1);
             this.tlp_Main.Controls.Add(this.groupBox_Texture, 1, 0);
+            this.tlp_Main.Controls.Add(this.groupBox_PreviewSettings, 1, 2);
             this.tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_Main.Location = new System.Drawing.Point(0, 28);
             this.tlp_Main.Name = "tlp_Main";
-            this.tlp_Main.RowCount = 2;
+            this.tlp_Main.RowCount = 3;
             this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp_Main.Size = new System.Drawing.Size(982, 525);
+            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_Main.Size = new System.Drawing.Size(982, 575);
             this.tlp_Main.TabIndex = 0;
             // 
             // groupBox_PreviewSettings
@@ -146,9 +146,9 @@ namespace BustupEditor
             this.groupBox_PreviewSettings.Controls.Add(this.panel_PreviewSettings);
             this.groupBox_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_PreviewSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 265);
+            this.groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 433);
             this.groupBox_PreviewSettings.Name = "groupBox_PreviewSettings";
-            this.groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 257);
+            this.groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 139);
             this.groupBox_PreviewSettings.TabIndex = 3;
             this.groupBox_PreviewSettings.TabStop = false;
             this.groupBox_PreviewSettings.Text = "Preview Settings";
@@ -161,7 +161,7 @@ namespace BustupEditor
             this.panel_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_PreviewSettings.Location = new System.Drawing.Point(3, 18);
             this.panel_PreviewSettings.Name = "panel_PreviewSettings";
-            this.panel_PreviewSettings.Size = new System.Drawing.Size(479, 236);
+            this.panel_PreviewSettings.Size = new System.Drawing.Size(479, 118);
             this.panel_PreviewSettings.TabIndex = 0;
             // 
             // tlp_PreviewSettings
@@ -177,12 +177,12 @@ namespace BustupEditor
             this.tlp_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlp_PreviewSettings.Location = new System.Drawing.Point(0, 0);
             this.tlp_PreviewSettings.Name = "tlp_PreviewSettings";
-            this.tlp_PreviewSettings.RowCount = 4;
+            this.tlp_PreviewSettings.RowCount = 1;
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_PreviewSettings.Size = new System.Drawing.Size(479, 200);
+            this.tlp_PreviewSettings.Size = new System.Drawing.Size(479, 100);
             this.tlp_PreviewSettings.TabIndex = 2;
             // 
             // tlp_PreviewFrame
@@ -255,7 +255,7 @@ namespace BustupEditor
             this.listBox_Sprites.Location = new System.Drawing.Point(3, 3);
             this.listBox_Sprites.Name = "listBox_Sprites";
             this.listBox_Sprites.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox_Sprites.Size = new System.Drawing.Size(485, 256);
+            this.listBox_Sprites.Size = new System.Drawing.Size(485, 281);
             this.listBox_Sprites.TabIndex = 1;
             // 
             // darkContextMenu_Sprites
@@ -268,7 +268,7 @@ namespace BustupEditor
             this.removeSelectedToolStripMenuItem,
             this.renameSelectedToolStripMenuItem});
             this.darkContextMenu_Sprites.Name = "darkContextMenu_Sprites";
-            this.darkContextMenu_Sprites.Size = new System.Drawing.Size(211, 104);
+            this.darkContextMenu_Sprites.Size = new System.Drawing.Size(194, 76);
             // 
             // addSpriteToolStripMenuItem
             // 
@@ -300,9 +300,10 @@ namespace BustupEditor
             this.groupBox_BustupSettings.Controls.Add(this.panel_BustupSettings);
             this.groupBox_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_BustupSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_BustupSettings.Location = new System.Drawing.Point(3, 265);
+            this.groupBox_BustupSettings.Location = new System.Drawing.Point(3, 290);
             this.groupBox_BustupSettings.Name = "groupBox_BustupSettings";
-            this.groupBox_BustupSettings.Size = new System.Drawing.Size(485, 257);
+            this.tlp_Main.SetRowSpan(this.groupBox_BustupSettings, 2);
+            this.groupBox_BustupSettings.Size = new System.Drawing.Size(485, 282);
             this.groupBox_BustupSettings.TabIndex = 2;
             this.groupBox_BustupSettings.TabStop = false;
             this.groupBox_BustupSettings.Text = "Bustup Parameters";
@@ -315,7 +316,7 @@ namespace BustupEditor
             this.panel_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_BustupSettings.Location = new System.Drawing.Point(3, 18);
             this.panel_BustupSettings.Name = "panel_BustupSettings";
-            this.panel_BustupSettings.Size = new System.Drawing.Size(479, 236);
+            this.panel_BustupSettings.Size = new System.Drawing.Size(479, 261);
             this.panel_BustupSettings.TabIndex = 0;
             // 
             // tlp_BustupSettings
@@ -344,7 +345,7 @@ namespace BustupEditor
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp_BustupSettings.Size = new System.Drawing.Size(458, 250);
+            this.tlp_BustupSettings.Size = new System.Drawing.Size(479, 250);
             this.tlp_BustupSettings.TabIndex = 1;
             // 
             // lbl_Animation
@@ -354,7 +355,7 @@ namespace BustupEditor
             this.lbl_Animation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_Animation.Location = new System.Drawing.Point(3, 217);
             this.lbl_Animation.Name = "lbl_Animation";
-            this.lbl_Animation.Size = new System.Drawing.Size(85, 16);
+            this.lbl_Animation.Size = new System.Drawing.Size(89, 16);
             this.lbl_Animation.TabIndex = 6;
             this.lbl_Animation.Text = "Animation:";
             // 
@@ -370,19 +371,19 @@ namespace BustupEditor
             this.tlp_MouthPos.Controls.Add(this.lbl_MouthPosY, 2, 0);
             this.tlp_MouthPos.Controls.Add(this.num_MouthPosX, 1, 0);
             this.tlp_MouthPos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthPos.Location = new System.Drawing.Point(94, 153);
+            this.tlp_MouthPos.Location = new System.Drawing.Point(98, 153);
             this.tlp_MouthPos.Name = "tlp_MouthPos";
             this.tlp_MouthPos.RowCount = 1;
             this.tlp_MouthPos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthPos.Size = new System.Drawing.Size(361, 44);
+            this.tlp_MouthPos.Size = new System.Drawing.Size(378, 44);
             this.tlp_MouthPos.TabIndex = 5;
             // 
             // num_MouthPosY
             // 
             this.num_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosY.Location = new System.Drawing.Point(255, 11);
+            this.num_MouthPosY.Location = new System.Drawing.Point(266, 11);
             this.num_MouthPosY.Name = "num_MouthPosY";
-            this.num_MouthPosY.Size = new System.Drawing.Size(103, 22);
+            this.num_MouthPosY.Size = new System.Drawing.Size(107, 22);
             this.num_MouthPosY.TabIndex = 3;
             // 
             // lbl_MouthPosX
@@ -390,7 +391,7 @@ namespace BustupEditor
             this.lbl_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthPosX.AutoSize = true;
             this.lbl_MouthPosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosX.Location = new System.Drawing.Point(51, 14);
+            this.lbl_MouthPosX.Location = new System.Drawing.Point(54, 14);
             this.lbl_MouthPosX.Name = "lbl_MouthPosX";
             this.lbl_MouthPosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_MouthPosX.TabIndex = 0;
@@ -401,7 +402,7 @@ namespace BustupEditor
             this.lbl_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthPosY.AutoSize = true;
             this.lbl_MouthPosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosY.Location = new System.Drawing.Point(230, 14);
+            this.lbl_MouthPosY.Location = new System.Drawing.Point(241, 14);
             this.lbl_MouthPosY.Name = "lbl_MouthPosY";
             this.lbl_MouthPosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_MouthPosY.TabIndex = 1;
@@ -410,9 +411,9 @@ namespace BustupEditor
             // num_MouthPosX
             // 
             this.num_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosX.Location = new System.Drawing.Point(75, 11);
+            this.num_MouthPosX.Location = new System.Drawing.Point(78, 11);
             this.num_MouthPosX.Name = "num_MouthPosX";
-            this.num_MouthPosX.Size = new System.Drawing.Size(102, 22);
+            this.num_MouthPosX.Size = new System.Drawing.Size(107, 22);
             this.num_MouthPosX.TabIndex = 2;
             // 
             // lbl_MouthPos
@@ -422,7 +423,7 @@ namespace BustupEditor
             this.lbl_MouthPos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_MouthPos.Location = new System.Drawing.Point(3, 159);
             this.lbl_MouthPos.Name = "lbl_MouthPos";
-            this.lbl_MouthPos.Size = new System.Drawing.Size(85, 32);
+            this.lbl_MouthPos.Size = new System.Drawing.Size(89, 32);
             this.lbl_MouthPos.TabIndex = 4;
             this.lbl_MouthPos.Text = "Mouth Position:";
             // 
@@ -438,19 +439,19 @@ namespace BustupEditor
             this.tlp_EyePos.Controls.Add(this.lbl_EyePosY, 2, 0);
             this.tlp_EyePos.Controls.Add(this.num_EyePosX, 1, 0);
             this.tlp_EyePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_EyePos.Location = new System.Drawing.Point(94, 103);
+            this.tlp_EyePos.Location = new System.Drawing.Point(98, 103);
             this.tlp_EyePos.Name = "tlp_EyePos";
             this.tlp_EyePos.RowCount = 1;
             this.tlp_EyePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_EyePos.Size = new System.Drawing.Size(361, 44);
+            this.tlp_EyePos.Size = new System.Drawing.Size(378, 44);
             this.tlp_EyePos.TabIndex = 3;
             // 
             // num_EyePosY
             // 
             this.num_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosY.Location = new System.Drawing.Point(255, 11);
+            this.num_EyePosY.Location = new System.Drawing.Point(266, 11);
             this.num_EyePosY.Name = "num_EyePosY";
-            this.num_EyePosY.Size = new System.Drawing.Size(103, 22);
+            this.num_EyePosY.Size = new System.Drawing.Size(107, 22);
             this.num_EyePosY.TabIndex = 3;
             // 
             // lbl_EyePosX
@@ -458,7 +459,7 @@ namespace BustupEditor
             this.lbl_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyePosX.AutoSize = true;
             this.lbl_EyePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosX.Location = new System.Drawing.Point(51, 14);
+            this.lbl_EyePosX.Location = new System.Drawing.Point(54, 14);
             this.lbl_EyePosX.Name = "lbl_EyePosX";
             this.lbl_EyePosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_EyePosX.TabIndex = 0;
@@ -469,7 +470,7 @@ namespace BustupEditor
             this.lbl_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyePosY.AutoSize = true;
             this.lbl_EyePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosY.Location = new System.Drawing.Point(230, 14);
+            this.lbl_EyePosY.Location = new System.Drawing.Point(241, 14);
             this.lbl_EyePosY.Name = "lbl_EyePosY";
             this.lbl_EyePosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_EyePosY.TabIndex = 1;
@@ -478,9 +479,9 @@ namespace BustupEditor
             // num_EyePosX
             // 
             this.num_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosX.Location = new System.Drawing.Point(75, 11);
+            this.num_EyePosX.Location = new System.Drawing.Point(78, 11);
             this.num_EyePosX.Name = "num_EyePosX";
-            this.num_EyePosX.Size = new System.Drawing.Size(102, 22);
+            this.num_EyePosX.Size = new System.Drawing.Size(107, 22);
             this.num_EyePosX.TabIndex = 2;
             // 
             // lbl_EyePos
@@ -490,7 +491,7 @@ namespace BustupEditor
             this.lbl_EyePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_EyePos.Location = new System.Drawing.Point(3, 117);
             this.lbl_EyePos.Name = "lbl_EyePos";
-            this.lbl_EyePos.Size = new System.Drawing.Size(85, 16);
+            this.lbl_EyePos.Size = new System.Drawing.Size(89, 16);
             this.lbl_EyePos.TabIndex = 2;
             this.lbl_EyePos.Text = "Eye Position:";
             // 
@@ -501,7 +502,7 @@ namespace BustupEditor
             this.lbl_BasePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_BasePos.Location = new System.Drawing.Point(3, 59);
             this.lbl_BasePos.Name = "lbl_BasePos";
-            this.lbl_BasePos.Size = new System.Drawing.Size(85, 32);
+            this.lbl_BasePos.Size = new System.Drawing.Size(89, 32);
             this.lbl_BasePos.TabIndex = 0;
             this.lbl_BasePos.Text = "Base Position:";
             // 
@@ -517,19 +518,19 @@ namespace BustupEditor
             this.tlp_BasePos.Controls.Add(this.lbl_BasePosY, 2, 0);
             this.tlp_BasePos.Controls.Add(this.num_BasePosX, 1, 0);
             this.tlp_BasePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BasePos.Location = new System.Drawing.Point(94, 53);
+            this.tlp_BasePos.Location = new System.Drawing.Point(98, 53);
             this.tlp_BasePos.Name = "tlp_BasePos";
             this.tlp_BasePos.RowCount = 1;
             this.tlp_BasePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BasePos.Size = new System.Drawing.Size(361, 44);
+            this.tlp_BasePos.Size = new System.Drawing.Size(378, 44);
             this.tlp_BasePos.TabIndex = 1;
             // 
             // num_BasePosY
             // 
             this.num_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosY.Location = new System.Drawing.Point(255, 11);
+            this.num_BasePosY.Location = new System.Drawing.Point(266, 11);
             this.num_BasePosY.Name = "num_BasePosY";
-            this.num_BasePosY.Size = new System.Drawing.Size(103, 22);
+            this.num_BasePosY.Size = new System.Drawing.Size(107, 22);
             this.num_BasePosY.TabIndex = 3;
             // 
             // lbl_BasePosX
@@ -537,7 +538,7 @@ namespace BustupEditor
             this.lbl_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_BasePosX.AutoSize = true;
             this.lbl_BasePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosX.Location = new System.Drawing.Point(51, 14);
+            this.lbl_BasePosX.Location = new System.Drawing.Point(54, 14);
             this.lbl_BasePosX.Name = "lbl_BasePosX";
             this.lbl_BasePosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_BasePosX.TabIndex = 0;
@@ -548,7 +549,7 @@ namespace BustupEditor
             this.lbl_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_BasePosY.AutoSize = true;
             this.lbl_BasePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosY.Location = new System.Drawing.Point(230, 14);
+            this.lbl_BasePosY.Location = new System.Drawing.Point(241, 14);
             this.lbl_BasePosY.Name = "lbl_BasePosY";
             this.lbl_BasePosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_BasePosY.TabIndex = 1;
@@ -557,9 +558,9 @@ namespace BustupEditor
             // num_BasePosX
             // 
             this.num_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosX.Location = new System.Drawing.Point(75, 11);
+            this.num_BasePosX.Location = new System.Drawing.Point(78, 11);
             this.num_BasePosX.Name = "num_BasePosX";
-            this.num_BasePosX.Size = new System.Drawing.Size(102, 22);
+            this.num_BasePosX.Size = new System.Drawing.Size(107, 22);
             this.num_BasePosX.TabIndex = 2;
             // 
             // comboBox_Animation
@@ -576,7 +577,7 @@ namespace BustupEditor
             "F08",
             "Eyes_Mouth",
             "Eyes_Mouth_F08"});
-            this.comboBox_Animation.Location = new System.Drawing.Point(94, 216);
+            this.comboBox_Animation.Location = new System.Drawing.Point(98, 216);
             this.comboBox_Animation.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.comboBox_Animation.Name = "comboBox_Animation";
             this.comboBox_Animation.Size = new System.Drawing.Size(185, 24);
@@ -589,7 +590,8 @@ namespace BustupEditor
             this.groupBox_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_Texture.Location = new System.Drawing.Point(494, 3);
             this.groupBox_Texture.Name = "groupBox_Texture";
-            this.groupBox_Texture.Size = new System.Drawing.Size(485, 256);
+            this.tlp_Main.SetRowSpan(this.groupBox_Texture, 2);
+            this.groupBox_Texture.Size = new System.Drawing.Size(485, 424);
             this.groupBox_Texture.TabIndex = 4;
             this.groupBox_Texture.TabStop = false;
             this.groupBox_Texture.Text = "Bustup Texture";
@@ -601,7 +603,7 @@ namespace BustupEditor
             this.pictureBox_Tex.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox_Tex.Location = new System.Drawing.Point(3, 18);
             this.pictureBox_Tex.Name = "pictureBox_Tex";
-            this.pictureBox_Tex.Size = new System.Drawing.Size(479, 235);
+            this.pictureBox_Tex.Size = new System.Drawing.Size(479, 403);
             this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Tex.TabIndex = 1;
             this.pictureBox_Tex.TabStop = false;
@@ -734,15 +736,15 @@ namespace BustupEditor
             this.tlp_BustupID.Name = "tlp_BustupID";
             this.tlp_BustupID.RowCount = 1;
             this.tlp_BustupID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BustupID.Size = new System.Drawing.Size(452, 44);
+            this.tlp_BustupID.Size = new System.Drawing.Size(473, 44);
             this.tlp_BustupID.TabIndex = 8;
             // 
             // num_MinorID
             // 
             this.num_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MinorID.Location = new System.Drawing.Point(228, 11);
+            this.num_MinorID.Location = new System.Drawing.Point(237, 11);
             this.num_MinorID.Name = "num_MinorID";
-            this.num_MinorID.Size = new System.Drawing.Size(69, 22);
+            this.num_MinorID.Size = new System.Drawing.Size(72, 22);
             this.num_MinorID.TabIndex = 3;
             // 
             // lbl_MajorID
@@ -750,7 +752,7 @@ namespace BustupEditor
             this.lbl_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MajorID.AutoSize = true;
             this.lbl_MajorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MajorID.Location = new System.Drawing.Point(12, 14);
+            this.lbl_MajorID.Location = new System.Drawing.Point(15, 14);
             this.lbl_MajorID.Name = "lbl_MajorID";
             this.lbl_MajorID.Size = new System.Drawing.Size(60, 16);
             this.lbl_MajorID.TabIndex = 0;
@@ -761,7 +763,7 @@ namespace BustupEditor
             this.lbl_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MinorID.AutoSize = true;
             this.lbl_MinorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MinorID.Location = new System.Drawing.Point(163, 14);
+            this.lbl_MinorID.Location = new System.Drawing.Point(172, 14);
             this.lbl_MinorID.Name = "lbl_MinorID";
             this.lbl_MinorID.Size = new System.Drawing.Size(59, 16);
             this.lbl_MinorID.TabIndex = 1;
@@ -770,9 +772,9 @@ namespace BustupEditor
             // num_MajorID
             // 
             this.num_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MajorID.Location = new System.Drawing.Point(78, 11);
+            this.num_MajorID.Location = new System.Drawing.Point(81, 11);
             this.num_MajorID.Name = "num_MajorID";
-            this.num_MajorID.Size = new System.Drawing.Size(69, 22);
+            this.num_MajorID.Size = new System.Drawing.Size(72, 22);
             this.num_MajorID.TabIndex = 2;
             // 
             // lbl_SubID
@@ -780,7 +782,7 @@ namespace BustupEditor
             this.lbl_SubID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_SubID.AutoSize = true;
             this.lbl_SubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_SubID.Location = new System.Drawing.Point(322, 14);
+            this.lbl_SubID.Location = new System.Drawing.Point(337, 14);
             this.lbl_SubID.Name = "lbl_SubID";
             this.lbl_SubID.Size = new System.Drawing.Size(50, 16);
             this.lbl_SubID.TabIndex = 4;
@@ -789,7 +791,7 @@ namespace BustupEditor
             // num_SubID
             // 
             this.num_SubID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_SubID.Location = new System.Drawing.Point(378, 11);
+            this.num_SubID.Location = new System.Drawing.Point(393, 11);
             this.num_SubID.Name = "num_SubID";
             this.num_SubID.Size = new System.Drawing.Size(68, 22);
             this.num_SubID.TabIndex = 5;
@@ -845,7 +847,7 @@ namespace BustupEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(982, 603);
             this.Controls.Add(this.tlp_Main);
             this.Controls.Add(this.darkMenuStrip_MainMenu);
             this.MainMenuStrip = this.darkMenuStrip_MainMenu;
