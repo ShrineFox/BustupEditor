@@ -7,6 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using DarkUI.Controls;
 using DarkUI.Forms;
 using Newtonsoft.Json;
@@ -28,7 +29,8 @@ namespace BustupEditor
                 new Tuple<string, string>("fileToolStripMenuItem", "disk"),
                 new Tuple<string, string>("loadToolStripMenuItem", "folder_page"),
                 new Tuple<string, string>("saveToolStripMenuItem", "disk_multiple"),
-                new Tuple<string, string>("exportBustupsToolStripMenuItem", "package_go"),
+                new Tuple<string, string>("importToolStripMenuItem", "package"),
+                new Tuple<string, string>("exportToolStripMenuItem", "package_go"),
                 new Tuple<string, string>("addToolStripMenuItem", "add"),
                 new Tuple<string, string>("addSpriteToolStripMenuItem", "add"),
                 new Tuple<string, string>("removeToolStripMenuItem", "delete"),
@@ -75,27 +77,28 @@ namespace BustupEditor
             public string Name = "Untitled";
             public string ImagesPath = "./Images";
             public List<Bustup> Bustups = new List<Bustup>();
-            public BustupType Type = BustupType.Portrait;
+            public BustupType Type = BustupType.Unknown;
         }
 
         public class Bustup
         {
-            public string Name = "";
+            public string Name = "Untitled";
             public string TexturePath = "";
-            public int MajorID = 0;
-            public int MinorID = 0;
-            public int SubID = 0;
-            public int BasePos_X = 0;
-            public int BasePos_Y = 0;
-            public int EyePos_X = 0;
-            public int EyePos_Y = 0;
-            public int MouthPos_X = 0;
-            public int MouthPos_Y = 0;
+            public ushort MajorID = 0;
+            public ushort MinorID = 0;
+            public ushort SubID = 0;
+            public float BasePos_X = 0;
+            public float BasePos_Y = 0;
+            public float EyePos_X = 0;
+            public float EyePos_Y = 0;
+            public float MouthPos_X = 0;
+            public float MouthPos_Y = 0;
             public AnimationType AnimType = AnimationType.None;
         }
 
         public enum BustupType
         {
+            Unknown,
             Portrait,
             Navigator
         }
@@ -105,23 +108,20 @@ namespace BustupEditor
             None,
             Eyes,
             Mouth,
-            F08,
             Eyes_Mouth,
-            Eyes_Mouth_F08
+            Eyes_Mouth_ExcludeAlpha = 11,
+            Unknown = 15
         }
 
         private void SavePreset_Click(object sender, EventArgs e)
         {
             var selection = WinFormsEvents.FilePath_Click("Save project file...", true, new string[] { "json (.json)" }, true);
-            if (selection.Count == 0)
+            if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
                 return;
 
             string outPath = selection.First();
-            if (string.IsNullOrEmpty(outPath))
-                return;
-
             if (!outPath.ToLower().EndsWith(".json"))
-                outPath += ".json";
+                outPath = outPath + ".json";
 
             File.WriteAllText(selection.First(), JsonConvert.SerializeObject(bustupProject, Newtonsoft.Json.Formatting.Indented));
             MessageBox.Show($"Saved project file to:\n{selection.First()}", "Project Saved Successfully");
@@ -130,7 +130,7 @@ namespace BustupEditor
         private void LoadPreset_Click(object sender, EventArgs e)
         {
             var selection = WinFormsEvents.FilePath_Click("Load project file...", true, new string[] { "json (.json)" });
-            if (selection.Count == 0)
+            if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
                 return;
 
             bustupProject = JsonConvert.DeserializeObject<BustupProject>(File.ReadAllText(selection.First()));
@@ -140,7 +140,9 @@ namespace BustupEditor
 
         private void UpdateSpriteList()
         {
-            throw new NotImplementedException();
+            listBox_Sprites.Items.Clear();
+            foreach (var bustup in bustupProject.Bustups)
+                listBox_Sprites.Items.Add(bustup.Name);
         }
 
         private void LoadTexturePreview(string texPath = "")
@@ -215,6 +217,131 @@ namespace BustupEditor
         }
 
         private void AddBustup(string name, string texPath = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Import_Click(object sender, EventArgs e)
+        {
+            var selection = WinFormsEvents.FilePath_Click("Load .DAT file...", true, new string[] { "Bustup Params (.dat)" });
+            if (selection.Count == 0)
+                return;
+
+            GetBustupParamData(selection[0]);
+            //ExtractBustupImages(selection[0]);
+            UpdateSpriteList();
+        }
+
+        private void ExtractBustupImages(string bustupDatPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GetBustupParamData(string bustupDatPath)
+        {
+            using (MemoryStream memStream = new MemoryStream(File.ReadAllBytes(bustupDatPath)))
+            using (EndianBinaryReader reader = new EndianBinaryReader(memStream, Endianness.BigEndian))
+            {
+                List<Bustup> bustups = new List<Bustup>();
+
+                // Try to determine the type of bustup bin loaded
+                if (bustupProject.Type == BustupType.Unknown)
+                {
+                    reader.ReadBytes(32); // Skip 32 bytes
+                    ushort test = reader.ReadUInt16();
+
+                    if (test == 0)
+                        bustupProject.Type = BustupType.Portrait;
+                    else
+                        bustupProject.Type = BustupType.Navigator;
+
+                    reader.BaseStream.Position = 0;
+                }
+
+                while (reader.BaseStream.Position + 32 < reader.BaseStreamLength)
+                {
+                    //MessageBox.Show($"{reader.BaseStream.Position} / {reader.BaseStreamLength}");
+                    Bustup bustup = new Bustup();
+
+                    // Load the first bit of data of bustup entry
+                    bustup.MajorID = reader.ReadUInt16();
+                    bustup.MinorID = reader.ReadUInt16();
+                    
+                    if (bustupProject.Type == BustupType.Portrait)
+                    {
+                        bustup.SubID = reader.ReadUInt16();
+                        reader.ReadUInt16(); // skip 2 bytes
+                    }
+
+                    bustup.BasePos_X = reader.ReadSingle();
+                    bustup.BasePos_Y = reader.ReadSingle();
+                    bustup.EyePos_X = reader.ReadSingle();
+                    bustup.EyePos_Y = reader.ReadSingle();
+                    bustup.MouthPos_X = reader.ReadSingle();
+                    bustup.MouthPos_Y = reader.ReadSingle();
+
+                    reader.ReadBytes(2);
+                    bustup.AnimType = (AnimationType)reader.ReadUInt16();
+
+                    // Skip 4 bytes at end for portrait bustups
+                    if (bustupProject.Type == BustupType.Portrait)
+                        reader.ReadSingle();
+
+                    // Assign unique name to bustup
+                    bustup.Name = $"{bustup.MajorID.ToString("000")}_{bustup.MinorID.ToString("000")}";
+                    if (bustupProject.Type == BustupType.Portrait)
+                        bustup.Name += $"_{bustup.SubID.ToString("00")}";
+                    
+                    int i = 1;
+                    string name = bustup.Name;
+                    while (bustups.Any(x => x.Name.Equals(bustup.Name)))
+                    {
+                        i++;
+                        bustup.Name = $"{name} ({i})";
+                    }
+
+                    bustups.Add(bustup);
+                }
+
+                bustupProject.Bustups = bustups;
+            }
+        }
+
+        private void SelectedBustup_Changed(object sender, EventArgs e)
+        {
+            ListBox spriteList = (ListBox)sender;
+            Bustup selectedBustup = null;
+
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(spriteList.SelectedItem.ToString())))
+                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(spriteList.SelectedItem.ToString()));
+            else
+                return;
+
+            num_MajorID.Value = selectedBustup.MajorID;
+            num_MinorID.Value = selectedBustup.MinorID;
+            num_SubID.Value = selectedBustup.SubID;
+
+            if (bustupProject.Type == BustupType.Navigator)
+                num_SubID.Enabled = false;
+            else
+                num_SubID.Enabled = true;
+
+            num_BasePosX.Value = Convert.ToDecimal(selectedBustup.BasePos_X);
+            num_EyePosX.Value = Convert.ToDecimal(selectedBustup.EyePos_X);
+            num_EyePosY.Value = Convert.ToDecimal(selectedBustup.EyePos_Y);
+            num_MouthPosX.Value = Convert.ToDecimal(selectedBustup.MouthPos_X);
+            num_MouthPosY.Value = Convert.ToDecimal(selectedBustup.MouthPos_Y);
+
+            comboBox_Animation.SelectedIndex = comboBox_Animation.Items.IndexOf(
+                Enum.GetName(typeof(AnimationType), selectedBustup.AnimType));
+
+            num_EyeFrame.Value = 0;
+            num_MouthFrame.Value = 0;
+
+            //LoadBustupPreview();
+        }
+
+        private void LoadBustupPreview()
         {
             throw new NotImplementedException();
         }
