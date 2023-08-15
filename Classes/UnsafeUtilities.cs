@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GlitchEPLGen
+namespace BustupEditor
 {
     public static unsafe class UnsafeUtilities
     {

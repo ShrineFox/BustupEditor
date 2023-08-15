@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using DarkUI.Controls;
@@ -228,13 +229,75 @@ namespace BustupEditor
                 return;
 
             GetBustupParamData(selection[0]);
-            //ExtractBustupImages(selection[0]);
+            ExtractBustupImages(selection[0]);
             UpdateSpriteList();
         }
 
         private void ExtractBustupImages(string bustupDatPath)
         {
-            throw new NotImplementedException();
+            string bustupDir = "";
+            if (bustupProject.Type == BustupType.Portrait)
+                bustupDir = Path.GetDirectoryName(Path.GetDirectoryName(bustupDatPath));
+            else if (bustupProject.Type == BustupType.Navigator)
+                bustupDir = Path.Combine(Path.GetDirectoryName(bustupDatPath), "BUSTUP");
+
+            if (!Directory.Exists(bustupDir))
+            {
+                MessageBox.Show($"Could not find BUSTUP directory at corresponding location:\n\n" +
+                    $"{bustupDir}");
+                return;
+            }
+            else
+            {
+                foreach (var bin in Directory.GetFiles(bustupDir, "*.BIN", SearchOption.TopDirectoryOnly))
+                    ExtractP5RPCBustupBIN(bin);
+            }
+        }
+
+        private void ExtractP5RPCBustupBIN(string bin)
+        {
+            using (MemoryStream memStream = new MemoryStream(File.ReadAllBytes(bin)))
+            using (EndianBinaryReader reader = new EndianBinaryReader(memStream, Endianness.BigEndian))
+            {
+                // Get number of images in BIN
+                int ddsCount = reader.ReadInt32();
+
+                string extractedPath = txt_ImagesPath.Text;
+
+                // Get directory to extract images to
+                if (!Directory.Exists(txt_ImagesPath.Text))
+                {
+                    extractedPath = Path.Combine(Path.GetDirectoryName(bin), "Extracted");
+                    bustupProject.ImagesPath = extractedPath;
+                    txt_ImagesPath.Text = extractedPath;
+                    Directory.CreateDirectory(extractedPath);
+                }
+                extractedPath = Path.Combine(extractedPath, Path.GetFileNameWithoutExtension(bin));
+                if (Directory.Exists(extractedPath))
+                    return;
+
+                Directory.CreateDirectory(extractedPath);
+
+                for (int i = ddsCount; i > 0; i--)
+                {
+                    // Get name and size of DDS file
+                    string ddsName = ReadName(reader);
+                    int ddsSize = reader.ReadInt32();
+                    byte[] ddsFile = reader.ReadBytes(ddsSize);
+                    
+                    // Extract contents of dds file to output folder
+                    string outImgPath = Path.Combine(extractedPath, ddsName);
+                    using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
+                        using (BinaryWriter writer = new BinaryWriter(stream))
+                            writer.Write(ddsFile);
+                }
+            }
+        }
+
+        public static string ReadName(BinaryReader reader)
+        {
+            //Read DDS filename
+            return Encoding.ASCII.GetString(reader.ReadBytes(32)).TrimEnd('\0');
         }
 
         private void GetBustupParamData(string bustupDatPath)
@@ -317,6 +380,8 @@ namespace BustupEditor
             else
                 return;
 
+            txt_ImagesPath.Text = bustupProject.ImagesPath;
+
             num_MajorID.Value = selectedBustup.MajorID;
             num_MinorID.Value = selectedBustup.MinorID;
             num_SubID.Value = selectedBustup.SubID;
@@ -338,12 +403,26 @@ namespace BustupEditor
             num_EyeFrame.Value = 0;
             num_MouthFrame.Value = 0;
 
-            //LoadBustupPreview();
+            LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
         }
 
-        private void LoadBustupPreview()
+        private void LoadBustupPreview(ushort majorID, ushort minorID, ushort subID)
         {
-            throw new NotImplementedException();
+            string ddsPath = $"B{majorID.ToString("000")}_{minorID.ToString("000")}";
+            if (bustupProject.Type == BustupType.Portrait)
+                ddsPath += $"_{subID.ToString("00")}";
+
+            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
+            if (Directory.Exists(ddsPath))
+            {
+                var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
+                if (ddsFiles.Length > 0)
+                {
+                    Bitmap ddsBitmap = DDS.Decode(File.ReadAllBytes(ddsFiles[0]));
+                    pictureBox_Tex.Image = ddsBitmap;
+                }
+            }
+            
         }
     }
 

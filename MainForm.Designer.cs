@@ -86,8 +86,8 @@ namespace BustupEditor
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -252,12 +252,12 @@ namespace BustupEditor
             // 
             this.tlp_BustupID.ColumnCount = 6;
             this.tlp_BustupSettings.SetColumnSpan(this.tlp_BustupID, 2);
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlp_BustupID.Controls.Add(this.num_SubID, 5, 0);
             this.tlp_BustupID.Controls.Add(this.num_MinorID, 3, 0);
             this.tlp_BustupID.Controls.Add(this.lbl_MajorID, 0, 0);
@@ -274,28 +274,28 @@ namespace BustupEditor
             // 
             // num_SubID
             // 
-            this.num_SubID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_SubID.Location = new System.Drawing.Point(393, 11);
+            this.num_SubID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.num_SubID.Location = new System.Drawing.Point(415, 11);
             this.num_SubID.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.num_SubID.Name = "num_SubID";
-            this.num_SubID.Size = new System.Drawing.Size(68, 22);
+            this.num_SubID.Size = new System.Drawing.Size(55, 22);
             this.num_SubID.TabIndex = 5;
             // 
             // num_MinorID
             // 
-            this.num_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MinorID.Location = new System.Drawing.Point(237, 11);
+            this.num_MinorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.num_MinorID.Location = new System.Drawing.Point(258, 11);
             this.num_MinorID.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.num_MinorID.Name = "num_MinorID";
-            this.num_MinorID.Size = new System.Drawing.Size(72, 22);
+            this.num_MinorID.Size = new System.Drawing.Size(53, 22);
             this.num_MinorID.TabIndex = 3;
             // 
             // lbl_MajorID
@@ -303,34 +303,34 @@ namespace BustupEditor
             this.lbl_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MajorID.AutoSize = true;
             this.lbl_MajorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MajorID.Location = new System.Drawing.Point(15, 14);
+            this.lbl_MajorID.Location = new System.Drawing.Point(11, 14);
             this.lbl_MajorID.Name = "lbl_MajorID";
-            this.lbl_MajorID.Size = new System.Drawing.Size(60, 16);
+            this.lbl_MajorID.Size = new System.Drawing.Size(84, 16);
             this.lbl_MajorID.TabIndex = 0;
-            this.lbl_MajorID.Text = "Major ID:";
+            this.lbl_MajorID.Text = "Character ID:";
             // 
             // lbl_MinorID
             // 
             this.lbl_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MinorID.AutoSize = true;
             this.lbl_MinorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MinorID.Location = new System.Drawing.Point(172, 14);
+            this.lbl_MinorID.Location = new System.Drawing.Point(175, 6);
             this.lbl_MinorID.Name = "lbl_MinorID";
-            this.lbl_MinorID.Size = new System.Drawing.Size(59, 16);
+            this.lbl_MinorID.Size = new System.Drawing.Size(77, 32);
             this.lbl_MinorID.TabIndex = 1;
-            this.lbl_MinorID.Text = "Minor ID:";
+            this.lbl_MinorID.Text = "Expression ID:";
             // 
             // num_MajorID
             // 
-            this.num_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MajorID.Location = new System.Drawing.Point(81, 11);
+            this.num_MajorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.num_MajorID.Location = new System.Drawing.Point(101, 11);
             this.num_MajorID.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.num_MajorID.Name = "num_MajorID";
-            this.num_MajorID.Size = new System.Drawing.Size(72, 22);
+            this.num_MajorID.Size = new System.Drawing.Size(53, 22);
             this.num_MajorID.TabIndex = 2;
             // 
             // lbl_SubID
@@ -338,11 +338,11 @@ namespace BustupEditor
             this.lbl_SubID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_SubID.AutoSize = true;
             this.lbl_SubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_SubID.Location = new System.Drawing.Point(337, 14);
+            this.lbl_SubID.Location = new System.Drawing.Point(354, 14);
             this.lbl_SubID.Name = "lbl_SubID";
-            this.lbl_SubID.Size = new System.Drawing.Size(50, 16);
+            this.lbl_SubID.Size = new System.Drawing.Size(55, 16);
             this.lbl_SubID.TabIndex = 4;
-            this.lbl_SubID.Text = "Sub ID:";
+            this.lbl_SubID.Text = "Outfit ID:";
             // 
             // comboBox_Animation
             // 
@@ -754,7 +754,7 @@ namespace BustupEditor
             // 
             // txt_ImagesPath
             // 
-            this.txt_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ImagesPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ImagesPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.txt_ImagesPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -877,7 +877,7 @@ namespace BustupEditor
             this.loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.loadToolStripMenuItem.Text = "Load Project";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadPreset_Click);
             // 
@@ -886,26 +886,26 @@ namespace BustupEditor
             this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.saveToolStripMenuItem.Text = "Save Project";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SavePreset_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exportToolStripMenuItem.Text = "Export";
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.Import_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.exportToolStripMenuItem.Text = "Export";
             // 
             // addToolStripMenuItem
             // 
