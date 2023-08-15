@@ -365,6 +365,7 @@ namespace BustupEditor
                 num_SubID.Enabled = true;
 
             num_BasePosX.Value = Convert.ToDecimal(selectedBustup.BasePos_X);
+            num_BasePosY.Value = Convert.ToDecimal(selectedBustup.BasePos_Y);
             num_EyePosX.Value = Convert.ToDecimal(selectedBustup.EyePos_X);
             num_EyePosY.Value = Convert.ToDecimal(selectedBustup.EyePos_Y);
             num_MouthPosX.Value = Convert.ToDecimal(selectedBustup.MouthPos_X);
@@ -493,7 +494,7 @@ namespace BustupEditor
                 return;
             bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthPos_X = Convert.ToSingle(num_MouthPosX.Value);
 
-            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosX.Value));
+            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
         }
 
         private void MouthPosY_Changed(object sender, EventArgs e)
@@ -565,7 +566,7 @@ namespace BustupEditor
 
         private Point ScalePoint(double x, double y)
         {
-            return new Point(((int)Math.Ceiling(x * ((double)bustupProject.Scale / (double)100))), (int)Math.Ceiling(y * ((double)bustupProject.Scale / (double)100)));
+            return new Point((int)Math.Ceiling(x * ((double)bustupProject.Scale / (double)100)) * 2, (int)Math.Ceiling(y * ((double)bustupProject.Scale / (double)100)) * 2);
         }
 
         private void MouthFrame_Changed(object sender, EventArgs e)
