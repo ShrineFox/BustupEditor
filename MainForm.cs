@@ -27,6 +27,7 @@ namespace BustupEditor
 
         public PictureBox pictureBox_Eyes = new PictureBox() { Visible = false, SizeMode = PictureBoxSizeMode.Normal };
         public PictureBox pictureBox_Mouth = new PictureBox() { Visible = false, SizeMode = PictureBoxSizeMode.Normal };
+        public Bustup copiedParams = new Bustup();
 
         private void SetOverlayImages()
         {
@@ -40,16 +41,21 @@ namespace BustupEditor
                 new Tuple<string, string>("fileToolStripMenuItem", "disk"),
                 new Tuple<string, string>("loadToolStripMenuItem", "folder_page"),
                 new Tuple<string, string>("saveToolStripMenuItem", "disk_multiple"),
-                new Tuple<string, string>("importToolStripMenuItem", "package"),
+                new Tuple<string, string>("importToolStripMenuItem", "package_green"),
                 new Tuple<string, string>("exportToolStripMenuItem", "package_go"),
+                new Tuple<string, string>("editToolStripMenuItem", "book_edit"),
                 new Tuple<string, string>("addToolStripMenuItem", "add"),
                 new Tuple<string, string>("addSpriteToolStripMenuItem", "add"),
                 new Tuple<string, string>("removeToolStripMenuItem", "delete"),
                 new Tuple<string, string>("removeSelectedToolStripMenuItem", "delete"),
                 new Tuple<string, string>("renameToolStripMenuItem", "textfield_rename"),
                 new Tuple<string, string>("renameSelectedToolStripMenuItem", "textfield_rename"),
-                new Tuple<string, string>("setImageToolStripMenuItem", "picture_add"),
-                new Tuple<string, string>("chooseImageFileToolStripMenuItem", "picture_add"),
+                new Tuple<string, string>("openImageFolderToolStripMenuItem", "folder_image"),
+                new Tuple<string, string>("openImageFolderToolStripMenuItem1", "folder_image"),
+                new Tuple<string, string>("copyToolStripMenuItem", "page_copy"),
+                new Tuple<string, string>("copySelectedToolStripMenuItem", "page_copy"),
+                new Tuple<string, string>("pasteToolStripMenuItem", "paste_plain"),
+                new Tuple<string, string>("pasteSelectedToolStripMenuItem", "paste_plain"),
             };
 
             // Context Menu Strips
@@ -196,6 +202,9 @@ namespace BustupEditor
             if (selection.Count == 0)
                 return;
 
+            txt_ImagesPath.Text = "";
+            bustupProject = new BustupProject();
+
             GetBustupParamData(selection[0]);
             ExtractBustupImages(selection[0]);
             UpdateSpriteList();
@@ -340,18 +349,22 @@ namespace BustupEditor
 
         private void SelectedBustup_Changed(object sender, EventArgs e)
         {
-            ToggleControls();
+            UpdateFormCtrlValues();
+        }
 
+        private void UpdateFormCtrlValues()
+        {
             num_EyeFrame.Value = 0;
             num_MouthFrame.Value = 0;
 
-            ListBox spriteList = (ListBox)sender;
             Bustup selectedBustup = null;
 
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(spriteList.SelectedItem.ToString())))
-                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(spriteList.SelectedItem.ToString()));
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
             else
                 return;
+
+            ToggleControls();
 
             txt_ImagesPath.Text = bustupProject.ImagesPath;
 
@@ -373,9 +386,6 @@ namespace BustupEditor
 
             comboBox_Animation.SelectedIndex = comboBox_Animation.Items.IndexOf(
                 Enum.GetName(typeof(AnimationType), selectedBustup.AnimType));
-
-            num_EyeFrame.Value = 0;
-            num_MouthFrame.Value = 0;
 
             LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
 
@@ -605,6 +615,97 @@ namespace BustupEditor
         private void PreviewScale_Changed(object sender, EventArgs e)
         {
             bustupProject.Scale = Convert.ToInt32(num_Scale.Value);
+        }
+
+        private void OpenImageFolder_Click(object sender, EventArgs e)
+        {
+            Bustup selectedBustup = null;
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
+            else
+                return;
+
+            string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
+            if (bustupProject.Type == BustupType.Portrait)
+                ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
+
+            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
+            if (Directory.Exists(ddsPath))
+                Exe.Run("explorer.exe", ddsPath);
+        }
+
+        private void Copy_Click(object sender, EventArgs e)
+        {
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                copiedParams = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).Copy();
+            else
+                return;
+        }
+
+        private void Paste_Click(object sender, EventArgs e)
+        {
+            if (listBox_Sprites.SelectedItems.Count > 0 && copiedParams != new Bustup())
+            {
+                foreach (var selection in listBox_Sprites.SelectedItems)
+                {
+                    if (bustupProject.Bustups.Any(x => x.Name.Equals(selection.ToString())))
+                    {
+                        Bustup selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())).Copy();
+                        Bustup newBustup = copiedParams.Copy();
+
+                        // Preserve bustup names and IDs
+                        newBustup.Name = selectedBustup.Name;
+                        newBustup.MajorID = selectedBustup.MajorID;
+                        newBustup.MinorID = selectedBustup.MinorID;
+                        newBustup.SubID = selectedBustup.SubID;
+
+                        int bustupIndex = bustupProject.Bustups.IndexOf(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
+                        if (bustupIndex != -1)
+                        {
+                            bustupProject.Bustups[bustupIndex] = newBustup;
+                        }
+                    }
+                }
+                UpdateFormCtrlValues();
+            }
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            bustupProject.Bustups.Add(new Bustup());
+            UpdateSpriteList();
+            listBox_Sprites.SelectedIndex = listBox_Sprites.Items.Count - 1;
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            if (listBox_Sprites.SelectedItems.Count > 0)
+            {
+                int selectedIndex = listBox_Sprites.SelectedIndex;
+
+                // Remove all highlighted bustup entries
+                foreach (var selection in listBox_Sprites.SelectedItems)
+                    if (bustupProject.Bustups.Any(x => x.Name.Equals(selection.ToString())))
+                        bustupProject.Bustups.Remove(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
+
+                UpdateSpriteList();
+
+                // Restore previous selection
+                if (listBox_Sprites.Items.Count - 1 >= selectedIndex)
+                    listBox_Sprites.SelectedIndex = selectedIndex;
+            }
+        }
+
+        private void KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+                Remove_Click(sender, e);
+            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.R)
+                Rename_Click(sender, e);
+            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)
+                Copy_Click(sender, e);
+            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.V)
+                Paste_Click(sender, e);
         }
     }
 

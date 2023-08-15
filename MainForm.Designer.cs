@@ -68,7 +68,6 @@ namespace BustupEditor
             this.lbl_BasePos = new DarkUI.Controls.DarkLabel();
             this.groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
             this.darkContextMenu_Texture = new DarkUI.Controls.DarkContextMenu();
-            this.chooseImageFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_PreviewSettings = new System.Windows.Forms.GroupBox();
             this.panel_PreviewSettings = new System.Windows.Forms.Panel();
             this.tlp_PreviewSettings = new System.Windows.Forms.TableLayoutPanel();
@@ -87,14 +86,20 @@ namespace BustupEditor
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_Scale = new DarkUI.Controls.DarkLabel();
             this.num_Scale = new DarkUI.Controls.DarkNumericUpDown();
             this.pnl_ImgPreview = new System.Windows.Forms.Panel();
             this.pictureBox_Tex = new System.Windows.Forms.PictureBox();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copySelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImageFolderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_Main.SuspendLayout();
             this.darkContextMenu_Sprites.SuspendLayout();
             this.groupBox_BustupSettings.SuspendLayout();
@@ -138,13 +143,13 @@ namespace BustupEditor
             this.tlp_Main.Controls.Add(this.groupBox_Texture, 1, 0);
             this.tlp_Main.Controls.Add(this.groupBox_PreviewSettings, 1, 2);
             this.tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_Main.Location = new System.Drawing.Point(0, 30);
+            this.tlp_Main.Location = new System.Drawing.Point(0, 28);
             this.tlp_Main.Name = "tlp_Main";
             this.tlp_Main.RowCount = 3;
             this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_Main.Size = new System.Drawing.Size(982, 573);
+            this.tlp_Main.Size = new System.Drawing.Size(982, 575);
             this.tlp_Main.TabIndex = 0;
             // 
             // listBox_Sprites
@@ -159,9 +164,10 @@ namespace BustupEditor
             this.listBox_Sprites.Location = new System.Drawing.Point(3, 3);
             this.listBox_Sprites.Name = "listBox_Sprites";
             this.listBox_Sprites.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox_Sprites.Size = new System.Drawing.Size(485, 280);
+            this.listBox_Sprites.Size = new System.Drawing.Size(485, 281);
             this.listBox_Sprites.TabIndex = 1;
             this.listBox_Sprites.SelectedIndexChanged += new System.EventHandler(this.SelectedBustup_Changed);
+            this.listBox_Sprites.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDown);
             // 
             // darkContextMenu_Sprites
             // 
@@ -171,33 +177,38 @@ namespace BustupEditor
             this.darkContextMenu_Sprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSpriteToolStripMenuItem,
             this.removeSelectedToolStripMenuItem,
-            this.renameSelectedToolStripMenuItem});
+            this.renameSelectedToolStripMenuItem,
+            this.copySelectedToolStripMenuItem,
+            this.pasteSelectedToolStripMenuItem,
+            this.openImageFolderToolStripMenuItem1});
             this.darkContextMenu_Sprites.Name = "darkContextMenu_Sprites";
-            this.darkContextMenu_Sprites.Size = new System.Drawing.Size(194, 76);
+            this.darkContextMenu_Sprites.Size = new System.Drawing.Size(207, 148);
             // 
             // addSpriteToolStripMenuItem
             // 
             this.addSpriteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.addSpriteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.addSpriteToolStripMenuItem.Name = "addSpriteToolStripMenuItem";
-            this.addSpriteToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.addSpriteToolStripMenuItem.Text = "Add Bustup";
+            this.addSpriteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addSpriteToolStripMenuItem.Text = "Add";
+            this.addSpriteToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
             // 
             // removeSelectedToolStripMenuItem
             // 
             this.removeSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.removeSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
-            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.removeSelectedToolStripMenuItem.Text = "Remove Selected";
+            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.removeSelectedToolStripMenuItem.Text = "Remove";
+            this.removeSelectedToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
             // 
             // renameSelectedToolStripMenuItem
             // 
             this.renameSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.renameSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.renameSelectedToolStripMenuItem.Name = "renameSelectedToolStripMenuItem";
-            this.renameSelectedToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.renameSelectedToolStripMenuItem.Text = "Rename Selected";
+            this.renameSelectedToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.renameSelectedToolStripMenuItem.Text = "Rename";
             this.renameSelectedToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
             // 
             // groupBox_BustupSettings
@@ -205,10 +216,10 @@ namespace BustupEditor
             this.groupBox_BustupSettings.Controls.Add(this.panel_BustupSettings);
             this.groupBox_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_BustupSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_BustupSettings.Location = new System.Drawing.Point(3, 289);
+            this.groupBox_BustupSettings.Location = new System.Drawing.Point(3, 290);
             this.groupBox_BustupSettings.Name = "groupBox_BustupSettings";
             this.tlp_Main.SetRowSpan(this.groupBox_BustupSettings, 2);
-            this.groupBox_BustupSettings.Size = new System.Drawing.Size(485, 281);
+            this.groupBox_BustupSettings.Size = new System.Drawing.Size(485, 282);
             this.groupBox_BustupSettings.TabIndex = 2;
             this.groupBox_BustupSettings.TabStop = false;
             this.groupBox_BustupSettings.Text = "Bustup Parameters";
@@ -221,7 +232,7 @@ namespace BustupEditor
             this.panel_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_BustupSettings.Location = new System.Drawing.Point(3, 18);
             this.panel_BustupSettings.Name = "panel_BustupSettings";
-            this.panel_BustupSettings.Size = new System.Drawing.Size(479, 260);
+            this.panel_BustupSettings.Size = new System.Drawing.Size(479, 261);
             this.panel_BustupSettings.TabIndex = 0;
             // 
             // tlp_BustupSettings
@@ -662,7 +673,7 @@ namespace BustupEditor
             this.groupBox_Texture.Location = new System.Drawing.Point(494, 3);
             this.groupBox_Texture.Name = "groupBox_Texture";
             this.tlp_Main.SetRowSpan(this.groupBox_Texture, 2);
-            this.groupBox_Texture.Size = new System.Drawing.Size(485, 423);
+            this.groupBox_Texture.Size = new System.Drawing.Size(485, 424);
             this.groupBox_Texture.TabIndex = 4;
             this.groupBox_Texture.TabStop = false;
             this.groupBox_Texture.Text = "Bustup Texture";
@@ -673,26 +684,18 @@ namespace BustupEditor
             this.darkContextMenu_Texture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkContextMenu_Texture.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.darkContextMenu_Texture.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chooseImageFileToolStripMenuItem});
+            this.openImageFolderToolStripMenuItem});
             this.darkContextMenu_Texture.Name = "darkContextMenu_Texture";
-            this.darkContextMenu_Texture.Size = new System.Drawing.Size(210, 28);
-            // 
-            // chooseImageFileToolStripMenuItem
-            // 
-            this.chooseImageFileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.chooseImageFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.chooseImageFileToolStripMenuItem.Name = "chooseImageFileToolStripMenuItem";
-            this.chooseImageFileToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
-            this.chooseImageFileToolStripMenuItem.Text = "Choose Image File...";
+            this.darkContextMenu_Texture.Size = new System.Drawing.Size(207, 28);
             // 
             // groupBox_PreviewSettings
             // 
             this.groupBox_PreviewSettings.Controls.Add(this.panel_PreviewSettings);
             this.groupBox_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_PreviewSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 432);
+            this.groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 433);
             this.groupBox_PreviewSettings.Name = "groupBox_PreviewSettings";
-            this.groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 138);
+            this.groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 139);
             this.groupBox_PreviewSettings.TabIndex = 3;
             this.groupBox_PreviewSettings.TabStop = false;
             this.groupBox_PreviewSettings.Text = "Preview Settings";
@@ -705,7 +708,7 @@ namespace BustupEditor
             this.panel_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_PreviewSettings.Location = new System.Drawing.Point(3, 18);
             this.panel_PreviewSettings.Name = "panel_PreviewSettings";
-            this.panel_PreviewSettings.Size = new System.Drawing.Size(479, 117);
+            this.panel_PreviewSettings.Size = new System.Drawing.Size(479, 118);
             this.panel_PreviewSettings.TabIndex = 0;
             // 
             // tlp_PreviewSettings
@@ -858,14 +861,11 @@ namespace BustupEditor
             this.darkMenuStrip_MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem,
-            this.renameToolStripMenuItem,
-            this.setImageToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.darkMenuStrip_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.darkMenuStrip_MainMenu.Name = "darkMenuStrip_MainMenu";
             this.darkMenuStrip_MainMenu.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
-            this.darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 30);
+            this.darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 28);
             this.darkMenuStrip_MainMenu.TabIndex = 1;
             this.darkMenuStrip_MainMenu.Text = "darkMenuStrip1";
             // 
@@ -917,39 +917,6 @@ namespace BustupEditor
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.exportToolStripMenuItem.Text = "Export";
             // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // renameToolStripMenuItem
-            // 
-            this.renameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
-            this.renameToolStripMenuItem.Text = "Rename";
-            this.renameToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
-            // 
-            // setImageToolStripMenuItem
-            // 
-            this.setImageToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.setImageToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.setImageToolStripMenuItem.Name = "setImageToolStripMenuItem";
-            this.setImageToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
-            this.setImageToolStripMenuItem.Text = "Set Image";
-            // 
             // lbl_Scale
             // 
             this.lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -990,7 +957,7 @@ namespace BustupEditor
             this.pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ImgPreview.Location = new System.Drawing.Point(3, 18);
             this.pnl_ImgPreview.Name = "pnl_ImgPreview";
-            this.pnl_ImgPreview.Size = new System.Drawing.Size(479, 402);
+            this.pnl_ImgPreview.Size = new System.Drawing.Size(479, 403);
             this.pnl_ImgPreview.TabIndex = 0;
             // 
             // pictureBox_Tex
@@ -1003,6 +970,100 @@ namespace BustupEditor
             this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox_Tex.TabIndex = 2;
             this.pictureBox_Tex.TabStop = false;
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.removeToolStripMenuItem,
+            this.renameToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem});
+            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.copyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.pasteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.Paste_Click);
+            // 
+            // openImageFolderToolStripMenuItem
+            // 
+            this.openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
+            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.openImageFolderToolStripMenuItem.Text = "Open Image Folder";
+            this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenImageFolder_Click);
+            // 
+            // copySelectedToolStripMenuItem
+            // 
+            this.copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
+            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.copySelectedToolStripMenuItem.Text = "Copy";
+            this.copySelectedToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
+            // 
+            // pasteSelectedToolStripMenuItem
+            // 
+            this.pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
+            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.pasteSelectedToolStripMenuItem.Text = "Paste";
+            // 
+            // openImageFolderToolStripMenuItem1
+            // 
+            this.openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
+            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
+            this.openImageFolderToolStripMenuItem1.Click += new System.EventHandler(this.OpenImageFolder_Click);
             // 
             // MainForm
             // 
@@ -1080,11 +1141,6 @@ namespace BustupEditor
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Sprites;
         private DarkUI.Controls.DarkGroupBox groupBox_Texture;
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Texture;
-        private System.Windows.Forms.ToolStripMenuItem chooseImageFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setImageToolStripMenuItem;
         private System.Windows.Forms.Panel panel_BustupSettings;
         private System.Windows.Forms.TableLayoutPanel tlp_BustupSettings;
         private System.Windows.Forms.Panel panel_PreviewSettings;
@@ -1131,6 +1187,16 @@ namespace BustupEditor
         private DarkUI.Controls.DarkNumericUpDown num_Scale;
         private System.Windows.Forms.Panel pnl_ImgPreview;
         private System.Windows.Forms.PictureBox pictureBox_Tex;
+        private System.Windows.Forms.ToolStripMenuItem openImageFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copySelectedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteSelectedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openImageFolderToolStripMenuItem1;
     }
 }
 
