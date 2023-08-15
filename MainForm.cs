@@ -89,7 +89,7 @@ namespace BustupEditor
             public string ImagesPath = "./Images";
             public List<Bustup> Bustups = new List<Bustup>();
             public BustupType Type = BustupType.Unknown;
-            public int Scale = 25;
+            public int Scale = 50;
         }
 
         public class Bustup
@@ -566,7 +566,7 @@ namespace BustupEditor
 
         private Point ScalePoint(double x, double y)
         {
-            return new Point((int)Math.Ceiling(x * ((double)bustupProject.Scale / (double)100)) * 2, (int)Math.Ceiling(y * ((double)bustupProject.Scale / (double)100)) * 2);
+            return new Point((int)Math.Ceiling(x * ((double)bustupProject.Scale / (double)50)), (int)Math.Ceiling(y * ((double)bustupProject.Scale / (double)50)));
         }
 
         private void MouthFrame_Changed(object sender, EventArgs e)
