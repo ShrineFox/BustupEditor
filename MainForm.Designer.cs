@@ -92,6 +92,8 @@ namespace BustupEditor
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Scale = new DarkUI.Controls.DarkLabel();
+            this.num_Scale = new DarkUI.Controls.DarkNumericUpDown();
             this.tlp_Main.SuspendLayout();
             this.darkContextMenu_Sprites.SuspendLayout();
             this.groupBox_BustupSettings.SuspendLayout();
@@ -121,6 +123,7 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)(this.num_MouthFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).BeginInit();
             this.darkMenuStrip_MainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_Main
@@ -284,6 +287,7 @@ namespace BustupEditor
             this.num_SubID.Name = "num_SubID";
             this.num_SubID.Size = new System.Drawing.Size(55, 22);
             this.num_SubID.TabIndex = 5;
+            this.num_SubID.ValueChanged += new System.EventHandler(this.SubID_Changed);
             // 
             // num_MinorID
             // 
@@ -297,6 +301,7 @@ namespace BustupEditor
             this.num_MinorID.Name = "num_MinorID";
             this.num_MinorID.Size = new System.Drawing.Size(53, 22);
             this.num_MinorID.TabIndex = 3;
+            this.num_MinorID.ValueChanged += new System.EventHandler(this.MinorID_Changed);
             // 
             // lbl_MajorID
             // 
@@ -332,6 +337,7 @@ namespace BustupEditor
             this.num_MajorID.Name = "num_MajorID";
             this.num_MajorID.Size = new System.Drawing.Size(53, 22);
             this.num_MajorID.TabIndex = 2;
+            this.num_MajorID.ValueChanged += new System.EventHandler(this.MajorID_Changed);
             // 
             // lbl_SubID
             // 
@@ -363,6 +369,7 @@ namespace BustupEditor
             this.comboBox_Animation.Name = "comboBox_Animation";
             this.comboBox_Animation.Size = new System.Drawing.Size(185, 24);
             this.comboBox_Animation.TabIndex = 7;
+            this.comboBox_Animation.SelectedIndexChanged += new System.EventHandler(this.Animation_Changed);
             // 
             // lbl_Animation
             // 
@@ -411,6 +418,7 @@ namespace BustupEditor
             this.num_MouthPosY.Name = "num_MouthPosY";
             this.num_MouthPosY.Size = new System.Drawing.Size(107, 22);
             this.num_MouthPosY.TabIndex = 3;
+            this.num_MouthPosY.ValueChanged += new System.EventHandler(this.MouthPosY_Changed);
             // 
             // lbl_MouthPosX
             // 
@@ -451,6 +459,7 @@ namespace BustupEditor
             this.num_MouthPosX.Name = "num_MouthPosX";
             this.num_MouthPosX.Size = new System.Drawing.Size(107, 22);
             this.num_MouthPosX.TabIndex = 2;
+            this.num_MouthPosX.ValueChanged += new System.EventHandler(this.MouthPosX_Changed);
             // 
             // tlp_EyePos
             // 
@@ -488,6 +497,7 @@ namespace BustupEditor
             this.num_EyePosY.Name = "num_EyePosY";
             this.num_EyePosY.Size = new System.Drawing.Size(107, 22);
             this.num_EyePosY.TabIndex = 3;
+            this.num_EyePosY.ValueChanged += new System.EventHandler(this.EyePosY_Changed);
             // 
             // lbl_EyePosX
             // 
@@ -528,6 +538,7 @@ namespace BustupEditor
             this.num_EyePosX.Name = "num_EyePosX";
             this.num_EyePosX.Size = new System.Drawing.Size(107, 22);
             this.num_EyePosX.TabIndex = 2;
+            this.num_EyePosX.ValueChanged += new System.EventHandler(this.EyePosX_Changed);
             // 
             // tlp_BasePos
             // 
@@ -565,6 +576,7 @@ namespace BustupEditor
             this.num_BasePosY.Name = "num_BasePosY";
             this.num_BasePosY.Size = new System.Drawing.Size(107, 22);
             this.num_BasePosY.TabIndex = 3;
+            this.num_BasePosY.ValueChanged += new System.EventHandler(this.BasePosY_Changed);
             // 
             // lbl_BasePosX
             // 
@@ -605,6 +617,7 @@ namespace BustupEditor
             this.num_BasePosX.Name = "num_BasePosX";
             this.num_BasePosX.Size = new System.Drawing.Size(107, 22);
             this.num_BasePosX.TabIndex = 2;
+            this.num_BasePosX.ValueChanged += new System.EventHandler(this.BasePosX_Changed);
             // 
             // lbl_MouthPos
             // 
@@ -660,7 +673,6 @@ namespace BustupEditor
             this.pictureBox_Tex.Location = new System.Drawing.Point(3, 18);
             this.pictureBox_Tex.Name = "pictureBox_Tex";
             this.pictureBox_Tex.Size = new System.Drawing.Size(479, 403);
-            this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Tex.TabIndex = 1;
             this.pictureBox_Tex.TabStop = false;
             // 
@@ -762,6 +774,7 @@ namespace BustupEditor
             this.txt_ImagesPath.Name = "txt_ImagesPath";
             this.txt_ImagesPath.Size = new System.Drawing.Size(277, 22);
             this.txt_ImagesPath.TabIndex = 0;
+            this.txt_ImagesPath.TextChanged += new System.EventHandler(this.ImagePath_Changed);
             // 
             // btn_ImagesPath
             // 
@@ -772,20 +785,24 @@ namespace BustupEditor
             this.btn_ImagesPath.Size = new System.Drawing.Size(48, 23);
             this.btn_ImagesPath.TabIndex = 1;
             this.btn_ImagesPath.Text = "...";
+            this.btn_ImagesPath.Click += new System.EventHandler(this.BrowseImagePath_Click);
             // 
             // tlp_PreviewFrame
             // 
-            this.tlp_PreviewFrame.ColumnCount = 4;
+            this.tlp_PreviewFrame.ColumnCount = 6;
             this.tlp_PreviewSettings.SetColumnSpan(this.tlp_PreviewFrame, 2);
+            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlp_PreviewFrame.Controls.Add(this.lbl_EyeFrame, 0, 0);
             this.tlp_PreviewFrame.Controls.Add(this.num_MouthFrame, 3, 0);
             this.tlp_PreviewFrame.Controls.Add(this.lbl_MouthFrame, 2, 0);
             this.tlp_PreviewFrame.Controls.Add(this.num_EyeFrame, 1, 0);
-            this.tlp_PreviewFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_PreviewFrame.Controls.Add(this.lbl_Scale, 4, 0);
+            this.tlp_PreviewFrame.Controls.Add(this.num_Scale, 5, 0);
             this.tlp_PreviewFrame.Location = new System.Drawing.Point(3, 53);
             this.tlp_PreviewFrame.Name = "tlp_PreviewFrame";
             this.tlp_PreviewFrame.RowCount = 1;
@@ -798,48 +815,50 @@ namespace BustupEditor
             this.lbl_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyeFrame.AutoSize = true;
             this.lbl_EyeFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyeFrame.Location = new System.Drawing.Point(15, 14);
+            this.lbl_EyeFrame.Location = new System.Drawing.Point(18, 6);
             this.lbl_EyeFrame.Name = "lbl_EyeFrame";
-            this.lbl_EyeFrame.Size = new System.Drawing.Size(76, 16);
+            this.lbl_EyeFrame.Size = new System.Drawing.Size(49, 32);
             this.lbl_EyeFrame.TabIndex = 4;
             this.lbl_EyeFrame.Text = "Eye Frame:";
             // 
             // num_MouthFrame
             // 
             this.num_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthFrame.Location = new System.Drawing.Point(332, 11);
+            this.num_MouthFrame.Location = new System.Drawing.Point(213, 11);
             this.num_MouthFrame.Maximum = new decimal(new int[] {
             3,
             0,
             0,
             0});
             this.num_MouthFrame.Name = "num_MouthFrame";
-            this.num_MouthFrame.Size = new System.Drawing.Size(107, 22);
+            this.num_MouthFrame.Size = new System.Drawing.Size(64, 22);
             this.num_MouthFrame.TabIndex = 3;
+            this.num_MouthFrame.ValueChanged += new System.EventHandler(this.MouthFrame_Changed);
             // 
             // lbl_MouthFrame
             // 
             this.lbl_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthFrame.AutoSize = true;
             this.lbl_MouthFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthFrame.Location = new System.Drawing.Point(238, 14);
+            this.lbl_MouthFrame.Location = new System.Drawing.Point(158, 6);
             this.lbl_MouthFrame.Name = "lbl_MouthFrame";
-            this.lbl_MouthFrame.Size = new System.Drawing.Size(88, 16);
+            this.lbl_MouthFrame.Size = new System.Drawing.Size(49, 32);
             this.lbl_MouthFrame.TabIndex = 1;
             this.lbl_MouthFrame.Text = "Mouth Frame:";
             // 
             // num_EyeFrame
             // 
             this.num_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyeFrame.Location = new System.Drawing.Point(97, 11);
+            this.num_EyeFrame.Location = new System.Drawing.Point(73, 11);
             this.num_EyeFrame.Maximum = new decimal(new int[] {
             3,
             0,
             0,
             0});
             this.num_EyeFrame.Name = "num_EyeFrame";
-            this.num_EyeFrame.Size = new System.Drawing.Size(107, 22);
+            this.num_EyeFrame.Size = new System.Drawing.Size(64, 22);
             this.num_EyeFrame.TabIndex = 2;
+            this.num_EyeFrame.ValueChanged += new System.EventHandler(this.EyeFrame_Changed);
             // 
             // darkMenuStrip_MainMenu
             // 
@@ -940,6 +959,37 @@ namespace BustupEditor
             this.setImageToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.setImageToolStripMenuItem.Text = "Set Image";
             // 
+            // lbl_Scale
+            // 
+            this.lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbl_Scale.AutoSize = true;
+            this.lbl_Scale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_Scale.Location = new System.Drawing.Point(313, 6);
+            this.lbl_Scale.Name = "lbl_Scale";
+            this.lbl_Scale.Size = new System.Drawing.Size(58, 32);
+            this.lbl_Scale.TabIndex = 5;
+            this.lbl_Scale.Text = "Preview Scale:";
+            // 
+            // num_Scale
+            // 
+            this.num_Scale.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.num_Scale.Location = new System.Drawing.Point(377, 11);
+            this.num_Scale.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num_Scale.Name = "num_Scale";
+            this.num_Scale.Size = new System.Drawing.Size(64, 22);
+            this.num_Scale.TabIndex = 6;
+            this.num_Scale.Tag = "";
+            this.num_Scale.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.num_Scale.ValueChanged += new System.EventHandler(this.PreviewScale_Changed);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -991,6 +1041,7 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).EndInit();
             this.darkMenuStrip_MainMenu.ResumeLayout(false);
             this.darkMenuStrip_MainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1060,6 +1111,8 @@ namespace BustupEditor
         private DarkUI.Controls.DarkTextBox txt_ImagesPath;
         private DarkUI.Controls.DarkButton btn_ImagesPath;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private DarkUI.Controls.DarkLabel lbl_Scale;
+        private DarkUI.Controls.DarkNumericUpDown num_Scale;
     }
 }
 

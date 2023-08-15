@@ -22,6 +22,16 @@ namespace BustupEditor
         {
             InitializeComponent();
             SetMenuStripIcons();
+            SetOverlayImages();
+        }
+
+        public PictureBox pictureBox_Eyes = new PictureBox() { Visible = false, SizeMode = PictureBoxSizeMode.Normal };
+        public PictureBox pictureBox_Mouth = new PictureBox() { Visible = false, SizeMode = PictureBoxSizeMode.Normal };
+
+        private void SetOverlayImages()
+        {
+            pictureBox_Eyes.Parent = pictureBox_Tex;
+            pictureBox_Mouth.Parent = pictureBox_Tex;
         }
 
         private void SetMenuStripIcons()
@@ -79,12 +89,12 @@ namespace BustupEditor
             public string ImagesPath = "./Images";
             public List<Bustup> Bustups = new List<Bustup>();
             public BustupType Type = BustupType.Unknown;
+            public int Scale = 25;
         }
 
         public class Bustup
         {
             public string Name = "Untitled";
-            public string TexturePath = "";
             public ushort MajorID = 0;
             public ushort MinorID = 0;
             public ushort SubID = 0;
@@ -146,19 +156,6 @@ namespace BustupEditor
                 listBox_Sprites.Items.Add(bustup.Name);
         }
 
-        private void LoadTexturePreview(string texPath = "")
-        {
-            if (!String.IsNullOrEmpty(texPath) && File.Exists(texPath))
-            {
-                //pictureBox_Tex.Image = GFDLibrary.Textures.TextureDecoder.Decode(File.ReadAllBytes(texPath),
-                    //GFDLibrary.Textures.TextureFormat.DDS);
-            }
-            else
-            {
-                pictureBox_Tex.Image = null;
-            }
-        }
-
         private void Rename_Click(object sender, EventArgs e)
         {
             if (listBox_Sprites.SelectedIndex != -1 && bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
@@ -191,35 +188,6 @@ namespace BustupEditor
 
                 UpdateSpriteList();
             }
-        }
-
-        private void BrowseForTexture()
-        {
-            if (listBox_Sprites.SelectedIndex != -1)
-            {
-                // Ask user to select .dds file(s)
-                List<string> texPaths = WinFormsEvents.FilePath_Click("Choose sprite texture", true, new string[1] { "DDS Image (.dds)" });
-                for (int i = 0; i < texPaths.Count; i++)
-                {
-                    // Update texture path for model object matching selected listbox item, otherwise create new one named after file
-                    if (i == 0)
-                        bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).TexturePath = texPaths[i];
-                    else
-                    {
-                        AddBustup(Path.GetFileNameWithoutExtension(texPaths[i]), texPaths[i]);
-                        UpdateSpriteList();
-                    }
-
-                    // Show texture preview if it's the last one loaded
-                    if (i == texPaths.Count - 1)
-                        LoadTexturePreview(texPaths[i]);
-                }
-            }
-        }
-
-        private void AddBustup(string name, string texPath = "")
-        {
-            throw new NotImplementedException();
         }
 
         private void Import_Click(object sender, EventArgs e)
@@ -372,6 +340,11 @@ namespace BustupEditor
 
         private void SelectedBustup_Changed(object sender, EventArgs e)
         {
+            ToggleControls();
+
+            num_EyeFrame.Value = 0;
+            num_MouthFrame.Value = 0;
+
             ListBox spriteList = (ListBox)sender;
             Bustup selectedBustup = null;
 
@@ -404,6 +377,19 @@ namespace BustupEditor
             num_MouthFrame.Value = 0;
 
             LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
+
+            ToggleControls(true);
+        }
+
+        private void ToggleControls(bool enabled = false)
+        {
+            foreach (var str in new string[] { "num_MajorID", "num_MinorID", "num_SubID", 
+                "num_BasePosX", "num_BasePosY", "num_EyePosX", "num_EyePosY",
+                "num_MouthPosX", "num_MouthPosY", "comboBox_Animation", "txt_ImagesPath",
+                "num_EyeFrame", "num_MouthFrame" })
+            {
+                WinForms.GetControl(this, str).Enabled = enabled;
+            }
         }
 
         private void LoadBustupPreview(ushort majorID, ushort minorID, ushort subID)
@@ -418,11 +404,206 @@ namespace BustupEditor
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
                 if (ddsFiles.Length > 0)
                 {
-                    Bitmap ddsBitmap = DDS.Decode(File.ReadAllBytes(ddsFiles[0]));
+                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles[0])));
                     pictureBox_Tex.Image = ddsBitmap;
+                    return;
                 }
             }
-            
+
+            pictureBox_Tex.Image = null;
+        }
+
+        private Bitmap ScaleBitmap(Bitmap bmp)
+        {
+            return new Bitmap(bmp, new Size((int)Math.Ceiling((double)bmp.Width * ((double)bustupProject.Scale / (double)100)), (int)Math.Ceiling(((double)bmp.Height * ((double)bustupProject.Scale / (double)100)))));
+        }
+
+        private void MajorID_Changed(object sender, EventArgs e)
+        {
+            if (!num_MajorID.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MajorID = Convert.ToUInt16(num_MajorID.Value);
+        }
+
+        private void MinorID_Changed(object sender, EventArgs e)
+        {
+            if (!num_MinorID.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MinorID = Convert.ToUInt16(num_MinorID.Value);
+        }
+
+        private void SubID_Changed(object sender, EventArgs e)
+        {
+            if (!num_SubID.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).SubID = Convert.ToUInt16(num_SubID.Value);
+        }
+
+        private void BasePosX_Changed(object sender, EventArgs e)
+        {
+            if (!num_BasePosX.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BasePos_X = Convert.ToSingle(num_BasePosX.Value);
+        }
+
+        private void BasePosY_Changed(object sender, EventArgs e)
+        {
+            if (!num_BasePosY.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BasePos_Y = Convert.ToSingle(num_BasePosY.Value);
+        }
+
+        private void EyePosX_Changed(object sender, EventArgs e)
+        {
+            if (!num_EyePosX.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).EyePos_X = Convert.ToSingle(num_EyePosX.Value);
+
+            pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
+        }
+
+        private void EyePosY_Changed(object sender, EventArgs e)
+        {
+            if (!num_EyePosY.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).EyePos_Y = Convert.ToSingle(num_EyePosY.Value);
+
+            pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
+        }
+
+        private void MouthPosX_Changed(object sender, EventArgs e)
+        {
+            if (!num_MouthPosX.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthPos_X = Convert.ToSingle(num_MouthPosX.Value);
+
+            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosX.Value));
+        }
+
+        private void MouthPosY_Changed(object sender, EventArgs e)
+        {
+            if (!num_MouthPosY.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthPos_Y = Convert.ToSingle(num_MouthPosY.Value);
+
+            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
+        }
+
+        private void Animation_Changed(object sender, EventArgs e)
+        {
+            if (!comboBox_Animation.Enabled)
+                return;
+            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                return;
+
+            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).AnimType = (AnimationType)Enum.Parse(typeof(AnimationType), comboBox_Animation.SelectedItem.ToString());
+        }
+
+        private void ImagePath_Changed(object sender, EventArgs e)
+        {
+            if (!txt_ImagesPath.Enabled)
+                return;
+
+            bustupProject.ImagesPath = txt_ImagesPath.Text;
+        }
+
+        private void BrowseImagePath_Click(object sender, EventArgs e)
+        {
+            txt_ImagesPath.Text = WinFormsEvents.FolderPath_Click("Choose Extracted Bustup folder...");
+        }
+
+        private void EyeFrame_Changed(object sender, EventArgs e)
+        {
+            int eyeFrame = Convert.ToInt32(num_EyeFrame.Value);
+
+            Bustup selectedBustup = null;
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
+            else
+                return;
+
+            string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
+            if (bustupProject.Type == BustupType.Portrait)
+                ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
+
+            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
+            if (Directory.Exists(ddsPath))
+            {
+                var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
+                string dds = Path.GetFileName(ddsPath).ToLower() + "_e" + eyeFrame + ".dds";
+                if (ddsFiles.Length > 0 && ddsFiles.Any(x => x.EndsWith(dds)))
+                {
+                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles.FirstOrDefault(x => x.EndsWith(dds)))));
+                    pictureBox_Eyes.Image = ddsBitmap;
+                    pictureBox_Eyes.Size = ddsBitmap.Size;
+                    pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
+                    pictureBox_Eyes.Visible = true;
+                    return;
+                }
+            }
+
+            pictureBox_Eyes.Visible = false;
+        }
+
+        private Point ScalePoint(double x, double y)
+        {
+            return new Point(((int)Math.Ceiling(x * ((double)bustupProject.Scale / (double)100))), (int)Math.Ceiling(y * ((double)bustupProject.Scale / (double)100)));
+        }
+
+        private void MouthFrame_Changed(object sender, EventArgs e)
+        {
+            int mouthFrame = Convert.ToInt32(num_MouthFrame.Value);
+
+            Bustup selectedBustup = null;
+            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
+            else
+                return;
+
+            string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
+            if (bustupProject.Type == BustupType.Portrait)
+                ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
+
+            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
+            if (Directory.Exists(ddsPath))
+            {
+                var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
+                string dds = Path.GetFileName(ddsPath).ToLower() + "_m" + mouthFrame + ".dds";
+                if (ddsFiles.Length > 0 && ddsFiles.Any(x => x.EndsWith(dds)))
+                {
+                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles.FirstOrDefault(x => x.EndsWith(dds)))));
+                    pictureBox_Mouth.Image = ddsBitmap;
+                    pictureBox_Mouth.Size = ddsBitmap.Size;
+                    pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));
+                    pictureBox_Mouth.Visible = true;
+                    return;
+                }
+            }
+
+            pictureBox_Mouth.Visible = false;
+        }
+
+        private void PreviewScale_Changed(object sender, EventArgs e)
+        {
+            bustupProject.Scale = Convert.ToInt32(num_Scale.Value);
         }
     }
 
