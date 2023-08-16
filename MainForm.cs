@@ -637,6 +637,11 @@ namespace BustupEditor
         private void EyeFrame_Changed(object sender, EventArgs e)
         {
             int eyeFrame = Convert.ToInt32(num_EyeFrame.Value);
+            if (eyeFrame == 0)
+            {
+                pictureBox_Eyes.Visible = false;
+                return;
+            }
 
             Bustup selectedBustup = null;
             if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
@@ -652,10 +657,11 @@ namespace BustupEditor
             if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
-                string dds = Path.GetFileName(ddsPath).ToLower() + "_e" + eyeFrame + ".dds";
-                if (ddsFiles.Length > 0 && ddsFiles.Any(x => x.EndsWith(dds)))
+                
+                if (ddsFiles.Length >= eyeFrame + 1)
                 {
-                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles.FirstOrDefault(x => x.EndsWith(dds)))));
+                    string dds = ddsFiles[eyeFrame];
+                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(dds)));
                     pictureBox_Eyes.Image = ddsBitmap;
                     pictureBox_Eyes.Size = ddsBitmap.Size;
                     pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
@@ -675,6 +681,12 @@ namespace BustupEditor
         private void MouthFrame_Changed(object sender, EventArgs e)
         {
             int mouthFrame = Convert.ToInt32(num_MouthFrame.Value);
+            if (mouthFrame == 0)
+            {
+                pictureBox_Mouth.Visible = false;
+                return;
+            }
+            mouthFrame = mouthFrame + 2;
 
             Bustup selectedBustup = null;
             if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
@@ -690,10 +702,11 @@ namespace BustupEditor
             if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
-                string dds = Path.GetFileName(ddsPath).ToLower() + "_m" + mouthFrame + ".dds";
-                if (ddsFiles.Length > 0 && ddsFiles.Any(x => x.EndsWith(dds)))
+                
+                if (ddsFiles.Length >= mouthFrame + 1)
                 {
-                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles.FirstOrDefault(x => x.EndsWith(dds)))));
+                    string dds = ddsFiles[mouthFrame];
+                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(dds)));
                     pictureBox_Mouth.Image = ddsBitmap;
                     pictureBox_Mouth.Size = ddsBitmap.Size;
                     pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));

@@ -190,7 +190,7 @@ namespace BustupEditor
             this.addSpriteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.addSpriteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.addSpriteToolStripMenuItem.Name = "addSpriteToolStripMenuItem";
-            this.addSpriteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addSpriteToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.addSpriteToolStripMenuItem.Text = "Add";
             this.addSpriteToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
             // 
@@ -199,7 +199,7 @@ namespace BustupEditor
             this.removeSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.removeSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
-            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.removeSelectedToolStripMenuItem.Text = "Remove";
             this.removeSelectedToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
             // 
@@ -208,7 +208,7 @@ namespace BustupEditor
             this.renameSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.renameSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.renameSelectedToolStripMenuItem.Name = "renameSelectedToolStripMenuItem";
-            this.renameSelectedToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.renameSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.renameSelectedToolStripMenuItem.Text = "Rename";
             this.renameSelectedToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
             // 
@@ -888,7 +888,7 @@ namespace BustupEditor
             this.loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loadToolStripMenuItem.Text = "Load Project";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadPreset_Click);
             // 
@@ -897,7 +897,7 @@ namespace BustupEditor
             this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save Project";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SavePreset_Click);
             // 
@@ -906,7 +906,7 @@ namespace BustupEditor
             this.importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.Import_Click);
             // 
@@ -1037,7 +1037,7 @@ namespace BustupEditor
             this.openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
-            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.openImageFolderToolStripMenuItem.Text = "Open Image Folder";
             this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenImageFolder_Click);
             // 
@@ -1046,7 +1046,7 @@ namespace BustupEditor
             this.copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
-            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.copySelectedToolStripMenuItem.Text = "Copy";
             this.copySelectedToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
             // 
@@ -1055,7 +1055,7 @@ namespace BustupEditor
             this.pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
-            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.pasteSelectedToolStripMenuItem.Text = "Paste";
             // 
             // openImageFolderToolStripMenuItem1
@@ -1063,7 +1063,7 @@ namespace BustupEditor
             this.openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
-            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(206, 24);
             this.openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
             this.openImageFolderToolStripMenuItem1.Click += new System.EventHandler(this.OpenImageFolder_Click);
             // 
