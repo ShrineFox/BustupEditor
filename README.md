@@ -1,22 +1,34 @@
-# BustupParamEditor GUI
-This program shares features between previous projects [DDS2Tool](https://github.com/ShrineFox/DDS2Tool) and [BustupParamEditor](https://github.com/ShrineFox/BustupParamEditor).  
-By specifying a path to either bustup_param.dat (found in ps3.cpk\bustup\data)  
-or msgAssistBustupParam.dat (data.cpk\font\assist) and selecting a bustup,  
-you can change the values for X and Y positioning of the mouth, eyes, or the entire bustup itself.  
-![Image](https://i.imgur.com/080ZbZ4.png)
+# BustupEditor
+You can use this GUI to extract & repack DDS images from bustup .BIN files found in Persona 5 Royal (PC/Switch). 
+Previously known as BustupParamEditorGUI. See Releases for older versions that worked with Persona 5 (PS3).
+
+![Image](https://i.imgur.com/cd66qTU.png)
 
 ## Features
-- Provide a path to your corresponding folder of bustup .BIN files to automatically extract the DDS images.
-- Extracted DDS files are automatically converted to PNG.
-- Preview the bustup parameters in real time while editing the positional values.
-- Flip between animation frames for the mouth and eyes in the preview.
-- Edit the extracted images and even repack them into a new .BIN file when you're satisfied.
-- Quickly copy and paste positional values between bustups using the Edit menu.
-- Thanks to [zarroboogs](https://github.com/zarroboogs), you can even change how bustups animate.
-- Add parameters for brand new bustups or edit the ids of existing entries to fit your needs.
+- Import a .DAT file and it will automatically extract all nearby Bustup .BIN files (if present).
+- Add/remove bustup parameter entries, reposition eye/mouth frames, change animation style, and preview animation frames.
+- Export a new .DAT file (and automatically repack extracted .BINs if found).
+- Save/load projects as .json so you can resume editing where you left off.
+- Set a name for a selected bustup parameter entries so you can easily find it in the list.
+- Copy the selected bustup entry's parameters, and Paste to apply positional offsets to all selected list entries.
 
-## Disclaimers
-**Be sure to make copies of the original files before using this program!** 
-Changes are saved directly to your selected files and cannot be undone.  
-You have to edit the combined PNG files to preview custom bustup images in the program. (The preview doesn't use the uncombined DDS images).  
-You must save over the original DDS files with your edits if you want to repack your custom bustup as a BIN. (The PNG files do not get converted back to DDS or repacked into the BIN.)
+## How to Use
+1. Use [CriFSLibGUI](https://github.com/Sewer56/CriFsV2Lib/releases) to extract the contents from CPK files in ``Steam\steamapps\common\P5R\CPK``.
+2. Extract the latest Release and run ``BustupEditor.exe``.
+### Editing Dialog Portrait Bustups
+1. Click on ``File`` > ``Import``.
+2. Navigate to ``BASE.CPK_unpacked\BUSTUP\DATA`` and choose ``BUSTUP_PARAM.DAT``.
+   (If you only want to edit position/entry data and not unpack/repack bustups, move this file out of the folder first).
+3. Select the entry that you want to edit in the list. Right click and choose ``Open Image Folder``.
+4. Use a program that can edit DDS files (such as Paint.NET) to edit and replace the images.
+5. Re-select the entry in the program to reload the image preview.
+6. Change the selected eye/mouth frame number in the bottom right to preview blinking/talking.
+7. Use the offset options on the bottom left to re-align the eyes and mouth if needed.
+8. Click on ``File`` > ``Export`` to choose a new location to save your modified ``.DAT`` to.
+   (If you don't want to repack all bustups, which can take awhile, remove all but your edited ones from the ``Extracted`` folder).
+### Editing Navigator Bustups
+Same as above, but import  ``BASE.CPK_unpacked\FONT\ASSIST\MSGASSISTBUSTUPPARAM.DAT`` instead.
+
+## Future Plans
+- Reimplement support for the PS3 version of Persona 5.
+- Support for bustup .BINs containing GNF (PS4).
