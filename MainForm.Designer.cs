@@ -30,6 +30,7 @@ namespace BustupEditor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlp_Main = new System.Windows.Forms.TableLayoutPanel();
             this.listBox_Sprites = new System.Windows.Forms.ListBox();
             this.darkContextMenu_Sprites = new DarkUI.Controls.DarkContextMenu();
@@ -1073,6 +1074,7 @@ namespace BustupEditor
             this.ClientSize = new System.Drawing.Size(982, 603);
             this.Controls.Add(this.tlp_Main);
             this.Controls.Add(this.darkMenuStrip_MainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.darkMenuStrip_MainMenu;
             this.MinimumSize = new System.Drawing.Size(650, 475);
             this.Name = "MainForm";

@@ -33,6 +33,7 @@ namespace BustupEditor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenameForm));
             this.metroSetLabel_ProjectName = new DarkUI.Controls.DarkLabel();
             this.metroSetTextBox_NewName = new DarkUI.Controls.DarkTextBox();
             this.tableLayoutPanel_Settings = new System.Windows.Forms.TableLayoutPanel();
@@ -162,11 +163,12 @@ namespace BustupEditor
             this.CancelButton = this.metroSetButton_Cancel;
             this.ClientSize = new System.Drawing.Size(509, 179);
             this.Controls.Add(this.tableLayoutPanel_Settings);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RenameForm";
             this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 2);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "BustupEditor - Set Sprite Name";
+            this.Text = "BustupEditor - Set New Name";
             this.tableLayoutPanel_Settings.ResumeLayout(false);
             this.tableLayoutPanel_ProjectName.ResumeLayout(false);
             this.tableLayoutPanel_ProjectName.PerformLayout();
