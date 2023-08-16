@@ -298,7 +298,13 @@ namespace BustupEditor
                     reader.BaseStream.Position = 0;
                 }
 
-                while (reader.BaseStream.Position + 32 < reader.BaseStreamLength)
+                var entryCount = reader.BaseStreamLength;
+                if (bustupProject.Type == BustupType.Portrait)
+                    entryCount = entryCount / 40;
+                else if (bustupProject.Type == BustupType.Navigator)
+                    entryCount = entryCount / 32;
+
+                for (int i = 0; i < entryCount; i++)
                 {
                     //MessageBox.Show($"{reader.BaseStream.Position} / {reader.BaseStreamLength}");
                     Bustup bustup = new Bustup();
@@ -332,12 +338,12 @@ namespace BustupEditor
                     if (bustupProject.Type == BustupType.Portrait)
                         bustup.Name += $"_{bustup.SubID.ToString("00")}";
                     
-                    int i = 1;
+                    int x = 1;
                     string name = bustup.Name;
-                    while (bustups.Any(x => x.Name.Equals(bustup.Name)))
+                    while (bustups.Any(z => z.Name.Equals(bustup.Name)))
                     {
-                        i++;
-                        bustup.Name = $"{name} ({i})";
+                        x++;
+                        bustup.Name = $"{name} ({x})";
                     }
 
                     bustups.Add(bustup);
@@ -345,6 +351,93 @@ namespace BustupEditor
 
                 bustupProject.Bustups = bustups;
             }
+        }
+
+        private void Export_Click(object sender, EventArgs e)
+        {
+            string exportFolder = WinFormsEvents.FolderPath_Click("Choose Output folder...");
+
+            ExportDat(exportFolder);
+            ExportP5RPCBustupBins(exportFolder);
+
+            MessageBox.Show($"Done exporting new files to:\n\n{exportFolder}");
+        }
+
+        private void ExportDat(string exportFolder)
+        {
+            string outputFile = exportFolder;
+            if (bustupProject.Type == BustupType.Portrait)
+                outputFile = Path.Combine(outputFile, $"DATA//BUSTUP_PARAM.DAT");
+            else if (bustupProject.Type == BustupType.Navigator)
+                outputFile = Path.Combine(outputFile, "MSGASSISTBUSTUPPARAM.DAT");
+
+            Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+
+            using (FileStream stream = new FileStream(outputFile, FileMode.OpenOrCreate))
+            using (EndianBinaryWriter writer = new EndianBinaryWriter(stream, Endianness.BigEndian))
+            {
+                foreach (var bustup in bustupProject.Bustups)
+                {
+                    writer.Write(bustup.MajorID);
+                    writer.Write(bustup.MinorID);
+
+                    if (bustupProject.Type == BustupType.Portrait)
+                    {
+                        writer.Write(bustup.SubID);
+                        writer.Write(new byte[2]);
+                    }
+
+                    writer.Write(bustup.BasePos_X);
+                    writer.Write(bustup.BasePos_Y);
+                    writer.Write(bustup.EyePos_X);
+                    writer.Write(bustup.EyePos_Y);
+                    writer.Write(bustup.MouthPos_X);
+                    writer.Write(bustup.MouthPos_Y);
+
+                    writer.Write(new byte[2]);
+                    writer.Write((short)bustup.AnimType);
+
+                    if (bustupProject.Type == BustupType.Portrait)
+                        writer.Write(new byte[4]);
+                }
+            }
+        }
+
+        private void ExportP5RPCBustupBins(string exportFolder)
+        {
+            if (bustupProject.Type == BustupType.Navigator)
+                exportFolder = Path.Combine(exportFolder, "BUSTUP");
+
+            Directory.CreateDirectory(exportFolder);
+
+            foreach (var bustupFolder in Directory.GetDirectories(txt_ImagesPath.Text))
+            {
+                string exportBin = Path.Combine(exportFolder, Path.GetFileName(bustupFolder) + ".BIN");
+                using (FileStream stream = new FileStream(exportBin, FileMode.OpenOrCreate))
+                using (EndianBinaryWriter writer = new EndianBinaryWriter(stream, Endianness.BigEndian))
+                {
+                    var ddsFiles = Directory.GetFiles(bustupFolder, "*.dds", SearchOption.TopDirectoryOnly);
+                    writer.Write(ddsFiles.Length);
+
+                    foreach (var dds in ddsFiles)
+                    {
+                        Byte[] ddsFile = File.ReadAllBytes(dds);
+
+                        // Get name and size of DDS file
+                        WriteName(writer, Path.GetFileName(dds));
+                        writer.Write(ddsFile.Length);
+                        writer.Write(ddsFile);
+                    }
+                }
+            }
+        }
+
+        public static void WriteName(EndianBinaryWriter writer, string name)
+        {
+            byte[] nameBytes = Encoding.ASCII.GetBytes(name);
+            writer.Write(nameBytes);
+            int padAmount = 32 - nameBytes.Length;
+            writer.Write(new byte[padAmount]);
         }
 
         private void SelectedBustup_Changed(object sender, EventArgs e)
