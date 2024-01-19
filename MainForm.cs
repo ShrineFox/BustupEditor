@@ -37,54 +37,7 @@ namespace BustupEditor
 
         private void SetMenuStripIcons()
         {
-            List<Tuple<string, string>> menuStripIcons = new List<Tuple<string, string>>() {
-                new Tuple<string, string>("fileToolStripMenuItem", "disk"),
-                new Tuple<string, string>("loadToolStripMenuItem", "folder_page"),
-                new Tuple<string, string>("saveToolStripMenuItem", "disk_multiple"),
-                new Tuple<string, string>("importToolStripMenuItem", "package_green"),
-                new Tuple<string, string>("exportToolStripMenuItem", "package_go"),
-                new Tuple<string, string>("editToolStripMenuItem", "book_edit"),
-                new Tuple<string, string>("addToolStripMenuItem", "add"),
-                new Tuple<string, string>("addSpriteToolStripMenuItem", "add"),
-                new Tuple<string, string>("removeToolStripMenuItem", "delete"),
-                new Tuple<string, string>("removeSelectedToolStripMenuItem", "delete"),
-                new Tuple<string, string>("renameToolStripMenuItem", "textfield_rename"),
-                new Tuple<string, string>("renameSelectedToolStripMenuItem", "textfield_rename"),
-                new Tuple<string, string>("openImageFolderToolStripMenuItem", "folder_image"),
-                new Tuple<string, string>("openImageFolderToolStripMenuItem1", "folder_image"),
-                new Tuple<string, string>("copyToolStripMenuItem", "page_copy"),
-                new Tuple<string, string>("copySelectedToolStripMenuItem", "page_copy"),
-                new Tuple<string, string>("pasteToolStripMenuItem", "paste_plain"),
-                new Tuple<string, string>("pasteSelectedToolStripMenuItem", "paste_plain"),
-            };
-
-            // Context Menu Strips
-            foreach (DarkContextMenu menuStrip in new DarkContextMenu[] { darkContextMenu_Sprites, darkContextMenu_Texture })
-                ApplyIconsFromList(menuStrip.Items, menuStripIcons);
-
-            // Menu Strip Items
-            foreach (DarkMenuStrip menuStrip in this.FlattenChildren<DarkMenuStrip>())
-                ApplyIconsFromList(menuStrip.Items, menuStripIcons);
-        }
-
-        private void ApplyIconsFromList(ToolStripItemCollection items, List<Tuple<string, string>> menuStripIcons)
-        {
-            foreach (ToolStripMenuItem tsmi in items)
-            {
-                // Apply context menu icon
-                if (menuStripIcons.Any(x => x.Item1 == tsmi.Name))
-                    ApplyIconFromFile(tsmi, menuStripIcons);
-                // Apply drop down menu icon
-                foreach (ToolStripMenuItem tsmi2 in tsmi.DropDownItems)
-                    if (menuStripIcons.Any(x => x.Item1 == tsmi2.Name))
-                        ApplyIconFromFile(tsmi2, menuStripIcons);
-            }
-        }
-
-        private void ApplyIconFromFile(ToolStripMenuItem tsmi, List<Tuple<string, string>> menuStripIcons)
-        {
-            tsmi.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                        $"Icons\\{menuStripIcons.Single(x => x.Item1 == tsmi.Name).Item2}.png"));
+            MenuStripHelper.SetMenuStripIcons(MenuStripHelper.GetMenuStripIconPairs("./Dependencies/Icons.txt"), this);
         }
 
         BustupProject bustupProject = new BustupProject();
@@ -95,6 +48,7 @@ namespace BustupEditor
             public string ImagesPath = "./Images";
             public List<Bustup> Bustups = new List<Bustup>();
             public BustupType Type = BustupType.Unknown;
+            public PlatformType Platform = PlatformType.Unknown;
             public int Scale = 50;
         }
 
@@ -111,6 +65,14 @@ namespace BustupEditor
             public float MouthPos_X = 0;
             public float MouthPos_Y = 0;
             public AnimationType AnimType = AnimationType.None;
+        }
+
+        public enum PlatformType
+        {
+            PS3,
+            PS4,
+            PC,
+            Unknown
         }
 
         public enum BustupType
@@ -132,7 +94,7 @@ namespace BustupEditor
 
         private void SavePreset_Click(object sender, EventArgs e)
         {
-            var selection = WinFormsEvents.FilePath_Click("Save project file...", true, new string[] { "json (.json)" }, true);
+            var selection = WinFormsDialogs.SelectFile("Save project file...", true, new string[] { "json (.json)" }, true);
             if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
                 return;
 
@@ -146,7 +108,7 @@ namespace BustupEditor
 
         private void LoadPreset_Click(object sender, EventArgs e)
         {
-            var selection = WinFormsEvents.FilePath_Click("Load project file...", true, new string[] { "json (.json)" });
+            var selection = WinFormsDialogs.SelectFile("Load project file...", true, new string[] { "json (.json)" });
             if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
                 return;
 
@@ -198,7 +160,7 @@ namespace BustupEditor
 
         private void Import_Click(object sender, EventArgs e)
         {
-            var selection = WinFormsEvents.FilePath_Click("Load .DAT file...", true, new string[] { "Bustup Params (.dat)" });
+            var selection = WinFormsDialogs.SelectFile("Load .DAT file...", true, new string[] { "Bustup Params (.dat)" });
             if (selection.Count == 0)
                 return;
 
@@ -261,12 +223,46 @@ namespace BustupEditor
                     string ddsName = ReadName(reader);
                     int ddsSize = reader.ReadInt32();
                     byte[] ddsFile = reader.ReadBytes(ddsSize);
-                    
-                    // Extract contents of dds file to output folder
-                    string outImgPath = Path.Combine(extractedPath, ddsName);
-                    using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
+
+                    if (ddsName.TrimEnd().EndsWith(".dds2"))
+                    {
+                        string outImgPath = Path.Combine(extractedPath, ddsName);
+                        using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
                         using (BinaryWriter writer = new BinaryWriter(stream))
                             writer.Write(ddsFile);
+                        ExtractDDS2(ddsFile, extractedPath);
+                        bustupProject.Platform = PlatformType.PS3;
+                    }
+                    else
+                    {
+                        // Extract contents of dds file to output folder
+                        string outImgPath = Path.Combine(extractedPath, ddsName);
+                        using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
+                        using (BinaryWriter writer = new BinaryWriter(stream))
+                            writer.Write(ddsFile);
+                    }
+                }
+            }
+        }
+
+        private void ExtractDDS2(byte[] dds2File, string extractedPath)
+        {
+            using (EndianBinaryReader reader = new EndianBinaryReader(new MemoryStream(dds2File), Endianness.BigEndian))
+            {
+                int imgCount = reader.ReadInt32();
+                for (int i = imgCount; i > 0; i--)
+                {
+                    string ddsName = ReadName(reader);
+                    int ddsSize = reader.ReadInt32();
+                    byte[] ddsFile = reader.ReadBytes(ddsSize);
+                    using (FileStream stream = new FileStream($"{extractedPath}\\{ddsName}", FileMode.Create))
+                    {
+                        using (BinaryWriter writer = new BinaryWriter(stream))
+                        {
+                            writer.Write(ddsFile);
+                        }
+                    }
+                    
                 }
             }
         }
@@ -355,7 +351,7 @@ namespace BustupEditor
 
         private void Export_Click(object sender, EventArgs e)
         {
-            string exportFolder = WinFormsEvents.FolderPath_Click("Choose Output folder...");
+            string exportFolder = WinFormsDialogs.SelectFolder("Choose Output folder...");
 
             ExportDat(exportFolder);
             ExportP5RPCBustupBins(exportFolder);
@@ -631,7 +627,7 @@ namespace BustupEditor
 
         private void BrowseImagePath_Click(object sender, EventArgs e)
         {
-            txt_ImagesPath.Text = WinFormsEvents.FolderPath_Click("Choose Extracted Bustup folder...");
+            txt_ImagesPath.Text = WinFormsDialogs.SelectFolder("Choose Extracted Bustup folder...");
         }
 
         private void EyeFrame_Changed(object sender, EventArgs e)
@@ -654,6 +650,7 @@ namespace BustupEditor
                 ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
 
             ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
+
             if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
@@ -695,6 +692,7 @@ namespace BustupEditor
                 return;
 
             string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
+
             if (bustupProject.Type == BustupType.Portrait)
                 ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
 
@@ -732,6 +730,7 @@ namespace BustupEditor
                 return;
 
             string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
+
             if (bustupProject.Type == BustupType.Portrait)
                 ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
 
