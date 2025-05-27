@@ -37,9 +37,33 @@ namespace BustupEditor
             this.addSpriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copySelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImageFolderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_BustupSettings = new System.Windows.Forms.GroupBox();
             this.panel_BustupSettings = new System.Windows.Forms.Panel();
+            this.pnl_BustupSettings = new System.Windows.Forms.Panel();
             this.tlp_BustupSettings = new System.Windows.Forms.TableLayoutPanel();
+            this.tlp_MouthImg3Browse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_MouthImg3Browse = new DarkUI.Controls.DarkTextBox();
+            this.btn_MouthImg3Browse = new DarkUI.Controls.DarkButton();
+            this.tlp_MouthImg2Browse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_MouthImg2Browse = new DarkUI.Controls.DarkTextBox();
+            this.btn_MouthImg2Browse = new DarkUI.Controls.DarkButton();
+            this.tlp_MouthImg1Browse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_MouthImg1Browse = new DarkUI.Controls.DarkTextBox();
+            this.btn_MouthImg1Browse = new DarkUI.Controls.DarkButton();
+            this.tlp_BlinkImg2Browse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_BlinkImg2Browse = new DarkUI.Controls.DarkTextBox();
+            this.btn_BlinkImg2Browse = new DarkUI.Controls.DarkButton();
+            this.tlp_BlinkImg1Browse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_BlinkImg1Browse = new DarkUI.Controls.DarkTextBox();
+            this.btn_BlinkImg1Browse = new DarkUI.Controls.DarkButton();
+            this.lbl_BlinkImg1Browse = new DarkUI.Controls.DarkLabel();
+            this.lbl_BaseImage = new DarkUI.Controls.DarkLabel();
+            this.tlp_BaseImgBrowse = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_BaseImgBrowse = new DarkUI.Controls.DarkTextBox();
+            this.btn_BaseImgBrowse = new DarkUI.Controls.DarkButton();
             this.tlp_BustupID = new System.Windows.Forms.TableLayoutPanel();
             this.num_SubID = new DarkUI.Controls.DarkNumericUpDown();
             this.num_MinorID = new DarkUI.Controls.DarkNumericUpDown();
@@ -67,8 +91,15 @@ namespace BustupEditor
             this.lbl_MouthPos = new DarkUI.Controls.DarkLabel();
             this.lbl_EyePos = new DarkUI.Controls.DarkLabel();
             this.lbl_BasePos = new DarkUI.Controls.DarkLabel();
+            this.lbl_BlinkImg2Browse = new DarkUI.Controls.DarkLabel();
+            this.lbl_MouthImg1Browse = new DarkUI.Controls.DarkLabel();
+            this.lbl_MouthImg2Browse = new DarkUI.Controls.DarkLabel();
+            this.lbl_MouthImg3Browse = new DarkUI.Controls.DarkLabel();
             this.groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
+            this.pnl_ImgPreview = new System.Windows.Forms.Panel();
+            this.pictureBox_Tex = new System.Windows.Forms.PictureBox();
             this.darkContextMenu_Texture = new DarkUI.Controls.DarkContextMenu();
+            this.openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_PreviewSettings = new System.Windows.Forms.GroupBox();
             this.panel_PreviewSettings = new System.Windows.Forms.Panel();
             this.tlp_PreviewSettings = new System.Windows.Forms.TableLayoutPanel();
@@ -81,31 +112,32 @@ namespace BustupEditor
             this.num_MouthFrame = new DarkUI.Controls.DarkNumericUpDown();
             this.lbl_MouthFrame = new DarkUI.Controls.DarkLabel();
             this.num_EyeFrame = new DarkUI.Controls.DarkNumericUpDown();
+            this.lbl_Scale = new DarkUI.Controls.DarkLabel();
+            this.num_Scale = new DarkUI.Controls.DarkNumericUpDown();
             this.darkMenuStrip_MainMenu = new DarkUI.Controls.DarkMenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Scale = new DarkUI.Controls.DarkLabel();
-            this.num_Scale = new DarkUI.Controls.DarkNumericUpDown();
-            this.pnl_ImgPreview = new System.Windows.Forms.Panel();
-            this.pictureBox_Tex = new System.Windows.Forms.PictureBox();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copySelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openImageFolderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_Main.SuspendLayout();
             this.darkContextMenu_Sprites.SuspendLayout();
             this.groupBox_BustupSettings.SuspendLayout();
             this.panel_BustupSettings.SuspendLayout();
+            this.pnl_BustupSettings.SuspendLayout();
             this.tlp_BustupSettings.SuspendLayout();
+            this.tlp_MouthImg3Browse.SuspendLayout();
+            this.tlp_MouthImg2Browse.SuspendLayout();
+            this.tlp_MouthImg1Browse.SuspendLayout();
+            this.tlp_BlinkImg2Browse.SuspendLayout();
+            this.tlp_BlinkImg1Browse.SuspendLayout();
+            this.tlp_BaseImgBrowse.SuspendLayout();
             this.tlp_BustupID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_SubID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_MinorID)).BeginInit();
@@ -120,6 +152,8 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)(this.num_BasePosY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_BasePosX)).BeginInit();
             this.groupBox_Texture.SuspendLayout();
+            this.pnl_ImgPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).BeginInit();
             this.darkContextMenu_Texture.SuspendLayout();
             this.groupBox_PreviewSettings.SuspendLayout();
             this.panel_PreviewSettings.SuspendLayout();
@@ -128,14 +162,13 @@ namespace BustupEditor
             this.tlp_PreviewFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_MouthFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).BeginInit();
-            this.darkMenuStrip_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).BeginInit();
-            this.pnl_ImgPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).BeginInit();
+            this.darkMenuStrip_MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlp_Main
             // 
+            this.tlp_Main.AllowDrop = true;
             this.tlp_Main.ColumnCount = 2;
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -212,6 +245,32 @@ namespace BustupEditor
             this.renameSelectedToolStripMenuItem.Text = "Rename";
             this.renameSelectedToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
             // 
+            // copySelectedToolStripMenuItem
+            // 
+            this.copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
+            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.copySelectedToolStripMenuItem.Text = "Copy";
+            this.copySelectedToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
+            // 
+            // pasteSelectedToolStripMenuItem
+            // 
+            this.pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
+            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.pasteSelectedToolStripMenuItem.Text = "Paste";
+            // 
+            // openImageFolderToolStripMenuItem1
+            // 
+            this.openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
+            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(206, 24);
+            this.openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
+            this.openImageFolderToolStripMenuItem1.Click += new System.EventHandler(this.OpenImageFolder_Click);
+            // 
             // groupBox_BustupSettings
             // 
             this.groupBox_BustupSettings.Controls.Add(this.panel_BustupSettings);
@@ -229,20 +288,41 @@ namespace BustupEditor
             // 
             this.panel_BustupSettings.AutoScroll = true;
             this.panel_BustupSettings.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.panel_BustupSettings.Controls.Add(this.tlp_BustupSettings);
+            this.panel_BustupSettings.Controls.Add(this.pnl_BustupSettings);
             this.panel_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_BustupSettings.Location = new System.Drawing.Point(3, 18);
             this.panel_BustupSettings.Name = "panel_BustupSettings";
             this.panel_BustupSettings.Size = new System.Drawing.Size(479, 261);
             this.panel_BustupSettings.TabIndex = 0;
             // 
+            // pnl_BustupSettings
+            // 
+            this.pnl_BustupSettings.AutoSize = true;
+            this.pnl_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnl_BustupSettings.Controls.Add(this.tlp_BustupSettings);
+            this.pnl_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_BustupSettings.Location = new System.Drawing.Point(0, 0);
+            this.pnl_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_BustupSettings.Name = "pnl_BustupSettings";
+            this.pnl_BustupSettings.Size = new System.Drawing.Size(479, 261);
+            this.pnl_BustupSettings.TabIndex = 2;
+            // 
             // tlp_BustupSettings
             // 
-            this.tlp_BustupSettings.AutoSize = true;
+            this.tlp_BustupSettings.AutoScroll = true;
             this.tlp_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlp_BustupSettings.ColumnCount = 2;
-            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_BustupSettings.ColumnCount = 3;
+            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.64706F));
+            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.35294F));
+            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg3Browse, 1, 10);
+            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg2Browse, 1, 9);
+            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg1Browse, 1, 8);
+            this.tlp_BustupSettings.Controls.Add(this.tlp_BlinkImg2Browse, 1, 7);
+            this.tlp_BustupSettings.Controls.Add(this.tlp_BlinkImg1Browse, 1, 6);
+            this.tlp_BustupSettings.Controls.Add(this.lbl_BlinkImg1Browse, 0, 6);
+            this.tlp_BustupSettings.Controls.Add(this.lbl_BaseImage, 0, 5);
+            this.tlp_BustupSettings.Controls.Add(this.tlp_BaseImgBrowse, 1, 5);
             this.tlp_BustupSettings.Controls.Add(this.tlp_BustupID, 0, 0);
             this.tlp_BustupSettings.Controls.Add(this.comboBox_Animation, 1, 4);
             this.tlp_BustupSettings.Controls.Add(this.lbl_Animation, 0, 4);
@@ -252,18 +332,303 @@ namespace BustupEditor
             this.tlp_BustupSettings.Controls.Add(this.lbl_MouthPos, 0, 3);
             this.tlp_BustupSettings.Controls.Add(this.lbl_EyePos, 0, 2);
             this.tlp_BustupSettings.Controls.Add(this.lbl_BasePos, 0, 1);
-            this.tlp_BustupSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlp_BustupSettings.Controls.Add(this.lbl_BlinkImg2Browse, 0, 7);
+            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg1Browse, 0, 8);
+            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg2Browse, 0, 9);
+            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg3Browse, 0, 10);
+            this.tlp_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_BustupSettings.Location = new System.Drawing.Point(0, 0);
+            this.tlp_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
             this.tlp_BustupSettings.Name = "tlp_BustupSettings";
-            this.tlp_BustupSettings.RowCount = 5;
+            this.tlp_BustupSettings.RowCount = 11;
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp_BustupSettings.Size = new System.Drawing.Size(479, 250);
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_BustupSettings.Size = new System.Drawing.Size(479, 261);
             this.tlp_BustupSettings.TabIndex = 1;
+            // 
+            // tlp_MouthImg3Browse
+            // 
+            this.tlp_MouthImg3Browse.AllowDrop = true;
+            this.tlp_MouthImg3Browse.ColumnCount = 2;
+            this.tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_MouthImg3Browse.Controls.Add(this.txt_MouthImg3Browse, 0, 0);
+            this.tlp_MouthImg3Browse.Controls.Add(this.btn_MouthImg3Browse, 1, 0);
+            this.tlp_MouthImg3Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_MouthImg3Browse.Location = new System.Drawing.Point(87, 503);
+            this.tlp_MouthImg3Browse.Name = "tlp_MouthImg3Browse";
+            this.tlp_MouthImg3Browse.RowCount = 1;
+            this.tlp_MouthImg3Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_MouthImg3Browse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_MouthImg3Browse.TabIndex = 20;
+            // 
+            // txt_MouthImg3Browse
+            // 
+            this.txt_MouthImg3Browse.AllowDrop = true;
+            this.txt_MouthImg3Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MouthImg3Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_MouthImg3Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_MouthImg3Browse.Location = new System.Drawing.Point(3, 11);
+            this.txt_MouthImg3Browse.Name = "txt_MouthImg3Browse";
+            this.txt_MouthImg3Browse.Size = new System.Drawing.Size(285, 22);
+            this.txt_MouthImg3Browse.TabIndex = 0;
+            this.txt_MouthImg3Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_MouthImg3Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_MouthImg3Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_MouthImg3Browse
+            // 
+            this.btn_MouthImg3Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_MouthImg3Browse.Location = new System.Drawing.Point(294, 10);
+            this.btn_MouthImg3Browse.Name = "btn_MouthImg3Browse";
+            this.btn_MouthImg3Browse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_MouthImg3Browse.Size = new System.Drawing.Size(48, 23);
+            this.btn_MouthImg3Browse.TabIndex = 1;
+            this.btn_MouthImg3Browse.Text = "...";
+            this.btn_MouthImg3Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            // 
+            // tlp_MouthImg2Browse
+            // 
+            this.tlp_MouthImg2Browse.AllowDrop = true;
+            this.tlp_MouthImg2Browse.ColumnCount = 2;
+            this.tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_MouthImg2Browse.Controls.Add(this.txt_MouthImg2Browse, 0, 0);
+            this.tlp_MouthImg2Browse.Controls.Add(this.btn_MouthImg2Browse, 1, 0);
+            this.tlp_MouthImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_MouthImg2Browse.Location = new System.Drawing.Point(87, 453);
+            this.tlp_MouthImg2Browse.Name = "tlp_MouthImg2Browse";
+            this.tlp_MouthImg2Browse.RowCount = 1;
+            this.tlp_MouthImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_MouthImg2Browse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_MouthImg2Browse.TabIndex = 19;
+            // 
+            // txt_MouthImg2Browse
+            // 
+            this.txt_MouthImg2Browse.AllowDrop = true;
+            this.txt_MouthImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MouthImg2Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_MouthImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_MouthImg2Browse.Location = new System.Drawing.Point(3, 11);
+            this.txt_MouthImg2Browse.Name = "txt_MouthImg2Browse";
+            this.txt_MouthImg2Browse.Size = new System.Drawing.Size(285, 22);
+            this.txt_MouthImg2Browse.TabIndex = 0;
+            this.txt_MouthImg2Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_MouthImg2Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_MouthImg2Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_MouthImg2Browse
+            // 
+            this.btn_MouthImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_MouthImg2Browse.Location = new System.Drawing.Point(294, 10);
+            this.btn_MouthImg2Browse.Name = "btn_MouthImg2Browse";
+            this.btn_MouthImg2Browse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_MouthImg2Browse.Size = new System.Drawing.Size(48, 23);
+            this.btn_MouthImg2Browse.TabIndex = 1;
+            this.btn_MouthImg2Browse.Text = "...";
+            this.btn_MouthImg2Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            // 
+            // tlp_MouthImg1Browse
+            // 
+            this.tlp_MouthImg1Browse.AllowDrop = true;
+            this.tlp_MouthImg1Browse.ColumnCount = 2;
+            this.tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_MouthImg1Browse.Controls.Add(this.txt_MouthImg1Browse, 0, 0);
+            this.tlp_MouthImg1Browse.Controls.Add(this.btn_MouthImg1Browse, 1, 0);
+            this.tlp_MouthImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_MouthImg1Browse.Location = new System.Drawing.Point(87, 403);
+            this.tlp_MouthImg1Browse.Name = "tlp_MouthImg1Browse";
+            this.tlp_MouthImg1Browse.RowCount = 1;
+            this.tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlp_MouthImg1Browse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_MouthImg1Browse.TabIndex = 18;
+            // 
+            // txt_MouthImg1Browse
+            // 
+            this.txt_MouthImg1Browse.AllowDrop = true;
+            this.txt_MouthImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MouthImg1Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_MouthImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_MouthImg1Browse.Location = new System.Drawing.Point(3, 11);
+            this.txt_MouthImg1Browse.Name = "txt_MouthImg1Browse";
+            this.txt_MouthImg1Browse.Size = new System.Drawing.Size(285, 22);
+            this.txt_MouthImg1Browse.TabIndex = 0;
+            this.txt_MouthImg1Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_MouthImg1Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_MouthImg1Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_MouthImg1Browse
+            // 
+            this.btn_MouthImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_MouthImg1Browse.Location = new System.Drawing.Point(294, 10);
+            this.btn_MouthImg1Browse.Name = "btn_MouthImg1Browse";
+            this.btn_MouthImg1Browse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_MouthImg1Browse.Size = new System.Drawing.Size(48, 23);
+            this.btn_MouthImg1Browse.TabIndex = 1;
+            this.btn_MouthImg1Browse.Text = "...";
+            this.btn_MouthImg1Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            // 
+            // tlp_BlinkImg2Browse
+            // 
+            this.tlp_BlinkImg2Browse.AllowDrop = true;
+            this.tlp_BlinkImg2Browse.ColumnCount = 2;
+            this.tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_BlinkImg2Browse.Controls.Add(this.txt_BlinkImg2Browse, 0, 0);
+            this.tlp_BlinkImg2Browse.Controls.Add(this.btn_BlinkImg2Browse, 1, 0);
+            this.tlp_BlinkImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_BlinkImg2Browse.Location = new System.Drawing.Point(87, 353);
+            this.tlp_BlinkImg2Browse.Name = "tlp_BlinkImg2Browse";
+            this.tlp_BlinkImg2Browse.RowCount = 1;
+            this.tlp_BlinkImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_BlinkImg2Browse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_BlinkImg2Browse.TabIndex = 17;
+            // 
+            // txt_BlinkImg2Browse
+            // 
+            this.txt_BlinkImg2Browse.AllowDrop = true;
+            this.txt_BlinkImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_BlinkImg2Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_BlinkImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_BlinkImg2Browse.Location = new System.Drawing.Point(3, 11);
+            this.txt_BlinkImg2Browse.Name = "txt_BlinkImg2Browse";
+            this.txt_BlinkImg2Browse.Size = new System.Drawing.Size(285, 22);
+            this.txt_BlinkImg2Browse.TabIndex = 0;
+            this.txt_BlinkImg2Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_BlinkImg2Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_BlinkImg2Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_BlinkImg2Browse
+            // 
+            this.btn_BlinkImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_BlinkImg2Browse.Location = new System.Drawing.Point(294, 10);
+            this.btn_BlinkImg2Browse.Name = "btn_BlinkImg2Browse";
+            this.btn_BlinkImg2Browse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_BlinkImg2Browse.Size = new System.Drawing.Size(48, 23);
+            this.btn_BlinkImg2Browse.TabIndex = 1;
+            this.btn_BlinkImg2Browse.Text = "...";
+            this.btn_BlinkImg2Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            // 
+            // tlp_BlinkImg1Browse
+            // 
+            this.tlp_BlinkImg1Browse.AllowDrop = true;
+            this.tlp_BlinkImg1Browse.ColumnCount = 2;
+            this.tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_BlinkImg1Browse.Controls.Add(this.txt_BlinkImg1Browse, 0, 0);
+            this.tlp_BlinkImg1Browse.Controls.Add(this.btn_BlinkImg1Browse, 1, 0);
+            this.tlp_BlinkImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_BlinkImg1Browse.Location = new System.Drawing.Point(87, 303);
+            this.tlp_BlinkImg1Browse.Name = "tlp_BlinkImg1Browse";
+            this.tlp_BlinkImg1Browse.RowCount = 1;
+            this.tlp_BlinkImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_BlinkImg1Browse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_BlinkImg1Browse.TabIndex = 16;
+            // 
+            // txt_BlinkImg1Browse
+            // 
+            this.txt_BlinkImg1Browse.AllowDrop = true;
+            this.txt_BlinkImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_BlinkImg1Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_BlinkImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_BlinkImg1Browse.Location = new System.Drawing.Point(3, 11);
+            this.txt_BlinkImg1Browse.Name = "txt_BlinkImg1Browse";
+            this.txt_BlinkImg1Browse.Size = new System.Drawing.Size(285, 22);
+            this.txt_BlinkImg1Browse.TabIndex = 0;
+            this.txt_BlinkImg1Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_BlinkImg1Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_BlinkImg1Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_BlinkImg1Browse
+            // 
+            this.btn_BlinkImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_BlinkImg1Browse.Location = new System.Drawing.Point(294, 10);
+            this.btn_BlinkImg1Browse.Name = "btn_BlinkImg1Browse";
+            this.btn_BlinkImg1Browse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_BlinkImg1Browse.Size = new System.Drawing.Size(48, 23);
+            this.btn_BlinkImg1Browse.TabIndex = 1;
+            this.btn_BlinkImg1Browse.Text = "...";
+            this.btn_BlinkImg1Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            // 
+            // lbl_BlinkImg1Browse
+            // 
+            this.lbl_BlinkImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BlinkImg1Browse.AutoSize = true;
+            this.lbl_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_BlinkImg1Browse.Location = new System.Drawing.Point(3, 317);
+            this.lbl_BlinkImg1Browse.Name = "lbl_BlinkImg1Browse";
+            this.lbl_BlinkImg1Browse.Size = new System.Drawing.Size(78, 16);
+            this.lbl_BlinkImg1Browse.TabIndex = 11;
+            this.lbl_BlinkImg1Browse.Text = "Blink Img 1:";
+            // 
+            // lbl_BaseImage
+            // 
+            this.lbl_BaseImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BaseImage.AutoSize = true;
+            this.lbl_BaseImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_BaseImage.Location = new System.Drawing.Point(3, 267);
+            this.lbl_BaseImage.Name = "lbl_BaseImage";
+            this.lbl_BaseImage.Size = new System.Drawing.Size(78, 16);
+            this.lbl_BaseImage.TabIndex = 10;
+            this.lbl_BaseImage.Text = "Base Img:";
+            // 
+            // tlp_BaseImgBrowse
+            // 
+            this.tlp_BaseImgBrowse.AllowDrop = true;
+            this.tlp_BaseImgBrowse.ColumnCount = 2;
+            this.tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlp_BaseImgBrowse.Controls.Add(this.txt_BaseImgBrowse, 0, 0);
+            this.tlp_BaseImgBrowse.Controls.Add(this.btn_BaseImgBrowse, 1, 0);
+            this.tlp_BaseImgBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_BaseImgBrowse.Location = new System.Drawing.Point(87, 253);
+            this.tlp_BaseImgBrowse.Name = "tlp_BaseImgBrowse";
+            this.tlp_BaseImgBrowse.RowCount = 1;
+            this.tlp_BaseImgBrowse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_BaseImgBrowse.Size = new System.Drawing.Size(388, 44);
+            this.tlp_BaseImgBrowse.TabIndex = 9;
+            // 
+            // txt_BaseImgBrowse
+            // 
+            this.txt_BaseImgBrowse.AllowDrop = true;
+            this.txt_BaseImgBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_BaseImgBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txt_BaseImgBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_BaseImgBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txt_BaseImgBrowse.Location = new System.Drawing.Point(3, 11);
+            this.txt_BaseImgBrowse.Name = "txt_BaseImgBrowse";
+            this.txt_BaseImgBrowse.Size = new System.Drawing.Size(285, 22);
+            this.txt_BaseImgBrowse.TabIndex = 0;
+            this.txt_BaseImgBrowse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_BaseImgBrowse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_BaseImgBrowse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // btn_BaseImgBrowse
+            // 
+            this.btn_BaseImgBrowse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_BaseImgBrowse.Location = new System.Drawing.Point(294, 10);
+            this.btn_BaseImgBrowse.Name = "btn_BaseImgBrowse";
+            this.btn_BaseImgBrowse.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_BaseImgBrowse.Size = new System.Drawing.Size(48, 23);
+            this.btn_BaseImgBrowse.TabIndex = 1;
+            this.btn_BaseImgBrowse.Text = "...";
+            this.btn_BaseImgBrowse.Click += new System.EventHandler(this.BrowseImagePath_Click);
             // 
             // tlp_BustupID
             // 
@@ -286,7 +651,7 @@ namespace BustupEditor
             this.tlp_BustupID.Name = "tlp_BustupID";
             this.tlp_BustupID.RowCount = 1;
             this.tlp_BustupID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BustupID.Size = new System.Drawing.Size(473, 44);
+            this.tlp_BustupID.Size = new System.Drawing.Size(472, 44);
             this.tlp_BustupID.TabIndex = 8;
             // 
             // num_SubID
@@ -299,7 +664,7 @@ namespace BustupEditor
             0,
             0});
             this.num_SubID.Name = "num_SubID";
-            this.num_SubID.Size = new System.Drawing.Size(55, 22);
+            this.num_SubID.Size = new System.Drawing.Size(54, 22);
             this.num_SubID.TabIndex = 5;
             this.num_SubID.ValueChanged += new System.EventHandler(this.SubID_Changed);
             // 
@@ -378,7 +743,7 @@ namespace BustupEditor
             "Eyes_Mouth",
             "Eyes_Mouth_ExcludeAlpha",
             "Unknown"});
-            this.comboBox_Animation.Location = new System.Drawing.Point(98, 216);
+            this.comboBox_Animation.Location = new System.Drawing.Point(87, 216);
             this.comboBox_Animation.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.comboBox_Animation.Name = "comboBox_Animation";
             this.comboBox_Animation.Size = new System.Drawing.Size(185, 24);
@@ -392,7 +757,7 @@ namespace BustupEditor
             this.lbl_Animation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_Animation.Location = new System.Drawing.Point(3, 217);
             this.lbl_Animation.Name = "lbl_Animation";
-            this.lbl_Animation.Size = new System.Drawing.Size(89, 16);
+            this.lbl_Animation.Size = new System.Drawing.Size(78, 16);
             this.lbl_Animation.TabIndex = 6;
             this.lbl_Animation.Text = "Animation:";
             // 
@@ -408,17 +773,17 @@ namespace BustupEditor
             this.tlp_MouthPos.Controls.Add(this.lbl_MouthPosY, 2, 0);
             this.tlp_MouthPos.Controls.Add(this.num_MouthPosX, 1, 0);
             this.tlp_MouthPos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthPos.Location = new System.Drawing.Point(98, 153);
+            this.tlp_MouthPos.Location = new System.Drawing.Point(87, 153);
             this.tlp_MouthPos.Name = "tlp_MouthPos";
             this.tlp_MouthPos.RowCount = 1;
             this.tlp_MouthPos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthPos.Size = new System.Drawing.Size(378, 44);
+            this.tlp_MouthPos.Size = new System.Drawing.Size(388, 44);
             this.tlp_MouthPos.TabIndex = 5;
             // 
             // num_MouthPosY
             // 
             this.num_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosY.Location = new System.Drawing.Point(266, 11);
+            this.num_MouthPosY.Location = new System.Drawing.Point(273, 11);
             this.num_MouthPosY.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -439,7 +804,7 @@ namespace BustupEditor
             this.lbl_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthPosX.AutoSize = true;
             this.lbl_MouthPosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosX.Location = new System.Drawing.Point(54, 14);
+            this.lbl_MouthPosX.Location = new System.Drawing.Point(56, 14);
             this.lbl_MouthPosX.Name = "lbl_MouthPosX";
             this.lbl_MouthPosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_MouthPosX.TabIndex = 0;
@@ -450,7 +815,7 @@ namespace BustupEditor
             this.lbl_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthPosY.AutoSize = true;
             this.lbl_MouthPosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosY.Location = new System.Drawing.Point(241, 14);
+            this.lbl_MouthPosY.Location = new System.Drawing.Point(248, 14);
             this.lbl_MouthPosY.Name = "lbl_MouthPosY";
             this.lbl_MouthPosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_MouthPosY.TabIndex = 1;
@@ -459,7 +824,7 @@ namespace BustupEditor
             // num_MouthPosX
             // 
             this.num_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosX.Location = new System.Drawing.Point(78, 11);
+            this.num_MouthPosX.Location = new System.Drawing.Point(80, 11);
             this.num_MouthPosX.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -487,17 +852,17 @@ namespace BustupEditor
             this.tlp_EyePos.Controls.Add(this.lbl_EyePosY, 2, 0);
             this.tlp_EyePos.Controls.Add(this.num_EyePosX, 1, 0);
             this.tlp_EyePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_EyePos.Location = new System.Drawing.Point(98, 103);
+            this.tlp_EyePos.Location = new System.Drawing.Point(87, 103);
             this.tlp_EyePos.Name = "tlp_EyePos";
             this.tlp_EyePos.RowCount = 1;
             this.tlp_EyePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_EyePos.Size = new System.Drawing.Size(378, 44);
+            this.tlp_EyePos.Size = new System.Drawing.Size(388, 44);
             this.tlp_EyePos.TabIndex = 3;
             // 
             // num_EyePosY
             // 
             this.num_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosY.Location = new System.Drawing.Point(266, 11);
+            this.num_EyePosY.Location = new System.Drawing.Point(273, 11);
             this.num_EyePosY.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -518,7 +883,7 @@ namespace BustupEditor
             this.lbl_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyePosX.AutoSize = true;
             this.lbl_EyePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosX.Location = new System.Drawing.Point(54, 14);
+            this.lbl_EyePosX.Location = new System.Drawing.Point(56, 14);
             this.lbl_EyePosX.Name = "lbl_EyePosX";
             this.lbl_EyePosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_EyePosX.TabIndex = 0;
@@ -529,7 +894,7 @@ namespace BustupEditor
             this.lbl_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyePosY.AutoSize = true;
             this.lbl_EyePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosY.Location = new System.Drawing.Point(241, 14);
+            this.lbl_EyePosY.Location = new System.Drawing.Point(248, 14);
             this.lbl_EyePosY.Name = "lbl_EyePosY";
             this.lbl_EyePosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_EyePosY.TabIndex = 1;
@@ -538,7 +903,7 @@ namespace BustupEditor
             // num_EyePosX
             // 
             this.num_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosX.Location = new System.Drawing.Point(78, 11);
+            this.num_EyePosX.Location = new System.Drawing.Point(80, 11);
             this.num_EyePosX.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -566,17 +931,17 @@ namespace BustupEditor
             this.tlp_BasePos.Controls.Add(this.lbl_BasePosY, 2, 0);
             this.tlp_BasePos.Controls.Add(this.num_BasePosX, 1, 0);
             this.tlp_BasePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BasePos.Location = new System.Drawing.Point(98, 53);
+            this.tlp_BasePos.Location = new System.Drawing.Point(87, 53);
             this.tlp_BasePos.Name = "tlp_BasePos";
             this.tlp_BasePos.RowCount = 1;
             this.tlp_BasePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BasePos.Size = new System.Drawing.Size(378, 44);
+            this.tlp_BasePos.Size = new System.Drawing.Size(388, 44);
             this.tlp_BasePos.TabIndex = 1;
             // 
             // num_BasePosY
             // 
             this.num_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosY.Location = new System.Drawing.Point(266, 11);
+            this.num_BasePosY.Location = new System.Drawing.Point(273, 11);
             this.num_BasePosY.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -597,7 +962,7 @@ namespace BustupEditor
             this.lbl_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_BasePosX.AutoSize = true;
             this.lbl_BasePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosX.Location = new System.Drawing.Point(54, 14);
+            this.lbl_BasePosX.Location = new System.Drawing.Point(56, 14);
             this.lbl_BasePosX.Name = "lbl_BasePosX";
             this.lbl_BasePosX.Size = new System.Drawing.Size(18, 16);
             this.lbl_BasePosX.TabIndex = 0;
@@ -608,7 +973,7 @@ namespace BustupEditor
             this.lbl_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_BasePosY.AutoSize = true;
             this.lbl_BasePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosY.Location = new System.Drawing.Point(241, 14);
+            this.lbl_BasePosY.Location = new System.Drawing.Point(248, 14);
             this.lbl_BasePosY.Name = "lbl_BasePosY";
             this.lbl_BasePosY.Size = new System.Drawing.Size(19, 16);
             this.lbl_BasePosY.TabIndex = 1;
@@ -617,7 +982,7 @@ namespace BustupEditor
             // num_BasePosX
             // 
             this.num_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosX.Location = new System.Drawing.Point(78, 11);
+            this.num_BasePosX.Location = new System.Drawing.Point(80, 11);
             this.num_BasePosX.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -640,7 +1005,7 @@ namespace BustupEditor
             this.lbl_MouthPos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_MouthPos.Location = new System.Drawing.Point(3, 159);
             this.lbl_MouthPos.Name = "lbl_MouthPos";
-            this.lbl_MouthPos.Size = new System.Drawing.Size(89, 32);
+            this.lbl_MouthPos.Size = new System.Drawing.Size(78, 32);
             this.lbl_MouthPos.TabIndex = 4;
             this.lbl_MouthPos.Text = "Mouth Position:";
             // 
@@ -649,9 +1014,9 @@ namespace BustupEditor
             this.lbl_EyePos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_EyePos.AutoSize = true;
             this.lbl_EyePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePos.Location = new System.Drawing.Point(3, 117);
+            this.lbl_EyePos.Location = new System.Drawing.Point(3, 109);
             this.lbl_EyePos.Name = "lbl_EyePos";
-            this.lbl_EyePos.Size = new System.Drawing.Size(89, 16);
+            this.lbl_EyePos.Size = new System.Drawing.Size(78, 32);
             this.lbl_EyePos.TabIndex = 2;
             this.lbl_EyePos.Text = "Eye Position:";
             // 
@@ -662,9 +1027,53 @@ namespace BustupEditor
             this.lbl_BasePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbl_BasePos.Location = new System.Drawing.Point(3, 59);
             this.lbl_BasePos.Name = "lbl_BasePos";
-            this.lbl_BasePos.Size = new System.Drawing.Size(89, 32);
+            this.lbl_BasePos.Size = new System.Drawing.Size(78, 32);
             this.lbl_BasePos.TabIndex = 0;
             this.lbl_BasePos.Text = "Base Position:";
+            // 
+            // lbl_BlinkImg2Browse
+            // 
+            this.lbl_BlinkImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BlinkImg2Browse.AutoSize = true;
+            this.lbl_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_BlinkImg2Browse.Location = new System.Drawing.Point(3, 367);
+            this.lbl_BlinkImg2Browse.Name = "lbl_BlinkImg2Browse";
+            this.lbl_BlinkImg2Browse.Size = new System.Drawing.Size(78, 16);
+            this.lbl_BlinkImg2Browse.TabIndex = 12;
+            this.lbl_BlinkImg2Browse.Text = "Blink Img 2:";
+            // 
+            // lbl_MouthImg1Browse
+            // 
+            this.lbl_MouthImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_MouthImg1Browse.AutoSize = true;
+            this.lbl_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_MouthImg1Browse.Location = new System.Drawing.Point(3, 409);
+            this.lbl_MouthImg1Browse.Name = "lbl_MouthImg1Browse";
+            this.lbl_MouthImg1Browse.Size = new System.Drawing.Size(78, 32);
+            this.lbl_MouthImg1Browse.TabIndex = 13;
+            this.lbl_MouthImg1Browse.Text = "Mouth Img 1:";
+            // 
+            // lbl_MouthImg2Browse
+            // 
+            this.lbl_MouthImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_MouthImg2Browse.AutoSize = true;
+            this.lbl_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_MouthImg2Browse.Location = new System.Drawing.Point(3, 459);
+            this.lbl_MouthImg2Browse.Name = "lbl_MouthImg2Browse";
+            this.lbl_MouthImg2Browse.Size = new System.Drawing.Size(78, 32);
+            this.lbl_MouthImg2Browse.TabIndex = 14;
+            this.lbl_MouthImg2Browse.Text = "Mouth Img 2:";
+            // 
+            // lbl_MouthImg3Browse
+            // 
+            this.lbl_MouthImg3Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_MouthImg3Browse.AutoSize = true;
+            this.lbl_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_MouthImg3Browse.Location = new System.Drawing.Point(3, 509);
+            this.lbl_MouthImg3Browse.Name = "lbl_MouthImg3Browse";
+            this.lbl_MouthImg3Browse.Size = new System.Drawing.Size(78, 32);
+            this.lbl_MouthImg3Browse.TabIndex = 15;
+            this.lbl_MouthImg3Browse.Text = "Mouth Img 3:";
             // 
             // groupBox_Texture
             // 
@@ -679,6 +1088,30 @@ namespace BustupEditor
             this.groupBox_Texture.TabStop = false;
             this.groupBox_Texture.Text = "Bustup Texture";
             // 
+            // pnl_ImgPreview
+            // 
+            this.pnl_ImgPreview.AllowDrop = true;
+            this.pnl_ImgPreview.AutoScroll = true;
+            this.pnl_ImgPreview.AutoSize = true;
+            this.pnl_ImgPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnl_ImgPreview.Controls.Add(this.pictureBox_Tex);
+            this.pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_ImgPreview.Location = new System.Drawing.Point(3, 18);
+            this.pnl_ImgPreview.Name = "pnl_ImgPreview";
+            this.pnl_ImgPreview.Size = new System.Drawing.Size(479, 403);
+            this.pnl_ImgPreview.TabIndex = 0;
+            // 
+            // pictureBox_Tex
+            // 
+            this.pictureBox_Tex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.pictureBox_Tex.ContextMenuStrip = this.darkContextMenu_Texture;
+            this.pictureBox_Tex.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox_Tex.Name = "pictureBox_Tex";
+            this.pictureBox_Tex.Size = new System.Drawing.Size(479, 402);
+            this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Tex.TabIndex = 2;
+            this.pictureBox_Tex.TabStop = false;
+            // 
             // darkContextMenu_Texture
             // 
             this.darkContextMenu_Texture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -688,6 +1121,15 @@ namespace BustupEditor
             this.openImageFolderToolStripMenuItem});
             this.darkContextMenu_Texture.Name = "darkContextMenu_Texture";
             this.darkContextMenu_Texture.Size = new System.Drawing.Size(207, 28);
+            // 
+            // openImageFolderToolStripMenuItem
+            // 
+            this.openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
+            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.openImageFolderToolStripMenuItem.Text = "Open Image Folder";
+            this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenImageFolder_Click);
             // 
             // groupBox_PreviewSettings
             // 
@@ -720,14 +1162,14 @@ namespace BustupEditor
             this.tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlp_PreviewSettings.Controls.Add(this.lbl_ImagesPath, 0, 0);
-            this.tlp_PreviewSettings.Controls.Add(this.tlp_ImagesPath, 1, 0);
-            this.tlp_PreviewSettings.Controls.Add(this.tlp_PreviewFrame, 0, 1);
+            this.tlp_PreviewSettings.Controls.Add(this.tlp_ImagesPath, 1, 1);
+            this.tlp_PreviewSettings.Controls.Add(this.tlp_PreviewFrame, 0, 0);
             this.tlp_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlp_PreviewSettings.Location = new System.Drawing.Point(0, 0);
             this.tlp_PreviewSettings.Name = "tlp_PreviewSettings";
             this.tlp_PreviewSettings.RowCount = 1;
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlp_PreviewSettings.Size = new System.Drawing.Size(479, 100);
@@ -738,7 +1180,7 @@ namespace BustupEditor
             this.lbl_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_ImagesPath.AutoSize = true;
             this.lbl_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_ImagesPath.Location = new System.Drawing.Point(37, 9);
+            this.lbl_ImagesPath.Location = new System.Drawing.Point(37, 58);
             this.lbl_ImagesPath.Name = "lbl_ImagesPath";
             this.lbl_ImagesPath.Size = new System.Drawing.Size(55, 32);
             this.lbl_ImagesPath.TabIndex = 3;
@@ -746,21 +1188,23 @@ namespace BustupEditor
             // 
             // tlp_ImagesPath
             // 
+            this.tlp_ImagesPath.AllowDrop = true;
             this.tlp_ImagesPath.ColumnCount = 2;
             this.tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlp_ImagesPath.Controls.Add(this.txt_ImagesPath, 0, 0);
             this.tlp_ImagesPath.Controls.Add(this.btn_ImagesPath, 1, 0);
             this.tlp_ImagesPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_ImagesPath.Location = new System.Drawing.Point(98, 3);
+            this.tlp_ImagesPath.Location = new System.Drawing.Point(98, 52);
             this.tlp_ImagesPath.Name = "tlp_ImagesPath";
             this.tlp_ImagesPath.RowCount = 1;
             this.tlp_ImagesPath.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_ImagesPath.Size = new System.Drawing.Size(378, 44);
+            this.tlp_ImagesPath.Size = new System.Drawing.Size(378, 45);
             this.tlp_ImagesPath.TabIndex = 2;
             // 
             // txt_ImagesPath
             // 
+            this.txt_ImagesPath.AllowDrop = true;
             this.txt_ImagesPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ImagesPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.txt_ImagesPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -770,11 +1214,13 @@ namespace BustupEditor
             this.txt_ImagesPath.Size = new System.Drawing.Size(277, 22);
             this.txt_ImagesPath.TabIndex = 0;
             this.txt_ImagesPath.TextChanged += new System.EventHandler(this.ImagePath_Changed);
+            this.txt_ImagesPath.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
+            this.txt_ImagesPath.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
             // 
             // btn_ImagesPath
             // 
             this.btn_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_ImagesPath.Location = new System.Drawing.Point(286, 10);
+            this.btn_ImagesPath.Location = new System.Drawing.Point(286, 11);
             this.btn_ImagesPath.Name = "btn_ImagesPath";
             this.btn_ImagesPath.Padding = new System.Windows.Forms.Padding(5);
             this.btn_ImagesPath.Size = new System.Drawing.Size(48, 23);
@@ -798,11 +1244,11 @@ namespace BustupEditor
             this.tlp_PreviewFrame.Controls.Add(this.num_EyeFrame, 1, 0);
             this.tlp_PreviewFrame.Controls.Add(this.lbl_Scale, 4, 0);
             this.tlp_PreviewFrame.Controls.Add(this.num_Scale, 5, 0);
-            this.tlp_PreviewFrame.Location = new System.Drawing.Point(3, 53);
+            this.tlp_PreviewFrame.Location = new System.Drawing.Point(3, 3);
             this.tlp_PreviewFrame.Name = "tlp_PreviewFrame";
             this.tlp_PreviewFrame.RowCount = 1;
             this.tlp_PreviewFrame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_PreviewFrame.Size = new System.Drawing.Size(473, 44);
+            this.tlp_PreviewFrame.Size = new System.Drawing.Size(473, 43);
             this.tlp_PreviewFrame.TabIndex = 1;
             // 
             // lbl_EyeFrame
@@ -810,7 +1256,7 @@ namespace BustupEditor
             this.lbl_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_EyeFrame.AutoSize = true;
             this.lbl_EyeFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyeFrame.Location = new System.Drawing.Point(18, 6);
+            this.lbl_EyeFrame.Location = new System.Drawing.Point(18, 5);
             this.lbl_EyeFrame.Name = "lbl_EyeFrame";
             this.lbl_EyeFrame.Size = new System.Drawing.Size(49, 32);
             this.lbl_EyeFrame.TabIndex = 4;
@@ -819,7 +1265,7 @@ namespace BustupEditor
             // num_MouthFrame
             // 
             this.num_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthFrame.Location = new System.Drawing.Point(213, 11);
+            this.num_MouthFrame.Location = new System.Drawing.Point(213, 10);
             this.num_MouthFrame.Maximum = new decimal(new int[] {
             3,
             0,
@@ -835,7 +1281,7 @@ namespace BustupEditor
             this.lbl_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_MouthFrame.AutoSize = true;
             this.lbl_MouthFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthFrame.Location = new System.Drawing.Point(158, 6);
+            this.lbl_MouthFrame.Location = new System.Drawing.Point(158, 5);
             this.lbl_MouthFrame.Name = "lbl_MouthFrame";
             this.lbl_MouthFrame.Size = new System.Drawing.Size(49, 32);
             this.lbl_MouthFrame.TabIndex = 1;
@@ -844,7 +1290,7 @@ namespace BustupEditor
             // num_EyeFrame
             // 
             this.num_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyeFrame.Location = new System.Drawing.Point(73, 11);
+            this.num_EyeFrame.Location = new System.Drawing.Point(73, 10);
             this.num_EyeFrame.Maximum = new decimal(new int[] {
             2,
             0,
@@ -854,6 +1300,37 @@ namespace BustupEditor
             this.num_EyeFrame.Size = new System.Drawing.Size(64, 22);
             this.num_EyeFrame.TabIndex = 2;
             this.num_EyeFrame.ValueChanged += new System.EventHandler(this.EyeFrame_Changed);
+            // 
+            // lbl_Scale
+            // 
+            this.lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbl_Scale.AutoSize = true;
+            this.lbl_Scale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbl_Scale.Location = new System.Drawing.Point(313, 5);
+            this.lbl_Scale.Name = "lbl_Scale";
+            this.lbl_Scale.Size = new System.Drawing.Size(58, 32);
+            this.lbl_Scale.TabIndex = 5;
+            this.lbl_Scale.Text = "Preview Scale:";
+            // 
+            // num_Scale
+            // 
+            this.num_Scale.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.num_Scale.Location = new System.Drawing.Point(377, 10);
+            this.num_Scale.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num_Scale.Name = "num_Scale";
+            this.num_Scale.Size = new System.Drawing.Size(64, 22);
+            this.num_Scale.TabIndex = 6;
+            this.num_Scale.Tag = "";
+            this.num_Scale.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.num_Scale.ValueChanged += new System.EventHandler(this.PreviewScale_Changed);
             // 
             // darkMenuStrip_MainMenu
             // 
@@ -888,7 +1365,7 @@ namespace BustupEditor
             this.loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.loadToolStripMenuItem.Text = "Load Project";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadPreset_Click);
             // 
@@ -897,7 +1374,7 @@ namespace BustupEditor
             this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.saveToolStripMenuItem.Text = "Save Project";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SavePreset_Click);
             // 
@@ -906,7 +1383,7 @@ namespace BustupEditor
             this.importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.Import_Click);
             // 
@@ -915,63 +1392,9 @@ namespace BustupEditor
             this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.Export_Click);
-            // 
-            // lbl_Scale
-            // 
-            this.lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_Scale.AutoSize = true;
-            this.lbl_Scale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_Scale.Location = new System.Drawing.Point(313, 6);
-            this.lbl_Scale.Name = "lbl_Scale";
-            this.lbl_Scale.Size = new System.Drawing.Size(58, 32);
-            this.lbl_Scale.TabIndex = 5;
-            this.lbl_Scale.Text = "Preview Scale:";
-            // 
-            // num_Scale
-            // 
-            this.num_Scale.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_Scale.Location = new System.Drawing.Point(377, 11);
-            this.num_Scale.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num_Scale.Name = "num_Scale";
-            this.num_Scale.Size = new System.Drawing.Size(64, 22);
-            this.num_Scale.TabIndex = 6;
-            this.num_Scale.Tag = "";
-            this.num_Scale.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.num_Scale.ValueChanged += new System.EventHandler(this.PreviewScale_Changed);
-            // 
-            // pnl_ImgPreview
-            // 
-            this.pnl_ImgPreview.AutoScroll = true;
-            this.pnl_ImgPreview.AutoSize = true;
-            this.pnl_ImgPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnl_ImgPreview.Controls.Add(this.pictureBox_Tex);
-            this.pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_ImgPreview.Location = new System.Drawing.Point(3, 18);
-            this.pnl_ImgPreview.Name = "pnl_ImgPreview";
-            this.pnl_ImgPreview.Size = new System.Drawing.Size(479, 403);
-            this.pnl_ImgPreview.TabIndex = 0;
-            // 
-            // pictureBox_Tex
-            // 
-            this.pictureBox_Tex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.pictureBox_Tex.ContextMenuStrip = this.darkContextMenu_Texture;
-            this.pictureBox_Tex.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox_Tex.Name = "pictureBox_Tex";
-            this.pictureBox_Tex.Size = new System.Drawing.Size(479, 402);
-            this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Tex.TabIndex = 2;
-            this.pictureBox_Tex.TabStop = false;
             // 
             // editToolStripMenuItem
             // 
@@ -992,7 +1415,7 @@ namespace BustupEditor
             this.addToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
             // 
@@ -1001,7 +1424,7 @@ namespace BustupEditor
             this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
             // 
@@ -1010,7 +1433,7 @@ namespace BustupEditor
             this.renameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.renameToolStripMenuItem.Text = "Rename";
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
             // 
@@ -1019,7 +1442,7 @@ namespace BustupEditor
             this.copyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.copyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
             // 
@@ -1028,44 +1451,9 @@ namespace BustupEditor
             this.pasteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.pasteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.Paste_Click);
-            // 
-            // openImageFolderToolStripMenuItem
-            // 
-            this.openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
-            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.openImageFolderToolStripMenuItem.Text = "Open Image Folder";
-            this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenImageFolder_Click);
-            // 
-            // copySelectedToolStripMenuItem
-            // 
-            this.copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
-            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.copySelectedToolStripMenuItem.Text = "Copy";
-            this.copySelectedToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
-            // 
-            // pasteSelectedToolStripMenuItem
-            // 
-            this.pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
-            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.pasteSelectedToolStripMenuItem.Text = "Paste";
-            // 
-            // openImageFolderToolStripMenuItem1
-            // 
-            this.openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
-            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(206, 24);
-            this.openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
-            this.openImageFolderToolStripMenuItem1.Click += new System.EventHandler(this.OpenImageFolder_Click);
             // 
             // MainForm
             // 
@@ -1084,8 +1472,21 @@ namespace BustupEditor
             this.groupBox_BustupSettings.ResumeLayout(false);
             this.panel_BustupSettings.ResumeLayout(false);
             this.panel_BustupSettings.PerformLayout();
+            this.pnl_BustupSettings.ResumeLayout(false);
             this.tlp_BustupSettings.ResumeLayout(false);
             this.tlp_BustupSettings.PerformLayout();
+            this.tlp_MouthImg3Browse.ResumeLayout(false);
+            this.tlp_MouthImg3Browse.PerformLayout();
+            this.tlp_MouthImg2Browse.ResumeLayout(false);
+            this.tlp_MouthImg2Browse.PerformLayout();
+            this.tlp_MouthImg1Browse.ResumeLayout(false);
+            this.tlp_MouthImg1Browse.PerformLayout();
+            this.tlp_BlinkImg2Browse.ResumeLayout(false);
+            this.tlp_BlinkImg2Browse.PerformLayout();
+            this.tlp_BlinkImg1Browse.ResumeLayout(false);
+            this.tlp_BlinkImg1Browse.PerformLayout();
+            this.tlp_BaseImgBrowse.ResumeLayout(false);
+            this.tlp_BaseImgBrowse.PerformLayout();
             this.tlp_BustupID.ResumeLayout(false);
             this.tlp_BustupID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_SubID)).EndInit();
@@ -1105,6 +1506,9 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)(this.num_BasePosX)).EndInit();
             this.groupBox_Texture.ResumeLayout(false);
             this.groupBox_Texture.PerformLayout();
+            this.pnl_ImgPreview.ResumeLayout(false);
+            this.pnl_ImgPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).EndInit();
             this.darkContextMenu_Texture.ResumeLayout(false);
             this.groupBox_PreviewSettings.ResumeLayout(false);
             this.panel_PreviewSettings.ResumeLayout(false);
@@ -1117,12 +1521,9 @@ namespace BustupEditor
             this.tlp_PreviewFrame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_MouthFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).EndInit();
             this.darkMenuStrip_MainMenu.ResumeLayout(false);
             this.darkMenuStrip_MainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).EndInit();
-            this.pnl_ImgPreview.ResumeLayout(false);
-            this.pnl_ImgPreview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1148,25 +1549,9 @@ namespace BustupEditor
         private System.Windows.Forms.TableLayoutPanel tlp_BustupSettings;
         private System.Windows.Forms.Panel panel_PreviewSettings;
         private DarkUI.Controls.DarkLabel lbl_BasePos;
-        private System.Windows.Forms.TableLayoutPanel tlp_BasePos;
-        private DarkUI.Controls.DarkLabel lbl_BasePosX;
-        private DarkUI.Controls.DarkLabel lbl_BasePosY;
-        private DarkUI.Controls.DarkNumericUpDown num_BasePosX;
-        private DarkUI.Controls.DarkNumericUpDown num_BasePosY;
         private DarkUI.Controls.DarkLabel lbl_EyePos;
-        private System.Windows.Forms.TableLayoutPanel tlp_EyePos;
-        private DarkUI.Controls.DarkNumericUpDown num_EyePosY;
-        private DarkUI.Controls.DarkLabel lbl_EyePosX;
-        private DarkUI.Controls.DarkLabel lbl_EyePosY;
-        private DarkUI.Controls.DarkNumericUpDown num_EyePosX;
         private DarkUI.Controls.DarkLabel lbl_MouthPos;
-        private System.Windows.Forms.TableLayoutPanel tlp_MouthPos;
-        private DarkUI.Controls.DarkNumericUpDown num_MouthPosY;
-        private DarkUI.Controls.DarkLabel lbl_MouthPosX;
-        private DarkUI.Controls.DarkLabel lbl_MouthPosY;
-        private DarkUI.Controls.DarkNumericUpDown num_MouthPosX;
         private DarkUI.Controls.DarkLabel lbl_Animation;
-        private System.Windows.Forms.ComboBox comboBox_Animation;
         private System.Windows.Forms.TableLayoutPanel tlp_PreviewSettings;
         private System.Windows.Forms.TableLayoutPanel tlp_PreviewFrame;
         private DarkUI.Controls.DarkNumericUpDown num_MouthFrame;
@@ -1200,6 +1585,47 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem copySelectedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteSelectedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openImageFolderToolStripMenuItem1;
+        private System.Windows.Forms.Panel pnl_BustupSettings;
+        private System.Windows.Forms.TableLayoutPanel tlp_MouthImg1Browse;
+        private DarkUI.Controls.DarkTextBox txt_MouthImg1Browse;
+        private DarkUI.Controls.DarkButton btn_MouthImg1Browse;
+        private System.Windows.Forms.TableLayoutPanel tlp_BlinkImg2Browse;
+        private DarkUI.Controls.DarkTextBox txt_BlinkImg2Browse;
+        private DarkUI.Controls.DarkButton btn_BlinkImg2Browse;
+        private System.Windows.Forms.TableLayoutPanel tlp_BlinkImg1Browse;
+        private DarkUI.Controls.DarkTextBox txt_BlinkImg1Browse;
+        private DarkUI.Controls.DarkButton btn_BlinkImg1Browse;
+        private DarkUI.Controls.DarkLabel lbl_BlinkImg1Browse;
+        private DarkUI.Controls.DarkLabel lbl_BaseImage;
+        private System.Windows.Forms.TableLayoutPanel tlp_BaseImgBrowse;
+        private DarkUI.Controls.DarkTextBox txt_BaseImgBrowse;
+        private DarkUI.Controls.DarkButton btn_BaseImgBrowse;
+        private System.Windows.Forms.ComboBox comboBox_Animation;
+        private System.Windows.Forms.TableLayoutPanel tlp_MouthPos;
+        private DarkUI.Controls.DarkNumericUpDown num_MouthPosY;
+        private DarkUI.Controls.DarkLabel lbl_MouthPosX;
+        private DarkUI.Controls.DarkLabel lbl_MouthPosY;
+        private DarkUI.Controls.DarkNumericUpDown num_MouthPosX;
+        private System.Windows.Forms.TableLayoutPanel tlp_EyePos;
+        private DarkUI.Controls.DarkNumericUpDown num_EyePosY;
+        private DarkUI.Controls.DarkLabel lbl_EyePosX;
+        private DarkUI.Controls.DarkLabel lbl_EyePosY;
+        private DarkUI.Controls.DarkNumericUpDown num_EyePosX;
+        private System.Windows.Forms.TableLayoutPanel tlp_BasePos;
+        private DarkUI.Controls.DarkNumericUpDown num_BasePosY;
+        private DarkUI.Controls.DarkLabel lbl_BasePosX;
+        private DarkUI.Controls.DarkLabel lbl_BasePosY;
+        private DarkUI.Controls.DarkNumericUpDown num_BasePosX;
+        private DarkUI.Controls.DarkLabel lbl_BlinkImg2Browse;
+        private DarkUI.Controls.DarkLabel lbl_MouthImg1Browse;
+        private DarkUI.Controls.DarkLabel lbl_MouthImg2Browse;
+        private DarkUI.Controls.DarkLabel lbl_MouthImg3Browse;
+        private System.Windows.Forms.TableLayoutPanel tlp_MouthImg3Browse;
+        private DarkUI.Controls.DarkTextBox txt_MouthImg3Browse;
+        private DarkUI.Controls.DarkButton btn_MouthImg3Browse;
+        private System.Windows.Forms.TableLayoutPanel tlp_MouthImg2Browse;
+        private DarkUI.Controls.DarkTextBox txt_MouthImg2Browse;
+        private DarkUI.Controls.DarkButton btn_MouthImg2Browse;
     }
 }
 

@@ -65,6 +65,12 @@ namespace BustupEditor
             public float MouthPos_X = 0;
             public float MouthPos_Y = 0;
             public AnimationType AnimType = AnimationType.None;
+            public string BaseImgPath = "";
+            public string BlinkImg1Path = "";
+            public string BlinkImg2Path = "";
+            public string MouthImg1Path = "";
+            public string MouthImg2Path = "";
+            public string MouthImg3Path = "";
         }
 
         public enum PlatformType
@@ -275,6 +281,9 @@ namespace BustupEditor
 
         private void GetBustupParamData(string bustupDatPath)
         {
+            if (string.IsNullOrEmpty(bustupDatPath))
+                return;
+
             using (MemoryStream memStream = new MemoryStream(File.ReadAllBytes(bustupDatPath)))
             using (EndianBinaryReader reader = new EndianBinaryReader(memStream, Endianness.BigEndian))
             {
@@ -476,6 +485,13 @@ namespace BustupEditor
             comboBox_Animation.SelectedIndex = comboBox_Animation.Items.IndexOf(
                 Enum.GetName(typeof(AnimationType), selectedBustup.AnimType));
 
+            txt_BaseImgBrowse.Text = selectedBustup.BaseImgPath;
+            txt_BlinkImg1Browse.Text = selectedBustup.BlinkImg1Path;
+            txt_BlinkImg2Browse.Text = selectedBustup.BlinkImg2Path;
+            txt_MouthImg1Browse.Text = selectedBustup.MouthImg1Path;
+            txt_MouthImg2Browse.Text = selectedBustup.MouthImg2Path;
+            txt_MouthImg3Browse.Text = selectedBustup.MouthImg3Path;
+
             LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
 
             ToggleControls(true);
@@ -483,10 +499,15 @@ namespace BustupEditor
 
         private void ToggleControls(bool enabled = false)
         {
+            // Used to avoid getting into an infinite loop when updating
+            // the values of the controls when a bustup is selected from the list
+
             foreach (var str in new string[] { "num_MajorID", "num_MinorID", "num_SubID", 
                 "num_BasePosX", "num_BasePosY", "num_EyePosX", "num_EyePosY",
                 "num_MouthPosX", "num_MouthPosY", "comboBox_Animation", "txt_ImagesPath",
-                "num_EyeFrame", "num_MouthFrame" })
+                "num_EyeFrame", "num_MouthFrame", "txt_BaseImgBrowse", "txt_BlinkImg1Browse",
+                "txt_BlinkImg2Browse", "txt_MouthImg1Browse", "txt_MouthImg2Browse",
+                "txt_MouthImg3Browse" })
             {
                 WinForms.GetControl(this, str).Enabled = enabled;
             }
@@ -619,15 +640,69 @@ namespace BustupEditor
 
         private void ImagePath_Changed(object sender, EventArgs e)
         {
-            if (!txt_ImagesPath.Enabled)
+            DarkTextBox txtBox = sender as DarkTextBox;
+
+            if (!txtBox.Enabled)
                 return;
 
-            bustupProject.ImagesPath = txt_ImagesPath.Text;
+            switch(txtBox.Name)
+            {
+                case "txt_BaseImgBrowse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BaseImgPath = txtBox.Text;
+                    break;
+                case "txt_BlinkImg1Browse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BlinkImg1Path = txtBox.Text;
+                    break;
+                case "txt_BlinkImg2Browse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BlinkImg2Path = txtBox.Text;
+                    break;
+                case "txt_MouthImg1Browse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg1Path = txtBox.Text;
+                    break;
+                case "txt_MouthImg2Browse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg2Path = txtBox.Text;
+                    break;
+                case "txt_MouthImg3Browse":
+                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
+                        return;
+                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg3Path = txtBox.Text;
+                    break;
+                case "txt_ImagesPath":
+                    bustupProject.ImagesPath = txt_ImagesPath.Text;
+                    break;
+            }
         }
 
         private void BrowseImagePath_Click(object sender, EventArgs e)
         {
-            txt_ImagesPath.Text = WinFormsDialogs.SelectFolder("Choose Extracted Bustup folder...");
+            DarkButton btn = sender as DarkButton;
+
+            switch(btn.Name)
+            {
+                case "btn_ImagesPath":
+                    txt_ImagesPath.Text = WinFormsDialogs.SelectFolder("Choose Extracted Bustup folder...");
+                    break;
+                case "btn_BaseImgBrowse":
+                case "btn_BlinkImg1Browse":
+                case "btn_BlinkImg2Browse":
+                case "btn_MouthImg1Browse":
+                case "btn_MouthImg2Browse":
+                case "btn_MouthImg3Browse":
+                    var selection = WinFormsDialogs.SelectFile("Select Base Image...", true, new string[] { "DDS (.dds)", "PNG (.png)" });
+                    if (selection.Count > 0 && !string.IsNullOrEmpty(selection.First()))
+                        WinForms.GetControl(this, btn.Name.Replace("btn","txt")).Text = selection.First();
+                    break;
+            }
         }
 
         private void EyeFrame_Changed(object sender, EventArgs e)
@@ -811,6 +886,16 @@ namespace BustupEditor
                 Copy_Click(sender, e);
             else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.V)
                 Paste_Click(sender, e);
+        }
+
+        private void DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void DragDrop_Txt(object sender, DragEventArgs e)
+        {
+
         }
     }
 
