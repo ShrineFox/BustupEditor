@@ -75,7 +75,7 @@ namespace BustupEditor
             txt_ExpressionName.Text = selectedBustup.ExpressionName;
             txt_OutfitName.Text = selectedBustup.OutfitName;
 
-            LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
+            LoadBustupPreview(selectedBustup);
 
             ToggleControls(true);
         }
@@ -352,6 +352,22 @@ namespace BustupEditor
         private void PreviewScale_Changed(object sender, EventArgs e)
         {
             bustupProject.Scale = Convert.ToInt32(num_Scale.Value);
+        }
+
+        private void ApplyImagesToAll_SameExpression_Click(object sender, EventArgs e)
+        {
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            foreach (var bustup in bustupProject.Bustups.Where(x => x.CharaName == selectedBustup.CharaName 
+                && x.ExpressionName == selectedBustup.ExpressionName))
+            {
+                bustup.BaseImgPath = selectedBustup.BaseImgPath;
+                bustup.BlinkImg1Path = selectedBustup.BlinkImg1Path;
+                bustup.BlinkImg2Path = selectedBustup.BlinkImg2Path;
+                bustup.MouthImg1Path = selectedBustup.MouthImg1Path;
+                bustup.MouthImg2Path = selectedBustup.MouthImg2Path;
+                bustup.MouthImg3Path = selectedBustup.MouthImg3Path;
+            }
         }
     }
 }

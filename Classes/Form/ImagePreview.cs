@@ -24,14 +24,33 @@ namespace BustupEditor
             pictureBox_Mouth.Parent = pictureBox_Tex;
         }
 
-        private void LoadBustupPreview(ushort majorID, ushort minorID, ushort subID)
+        private void LoadBustupPreview(Bustup bustup)
         {
-            string ddsPath = $"B{majorID.ToString("000")}_{minorID.ToString("000")}";
+            string ddsPath = $"B{bustup.MajorID.ToString("000")}_{bustup.MinorID.ToString("000")}";
             if (bustupProject.Type == BustupType.Portrait)
-                ddsPath += $"_{subID.ToString("00")}";
+                ddsPath += $"_{bustup.SubID.ToString("00")}";
 
             ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
-            if (Directory.Exists(ddsPath))
+
+            if (File.Exists(bustup.BaseImgPath))
+            {
+                string extension = Path.GetExtension(bustup.BaseImgPath).ToLowerInvariant();
+                Bitmap bmp = null;
+
+                switch (extension)
+                {
+                    case ".dds":
+                        bmp = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(bustup.BaseImgPath)));
+                        break;
+                    case ".png":
+                        bmp = ScaleBitmap(new Bitmap(bustup.BaseImgPath));
+                        break;
+                }
+
+                pictureBox_Tex.Image = bmp;
+                return;
+            }
+            else if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
                 if (ddsFiles.Length > 0)

@@ -138,6 +138,9 @@ namespace BustupEditor
             renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            applyImagesToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            allWithSameExpressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            extractBustupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tlp_Main.SuspendLayout();
             darkContextMenu_Sprites.SuspendLayout();
             groupBox_BustupSettings.SuspendLayout();
@@ -223,14 +226,14 @@ namespace BustupEditor
             darkContextMenu_Sprites.ImageScalingSize = new System.Drawing.Size(20, 20);
             darkContextMenu_Sprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { addSpriteToolStripMenuItem, removeSelectedToolStripMenuItem, copySelectedToolStripMenuItem, pasteSelectedToolStripMenuItem, openImageFolderToolStripMenuItem1 });
             darkContextMenu_Sprites.Name = "darkContextMenu_Sprites";
-            darkContextMenu_Sprites.Size = new System.Drawing.Size(211, 152);
+            darkContextMenu_Sprites.Size = new System.Drawing.Size(207, 124);
             // 
             // addSpriteToolStripMenuItem
             // 
             addSpriteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             addSpriteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             addSpriteToolStripMenuItem.Name = "addSpriteToolStripMenuItem";
-            addSpriteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            addSpriteToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             addSpriteToolStripMenuItem.Text = "Add";
             addSpriteToolStripMenuItem.Click += Add_Click;
             // 
@@ -239,7 +242,7 @@ namespace BustupEditor
             removeSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             removeSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
-            removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             removeSelectedToolStripMenuItem.Text = "Remove";
             removeSelectedToolStripMenuItem.Click += Remove_Click;
             // 
@@ -248,7 +251,7 @@ namespace BustupEditor
             copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
-            copySelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            copySelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             copySelectedToolStripMenuItem.Text = "Copy";
             copySelectedToolStripMenuItem.Click += Copy_Click;
             // 
@@ -257,7 +260,7 @@ namespace BustupEditor
             pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
-            pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             pasteSelectedToolStripMenuItem.Text = "Paste";
             // 
             // openImageFolderToolStripMenuItem1
@@ -265,7 +268,7 @@ namespace BustupEditor
             openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
-            openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(206, 24);
             openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
             openImageFolderToolStripMenuItem1.Click += OpenImageFolder_Click;
             // 
@@ -1386,7 +1389,7 @@ namespace BustupEditor
             darkMenuStrip_MainMenu.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             darkMenuStrip_MainMenu.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             darkMenuStrip_MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem });
+            darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, applyImagesToToolStripMenuItem });
             darkMenuStrip_MainMenu.Location = new System.Drawing.Point(0, 0);
             darkMenuStrip_MainMenu.Name = "darkMenuStrip_MainMenu";
             darkMenuStrip_MainMenu.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
@@ -1397,7 +1400,7 @@ namespace BustupEditor
             // fileToolStripMenuItem
             // 
             fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem, extractBustupsToolStripMenuItem });
             fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -1409,7 +1412,7 @@ namespace BustupEditor
             newProjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { p5RToolStripMenuItem, p5PS3ToolStripMenuItem });
             newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            newProjectToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            newProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             newProjectToolStripMenuItem.Text = "New Project...";
             // 
             // p5RToolStripMenuItem
@@ -1471,7 +1474,7 @@ namespace BustupEditor
             loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             loadToolStripMenuItem.Text = "Load Project";
             loadToolStripMenuItem.Click += LoadProject_Click;
             // 
@@ -1480,7 +1483,7 @@ namespace BustupEditor
             saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             saveToolStripMenuItem.Text = "Save Project";
             saveToolStripMenuItem.Click += SaveProject_Click;
             // 
@@ -1489,7 +1492,7 @@ namespace BustupEditor
             importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             importToolStripMenuItem.Text = "Import";
             importToolStripMenuItem.Click += Import_Click;
             // 
@@ -1498,7 +1501,7 @@ namespace BustupEditor
             exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             exportToolStripMenuItem.Text = "Export";
             exportToolStripMenuItem.Click += Export_Click;
             // 
@@ -1554,6 +1557,33 @@ namespace BustupEditor
             pasteToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             pasteToolStripMenuItem.Text = "Paste";
             pasteToolStripMenuItem.Click += Paste_Click;
+            // 
+            // applyImagesToToolStripMenuItem
+            // 
+            applyImagesToToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            applyImagesToToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { allWithSameExpressionToolStripMenuItem });
+            applyImagesToToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            applyImagesToToolStripMenuItem.Name = "applyImagesToToolStripMenuItem";
+            applyImagesToToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            applyImagesToToolStripMenuItem.Text = "Apply Images To...";
+            // 
+            // allWithSameExpressionToolStripMenuItem
+            // 
+            allWithSameExpressionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            allWithSameExpressionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            allWithSameExpressionToolStripMenuItem.Name = "allWithSameExpressionToolStripMenuItem";
+            allWithSameExpressionToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            allWithSameExpressionToolStripMenuItem.Text = "All With Same Expression";
+            allWithSameExpressionToolStripMenuItem.Click += ApplyImagesToAll_SameExpression_Click;
+            // 
+            // extractBustupsToolStripMenuItem
+            // 
+            extractBustupsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            extractBustupsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            extractBustupsToolStripMenuItem.Name = "extractBustupsToolStripMenuItem";
+            extractBustupsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            extractBustupsToolStripMenuItem.Text = "Extract Bustups...";
+            extractBustupsToolStripMenuItem.Click += ExtractBustups_Click;
             // 
             // MainForm
             // 
@@ -1739,6 +1769,9 @@ namespace BustupEditor
         private DarkUI.Controls.DarkLabel lbl_ExpressionName;
         private DarkUI.Controls.DarkLabel lbl_OutfitName;
         private DarkUI.Controls.DarkTextBox txt_OutfitName;
+        private System.Windows.Forms.ToolStripMenuItem applyImagesToToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allWithSameExpressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem extractBustupsToolStripMenuItem;
     }
 }
 

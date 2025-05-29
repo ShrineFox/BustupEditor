@@ -44,11 +44,11 @@ namespace BustupEditor
             else
             {
                 foreach (var bin in Directory.GetFiles(bustupDir, "*.BIN", SearchOption.TopDirectoryOnly))
-                    ExtractP5RPCBustupBIN(bin);
+                    ExtractP5RPCBustupBIN(bin, Path.Combine(Path.GetDirectoryName(bin), "Extracted"));
             }
         }
 
-        private void ExtractP5RPCBustupBIN(string bin)
+        private void ExtractP5RPCBustupBIN(string bin, string exportPath)
         {
             using (MemoryStream memStream = new MemoryStream(File.ReadAllBytes(bin)))
             using (EndianBinaryReader reader = new EndianBinaryReader(memStream, Endianness.BigEndian))
@@ -56,21 +56,8 @@ namespace BustupEditor
                 // Get number of images in BIN
                 int ddsCount = reader.ReadInt32();
 
-                string extractedPath = txt_ImagesPath.Text;
-
-                // Get directory to extract images to
-                if (!Directory.Exists(txt_ImagesPath.Text))
-                {
-                    extractedPath = Path.Combine(Path.GetDirectoryName(bin), "Extracted");
-                    bustupProject.ImagesPath = extractedPath;
-                    txt_ImagesPath.Text = extractedPath;
-                    Directory.CreateDirectory(extractedPath);
-                }
-                extractedPath = Path.Combine(extractedPath, Path.GetFileNameWithoutExtension(bin));
-                if (Directory.Exists(extractedPath))
-                    return;
-
-                Directory.CreateDirectory(extractedPath);
+                exportPath = Path.Combine(exportPath, Path.GetFileNameWithoutExtension(bin));
+                Directory.CreateDirectory(exportPath);
 
                 for (int i = ddsCount; i > 0; i--)
                 {
@@ -81,18 +68,18 @@ namespace BustupEditor
 
                     if (ddsName.TrimEnd().EndsWith(".dds2"))
                     {
-                        string outImgPath = Path.Combine(extractedPath, ddsName);
-                        using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
+                        string outImgPath = Path.Combine(exportPath, ddsName);
+                        using (FileStream stream = new FileStream(Path.Combine(exportPath, outImgPath), FileMode.Create))
                         using (BinaryWriter writer = new BinaryWriter(stream))
                             writer.Write(ddsFile);
-                        ExtractDDS2(ddsFile, extractedPath);
+                        ExtractDDS2(ddsFile, exportPath);
                         bustupProject.Platform = PlatformType.PS3;
                     }
                     else
                     {
                         // Extract contents of dds file to output folder
-                        string outImgPath = Path.Combine(extractedPath, ddsName);
-                        using (FileStream stream = new FileStream(Path.Combine(extractedPath, outImgPath), FileMode.Create))
+                        string outImgPath = Path.Combine(exportPath, ddsName);
+                        using (FileStream stream = new FileStream(Path.Combine(exportPath, outImgPath), FileMode.Create))
                         using (BinaryWriter writer = new BinaryWriter(stream))
                             writer.Write(ddsFile);
                     }

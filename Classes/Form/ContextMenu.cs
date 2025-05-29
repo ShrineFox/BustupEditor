@@ -35,24 +35,22 @@ namespace BustupEditor
 
         private void Paste_Click(object sender, EventArgs e)
         {
-            if (listBox_Sprites.SelectedItems.Count > 0 && copiedParams != new Bustup())
+            if (listBox_Sprites.SelectedItems.Count > 0 && copiedParams != null)
             {
+                Bustup tempBustup = copiedParams.Copy();
+
                 foreach (var selection in listBox_Sprites.SelectedItems)
                 {
-                    Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem.Copy();
-                    Bustup newBustup = copiedParams.Copy();
+                    Bustup selectedBustup = (Bustup)selection;
 
-                    // Preserve bustup names and IDs
-                    newBustup.Name = selectedBustup.Name;
-                    newBustup.MajorID = selectedBustup.MajorID;
-                    newBustup.MinorID = selectedBustup.MinorID;
-                    newBustup.SubID = selectedBustup.SubID;
-
-                    int bustupIndex = bustupProject.Bustups.IndexOf(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
-                    if (bustupIndex != -1)
-                    {
-                        bustupProject.Bustups[bustupIndex] = newBustup;
-                    }
+                    // Update animation parameters
+                    selectedBustup.AnimType = tempBustup.AnimType;
+                    selectedBustup.BasePos_X = tempBustup.BasePos_X;
+                    selectedBustup.BasePos_Y = tempBustup.BasePos_Y;
+                    selectedBustup.EyePos_X = tempBustup.EyePos_X;
+                    selectedBustup.EyePos_Y = tempBustup.EyePos_Y;
+                    selectedBustup.MouthPos_X = tempBustup.MouthPos_X;
+                    selectedBustup.MouthPos_Y = tempBustup.MouthPos_Y;
                 }
                 
                 UpdateFormCtrlValues();
