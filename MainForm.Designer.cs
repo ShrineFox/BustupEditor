@@ -31,1578 +31,1602 @@ namespace BustupEditor
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.tlp_Main = new System.Windows.Forms.TableLayoutPanel();
-            this.listBox_Sprites = new System.Windows.Forms.ListBox();
-            this.darkContextMenu_Sprites = new DarkUI.Controls.DarkContextMenu();
-            this.addSpriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copySelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openImageFolderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox_BustupSettings = new System.Windows.Forms.GroupBox();
-            this.panel_BustupSettings = new System.Windows.Forms.Panel();
-            this.pnl_BustupSettings = new System.Windows.Forms.Panel();
-            this.tlp_BustupSettings = new System.Windows.Forms.TableLayoutPanel();
-            this.tlp_MouthImg3Browse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_MouthImg3Browse = new DarkUI.Controls.DarkTextBox();
-            this.btn_MouthImg3Browse = new DarkUI.Controls.DarkButton();
-            this.tlp_MouthImg2Browse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_MouthImg2Browse = new DarkUI.Controls.DarkTextBox();
-            this.btn_MouthImg2Browse = new DarkUI.Controls.DarkButton();
-            this.tlp_MouthImg1Browse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_MouthImg1Browse = new DarkUI.Controls.DarkTextBox();
-            this.btn_MouthImg1Browse = new DarkUI.Controls.DarkButton();
-            this.tlp_BlinkImg2Browse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_BlinkImg2Browse = new DarkUI.Controls.DarkTextBox();
-            this.btn_BlinkImg2Browse = new DarkUI.Controls.DarkButton();
-            this.tlp_BlinkImg1Browse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_BlinkImg1Browse = new DarkUI.Controls.DarkTextBox();
-            this.btn_BlinkImg1Browse = new DarkUI.Controls.DarkButton();
-            this.lbl_BlinkImg1Browse = new DarkUI.Controls.DarkLabel();
-            this.lbl_BaseImage = new DarkUI.Controls.DarkLabel();
-            this.tlp_BaseImgBrowse = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_BaseImgBrowse = new DarkUI.Controls.DarkTextBox();
-            this.btn_BaseImgBrowse = new DarkUI.Controls.DarkButton();
-            this.tlp_BustupID = new System.Windows.Forms.TableLayoutPanel();
-            this.num_SubID = new DarkUI.Controls.DarkNumericUpDown();
-            this.num_MinorID = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_MajorID = new DarkUI.Controls.DarkLabel();
-            this.lbl_MinorID = new DarkUI.Controls.DarkLabel();
-            this.num_MajorID = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_SubID = new DarkUI.Controls.DarkLabel();
-            this.comboBox_Animation = new System.Windows.Forms.ComboBox();
-            this.lbl_Animation = new DarkUI.Controls.DarkLabel();
-            this.tlp_MouthPos = new System.Windows.Forms.TableLayoutPanel();
-            this.num_MouthPosY = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_MouthPosX = new DarkUI.Controls.DarkLabel();
-            this.lbl_MouthPosY = new DarkUI.Controls.DarkLabel();
-            this.num_MouthPosX = new DarkUI.Controls.DarkNumericUpDown();
-            this.tlp_EyePos = new System.Windows.Forms.TableLayoutPanel();
-            this.num_EyePosY = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_EyePosX = new DarkUI.Controls.DarkLabel();
-            this.lbl_EyePosY = new DarkUI.Controls.DarkLabel();
-            this.num_EyePosX = new DarkUI.Controls.DarkNumericUpDown();
-            this.tlp_BasePos = new System.Windows.Forms.TableLayoutPanel();
-            this.num_BasePosY = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_BasePosX = new DarkUI.Controls.DarkLabel();
-            this.lbl_BasePosY = new DarkUI.Controls.DarkLabel();
-            this.num_BasePosX = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_MouthPos = new DarkUI.Controls.DarkLabel();
-            this.lbl_EyePos = new DarkUI.Controls.DarkLabel();
-            this.lbl_BasePos = new DarkUI.Controls.DarkLabel();
-            this.lbl_BlinkImg2Browse = new DarkUI.Controls.DarkLabel();
-            this.lbl_MouthImg1Browse = new DarkUI.Controls.DarkLabel();
-            this.lbl_MouthImg2Browse = new DarkUI.Controls.DarkLabel();
-            this.lbl_MouthImg3Browse = new DarkUI.Controls.DarkLabel();
-            this.groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
-            this.pnl_ImgPreview = new System.Windows.Forms.Panel();
-            this.pictureBox_Tex = new System.Windows.Forms.PictureBox();
-            this.darkContextMenu_Texture = new DarkUI.Controls.DarkContextMenu();
-            this.openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox_PreviewSettings = new System.Windows.Forms.GroupBox();
-            this.panel_PreviewSettings = new System.Windows.Forms.Panel();
-            this.tlp_PreviewSettings = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_ImagesPath = new DarkUI.Controls.DarkLabel();
-            this.tlp_ImagesPath = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_ImagesPath = new DarkUI.Controls.DarkTextBox();
-            this.btn_ImagesPath = new DarkUI.Controls.DarkButton();
-            this.tlp_PreviewFrame = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_EyeFrame = new DarkUI.Controls.DarkLabel();
-            this.num_MouthFrame = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_MouthFrame = new DarkUI.Controls.DarkLabel();
-            this.num_EyeFrame = new DarkUI.Controls.DarkNumericUpDown();
-            this.lbl_Scale = new DarkUI.Controls.DarkLabel();
-            this.num_Scale = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkMenuStrip_MainMenu = new DarkUI.Controls.DarkMenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.p5RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.p5PS3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventBustupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.naviBustupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventBustupProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.naviBustupProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tlp_Main.SuspendLayout();
-            this.darkContextMenu_Sprites.SuspendLayout();
-            this.groupBox_BustupSettings.SuspendLayout();
-            this.panel_BustupSettings.SuspendLayout();
-            this.pnl_BustupSettings.SuspendLayout();
-            this.tlp_BustupSettings.SuspendLayout();
-            this.tlp_MouthImg3Browse.SuspendLayout();
-            this.tlp_MouthImg2Browse.SuspendLayout();
-            this.tlp_MouthImg1Browse.SuspendLayout();
-            this.tlp_BlinkImg2Browse.SuspendLayout();
-            this.tlp_BlinkImg1Browse.SuspendLayout();
-            this.tlp_BaseImgBrowse.SuspendLayout();
-            this.tlp_BustupID.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SubID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MinorID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MajorID)).BeginInit();
-            this.tlp_MouthPos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthPosY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthPosX)).BeginInit();
-            this.tlp_EyePos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyePosY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyePosX)).BeginInit();
-            this.tlp_BasePos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_BasePosY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_BasePosX)).BeginInit();
-            this.groupBox_Texture.SuspendLayout();
-            this.pnl_ImgPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).BeginInit();
-            this.darkContextMenu_Texture.SuspendLayout();
-            this.groupBox_PreviewSettings.SuspendLayout();
-            this.panel_PreviewSettings.SuspendLayout();
-            this.tlp_PreviewSettings.SuspendLayout();
-            this.tlp_ImagesPath.SuspendLayout();
-            this.tlp_PreviewFrame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthFrame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).BeginInit();
-            this.darkMenuStrip_MainMenu.SuspendLayout();
-            this.SuspendLayout();
+            tlp_Main = new System.Windows.Forms.TableLayoutPanel();
+            listBox_Sprites = new System.Windows.Forms.ListBox();
+            darkContextMenu_Sprites = new DarkUI.Controls.DarkContextMenu();
+            addSpriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            copySelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            pasteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            openImageFolderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            groupBox_BustupSettings = new System.Windows.Forms.GroupBox();
+            panel_BustupSettings = new System.Windows.Forms.Panel();
+            pnl_BustupSettings = new System.Windows.Forms.Panel();
+            tlp_BustupSettings = new System.Windows.Forms.TableLayoutPanel();
+            txt_OutfitName = new DarkUI.Controls.DarkTextBox();
+            txt_ExpressionName = new DarkUI.Controls.DarkTextBox();
+            txt_CharaName = new DarkUI.Controls.DarkTextBox();
+            tlp_MouthImg3Browse = new System.Windows.Forms.TableLayoutPanel();
+            txt_MouthImg3Browse = new DarkUI.Controls.DarkTextBox();
+            btn_MouthImg3Browse = new DarkUI.Controls.DarkButton();
+            tlp_MouthImg2Browse = new System.Windows.Forms.TableLayoutPanel();
+            txt_MouthImg2Browse = new DarkUI.Controls.DarkTextBox();
+            btn_MouthImg2Browse = new DarkUI.Controls.DarkButton();
+            tlp_MouthImg1Browse = new System.Windows.Forms.TableLayoutPanel();
+            txt_MouthImg1Browse = new DarkUI.Controls.DarkTextBox();
+            btn_MouthImg1Browse = new DarkUI.Controls.DarkButton();
+            tlp_BlinkImg2Browse = new System.Windows.Forms.TableLayoutPanel();
+            txt_BlinkImg2Browse = new DarkUI.Controls.DarkTextBox();
+            btn_BlinkImg2Browse = new DarkUI.Controls.DarkButton();
+            tlp_BlinkImg1Browse = new System.Windows.Forms.TableLayoutPanel();
+            txt_BlinkImg1Browse = new DarkUI.Controls.DarkTextBox();
+            btn_BlinkImg1Browse = new DarkUI.Controls.DarkButton();
+            lbl_BlinkImg1Browse = new DarkUI.Controls.DarkLabel();
+            lbl_BaseImage = new DarkUI.Controls.DarkLabel();
+            tlp_BaseImgBrowse = new System.Windows.Forms.TableLayoutPanel();
+            txt_BaseImgBrowse = new DarkUI.Controls.DarkTextBox();
+            btn_BaseImgBrowse = new DarkUI.Controls.DarkButton();
+            tlp_BustupID = new System.Windows.Forms.TableLayoutPanel();
+            num_SubID = new DarkUI.Controls.DarkNumericUpDown();
+            num_MinorID = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_MajorID = new DarkUI.Controls.DarkLabel();
+            lbl_MinorID = new DarkUI.Controls.DarkLabel();
+            num_MajorID = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_SubID = new DarkUI.Controls.DarkLabel();
+            comboBox_Animation = new System.Windows.Forms.ComboBox();
+            lbl_Animation = new DarkUI.Controls.DarkLabel();
+            tlp_MouthPos = new System.Windows.Forms.TableLayoutPanel();
+            num_MouthPosY = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_MouthPosX = new DarkUI.Controls.DarkLabel();
+            lbl_MouthPosY = new DarkUI.Controls.DarkLabel();
+            num_MouthPosX = new DarkUI.Controls.DarkNumericUpDown();
+            tlp_EyePos = new System.Windows.Forms.TableLayoutPanel();
+            num_EyePosY = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_EyePosX = new DarkUI.Controls.DarkLabel();
+            lbl_EyePosY = new DarkUI.Controls.DarkLabel();
+            num_EyePosX = new DarkUI.Controls.DarkNumericUpDown();
+            tlp_BasePos = new System.Windows.Forms.TableLayoutPanel();
+            num_BasePosY = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_BasePosX = new DarkUI.Controls.DarkLabel();
+            lbl_BasePosY = new DarkUI.Controls.DarkLabel();
+            num_BasePosX = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_MouthPos = new DarkUI.Controls.DarkLabel();
+            lbl_EyePos = new DarkUI.Controls.DarkLabel();
+            lbl_BasePos = new DarkUI.Controls.DarkLabel();
+            lbl_BlinkImg2Browse = new DarkUI.Controls.DarkLabel();
+            lbl_MouthImg1Browse = new DarkUI.Controls.DarkLabel();
+            lbl_MouthImg2Browse = new DarkUI.Controls.DarkLabel();
+            lbl_MouthImg3Browse = new DarkUI.Controls.DarkLabel();
+            lbl_CharaName = new DarkUI.Controls.DarkLabel();
+            lbl_ExpressionName = new DarkUI.Controls.DarkLabel();
+            lbl_OutfitName = new DarkUI.Controls.DarkLabel();
+            groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
+            pnl_ImgPreview = new System.Windows.Forms.Panel();
+            pictureBox_Tex = new System.Windows.Forms.PictureBox();
+            darkContextMenu_Texture = new DarkUI.Controls.DarkContextMenu();
+            openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            groupBox_PreviewSettings = new System.Windows.Forms.GroupBox();
+            panel_PreviewSettings = new System.Windows.Forms.Panel();
+            tlp_PreviewSettings = new System.Windows.Forms.TableLayoutPanel();
+            lbl_ImagesPath = new DarkUI.Controls.DarkLabel();
+            tlp_ImagesPath = new System.Windows.Forms.TableLayoutPanel();
+            txt_ImagesPath = new DarkUI.Controls.DarkTextBox();
+            btn_ImagesPath = new DarkUI.Controls.DarkButton();
+            tlp_PreviewFrame = new System.Windows.Forms.TableLayoutPanel();
+            lbl_EyeFrame = new DarkUI.Controls.DarkLabel();
+            num_MouthFrame = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_MouthFrame = new DarkUI.Controls.DarkLabel();
+            num_EyeFrame = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_Scale = new DarkUI.Controls.DarkLabel();
+            num_Scale = new DarkUI.Controls.DarkNumericUpDown();
+            darkMenuStrip_MainMenu = new DarkUI.Controls.DarkMenuStrip();
+            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            p5RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            eventBustupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            naviBustupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            p5PS3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            eventBustupProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            naviBustupProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            tlp_Main.SuspendLayout();
+            darkContextMenu_Sprites.SuspendLayout();
+            groupBox_BustupSettings.SuspendLayout();
+            panel_BustupSettings.SuspendLayout();
+            pnl_BustupSettings.SuspendLayout();
+            tlp_BustupSettings.SuspendLayout();
+            tlp_MouthImg3Browse.SuspendLayout();
+            tlp_MouthImg2Browse.SuspendLayout();
+            tlp_MouthImg1Browse.SuspendLayout();
+            tlp_BlinkImg2Browse.SuspendLayout();
+            tlp_BlinkImg1Browse.SuspendLayout();
+            tlp_BaseImgBrowse.SuspendLayout();
+            tlp_BustupID.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_SubID).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_MinorID).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_MajorID).BeginInit();
+            tlp_MouthPos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_MouthPosY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_MouthPosX).BeginInit();
+            tlp_EyePos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_EyePosY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_EyePosX).BeginInit();
+            tlp_BasePos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_BasePosY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_BasePosX).BeginInit();
+            groupBox_Texture.SuspendLayout();
+            pnl_ImgPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Tex).BeginInit();
+            darkContextMenu_Texture.SuspendLayout();
+            groupBox_PreviewSettings.SuspendLayout();
+            panel_PreviewSettings.SuspendLayout();
+            tlp_PreviewSettings.SuspendLayout();
+            tlp_ImagesPath.SuspendLayout();
+            tlp_PreviewFrame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_MouthFrame).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_EyeFrame).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_Scale).BeginInit();
+            darkMenuStrip_MainMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // tlp_Main
             // 
-            this.tlp_Main.AllowDrop = true;
-            this.tlp_Main.ColumnCount = 2;
-            this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.Controls.Add(this.listBox_Sprites, 0, 0);
-            this.tlp_Main.Controls.Add(this.groupBox_BustupSettings, 0, 1);
-            this.tlp_Main.Controls.Add(this.groupBox_Texture, 1, 0);
-            this.tlp_Main.Controls.Add(this.groupBox_PreviewSettings, 1, 2);
-            this.tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_Main.Location = new System.Drawing.Point(0, 28);
-            this.tlp_Main.Name = "tlp_Main";
-            this.tlp_Main.RowCount = 3;
-            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_Main.Size = new System.Drawing.Size(982, 575);
-            this.tlp_Main.TabIndex = 0;
+            tlp_Main.AllowDrop = true;
+            tlp_Main.ColumnCount = 2;
+            tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlp_Main.Controls.Add(listBox_Sprites, 0, 0);
+            tlp_Main.Controls.Add(groupBox_BustupSettings, 0, 1);
+            tlp_Main.Controls.Add(groupBox_Texture, 1, 0);
+            tlp_Main.Controls.Add(groupBox_PreviewSettings, 1, 2);
+            tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_Main.Location = new System.Drawing.Point(0, 28);
+            tlp_Main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_Main.Name = "tlp_Main";
+            tlp_Main.RowCount = 3;
+            tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_Main.Size = new System.Drawing.Size(982, 726);
+            tlp_Main.TabIndex = 0;
             // 
             // listBox_Sprites
             // 
-            this.listBox_Sprites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.listBox_Sprites.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox_Sprites.ContextMenuStrip = this.darkContextMenu_Sprites;
-            this.listBox_Sprites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox_Sprites.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.listBox_Sprites.FormattingEnabled = true;
-            this.listBox_Sprites.ItemHeight = 16;
-            this.listBox_Sprites.Location = new System.Drawing.Point(3, 3);
-            this.listBox_Sprites.Name = "listBox_Sprites";
-            this.listBox_Sprites.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox_Sprites.Size = new System.Drawing.Size(485, 281);
-            this.listBox_Sprites.TabIndex = 1;
-            this.listBox_Sprites.SelectedIndexChanged += new System.EventHandler(this.SelectedBustup_Changed);
-            this.listBox_Sprites.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDown);
+            listBox_Sprites.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            listBox_Sprites.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            listBox_Sprites.ContextMenuStrip = darkContextMenu_Sprites;
+            listBox_Sprites.Dock = System.Windows.Forms.DockStyle.Fill;
+            listBox_Sprites.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            listBox_Sprites.FormattingEnabled = true;
+            listBox_Sprites.Location = new System.Drawing.Point(3, 4);
+            listBox_Sprites.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            listBox_Sprites.Name = "listBox_Sprites";
+            listBox_Sprites.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            listBox_Sprites.Size = new System.Drawing.Size(485, 355);
+            listBox_Sprites.TabIndex = 1;
+            listBox_Sprites.SelectedIndexChanged += SelectedBustup_Changed;
+            listBox_Sprites.KeyDown += KeyDown;
             // 
             // darkContextMenu_Sprites
             // 
-            this.darkContextMenu_Sprites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkContextMenu_Sprites.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkContextMenu_Sprites.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.darkContextMenu_Sprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSpriteToolStripMenuItem,
-            this.removeSelectedToolStripMenuItem,
-            this.renameSelectedToolStripMenuItem,
-            this.copySelectedToolStripMenuItem,
-            this.pasteSelectedToolStripMenuItem,
-            this.openImageFolderToolStripMenuItem1});
-            this.darkContextMenu_Sprites.Name = "darkContextMenu_Sprites";
-            this.darkContextMenu_Sprites.Size = new System.Drawing.Size(207, 148);
+            darkContextMenu_Sprites.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            darkContextMenu_Sprites.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            darkContextMenu_Sprites.ImageScalingSize = new System.Drawing.Size(20, 20);
+            darkContextMenu_Sprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { addSpriteToolStripMenuItem, removeSelectedToolStripMenuItem, copySelectedToolStripMenuItem, pasteSelectedToolStripMenuItem, openImageFolderToolStripMenuItem1 });
+            darkContextMenu_Sprites.Name = "darkContextMenu_Sprites";
+            darkContextMenu_Sprites.Size = new System.Drawing.Size(211, 152);
             // 
             // addSpriteToolStripMenuItem
             // 
-            this.addSpriteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.addSpriteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.addSpriteToolStripMenuItem.Name = "addSpriteToolStripMenuItem";
-            this.addSpriteToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.addSpriteToolStripMenuItem.Text = "Add";
-            this.addSpriteToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
+            addSpriteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            addSpriteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            addSpriteToolStripMenuItem.Name = "addSpriteToolStripMenuItem";
+            addSpriteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            addSpriteToolStripMenuItem.Text = "Add";
+            addSpriteToolStripMenuItem.Click += Add_Click;
             // 
             // removeSelectedToolStripMenuItem
             // 
-            this.removeSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.removeSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
-            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.removeSelectedToolStripMenuItem.Text = "Remove";
-            this.removeSelectedToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
-            // 
-            // renameSelectedToolStripMenuItem
-            // 
-            this.renameSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.renameSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.renameSelectedToolStripMenuItem.Name = "renameSelectedToolStripMenuItem";
-            this.renameSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.renameSelectedToolStripMenuItem.Text = "Rename";
-            this.renameSelectedToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
+            removeSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            removeSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
+            removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            removeSelectedToolStripMenuItem.Text = "Remove";
+            removeSelectedToolStripMenuItem.Click += Remove_Click;
             // 
             // copySelectedToolStripMenuItem
             // 
-            this.copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
-            this.copySelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.copySelectedToolStripMenuItem.Text = "Copy";
-            this.copySelectedToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
+            copySelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            copySelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            copySelectedToolStripMenuItem.Name = "copySelectedToolStripMenuItem";
+            copySelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            copySelectedToolStripMenuItem.Text = "Copy";
+            copySelectedToolStripMenuItem.Click += Copy_Click;
             // 
             // pasteSelectedToolStripMenuItem
             // 
-            this.pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
-            this.pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.pasteSelectedToolStripMenuItem.Text = "Paste";
+            pasteSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            pasteSelectedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            pasteSelectedToolStripMenuItem.Name = "pasteSelectedToolStripMenuItem";
+            pasteSelectedToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            pasteSelectedToolStripMenuItem.Text = "Paste";
             // 
             // openImageFolderToolStripMenuItem1
             // 
-            this.openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
-            this.openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(206, 24);
-            this.openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
-            this.openImageFolderToolStripMenuItem1.Click += new System.EventHandler(this.OpenImageFolder_Click);
+            openImageFolderToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            openImageFolderToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            openImageFolderToolStripMenuItem1.Name = "openImageFolderToolStripMenuItem1";
+            openImageFolderToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            openImageFolderToolStripMenuItem1.Text = "Open Image Folder";
+            openImageFolderToolStripMenuItem1.Click += OpenImageFolder_Click;
             // 
             // groupBox_BustupSettings
             // 
-            this.groupBox_BustupSettings.Controls.Add(this.panel_BustupSettings);
-            this.groupBox_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_BustupSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_BustupSettings.Location = new System.Drawing.Point(3, 290);
-            this.groupBox_BustupSettings.Name = "groupBox_BustupSettings";
-            this.tlp_Main.SetRowSpan(this.groupBox_BustupSettings, 2);
-            this.groupBox_BustupSettings.Size = new System.Drawing.Size(485, 282);
-            this.groupBox_BustupSettings.TabIndex = 2;
-            this.groupBox_BustupSettings.TabStop = false;
-            this.groupBox_BustupSettings.Text = "Bustup Parameters";
+            groupBox_BustupSettings.Controls.Add(panel_BustupSettings);
+            groupBox_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupBox_BustupSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            groupBox_BustupSettings.Location = new System.Drawing.Point(3, 367);
+            groupBox_BustupSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            groupBox_BustupSettings.Name = "groupBox_BustupSettings";
+            groupBox_BustupSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_Main.SetRowSpan(groupBox_BustupSettings, 2);
+            groupBox_BustupSettings.Size = new System.Drawing.Size(485, 355);
+            groupBox_BustupSettings.TabIndex = 2;
+            groupBox_BustupSettings.TabStop = false;
+            groupBox_BustupSettings.Text = "Bustup Parameters";
             // 
             // panel_BustupSettings
             // 
-            this.panel_BustupSettings.AutoScroll = true;
-            this.panel_BustupSettings.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.panel_BustupSettings.Controls.Add(this.pnl_BustupSettings);
-            this.panel_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_BustupSettings.Location = new System.Drawing.Point(3, 18);
-            this.panel_BustupSettings.Name = "panel_BustupSettings";
-            this.panel_BustupSettings.Size = new System.Drawing.Size(479, 261);
-            this.panel_BustupSettings.TabIndex = 0;
+            panel_BustupSettings.AutoScroll = true;
+            panel_BustupSettings.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            panel_BustupSettings.Controls.Add(pnl_BustupSettings);
+            panel_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_BustupSettings.Location = new System.Drawing.Point(3, 24);
+            panel_BustupSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel_BustupSettings.Name = "panel_BustupSettings";
+            panel_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            panel_BustupSettings.TabIndex = 0;
             // 
             // pnl_BustupSettings
             // 
-            this.pnl_BustupSettings.AutoSize = true;
-            this.pnl_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnl_BustupSettings.Controls.Add(this.tlp_BustupSettings);
-            this.pnl_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_BustupSettings.Location = new System.Drawing.Point(0, 0);
-            this.pnl_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_BustupSettings.Name = "pnl_BustupSettings";
-            this.pnl_BustupSettings.Size = new System.Drawing.Size(479, 261);
-            this.pnl_BustupSettings.TabIndex = 2;
+            pnl_BustupSettings.AutoSize = true;
+            pnl_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            pnl_BustupSettings.Controls.Add(tlp_BustupSettings);
+            pnl_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            pnl_BustupSettings.Location = new System.Drawing.Point(0, 0);
+            pnl_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
+            pnl_BustupSettings.Name = "pnl_BustupSettings";
+            pnl_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            pnl_BustupSettings.TabIndex = 2;
             // 
             // tlp_BustupSettings
             // 
-            this.tlp_BustupSettings.AutoScroll = true;
-            this.tlp_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlp_BustupSettings.ColumnCount = 3;
-            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.64706F));
-            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.35294F));
-            this.tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg3Browse, 1, 10);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg2Browse, 1, 9);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthImg1Browse, 1, 8);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_BlinkImg2Browse, 1, 7);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_BlinkImg1Browse, 1, 6);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_BlinkImg1Browse, 0, 6);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_BaseImage, 0, 5);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_BaseImgBrowse, 1, 5);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_BustupID, 0, 0);
-            this.tlp_BustupSettings.Controls.Add(this.comboBox_Animation, 1, 4);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_Animation, 0, 4);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_MouthPos, 1, 3);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_EyePos, 1, 2);
-            this.tlp_BustupSettings.Controls.Add(this.tlp_BasePos, 1, 1);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthPos, 0, 3);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_EyePos, 0, 2);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_BasePos, 0, 1);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_BlinkImg2Browse, 0, 7);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg1Browse, 0, 8);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg2Browse, 0, 9);
-            this.tlp_BustupSettings.Controls.Add(this.lbl_MouthImg3Browse, 0, 10);
-            this.tlp_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BustupSettings.Location = new System.Drawing.Point(0, 0);
-            this.tlp_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.tlp_BustupSettings.Name = "tlp_BustupSettings";
-            this.tlp_BustupSettings.RowCount = 11;
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_BustupSettings.Size = new System.Drawing.Size(479, 261);
-            this.tlp_BustupSettings.TabIndex = 1;
+            tlp_BustupSettings.AutoScroll = true;
+            tlp_BustupSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlp_BustupSettings.ColumnCount = 3;
+            tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.64706F));
+            tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.35294F));
+            tlp_BustupSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlp_BustupSettings.Controls.Add(txt_OutfitName, 1, 13);
+            tlp_BustupSettings.Controls.Add(txt_ExpressionName, 1, 12);
+            tlp_BustupSettings.Controls.Add(txt_CharaName, 1, 11);
+            tlp_BustupSettings.Controls.Add(tlp_MouthImg3Browse, 1, 10);
+            tlp_BustupSettings.Controls.Add(tlp_MouthImg2Browse, 1, 9);
+            tlp_BustupSettings.Controls.Add(tlp_MouthImg1Browse, 1, 8);
+            tlp_BustupSettings.Controls.Add(tlp_BlinkImg2Browse, 1, 7);
+            tlp_BustupSettings.Controls.Add(tlp_BlinkImg1Browse, 1, 6);
+            tlp_BustupSettings.Controls.Add(lbl_BlinkImg1Browse, 0, 6);
+            tlp_BustupSettings.Controls.Add(lbl_BaseImage, 0, 5);
+            tlp_BustupSettings.Controls.Add(tlp_BaseImgBrowse, 1, 5);
+            tlp_BustupSettings.Controls.Add(tlp_BustupID, 0, 0);
+            tlp_BustupSettings.Controls.Add(comboBox_Animation, 1, 4);
+            tlp_BustupSettings.Controls.Add(lbl_Animation, 0, 4);
+            tlp_BustupSettings.Controls.Add(tlp_MouthPos, 1, 3);
+            tlp_BustupSettings.Controls.Add(tlp_EyePos, 1, 2);
+            tlp_BustupSettings.Controls.Add(tlp_BasePos, 1, 1);
+            tlp_BustupSettings.Controls.Add(lbl_MouthPos, 0, 3);
+            tlp_BustupSettings.Controls.Add(lbl_EyePos, 0, 2);
+            tlp_BustupSettings.Controls.Add(lbl_BasePos, 0, 1);
+            tlp_BustupSettings.Controls.Add(lbl_BlinkImg2Browse, 0, 7);
+            tlp_BustupSettings.Controls.Add(lbl_MouthImg1Browse, 0, 8);
+            tlp_BustupSettings.Controls.Add(lbl_MouthImg2Browse, 0, 9);
+            tlp_BustupSettings.Controls.Add(lbl_MouthImg3Browse, 0, 10);
+            tlp_BustupSettings.Controls.Add(lbl_CharaName, 0, 11);
+            tlp_BustupSettings.Controls.Add(lbl_ExpressionName, 0, 12);
+            tlp_BustupSettings.Controls.Add(lbl_OutfitName, 0, 13);
+            tlp_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BustupSettings.Location = new System.Drawing.Point(0, 0);
+            tlp_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
+            tlp_BustupSettings.Name = "tlp_BustupSettings";
+            tlp_BustupSettings.RowCount = 15;
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlp_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            tlp_BustupSettings.TabIndex = 1;
+            // 
+            // txt_OutfitName
+            // 
+            txt_OutfitName.AllowDrop = true;
+            txt_OutfitName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_OutfitName.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_OutfitName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_OutfitName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_OutfitName.Location = new System.Drawing.Point(87, 823);
+            txt_OutfitName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_OutfitName.Name = "txt_OutfitName";
+            txt_OutfitName.Size = new System.Drawing.Size(388, 27);
+            txt_OutfitName.TabIndex = 26;
+            txt_OutfitName.TextChanged += ImagePath_Changed;
+            // 
+            // txt_ExpressionName
+            // 
+            txt_ExpressionName.AllowDrop = true;
+            txt_ExpressionName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_ExpressionName.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_ExpressionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_ExpressionName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_ExpressionName.Location = new System.Drawing.Point(87, 761);
+            txt_ExpressionName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_ExpressionName.Name = "txt_ExpressionName";
+            txt_ExpressionName.Size = new System.Drawing.Size(388, 27);
+            txt_ExpressionName.TabIndex = 25;
+            txt_ExpressionName.TextChanged += ImagePath_Changed;
+            // 
+            // txt_CharaName
+            // 
+            txt_CharaName.AllowDrop = true;
+            txt_CharaName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_CharaName.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_CharaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_CharaName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_CharaName.Location = new System.Drawing.Point(87, 699);
+            txt_CharaName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_CharaName.Name = "txt_CharaName";
+            txt_CharaName.Size = new System.Drawing.Size(388, 27);
+            txt_CharaName.TabIndex = 24;
+            txt_CharaName.TextChanged += ImagePath_Changed;
             // 
             // tlp_MouthImg3Browse
             // 
-            this.tlp_MouthImg3Browse.AllowDrop = true;
-            this.tlp_MouthImg3Browse.ColumnCount = 2;
-            this.tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_MouthImg3Browse.Controls.Add(this.txt_MouthImg3Browse, 0, 0);
-            this.tlp_MouthImg3Browse.Controls.Add(this.btn_MouthImg3Browse, 1, 0);
-            this.tlp_MouthImg3Browse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthImg3Browse.Location = new System.Drawing.Point(87, 503);
-            this.tlp_MouthImg3Browse.Name = "tlp_MouthImg3Browse";
-            this.tlp_MouthImg3Browse.RowCount = 1;
-            this.tlp_MouthImg3Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthImg3Browse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_MouthImg3Browse.TabIndex = 20;
+            tlp_MouthImg3Browse.AllowDrop = true;
+            tlp_MouthImg3Browse.ColumnCount = 2;
+            tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_MouthImg3Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_MouthImg3Browse.Controls.Add(txt_MouthImg3Browse, 0, 0);
+            tlp_MouthImg3Browse.Controls.Add(btn_MouthImg3Browse, 1, 0);
+            tlp_MouthImg3Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_MouthImg3Browse.Location = new System.Drawing.Point(87, 624);
+            tlp_MouthImg3Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_MouthImg3Browse.Name = "tlp_MouthImg3Browse";
+            tlp_MouthImg3Browse.RowCount = 1;
+            tlp_MouthImg3Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_MouthImg3Browse.Size = new System.Drawing.Size(388, 54);
+            tlp_MouthImg3Browse.TabIndex = 20;
             // 
             // txt_MouthImg3Browse
             // 
-            this.txt_MouthImg3Browse.AllowDrop = true;
-            this.txt_MouthImg3Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MouthImg3Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_MouthImg3Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_MouthImg3Browse.Location = new System.Drawing.Point(3, 11);
-            this.txt_MouthImg3Browse.Name = "txt_MouthImg3Browse";
-            this.txt_MouthImg3Browse.Size = new System.Drawing.Size(285, 22);
-            this.txt_MouthImg3Browse.TabIndex = 0;
-            this.txt_MouthImg3Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_MouthImg3Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_MouthImg3Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_MouthImg3Browse.AllowDrop = true;
+            txt_MouthImg3Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_MouthImg3Browse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_MouthImg3Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_MouthImg3Browse.Location = new System.Drawing.Point(3, 13);
+            txt_MouthImg3Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_MouthImg3Browse.Name = "txt_MouthImg3Browse";
+            txt_MouthImg3Browse.Size = new System.Drawing.Size(285, 27);
+            txt_MouthImg3Browse.TabIndex = 0;
+            txt_MouthImg3Browse.TextChanged += ImagePath_Changed;
+            txt_MouthImg3Browse.DragDrop += DragDrop_Txt;
+            txt_MouthImg3Browse.DragEnter += DragEnter;
             // 
             // btn_MouthImg3Browse
             // 
-            this.btn_MouthImg3Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_MouthImg3Browse.Location = new System.Drawing.Point(294, 10);
-            this.btn_MouthImg3Browse.Name = "btn_MouthImg3Browse";
-            this.btn_MouthImg3Browse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_MouthImg3Browse.Size = new System.Drawing.Size(48, 23);
-            this.btn_MouthImg3Browse.TabIndex = 1;
-            this.btn_MouthImg3Browse.Text = "...";
-            this.btn_MouthImg3Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_MouthImg3Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_MouthImg3Browse.Location = new System.Drawing.Point(294, 12);
+            btn_MouthImg3Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_MouthImg3Browse.Name = "btn_MouthImg3Browse";
+            btn_MouthImg3Browse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_MouthImg3Browse.Size = new System.Drawing.Size(48, 29);
+            btn_MouthImg3Browse.TabIndex = 1;
+            btn_MouthImg3Browse.Text = "...";
+            btn_MouthImg3Browse.Click += BrowseImagePath_Click;
             // 
             // tlp_MouthImg2Browse
             // 
-            this.tlp_MouthImg2Browse.AllowDrop = true;
-            this.tlp_MouthImg2Browse.ColumnCount = 2;
-            this.tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_MouthImg2Browse.Controls.Add(this.txt_MouthImg2Browse, 0, 0);
-            this.tlp_MouthImg2Browse.Controls.Add(this.btn_MouthImg2Browse, 1, 0);
-            this.tlp_MouthImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthImg2Browse.Location = new System.Drawing.Point(87, 453);
-            this.tlp_MouthImg2Browse.Name = "tlp_MouthImg2Browse";
-            this.tlp_MouthImg2Browse.RowCount = 1;
-            this.tlp_MouthImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthImg2Browse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_MouthImg2Browse.TabIndex = 19;
+            tlp_MouthImg2Browse.AllowDrop = true;
+            tlp_MouthImg2Browse.ColumnCount = 2;
+            tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_MouthImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_MouthImg2Browse.Controls.Add(txt_MouthImg2Browse, 0, 0);
+            tlp_MouthImg2Browse.Controls.Add(btn_MouthImg2Browse, 1, 0);
+            tlp_MouthImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_MouthImg2Browse.Location = new System.Drawing.Point(87, 562);
+            tlp_MouthImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_MouthImg2Browse.Name = "tlp_MouthImg2Browse";
+            tlp_MouthImg2Browse.RowCount = 1;
+            tlp_MouthImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_MouthImg2Browse.Size = new System.Drawing.Size(388, 54);
+            tlp_MouthImg2Browse.TabIndex = 19;
             // 
             // txt_MouthImg2Browse
             // 
-            this.txt_MouthImg2Browse.AllowDrop = true;
-            this.txt_MouthImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MouthImg2Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_MouthImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_MouthImg2Browse.Location = new System.Drawing.Point(3, 11);
-            this.txt_MouthImg2Browse.Name = "txt_MouthImg2Browse";
-            this.txt_MouthImg2Browse.Size = new System.Drawing.Size(285, 22);
-            this.txt_MouthImg2Browse.TabIndex = 0;
-            this.txt_MouthImg2Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_MouthImg2Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_MouthImg2Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_MouthImg2Browse.AllowDrop = true;
+            txt_MouthImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_MouthImg2Browse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_MouthImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_MouthImg2Browse.Location = new System.Drawing.Point(3, 13);
+            txt_MouthImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_MouthImg2Browse.Name = "txt_MouthImg2Browse";
+            txt_MouthImg2Browse.Size = new System.Drawing.Size(285, 27);
+            txt_MouthImg2Browse.TabIndex = 0;
+            txt_MouthImg2Browse.TextChanged += ImagePath_Changed;
+            txt_MouthImg2Browse.DragDrop += DragDrop_Txt;
+            txt_MouthImg2Browse.DragEnter += DragEnter;
             // 
             // btn_MouthImg2Browse
             // 
-            this.btn_MouthImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_MouthImg2Browse.Location = new System.Drawing.Point(294, 10);
-            this.btn_MouthImg2Browse.Name = "btn_MouthImg2Browse";
-            this.btn_MouthImg2Browse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_MouthImg2Browse.Size = new System.Drawing.Size(48, 23);
-            this.btn_MouthImg2Browse.TabIndex = 1;
-            this.btn_MouthImg2Browse.Text = "...";
-            this.btn_MouthImg2Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_MouthImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_MouthImg2Browse.Location = new System.Drawing.Point(294, 12);
+            btn_MouthImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_MouthImg2Browse.Name = "btn_MouthImg2Browse";
+            btn_MouthImg2Browse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_MouthImg2Browse.Size = new System.Drawing.Size(48, 29);
+            btn_MouthImg2Browse.TabIndex = 1;
+            btn_MouthImg2Browse.Text = "...";
+            btn_MouthImg2Browse.Click += BrowseImagePath_Click;
             // 
             // tlp_MouthImg1Browse
             // 
-            this.tlp_MouthImg1Browse.AllowDrop = true;
-            this.tlp_MouthImg1Browse.ColumnCount = 2;
-            this.tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_MouthImg1Browse.Controls.Add(this.txt_MouthImg1Browse, 0, 0);
-            this.tlp_MouthImg1Browse.Controls.Add(this.btn_MouthImg1Browse, 1, 0);
-            this.tlp_MouthImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthImg1Browse.Location = new System.Drawing.Point(87, 403);
-            this.tlp_MouthImg1Browse.Name = "tlp_MouthImg1Browse";
-            this.tlp_MouthImg1Browse.RowCount = 1;
-            this.tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlp_MouthImg1Browse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_MouthImg1Browse.TabIndex = 18;
+            tlp_MouthImg1Browse.AllowDrop = true;
+            tlp_MouthImg1Browse.ColumnCount = 2;
+            tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_MouthImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_MouthImg1Browse.Controls.Add(txt_MouthImg1Browse, 0, 0);
+            tlp_MouthImg1Browse.Controls.Add(btn_MouthImg1Browse, 1, 0);
+            tlp_MouthImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_MouthImg1Browse.Location = new System.Drawing.Point(87, 500);
+            tlp_MouthImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_MouthImg1Browse.Name = "tlp_MouthImg1Browse";
+            tlp_MouthImg1Browse.RowCount = 1;
+            tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_MouthImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            tlp_MouthImg1Browse.Size = new System.Drawing.Size(388, 54);
+            tlp_MouthImg1Browse.TabIndex = 18;
             // 
             // txt_MouthImg1Browse
             // 
-            this.txt_MouthImg1Browse.AllowDrop = true;
-            this.txt_MouthImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MouthImg1Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_MouthImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_MouthImg1Browse.Location = new System.Drawing.Point(3, 11);
-            this.txt_MouthImg1Browse.Name = "txt_MouthImg1Browse";
-            this.txt_MouthImg1Browse.Size = new System.Drawing.Size(285, 22);
-            this.txt_MouthImg1Browse.TabIndex = 0;
-            this.txt_MouthImg1Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_MouthImg1Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_MouthImg1Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_MouthImg1Browse.AllowDrop = true;
+            txt_MouthImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_MouthImg1Browse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_MouthImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_MouthImg1Browse.Location = new System.Drawing.Point(3, 13);
+            txt_MouthImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_MouthImg1Browse.Name = "txt_MouthImg1Browse";
+            txt_MouthImg1Browse.Size = new System.Drawing.Size(285, 27);
+            txt_MouthImg1Browse.TabIndex = 0;
+            txt_MouthImg1Browse.TextChanged += ImagePath_Changed;
+            txt_MouthImg1Browse.DragDrop += DragDrop_Txt;
+            txt_MouthImg1Browse.DragEnter += DragEnter;
             // 
             // btn_MouthImg1Browse
             // 
-            this.btn_MouthImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_MouthImg1Browse.Location = new System.Drawing.Point(294, 10);
-            this.btn_MouthImg1Browse.Name = "btn_MouthImg1Browse";
-            this.btn_MouthImg1Browse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_MouthImg1Browse.Size = new System.Drawing.Size(48, 23);
-            this.btn_MouthImg1Browse.TabIndex = 1;
-            this.btn_MouthImg1Browse.Text = "...";
-            this.btn_MouthImg1Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_MouthImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_MouthImg1Browse.Location = new System.Drawing.Point(294, 12);
+            btn_MouthImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_MouthImg1Browse.Name = "btn_MouthImg1Browse";
+            btn_MouthImg1Browse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_MouthImg1Browse.Size = new System.Drawing.Size(48, 29);
+            btn_MouthImg1Browse.TabIndex = 1;
+            btn_MouthImg1Browse.Text = "...";
+            btn_MouthImg1Browse.Click += BrowseImagePath_Click;
             // 
             // tlp_BlinkImg2Browse
             // 
-            this.tlp_BlinkImg2Browse.AllowDrop = true;
-            this.tlp_BlinkImg2Browse.ColumnCount = 2;
-            this.tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_BlinkImg2Browse.Controls.Add(this.txt_BlinkImg2Browse, 0, 0);
-            this.tlp_BlinkImg2Browse.Controls.Add(this.btn_BlinkImg2Browse, 1, 0);
-            this.tlp_BlinkImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BlinkImg2Browse.Location = new System.Drawing.Point(87, 353);
-            this.tlp_BlinkImg2Browse.Name = "tlp_BlinkImg2Browse";
-            this.tlp_BlinkImg2Browse.RowCount = 1;
-            this.tlp_BlinkImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BlinkImg2Browse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_BlinkImg2Browse.TabIndex = 17;
+            tlp_BlinkImg2Browse.AllowDrop = true;
+            tlp_BlinkImg2Browse.ColumnCount = 2;
+            tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_BlinkImg2Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_BlinkImg2Browse.Controls.Add(txt_BlinkImg2Browse, 0, 0);
+            tlp_BlinkImg2Browse.Controls.Add(btn_BlinkImg2Browse, 1, 0);
+            tlp_BlinkImg2Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BlinkImg2Browse.Location = new System.Drawing.Point(87, 438);
+            tlp_BlinkImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_BlinkImg2Browse.Name = "tlp_BlinkImg2Browse";
+            tlp_BlinkImg2Browse.RowCount = 1;
+            tlp_BlinkImg2Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_BlinkImg2Browse.Size = new System.Drawing.Size(388, 54);
+            tlp_BlinkImg2Browse.TabIndex = 17;
             // 
             // txt_BlinkImg2Browse
             // 
-            this.txt_BlinkImg2Browse.AllowDrop = true;
-            this.txt_BlinkImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_BlinkImg2Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_BlinkImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_BlinkImg2Browse.Location = new System.Drawing.Point(3, 11);
-            this.txt_BlinkImg2Browse.Name = "txt_BlinkImg2Browse";
-            this.txt_BlinkImg2Browse.Size = new System.Drawing.Size(285, 22);
-            this.txt_BlinkImg2Browse.TabIndex = 0;
-            this.txt_BlinkImg2Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_BlinkImg2Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_BlinkImg2Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_BlinkImg2Browse.AllowDrop = true;
+            txt_BlinkImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_BlinkImg2Browse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_BlinkImg2Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_BlinkImg2Browse.Location = new System.Drawing.Point(3, 13);
+            txt_BlinkImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_BlinkImg2Browse.Name = "txt_BlinkImg2Browse";
+            txt_BlinkImg2Browse.Size = new System.Drawing.Size(285, 27);
+            txt_BlinkImg2Browse.TabIndex = 0;
+            txt_BlinkImg2Browse.TextChanged += ImagePath_Changed;
+            txt_BlinkImg2Browse.DragDrop += DragDrop_Txt;
+            txt_BlinkImg2Browse.DragEnter += DragEnter;
             // 
             // btn_BlinkImg2Browse
             // 
-            this.btn_BlinkImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BlinkImg2Browse.Location = new System.Drawing.Point(294, 10);
-            this.btn_BlinkImg2Browse.Name = "btn_BlinkImg2Browse";
-            this.btn_BlinkImg2Browse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_BlinkImg2Browse.Size = new System.Drawing.Size(48, 23);
-            this.btn_BlinkImg2Browse.TabIndex = 1;
-            this.btn_BlinkImg2Browse.Text = "...";
-            this.btn_BlinkImg2Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_BlinkImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_BlinkImg2Browse.Location = new System.Drawing.Point(294, 12);
+            btn_BlinkImg2Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_BlinkImg2Browse.Name = "btn_BlinkImg2Browse";
+            btn_BlinkImg2Browse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_BlinkImg2Browse.Size = new System.Drawing.Size(48, 29);
+            btn_BlinkImg2Browse.TabIndex = 1;
+            btn_BlinkImg2Browse.Text = "...";
+            btn_BlinkImg2Browse.Click += BrowseImagePath_Click;
             // 
             // tlp_BlinkImg1Browse
             // 
-            this.tlp_BlinkImg1Browse.AllowDrop = true;
-            this.tlp_BlinkImg1Browse.ColumnCount = 2;
-            this.tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_BlinkImg1Browse.Controls.Add(this.txt_BlinkImg1Browse, 0, 0);
-            this.tlp_BlinkImg1Browse.Controls.Add(this.btn_BlinkImg1Browse, 1, 0);
-            this.tlp_BlinkImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BlinkImg1Browse.Location = new System.Drawing.Point(87, 303);
-            this.tlp_BlinkImg1Browse.Name = "tlp_BlinkImg1Browse";
-            this.tlp_BlinkImg1Browse.RowCount = 1;
-            this.tlp_BlinkImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BlinkImg1Browse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_BlinkImg1Browse.TabIndex = 16;
+            tlp_BlinkImg1Browse.AllowDrop = true;
+            tlp_BlinkImg1Browse.ColumnCount = 2;
+            tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_BlinkImg1Browse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_BlinkImg1Browse.Controls.Add(txt_BlinkImg1Browse, 0, 0);
+            tlp_BlinkImg1Browse.Controls.Add(btn_BlinkImg1Browse, 1, 0);
+            tlp_BlinkImg1Browse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BlinkImg1Browse.Location = new System.Drawing.Point(87, 376);
+            tlp_BlinkImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_BlinkImg1Browse.Name = "tlp_BlinkImg1Browse";
+            tlp_BlinkImg1Browse.RowCount = 1;
+            tlp_BlinkImg1Browse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_BlinkImg1Browse.Size = new System.Drawing.Size(388, 54);
+            tlp_BlinkImg1Browse.TabIndex = 16;
             // 
             // txt_BlinkImg1Browse
             // 
-            this.txt_BlinkImg1Browse.AllowDrop = true;
-            this.txt_BlinkImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_BlinkImg1Browse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_BlinkImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_BlinkImg1Browse.Location = new System.Drawing.Point(3, 11);
-            this.txt_BlinkImg1Browse.Name = "txt_BlinkImg1Browse";
-            this.txt_BlinkImg1Browse.Size = new System.Drawing.Size(285, 22);
-            this.txt_BlinkImg1Browse.TabIndex = 0;
-            this.txt_BlinkImg1Browse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_BlinkImg1Browse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_BlinkImg1Browse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_BlinkImg1Browse.AllowDrop = true;
+            txt_BlinkImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_BlinkImg1Browse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_BlinkImg1Browse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_BlinkImg1Browse.Location = new System.Drawing.Point(3, 13);
+            txt_BlinkImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_BlinkImg1Browse.Name = "txt_BlinkImg1Browse";
+            txt_BlinkImg1Browse.Size = new System.Drawing.Size(285, 27);
+            txt_BlinkImg1Browse.TabIndex = 0;
+            txt_BlinkImg1Browse.TextChanged += ImagePath_Changed;
+            txt_BlinkImg1Browse.DragDrop += DragDrop_Txt;
+            txt_BlinkImg1Browse.DragEnter += DragEnter;
             // 
             // btn_BlinkImg1Browse
             // 
-            this.btn_BlinkImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BlinkImg1Browse.Location = new System.Drawing.Point(294, 10);
-            this.btn_BlinkImg1Browse.Name = "btn_BlinkImg1Browse";
-            this.btn_BlinkImg1Browse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_BlinkImg1Browse.Size = new System.Drawing.Size(48, 23);
-            this.btn_BlinkImg1Browse.TabIndex = 1;
-            this.btn_BlinkImg1Browse.Text = "...";
-            this.btn_BlinkImg1Browse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_BlinkImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_BlinkImg1Browse.Location = new System.Drawing.Point(294, 12);
+            btn_BlinkImg1Browse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_BlinkImg1Browse.Name = "btn_BlinkImg1Browse";
+            btn_BlinkImg1Browse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_BlinkImg1Browse.Size = new System.Drawing.Size(48, 29);
+            btn_BlinkImg1Browse.TabIndex = 1;
+            btn_BlinkImg1Browse.Text = "...";
+            btn_BlinkImg1Browse.Click += BrowseImagePath_Click;
             // 
             // lbl_BlinkImg1Browse
             // 
-            this.lbl_BlinkImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BlinkImg1Browse.AutoSize = true;
-            this.lbl_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BlinkImg1Browse.Location = new System.Drawing.Point(3, 317);
-            this.lbl_BlinkImg1Browse.Name = "lbl_BlinkImg1Browse";
-            this.lbl_BlinkImg1Browse.Size = new System.Drawing.Size(78, 16);
-            this.lbl_BlinkImg1Browse.TabIndex = 11;
-            this.lbl_BlinkImg1Browse.Text = "Blink Img 1:";
+            lbl_BlinkImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_BlinkImg1Browse.AutoSize = true;
+            lbl_BlinkImg1Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BlinkImg1Browse.Location = new System.Drawing.Point(3, 383);
+            lbl_BlinkImg1Browse.Name = "lbl_BlinkImg1Browse";
+            lbl_BlinkImg1Browse.Size = new System.Drawing.Size(78, 40);
+            lbl_BlinkImg1Browse.TabIndex = 11;
+            lbl_BlinkImg1Browse.Text = "Blink Img 1:";
             // 
             // lbl_BaseImage
             // 
-            this.lbl_BaseImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BaseImage.AutoSize = true;
-            this.lbl_BaseImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BaseImage.Location = new System.Drawing.Point(3, 267);
-            this.lbl_BaseImage.Name = "lbl_BaseImage";
-            this.lbl_BaseImage.Size = new System.Drawing.Size(78, 16);
-            this.lbl_BaseImage.TabIndex = 10;
-            this.lbl_BaseImage.Text = "Base Img:";
+            lbl_BaseImage.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_BaseImage.AutoSize = true;
+            lbl_BaseImage.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BaseImage.Location = new System.Drawing.Point(3, 331);
+            lbl_BaseImage.Name = "lbl_BaseImage";
+            lbl_BaseImage.Size = new System.Drawing.Size(78, 20);
+            lbl_BaseImage.TabIndex = 10;
+            lbl_BaseImage.Text = "Base Img:";
             // 
             // tlp_BaseImgBrowse
             // 
-            this.tlp_BaseImgBrowse.AllowDrop = true;
-            this.tlp_BaseImgBrowse.ColumnCount = 2;
-            this.tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_BaseImgBrowse.Controls.Add(this.txt_BaseImgBrowse, 0, 0);
-            this.tlp_BaseImgBrowse.Controls.Add(this.btn_BaseImgBrowse, 1, 0);
-            this.tlp_BaseImgBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BaseImgBrowse.Location = new System.Drawing.Point(87, 253);
-            this.tlp_BaseImgBrowse.Name = "tlp_BaseImgBrowse";
-            this.tlp_BaseImgBrowse.RowCount = 1;
-            this.tlp_BaseImgBrowse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BaseImgBrowse.Size = new System.Drawing.Size(388, 44);
-            this.tlp_BaseImgBrowse.TabIndex = 9;
+            tlp_BaseImgBrowse.AllowDrop = true;
+            tlp_BaseImgBrowse.ColumnCount = 2;
+            tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_BaseImgBrowse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_BaseImgBrowse.Controls.Add(txt_BaseImgBrowse, 0, 0);
+            tlp_BaseImgBrowse.Controls.Add(btn_BaseImgBrowse, 1, 0);
+            tlp_BaseImgBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BaseImgBrowse.Location = new System.Drawing.Point(87, 314);
+            tlp_BaseImgBrowse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_BaseImgBrowse.Name = "tlp_BaseImgBrowse";
+            tlp_BaseImgBrowse.RowCount = 1;
+            tlp_BaseImgBrowse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_BaseImgBrowse.Size = new System.Drawing.Size(388, 54);
+            tlp_BaseImgBrowse.TabIndex = 9;
             // 
             // txt_BaseImgBrowse
             // 
-            this.txt_BaseImgBrowse.AllowDrop = true;
-            this.txt_BaseImgBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_BaseImgBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_BaseImgBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_BaseImgBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_BaseImgBrowse.Location = new System.Drawing.Point(3, 11);
-            this.txt_BaseImgBrowse.Name = "txt_BaseImgBrowse";
-            this.txt_BaseImgBrowse.Size = new System.Drawing.Size(285, 22);
-            this.txt_BaseImgBrowse.TabIndex = 0;
-            this.txt_BaseImgBrowse.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_BaseImgBrowse.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_BaseImgBrowse.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_BaseImgBrowse.AllowDrop = true;
+            txt_BaseImgBrowse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_BaseImgBrowse.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_BaseImgBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_BaseImgBrowse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_BaseImgBrowse.Location = new System.Drawing.Point(3, 13);
+            txt_BaseImgBrowse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_BaseImgBrowse.Name = "txt_BaseImgBrowse";
+            txt_BaseImgBrowse.Size = new System.Drawing.Size(285, 27);
+            txt_BaseImgBrowse.TabIndex = 0;
+            txt_BaseImgBrowse.TextChanged += ImagePath_Changed;
+            txt_BaseImgBrowse.DragDrop += DragDrop_Txt;
+            txt_BaseImgBrowse.DragEnter += DragEnter;
             // 
             // btn_BaseImgBrowse
             // 
-            this.btn_BaseImgBrowse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BaseImgBrowse.Location = new System.Drawing.Point(294, 10);
-            this.btn_BaseImgBrowse.Name = "btn_BaseImgBrowse";
-            this.btn_BaseImgBrowse.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_BaseImgBrowse.Size = new System.Drawing.Size(48, 23);
-            this.btn_BaseImgBrowse.TabIndex = 1;
-            this.btn_BaseImgBrowse.Text = "...";
-            this.btn_BaseImgBrowse.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_BaseImgBrowse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_BaseImgBrowse.Location = new System.Drawing.Point(294, 12);
+            btn_BaseImgBrowse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_BaseImgBrowse.Name = "btn_BaseImgBrowse";
+            btn_BaseImgBrowse.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_BaseImgBrowse.Size = new System.Drawing.Size(48, 29);
+            btn_BaseImgBrowse.TabIndex = 1;
+            btn_BaseImgBrowse.Text = "...";
+            btn_BaseImgBrowse.Click += BrowseImagePath_Click;
             // 
             // tlp_BustupID
             // 
-            this.tlp_BustupID.ColumnCount = 6;
-            this.tlp_BustupSettings.SetColumnSpan(this.tlp_BustupID, 2);
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
-            this.tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlp_BustupID.Controls.Add(this.num_SubID, 5, 0);
-            this.tlp_BustupID.Controls.Add(this.num_MinorID, 3, 0);
-            this.tlp_BustupID.Controls.Add(this.lbl_MajorID, 0, 0);
-            this.tlp_BustupID.Controls.Add(this.lbl_MinorID, 2, 0);
-            this.tlp_BustupID.Controls.Add(this.num_MajorID, 1, 0);
-            this.tlp_BustupID.Controls.Add(this.lbl_SubID, 4, 0);
-            this.tlp_BustupID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BustupID.Location = new System.Drawing.Point(3, 3);
-            this.tlp_BustupID.Name = "tlp_BustupID";
-            this.tlp_BustupID.RowCount = 1;
-            this.tlp_BustupID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BustupID.Size = new System.Drawing.Size(472, 44);
-            this.tlp_BustupID.TabIndex = 8;
+            tlp_BustupID.ColumnCount = 6;
+            tlp_BustupSettings.SetColumnSpan(tlp_BustupID, 2);
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_BustupID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_BustupID.Controls.Add(num_SubID, 5, 0);
+            tlp_BustupID.Controls.Add(num_MinorID, 3, 0);
+            tlp_BustupID.Controls.Add(lbl_MajorID, 0, 0);
+            tlp_BustupID.Controls.Add(lbl_MinorID, 2, 0);
+            tlp_BustupID.Controls.Add(num_MajorID, 1, 0);
+            tlp_BustupID.Controls.Add(lbl_SubID, 4, 0);
+            tlp_BustupID.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BustupID.Location = new System.Drawing.Point(3, 4);
+            tlp_BustupID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_BustupID.Name = "tlp_BustupID";
+            tlp_BustupID.RowCount = 1;
+            tlp_BustupID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_BustupID.Size = new System.Drawing.Size(472, 54);
+            tlp_BustupID.TabIndex = 8;
             // 
             // num_SubID
             // 
-            this.num_SubID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_SubID.Location = new System.Drawing.Point(415, 11);
-            this.num_SubID.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.num_SubID.Name = "num_SubID";
-            this.num_SubID.Size = new System.Drawing.Size(54, 22);
-            this.num_SubID.TabIndex = 5;
-            this.num_SubID.ValueChanged += new System.EventHandler(this.SubID_Changed);
+            num_SubID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_SubID.Location = new System.Drawing.Point(415, 13);
+            num_SubID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_SubID.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            num_SubID.Name = "num_SubID";
+            num_SubID.Size = new System.Drawing.Size(54, 27);
+            num_SubID.TabIndex = 5;
+            num_SubID.ValueChanged += SubID_Changed;
             // 
             // num_MinorID
             // 
-            this.num_MinorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_MinorID.Location = new System.Drawing.Point(258, 11);
-            this.num_MinorID.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.num_MinorID.Name = "num_MinorID";
-            this.num_MinorID.Size = new System.Drawing.Size(53, 22);
-            this.num_MinorID.TabIndex = 3;
-            this.num_MinorID.ValueChanged += new System.EventHandler(this.MinorID_Changed);
+            num_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_MinorID.Location = new System.Drawing.Point(258, 13);
+            num_MinorID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_MinorID.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            num_MinorID.Name = "num_MinorID";
+            num_MinorID.Size = new System.Drawing.Size(53, 27);
+            num_MinorID.TabIndex = 3;
+            num_MinorID.ValueChanged += MinorID_Changed;
             // 
             // lbl_MajorID
             // 
-            this.lbl_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_MajorID.AutoSize = true;
-            this.lbl_MajorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MajorID.Location = new System.Drawing.Point(11, 14);
-            this.lbl_MajorID.Name = "lbl_MajorID";
-            this.lbl_MajorID.Size = new System.Drawing.Size(84, 16);
-            this.lbl_MajorID.TabIndex = 0;
-            this.lbl_MajorID.Text = "Character ID:";
+            lbl_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_MajorID.AutoSize = true;
+            lbl_MajorID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MajorID.Location = new System.Drawing.Point(19, 7);
+            lbl_MajorID.Name = "lbl_MajorID";
+            lbl_MajorID.Size = new System.Drawing.Size(76, 40);
+            lbl_MajorID.TabIndex = 0;
+            lbl_MajorID.Text = "Character ID:";
             // 
             // lbl_MinorID
             // 
-            this.lbl_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_MinorID.AutoSize = true;
-            this.lbl_MinorID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MinorID.Location = new System.Drawing.Point(175, 6);
-            this.lbl_MinorID.Name = "lbl_MinorID";
-            this.lbl_MinorID.Size = new System.Drawing.Size(77, 32);
-            this.lbl_MinorID.TabIndex = 1;
-            this.lbl_MinorID.Text = "Expression ID:";
+            lbl_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_MinorID.AutoSize = true;
+            lbl_MinorID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MinorID.Location = new System.Drawing.Point(169, 7);
+            lbl_MinorID.Name = "lbl_MinorID";
+            lbl_MinorID.Size = new System.Drawing.Size(83, 40);
+            lbl_MinorID.TabIndex = 1;
+            lbl_MinorID.Text = "Expression ID:";
             // 
             // num_MajorID
             // 
-            this.num_MajorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_MajorID.Location = new System.Drawing.Point(101, 11);
-            this.num_MajorID.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.num_MajorID.Name = "num_MajorID";
-            this.num_MajorID.Size = new System.Drawing.Size(53, 22);
-            this.num_MajorID.TabIndex = 2;
-            this.num_MajorID.ValueChanged += new System.EventHandler(this.MajorID_Changed);
+            num_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_MajorID.Location = new System.Drawing.Point(101, 13);
+            num_MajorID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_MajorID.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            num_MajorID.Name = "num_MajorID";
+            num_MajorID.Size = new System.Drawing.Size(53, 27);
+            num_MajorID.TabIndex = 2;
+            num_MajorID.ValueChanged += MajorID_Changed;
             // 
             // lbl_SubID
             // 
-            this.lbl_SubID.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_SubID.AutoSize = true;
-            this.lbl_SubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_SubID.Location = new System.Drawing.Point(354, 14);
-            this.lbl_SubID.Name = "lbl_SubID";
-            this.lbl_SubID.Size = new System.Drawing.Size(55, 16);
-            this.lbl_SubID.TabIndex = 4;
-            this.lbl_SubID.Text = "Outfit ID:";
+            lbl_SubID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_SubID.AutoSize = true;
+            lbl_SubID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_SubID.Location = new System.Drawing.Point(340, 17);
+            lbl_SubID.Name = "lbl_SubID";
+            lbl_SubID.Size = new System.Drawing.Size(69, 20);
+            lbl_SubID.TabIndex = 4;
+            lbl_SubID.Text = "Outfit ID:";
             // 
             // comboBox_Animation
             // 
-            this.comboBox_Animation.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox_Animation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.comboBox_Animation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Animation.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox_Animation.FormattingEnabled = true;
-            this.comboBox_Animation.Items.AddRange(new object[] {
-            "None",
-            "Eyes",
-            "Mouth",
-            "Eyes_Mouth",
-            "Eyes_Mouth_ExcludeAlpha",
-            "Unknown"});
-            this.comboBox_Animation.Location = new System.Drawing.Point(87, 216);
-            this.comboBox_Animation.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.comboBox_Animation.Name = "comboBox_Animation";
-            this.comboBox_Animation.Size = new System.Drawing.Size(185, 24);
-            this.comboBox_Animation.TabIndex = 7;
-            this.comboBox_Animation.SelectedIndexChanged += new System.EventHandler(this.Animation_Changed);
+            comboBox_Animation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            comboBox_Animation.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            comboBox_Animation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBox_Animation.ForeColor = System.Drawing.Color.Silver;
+            comboBox_Animation.FormattingEnabled = true;
+            comboBox_Animation.Items.AddRange(new object[] { "None", "Eyes", "Mouth", "Eyes_Mouth", "Eyes_Mouth_ExcludeAlpha", "Unknown" });
+            comboBox_Animation.Location = new System.Drawing.Point(87, 269);
+            comboBox_Animation.Margin = new System.Windows.Forms.Padding(3, 12, 3, 4);
+            comboBox_Animation.Name = "comboBox_Animation";
+            comboBox_Animation.Size = new System.Drawing.Size(185, 28);
+            comboBox_Animation.TabIndex = 7;
+            comboBox_Animation.SelectedIndexChanged += Animation_Changed;
             // 
             // lbl_Animation
             // 
-            this.lbl_Animation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Animation.AutoSize = true;
-            this.lbl_Animation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_Animation.Location = new System.Drawing.Point(3, 217);
-            this.lbl_Animation.Name = "lbl_Animation";
-            this.lbl_Animation.Size = new System.Drawing.Size(78, 16);
-            this.lbl_Animation.TabIndex = 6;
-            this.lbl_Animation.Text = "Animation:";
+            lbl_Animation.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_Animation.AutoSize = true;
+            lbl_Animation.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_Animation.Location = new System.Drawing.Point(3, 259);
+            lbl_Animation.Name = "lbl_Animation";
+            lbl_Animation.Size = new System.Drawing.Size(78, 40);
+            lbl_Animation.TabIndex = 6;
+            lbl_Animation.Text = "Animation:";
             // 
             // tlp_MouthPos
             // 
-            this.tlp_MouthPos.ColumnCount = 4;
-            this.tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_MouthPos.Controls.Add(this.num_MouthPosY, 3, 0);
-            this.tlp_MouthPos.Controls.Add(this.lbl_MouthPosX, 0, 0);
-            this.tlp_MouthPos.Controls.Add(this.lbl_MouthPosY, 2, 0);
-            this.tlp_MouthPos.Controls.Add(this.num_MouthPosX, 1, 0);
-            this.tlp_MouthPos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_MouthPos.Location = new System.Drawing.Point(87, 153);
-            this.tlp_MouthPos.Name = "tlp_MouthPos";
-            this.tlp_MouthPos.RowCount = 1;
-            this.tlp_MouthPos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_MouthPos.Size = new System.Drawing.Size(388, 44);
-            this.tlp_MouthPos.TabIndex = 5;
+            tlp_MouthPos.ColumnCount = 4;
+            tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_MouthPos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_MouthPos.Controls.Add(num_MouthPosY, 3, 0);
+            tlp_MouthPos.Controls.Add(lbl_MouthPosX, 0, 0);
+            tlp_MouthPos.Controls.Add(lbl_MouthPosY, 2, 0);
+            tlp_MouthPos.Controls.Add(num_MouthPosX, 1, 0);
+            tlp_MouthPos.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_MouthPos.Location = new System.Drawing.Point(87, 190);
+            tlp_MouthPos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_MouthPos.Name = "tlp_MouthPos";
+            tlp_MouthPos.RowCount = 1;
+            tlp_MouthPos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_MouthPos.Size = new System.Drawing.Size(388, 54);
+            tlp_MouthPos.TabIndex = 5;
             // 
             // num_MouthPosY
             // 
-            this.num_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosY.Location = new System.Drawing.Point(273, 11);
-            this.num_MouthPosY.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_MouthPosY.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_MouthPosY.Name = "num_MouthPosY";
-            this.num_MouthPosY.Size = new System.Drawing.Size(107, 22);
-            this.num_MouthPosY.TabIndex = 3;
-            this.num_MouthPosY.ValueChanged += new System.EventHandler(this.MouthPosY_Changed);
+            num_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_MouthPosY.Location = new System.Drawing.Point(273, 13);
+            num_MouthPosY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_MouthPosY.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_MouthPosY.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_MouthPosY.Name = "num_MouthPosY";
+            num_MouthPosY.Size = new System.Drawing.Size(87, 27);
+            num_MouthPosY.TabIndex = 3;
+            num_MouthPosY.ValueChanged += MouthPosY_Changed;
             // 
             // lbl_MouthPosX
             // 
-            this.lbl_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_MouthPosX.AutoSize = true;
-            this.lbl_MouthPosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosX.Location = new System.Drawing.Point(56, 14);
-            this.lbl_MouthPosX.Name = "lbl_MouthPosX";
-            this.lbl_MouthPosX.Size = new System.Drawing.Size(18, 16);
-            this.lbl_MouthPosX.TabIndex = 0;
-            this.lbl_MouthPosX.Text = "X:";
+            lbl_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthPosX.AutoSize = true;
+            lbl_MouthPosX.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthPosX.Location = new System.Drawing.Point(53, 17);
+            lbl_MouthPosX.Name = "lbl_MouthPosX";
+            lbl_MouthPosX.Size = new System.Drawing.Size(21, 20);
+            lbl_MouthPosX.TabIndex = 0;
+            lbl_MouthPosX.Text = "X:";
             // 
             // lbl_MouthPosY
             // 
-            this.lbl_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_MouthPosY.AutoSize = true;
-            this.lbl_MouthPosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPosY.Location = new System.Drawing.Point(248, 14);
-            this.lbl_MouthPosY.Name = "lbl_MouthPosY";
-            this.lbl_MouthPosY.Size = new System.Drawing.Size(19, 16);
-            this.lbl_MouthPosY.TabIndex = 1;
-            this.lbl_MouthPosY.Text = "Y:";
+            lbl_MouthPosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthPosY.AutoSize = true;
+            lbl_MouthPosY.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthPosY.Location = new System.Drawing.Point(247, 17);
+            lbl_MouthPosY.Name = "lbl_MouthPosY";
+            lbl_MouthPosY.Size = new System.Drawing.Size(20, 20);
+            lbl_MouthPosY.TabIndex = 1;
+            lbl_MouthPosY.Text = "Y:";
             // 
             // num_MouthPosX
             // 
-            this.num_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthPosX.Location = new System.Drawing.Point(80, 11);
-            this.num_MouthPosX.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_MouthPosX.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_MouthPosX.Name = "num_MouthPosX";
-            this.num_MouthPosX.Size = new System.Drawing.Size(107, 22);
-            this.num_MouthPosX.TabIndex = 2;
-            this.num_MouthPosX.ValueChanged += new System.EventHandler(this.MouthPosX_Changed);
+            num_MouthPosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_MouthPosX.Location = new System.Drawing.Point(80, 13);
+            num_MouthPosX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_MouthPosX.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_MouthPosX.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_MouthPosX.Name = "num_MouthPosX";
+            num_MouthPosX.Size = new System.Drawing.Size(84, 27);
+            num_MouthPosX.TabIndex = 2;
+            num_MouthPosX.ValueChanged += MouthPosX_Changed;
             // 
             // tlp_EyePos
             // 
-            this.tlp_EyePos.ColumnCount = 4;
-            this.tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_EyePos.Controls.Add(this.num_EyePosY, 3, 0);
-            this.tlp_EyePos.Controls.Add(this.lbl_EyePosX, 0, 0);
-            this.tlp_EyePos.Controls.Add(this.lbl_EyePosY, 2, 0);
-            this.tlp_EyePos.Controls.Add(this.num_EyePosX, 1, 0);
-            this.tlp_EyePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_EyePos.Location = new System.Drawing.Point(87, 103);
-            this.tlp_EyePos.Name = "tlp_EyePos";
-            this.tlp_EyePos.RowCount = 1;
-            this.tlp_EyePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_EyePos.Size = new System.Drawing.Size(388, 44);
-            this.tlp_EyePos.TabIndex = 3;
+            tlp_EyePos.ColumnCount = 4;
+            tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_EyePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_EyePos.Controls.Add(num_EyePosY, 3, 0);
+            tlp_EyePos.Controls.Add(lbl_EyePosX, 0, 0);
+            tlp_EyePos.Controls.Add(lbl_EyePosY, 2, 0);
+            tlp_EyePos.Controls.Add(num_EyePosX, 1, 0);
+            tlp_EyePos.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_EyePos.Location = new System.Drawing.Point(87, 128);
+            tlp_EyePos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_EyePos.Name = "tlp_EyePos";
+            tlp_EyePos.RowCount = 1;
+            tlp_EyePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_EyePos.Size = new System.Drawing.Size(388, 54);
+            tlp_EyePos.TabIndex = 3;
             // 
             // num_EyePosY
             // 
-            this.num_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosY.Location = new System.Drawing.Point(273, 11);
-            this.num_EyePosY.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_EyePosY.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_EyePosY.Name = "num_EyePosY";
-            this.num_EyePosY.Size = new System.Drawing.Size(107, 22);
-            this.num_EyePosY.TabIndex = 3;
-            this.num_EyePosY.ValueChanged += new System.EventHandler(this.EyePosY_Changed);
+            num_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_EyePosY.Location = new System.Drawing.Point(273, 13);
+            num_EyePosY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_EyePosY.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_EyePosY.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_EyePosY.Name = "num_EyePosY";
+            num_EyePosY.Size = new System.Drawing.Size(87, 27);
+            num_EyePosY.TabIndex = 3;
+            num_EyePosY.ValueChanged += EyePosY_Changed;
             // 
             // lbl_EyePosX
             // 
-            this.lbl_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_EyePosX.AutoSize = true;
-            this.lbl_EyePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosX.Location = new System.Drawing.Point(56, 14);
-            this.lbl_EyePosX.Name = "lbl_EyePosX";
-            this.lbl_EyePosX.Size = new System.Drawing.Size(18, 16);
-            this.lbl_EyePosX.TabIndex = 0;
-            this.lbl_EyePosX.Text = "X:";
+            lbl_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_EyePosX.AutoSize = true;
+            lbl_EyePosX.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_EyePosX.Location = new System.Drawing.Point(53, 17);
+            lbl_EyePosX.Name = "lbl_EyePosX";
+            lbl_EyePosX.Size = new System.Drawing.Size(21, 20);
+            lbl_EyePosX.TabIndex = 0;
+            lbl_EyePosX.Text = "X:";
             // 
             // lbl_EyePosY
             // 
-            this.lbl_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_EyePosY.AutoSize = true;
-            this.lbl_EyePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePosY.Location = new System.Drawing.Point(248, 14);
-            this.lbl_EyePosY.Name = "lbl_EyePosY";
-            this.lbl_EyePosY.Size = new System.Drawing.Size(19, 16);
-            this.lbl_EyePosY.TabIndex = 1;
-            this.lbl_EyePosY.Text = "Y:";
+            lbl_EyePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_EyePosY.AutoSize = true;
+            lbl_EyePosY.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_EyePosY.Location = new System.Drawing.Point(247, 17);
+            lbl_EyePosY.Name = "lbl_EyePosY";
+            lbl_EyePosY.Size = new System.Drawing.Size(20, 20);
+            lbl_EyePosY.TabIndex = 1;
+            lbl_EyePosY.Text = "Y:";
             // 
             // num_EyePosX
             // 
-            this.num_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyePosX.Location = new System.Drawing.Point(80, 11);
-            this.num_EyePosX.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_EyePosX.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_EyePosX.Name = "num_EyePosX";
-            this.num_EyePosX.Size = new System.Drawing.Size(107, 22);
-            this.num_EyePosX.TabIndex = 2;
-            this.num_EyePosX.ValueChanged += new System.EventHandler(this.EyePosX_Changed);
+            num_EyePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_EyePosX.Location = new System.Drawing.Point(80, 13);
+            num_EyePosX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_EyePosX.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_EyePosX.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_EyePosX.Name = "num_EyePosX";
+            num_EyePosX.Size = new System.Drawing.Size(84, 27);
+            num_EyePosX.TabIndex = 2;
+            num_EyePosX.ValueChanged += EyePosX_Changed;
             // 
             // tlp_BasePos
             // 
-            this.tlp_BasePos.ColumnCount = 4;
-            this.tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlp_BasePos.Controls.Add(this.num_BasePosY, 3, 0);
-            this.tlp_BasePos.Controls.Add(this.lbl_BasePosX, 0, 0);
-            this.tlp_BasePos.Controls.Add(this.lbl_BasePosY, 2, 0);
-            this.tlp_BasePos.Controls.Add(this.num_BasePosX, 1, 0);
-            this.tlp_BasePos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_BasePos.Location = new System.Drawing.Point(87, 53);
-            this.tlp_BasePos.Name = "tlp_BasePos";
-            this.tlp_BasePos.RowCount = 1;
-            this.tlp_BasePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_BasePos.Size = new System.Drawing.Size(388, 44);
-            this.tlp_BasePos.TabIndex = 1;
+            tlp_BasePos.ColumnCount = 4;
+            tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_BasePos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            tlp_BasePos.Controls.Add(num_BasePosY, 3, 0);
+            tlp_BasePos.Controls.Add(lbl_BasePosX, 0, 0);
+            tlp_BasePos.Controls.Add(lbl_BasePosY, 2, 0);
+            tlp_BasePos.Controls.Add(num_BasePosX, 1, 0);
+            tlp_BasePos.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_BasePos.Location = new System.Drawing.Point(87, 66);
+            tlp_BasePos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_BasePos.Name = "tlp_BasePos";
+            tlp_BasePos.RowCount = 1;
+            tlp_BasePos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_BasePos.Size = new System.Drawing.Size(388, 54);
+            tlp_BasePos.TabIndex = 1;
             // 
             // num_BasePosY
             // 
-            this.num_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosY.Location = new System.Drawing.Point(273, 11);
-            this.num_BasePosY.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_BasePosY.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_BasePosY.Name = "num_BasePosY";
-            this.num_BasePosY.Size = new System.Drawing.Size(107, 22);
-            this.num_BasePosY.TabIndex = 3;
-            this.num_BasePosY.ValueChanged += new System.EventHandler(this.BasePosY_Changed);
+            num_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_BasePosY.Location = new System.Drawing.Point(273, 13);
+            num_BasePosY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_BasePosY.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_BasePosY.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_BasePosY.Name = "num_BasePosY";
+            num_BasePosY.Size = new System.Drawing.Size(87, 27);
+            num_BasePosY.TabIndex = 3;
+            num_BasePosY.ValueChanged += BasePosY_Changed;
             // 
             // lbl_BasePosX
             // 
-            this.lbl_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_BasePosX.AutoSize = true;
-            this.lbl_BasePosX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosX.Location = new System.Drawing.Point(56, 14);
-            this.lbl_BasePosX.Name = "lbl_BasePosX";
-            this.lbl_BasePosX.Size = new System.Drawing.Size(18, 16);
-            this.lbl_BasePosX.TabIndex = 0;
-            this.lbl_BasePosX.Text = "X:";
+            lbl_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_BasePosX.AutoSize = true;
+            lbl_BasePosX.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BasePosX.Location = new System.Drawing.Point(53, 17);
+            lbl_BasePosX.Name = "lbl_BasePosX";
+            lbl_BasePosX.Size = new System.Drawing.Size(21, 20);
+            lbl_BasePosX.TabIndex = 0;
+            lbl_BasePosX.Text = "X:";
             // 
             // lbl_BasePosY
             // 
-            this.lbl_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_BasePosY.AutoSize = true;
-            this.lbl_BasePosY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePosY.Location = new System.Drawing.Point(248, 14);
-            this.lbl_BasePosY.Name = "lbl_BasePosY";
-            this.lbl_BasePosY.Size = new System.Drawing.Size(19, 16);
-            this.lbl_BasePosY.TabIndex = 1;
-            this.lbl_BasePosY.Text = "Y:";
+            lbl_BasePosY.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_BasePosY.AutoSize = true;
+            lbl_BasePosY.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BasePosY.Location = new System.Drawing.Point(247, 17);
+            lbl_BasePosY.Name = "lbl_BasePosY";
+            lbl_BasePosY.Size = new System.Drawing.Size(20, 20);
+            lbl_BasePosY.TabIndex = 1;
+            lbl_BasePosY.Text = "Y:";
             // 
             // num_BasePosX
             // 
-            this.num_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_BasePosX.Location = new System.Drawing.Point(80, 11);
-            this.num_BasePosX.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.num_BasePosX.Minimum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            -2147483648});
-            this.num_BasePosX.Name = "num_BasePosX";
-            this.num_BasePosX.Size = new System.Drawing.Size(107, 22);
-            this.num_BasePosX.TabIndex = 2;
-            this.num_BasePosX.ValueChanged += new System.EventHandler(this.BasePosX_Changed);
+            num_BasePosX.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_BasePosX.Location = new System.Drawing.Point(80, 13);
+            num_BasePosX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_BasePosX.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            num_BasePosX.Minimum = new decimal(new int[] { 999999, 0, 0, int.MinValue });
+            num_BasePosX.Name = "num_BasePosX";
+            num_BasePosX.Size = new System.Drawing.Size(84, 27);
+            num_BasePosX.TabIndex = 2;
+            num_BasePosX.ValueChanged += BasePosX_Changed;
             // 
             // lbl_MouthPos
             // 
-            this.lbl_MouthPos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_MouthPos.AutoSize = true;
-            this.lbl_MouthPos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthPos.Location = new System.Drawing.Point(3, 159);
-            this.lbl_MouthPos.Name = "lbl_MouthPos";
-            this.lbl_MouthPos.Size = new System.Drawing.Size(78, 32);
-            this.lbl_MouthPos.TabIndex = 4;
-            this.lbl_MouthPos.Text = "Mouth Position:";
+            lbl_MouthPos.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthPos.AutoSize = true;
+            lbl_MouthPos.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthPos.Location = new System.Drawing.Point(3, 197);
+            lbl_MouthPos.Name = "lbl_MouthPos";
+            lbl_MouthPos.Size = new System.Drawing.Size(78, 40);
+            lbl_MouthPos.TabIndex = 4;
+            lbl_MouthPos.Text = "Mouth Position:";
             // 
             // lbl_EyePos
             // 
-            this.lbl_EyePos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_EyePos.AutoSize = true;
-            this.lbl_EyePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyePos.Location = new System.Drawing.Point(3, 109);
-            this.lbl_EyePos.Name = "lbl_EyePos";
-            this.lbl_EyePos.Size = new System.Drawing.Size(78, 32);
-            this.lbl_EyePos.TabIndex = 2;
-            this.lbl_EyePos.Text = "Eye Position:";
+            lbl_EyePos.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_EyePos.AutoSize = true;
+            lbl_EyePos.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_EyePos.Location = new System.Drawing.Point(3, 135);
+            lbl_EyePos.Name = "lbl_EyePos";
+            lbl_EyePos.Size = new System.Drawing.Size(78, 40);
+            lbl_EyePos.TabIndex = 2;
+            lbl_EyePos.Text = "Eye Position:";
             // 
             // lbl_BasePos
             // 
-            this.lbl_BasePos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BasePos.AutoSize = true;
-            this.lbl_BasePos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BasePos.Location = new System.Drawing.Point(3, 59);
-            this.lbl_BasePos.Name = "lbl_BasePos";
-            this.lbl_BasePos.Size = new System.Drawing.Size(78, 32);
-            this.lbl_BasePos.TabIndex = 0;
-            this.lbl_BasePos.Text = "Base Position:";
+            lbl_BasePos.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_BasePos.AutoSize = true;
+            lbl_BasePos.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BasePos.Location = new System.Drawing.Point(3, 73);
+            lbl_BasePos.Name = "lbl_BasePos";
+            lbl_BasePos.Size = new System.Drawing.Size(78, 40);
+            lbl_BasePos.TabIndex = 0;
+            lbl_BasePos.Text = "Base Position:";
             // 
             // lbl_BlinkImg2Browse
             // 
-            this.lbl_BlinkImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BlinkImg2Browse.AutoSize = true;
-            this.lbl_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_BlinkImg2Browse.Location = new System.Drawing.Point(3, 367);
-            this.lbl_BlinkImg2Browse.Name = "lbl_BlinkImg2Browse";
-            this.lbl_BlinkImg2Browse.Size = new System.Drawing.Size(78, 16);
-            this.lbl_BlinkImg2Browse.TabIndex = 12;
-            this.lbl_BlinkImg2Browse.Text = "Blink Img 2:";
+            lbl_BlinkImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_BlinkImg2Browse.AutoSize = true;
+            lbl_BlinkImg2Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_BlinkImg2Browse.Location = new System.Drawing.Point(3, 445);
+            lbl_BlinkImg2Browse.Name = "lbl_BlinkImg2Browse";
+            lbl_BlinkImg2Browse.Size = new System.Drawing.Size(78, 40);
+            lbl_BlinkImg2Browse.TabIndex = 12;
+            lbl_BlinkImg2Browse.Text = "Blink Img 2:";
             // 
             // lbl_MouthImg1Browse
             // 
-            this.lbl_MouthImg1Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_MouthImg1Browse.AutoSize = true;
-            this.lbl_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthImg1Browse.Location = new System.Drawing.Point(3, 409);
-            this.lbl_MouthImg1Browse.Name = "lbl_MouthImg1Browse";
-            this.lbl_MouthImg1Browse.Size = new System.Drawing.Size(78, 32);
-            this.lbl_MouthImg1Browse.TabIndex = 13;
-            this.lbl_MouthImg1Browse.Text = "Mouth Img 1:";
+            lbl_MouthImg1Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthImg1Browse.AutoSize = true;
+            lbl_MouthImg1Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthImg1Browse.Location = new System.Drawing.Point(3, 507);
+            lbl_MouthImg1Browse.Name = "lbl_MouthImg1Browse";
+            lbl_MouthImg1Browse.Size = new System.Drawing.Size(78, 40);
+            lbl_MouthImg1Browse.TabIndex = 13;
+            lbl_MouthImg1Browse.Text = "Mouth Img 1:";
             // 
             // lbl_MouthImg2Browse
             // 
-            this.lbl_MouthImg2Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_MouthImg2Browse.AutoSize = true;
-            this.lbl_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthImg2Browse.Location = new System.Drawing.Point(3, 459);
-            this.lbl_MouthImg2Browse.Name = "lbl_MouthImg2Browse";
-            this.lbl_MouthImg2Browse.Size = new System.Drawing.Size(78, 32);
-            this.lbl_MouthImg2Browse.TabIndex = 14;
-            this.lbl_MouthImg2Browse.Text = "Mouth Img 2:";
+            lbl_MouthImg2Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthImg2Browse.AutoSize = true;
+            lbl_MouthImg2Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthImg2Browse.Location = new System.Drawing.Point(3, 569);
+            lbl_MouthImg2Browse.Name = "lbl_MouthImg2Browse";
+            lbl_MouthImg2Browse.Size = new System.Drawing.Size(78, 40);
+            lbl_MouthImg2Browse.TabIndex = 14;
+            lbl_MouthImg2Browse.Text = "Mouth Img 2:";
             // 
             // lbl_MouthImg3Browse
             // 
-            this.lbl_MouthImg3Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_MouthImg3Browse.AutoSize = true;
-            this.lbl_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthImg3Browse.Location = new System.Drawing.Point(3, 509);
-            this.lbl_MouthImg3Browse.Name = "lbl_MouthImg3Browse";
-            this.lbl_MouthImg3Browse.Size = new System.Drawing.Size(78, 32);
-            this.lbl_MouthImg3Browse.TabIndex = 15;
-            this.lbl_MouthImg3Browse.Text = "Mouth Img 3:";
+            lbl_MouthImg3Browse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthImg3Browse.AutoSize = true;
+            lbl_MouthImg3Browse.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthImg3Browse.Location = new System.Drawing.Point(3, 631);
+            lbl_MouthImg3Browse.Name = "lbl_MouthImg3Browse";
+            lbl_MouthImg3Browse.Size = new System.Drawing.Size(78, 40);
+            lbl_MouthImg3Browse.TabIndex = 15;
+            lbl_MouthImg3Browse.Text = "Mouth Img 3:";
+            // 
+            // lbl_CharaName
+            // 
+            lbl_CharaName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_CharaName.AutoSize = true;
+            lbl_CharaName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_CharaName.Location = new System.Drawing.Point(3, 693);
+            lbl_CharaName.Name = "lbl_CharaName";
+            lbl_CharaName.Size = new System.Drawing.Size(78, 40);
+            lbl_CharaName.TabIndex = 21;
+            lbl_CharaName.Text = "Chara Name:";
+            // 
+            // lbl_ExpressionName
+            // 
+            lbl_ExpressionName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_ExpressionName.AutoSize = true;
+            lbl_ExpressionName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_ExpressionName.Location = new System.Drawing.Point(3, 755);
+            lbl_ExpressionName.Name = "lbl_ExpressionName";
+            lbl_ExpressionName.Size = new System.Drawing.Size(78, 40);
+            lbl_ExpressionName.TabIndex = 22;
+            lbl_ExpressionName.Text = "Expression Name:";
+            // 
+            // lbl_OutfitName
+            // 
+            lbl_OutfitName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_OutfitName.AutoSize = true;
+            lbl_OutfitName.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_OutfitName.Location = new System.Drawing.Point(3, 817);
+            lbl_OutfitName.Name = "lbl_OutfitName";
+            lbl_OutfitName.Size = new System.Drawing.Size(78, 40);
+            lbl_OutfitName.TabIndex = 23;
+            lbl_OutfitName.Text = "Outfit Name:";
             // 
             // groupBox_Texture
             // 
-            this.groupBox_Texture.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.groupBox_Texture.Controls.Add(this.pnl_ImgPreview);
-            this.groupBox_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Texture.Location = new System.Drawing.Point(494, 3);
-            this.groupBox_Texture.Name = "groupBox_Texture";
-            this.tlp_Main.SetRowSpan(this.groupBox_Texture, 2);
-            this.groupBox_Texture.Size = new System.Drawing.Size(485, 424);
-            this.groupBox_Texture.TabIndex = 4;
-            this.groupBox_Texture.TabStop = false;
-            this.groupBox_Texture.Text = "Bustup Texture";
+            groupBox_Texture.BorderColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            groupBox_Texture.Controls.Add(pnl_ImgPreview);
+            groupBox_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupBox_Texture.Location = new System.Drawing.Point(494, 4);
+            groupBox_Texture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            groupBox_Texture.Name = "groupBox_Texture";
+            groupBox_Texture.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_Main.SetRowSpan(groupBox_Texture, 2);
+            groupBox_Texture.Size = new System.Drawing.Size(485, 536);
+            groupBox_Texture.TabIndex = 4;
+            groupBox_Texture.TabStop = false;
+            groupBox_Texture.Text = "Bustup Texture";
             // 
             // pnl_ImgPreview
             // 
-            this.pnl_ImgPreview.AllowDrop = true;
-            this.pnl_ImgPreview.AutoScroll = true;
-            this.pnl_ImgPreview.AutoSize = true;
-            this.pnl_ImgPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnl_ImgPreview.Controls.Add(this.pictureBox_Tex);
-            this.pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_ImgPreview.Location = new System.Drawing.Point(3, 18);
-            this.pnl_ImgPreview.Name = "pnl_ImgPreview";
-            this.pnl_ImgPreview.Size = new System.Drawing.Size(479, 403);
-            this.pnl_ImgPreview.TabIndex = 0;
+            pnl_ImgPreview.AllowDrop = true;
+            pnl_ImgPreview.AutoScroll = true;
+            pnl_ImgPreview.AutoSize = true;
+            pnl_ImgPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            pnl_ImgPreview.Controls.Add(pictureBox_Tex);
+            pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            pnl_ImgPreview.Location = new System.Drawing.Point(3, 24);
+            pnl_ImgPreview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pnl_ImgPreview.Name = "pnl_ImgPreview";
+            pnl_ImgPreview.Size = new System.Drawing.Size(479, 508);
+            pnl_ImgPreview.TabIndex = 0;
             // 
             // pictureBox_Tex
             // 
-            this.pictureBox_Tex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.pictureBox_Tex.ContextMenuStrip = this.darkContextMenu_Texture;
-            this.pictureBox_Tex.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox_Tex.Name = "pictureBox_Tex";
-            this.pictureBox_Tex.Size = new System.Drawing.Size(479, 402);
-            this.pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Tex.TabIndex = 2;
-            this.pictureBox_Tex.TabStop = false;
+            pictureBox_Tex.BackColor = System.Drawing.Color.FromArgb(50, 53, 55);
+            pictureBox_Tex.ContextMenuStrip = darkContextMenu_Texture;
+            pictureBox_Tex.Location = new System.Drawing.Point(8, 10);
+            pictureBox_Tex.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox_Tex.Name = "pictureBox_Tex";
+            pictureBox_Tex.Size = new System.Drawing.Size(479, 402);
+            pictureBox_Tex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox_Tex.TabIndex = 2;
+            pictureBox_Tex.TabStop = false;
             // 
             // darkContextMenu_Texture
             // 
-            this.darkContextMenu_Texture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkContextMenu_Texture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkContextMenu_Texture.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.darkContextMenu_Texture.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openImageFolderToolStripMenuItem});
-            this.darkContextMenu_Texture.Name = "darkContextMenu_Texture";
-            this.darkContextMenu_Texture.Size = new System.Drawing.Size(207, 28);
+            darkContextMenu_Texture.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            darkContextMenu_Texture.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            darkContextMenu_Texture.ImageScalingSize = new System.Drawing.Size(20, 20);
+            darkContextMenu_Texture.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { openImageFolderToolStripMenuItem });
+            darkContextMenu_Texture.Name = "darkContextMenu_Texture";
+            darkContextMenu_Texture.Size = new System.Drawing.Size(207, 28);
             // 
             // openImageFolderToolStripMenuItem
             // 
-            this.openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
-            this.openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
-            this.openImageFolderToolStripMenuItem.Text = "Open Image Folder";
-            this.openImageFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenImageFolder_Click);
+            openImageFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            openImageFolderToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            openImageFolderToolStripMenuItem.Name = "openImageFolderToolStripMenuItem";
+            openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            openImageFolderToolStripMenuItem.Text = "Open Image Folder";
+            openImageFolderToolStripMenuItem.Click += OpenImageFolder_Click;
             // 
             // groupBox_PreviewSettings
             // 
-            this.groupBox_PreviewSettings.Controls.Add(this.panel_PreviewSettings);
-            this.groupBox_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_PreviewSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 433);
-            this.groupBox_PreviewSettings.Name = "groupBox_PreviewSettings";
-            this.groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 139);
-            this.groupBox_PreviewSettings.TabIndex = 3;
-            this.groupBox_PreviewSettings.TabStop = false;
-            this.groupBox_PreviewSettings.Text = "Preview Settings";
+            groupBox_PreviewSettings.Controls.Add(panel_PreviewSettings);
+            groupBox_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupBox_PreviewSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 548);
+            groupBox_PreviewSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            groupBox_PreviewSettings.Name = "groupBox_PreviewSettings";
+            groupBox_PreviewSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 174);
+            groupBox_PreviewSettings.TabIndex = 3;
+            groupBox_PreviewSettings.TabStop = false;
+            groupBox_PreviewSettings.Text = "Preview Settings";
             // 
             // panel_PreviewSettings
             // 
-            this.panel_PreviewSettings.AutoScroll = true;
-            this.panel_PreviewSettings.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.panel_PreviewSettings.Controls.Add(this.tlp_PreviewSettings);
-            this.panel_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_PreviewSettings.Location = new System.Drawing.Point(3, 18);
-            this.panel_PreviewSettings.Name = "panel_PreviewSettings";
-            this.panel_PreviewSettings.Size = new System.Drawing.Size(479, 118);
-            this.panel_PreviewSettings.TabIndex = 0;
+            panel_PreviewSettings.AutoScroll = true;
+            panel_PreviewSettings.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            panel_PreviewSettings.Controls.Add(tlp_PreviewSettings);
+            panel_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_PreviewSettings.Location = new System.Drawing.Point(3, 24);
+            panel_PreviewSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel_PreviewSettings.Name = "panel_PreviewSettings";
+            panel_PreviewSettings.Size = new System.Drawing.Size(479, 146);
+            panel_PreviewSettings.TabIndex = 0;
             // 
             // tlp_PreviewSettings
             // 
-            this.tlp_PreviewSettings.AutoSize = true;
-            this.tlp_PreviewSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlp_PreviewSettings.ColumnCount = 2;
-            this.tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tlp_PreviewSettings.Controls.Add(this.lbl_ImagesPath, 0, 0);
-            this.tlp_PreviewSettings.Controls.Add(this.tlp_ImagesPath, 1, 1);
-            this.tlp_PreviewSettings.Controls.Add(this.tlp_PreviewFrame, 0, 0);
-            this.tlp_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlp_PreviewSettings.Location = new System.Drawing.Point(0, 0);
-            this.tlp_PreviewSettings.Name = "tlp_PreviewSettings";
-            this.tlp_PreviewSettings.RowCount = 1;
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_PreviewSettings.Size = new System.Drawing.Size(479, 100);
-            this.tlp_PreviewSettings.TabIndex = 2;
+            tlp_PreviewSettings.AutoSize = true;
+            tlp_PreviewSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlp_PreviewSettings.ColumnCount = 2;
+            tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_PreviewSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            tlp_PreviewSettings.Controls.Add(lbl_ImagesPath, 0, 0);
+            tlp_PreviewSettings.Controls.Add(tlp_ImagesPath, 1, 1);
+            tlp_PreviewSettings.Controls.Add(tlp_PreviewFrame, 0, 0);
+            tlp_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            tlp_PreviewSettings.Location = new System.Drawing.Point(0, 0);
+            tlp_PreviewSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_PreviewSettings.Name = "tlp_PreviewSettings";
+            tlp_PreviewSettings.RowCount = 1;
+            tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_PreviewSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_PreviewSettings.Size = new System.Drawing.Size(479, 125);
+            tlp_PreviewSettings.TabIndex = 2;
             // 
             // lbl_ImagesPath
             // 
-            this.lbl_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_ImagesPath.AutoSize = true;
-            this.lbl_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_ImagesPath.Location = new System.Drawing.Point(37, 58);
-            this.lbl_ImagesPath.Name = "lbl_ImagesPath";
-            this.lbl_ImagesPath.Size = new System.Drawing.Size(55, 32);
-            this.lbl_ImagesPath.TabIndex = 3;
-            this.lbl_ImagesPath.Text = "Images Folder:";
+            lbl_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_ImagesPath.AutoSize = true;
+            lbl_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_ImagesPath.Location = new System.Drawing.Point(31, 73);
+            lbl_ImagesPath.Name = "lbl_ImagesPath";
+            lbl_ImagesPath.Size = new System.Drawing.Size(61, 40);
+            lbl_ImagesPath.TabIndex = 3;
+            lbl_ImagesPath.Text = "Images Folder:";
             // 
             // tlp_ImagesPath
             // 
-            this.tlp_ImagesPath.AllowDrop = true;
-            this.tlp_ImagesPath.ColumnCount = 2;
-            this.tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_ImagesPath.Controls.Add(this.txt_ImagesPath, 0, 0);
-            this.tlp_ImagesPath.Controls.Add(this.btn_ImagesPath, 1, 0);
-            this.tlp_ImagesPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_ImagesPath.Location = new System.Drawing.Point(98, 52);
-            this.tlp_ImagesPath.Name = "tlp_ImagesPath";
-            this.tlp_ImagesPath.RowCount = 1;
-            this.tlp_ImagesPath.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_ImagesPath.Size = new System.Drawing.Size(378, 45);
-            this.tlp_ImagesPath.TabIndex = 2;
+            tlp_ImagesPath.AllowDrop = true;
+            tlp_ImagesPath.ColumnCount = 2;
+            tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_ImagesPath.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_ImagesPath.Controls.Add(txt_ImagesPath, 0, 0);
+            tlp_ImagesPath.Controls.Add(btn_ImagesPath, 1, 0);
+            tlp_ImagesPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_ImagesPath.Location = new System.Drawing.Point(98, 65);
+            tlp_ImagesPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_ImagesPath.Name = "tlp_ImagesPath";
+            tlp_ImagesPath.RowCount = 1;
+            tlp_ImagesPath.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_ImagesPath.Size = new System.Drawing.Size(378, 56);
+            tlp_ImagesPath.TabIndex = 2;
             // 
             // txt_ImagesPath
             // 
-            this.txt_ImagesPath.AllowDrop = true;
-            this.txt_ImagesPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ImagesPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txt_ImagesPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txt_ImagesPath.Location = new System.Drawing.Point(3, 11);
-            this.txt_ImagesPath.Name = "txt_ImagesPath";
-            this.txt_ImagesPath.Size = new System.Drawing.Size(277, 22);
-            this.txt_ImagesPath.TabIndex = 0;
-            this.txt_ImagesPath.TextChanged += new System.EventHandler(this.ImagePath_Changed);
-            this.txt_ImagesPath.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragDrop_Txt);
-            this.txt_ImagesPath.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            txt_ImagesPath.AllowDrop = true;
+            txt_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_ImagesPath.BackColor = System.Drawing.Color.FromArgb(69, 73, 74);
+            txt_ImagesPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_ImagesPath.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            txt_ImagesPath.Location = new System.Drawing.Point(3, 14);
+            txt_ImagesPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txt_ImagesPath.Name = "txt_ImagesPath";
+            txt_ImagesPath.Size = new System.Drawing.Size(277, 27);
+            txt_ImagesPath.TabIndex = 0;
+            txt_ImagesPath.TextChanged += ImagePath_Changed;
+            txt_ImagesPath.DragDrop += DragDrop_Txt;
+            txt_ImagesPath.DragEnter += DragEnter;
             // 
             // btn_ImagesPath
             // 
-            this.btn_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_ImagesPath.Location = new System.Drawing.Point(286, 11);
-            this.btn_ImagesPath.Name = "btn_ImagesPath";
-            this.btn_ImagesPath.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_ImagesPath.Size = new System.Drawing.Size(48, 23);
-            this.btn_ImagesPath.TabIndex = 1;
-            this.btn_ImagesPath.Text = "...";
-            this.btn_ImagesPath.Click += new System.EventHandler(this.BrowseImagePath_Click);
+            btn_ImagesPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_ImagesPath.Location = new System.Drawing.Point(286, 13);
+            btn_ImagesPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_ImagesPath.Name = "btn_ImagesPath";
+            btn_ImagesPath.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btn_ImagesPath.Size = new System.Drawing.Size(48, 29);
+            btn_ImagesPath.TabIndex = 1;
+            btn_ImagesPath.Text = "...";
+            btn_ImagesPath.Click += BrowseImagePath_Click;
             // 
             // tlp_PreviewFrame
             // 
-            this.tlp_PreviewFrame.ColumnCount = 6;
-            this.tlp_PreviewSettings.SetColumnSpan(this.tlp_PreviewFrame, 2);
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_PreviewFrame.Controls.Add(this.lbl_EyeFrame, 0, 0);
-            this.tlp_PreviewFrame.Controls.Add(this.num_MouthFrame, 3, 0);
-            this.tlp_PreviewFrame.Controls.Add(this.lbl_MouthFrame, 2, 0);
-            this.tlp_PreviewFrame.Controls.Add(this.num_EyeFrame, 1, 0);
-            this.tlp_PreviewFrame.Controls.Add(this.lbl_Scale, 4, 0);
-            this.tlp_PreviewFrame.Controls.Add(this.num_Scale, 5, 0);
-            this.tlp_PreviewFrame.Location = new System.Drawing.Point(3, 3);
-            this.tlp_PreviewFrame.Name = "tlp_PreviewFrame";
-            this.tlp_PreviewFrame.RowCount = 1;
-            this.tlp_PreviewFrame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_PreviewFrame.Size = new System.Drawing.Size(473, 43);
-            this.tlp_PreviewFrame.TabIndex = 1;
+            tlp_PreviewFrame.ColumnCount = 6;
+            tlp_PreviewSettings.SetColumnSpan(tlp_PreviewFrame, 2);
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_PreviewFrame.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tlp_PreviewFrame.Controls.Add(lbl_EyeFrame, 0, 0);
+            tlp_PreviewFrame.Controls.Add(num_MouthFrame, 3, 0);
+            tlp_PreviewFrame.Controls.Add(lbl_MouthFrame, 2, 0);
+            tlp_PreviewFrame.Controls.Add(num_EyeFrame, 1, 0);
+            tlp_PreviewFrame.Controls.Add(lbl_Scale, 4, 0);
+            tlp_PreviewFrame.Controls.Add(num_Scale, 5, 0);
+            tlp_PreviewFrame.Location = new System.Drawing.Point(3, 4);
+            tlp_PreviewFrame.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_PreviewFrame.Name = "tlp_PreviewFrame";
+            tlp_PreviewFrame.RowCount = 1;
+            tlp_PreviewFrame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_PreviewFrame.Size = new System.Drawing.Size(473, 53);
+            tlp_PreviewFrame.TabIndex = 1;
             // 
             // lbl_EyeFrame
             // 
-            this.lbl_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_EyeFrame.AutoSize = true;
-            this.lbl_EyeFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_EyeFrame.Location = new System.Drawing.Point(18, 5);
-            this.lbl_EyeFrame.Name = "lbl_EyeFrame";
-            this.lbl_EyeFrame.Size = new System.Drawing.Size(49, 32);
-            this.lbl_EyeFrame.TabIndex = 4;
-            this.lbl_EyeFrame.Text = "Eye Frame:";
+            lbl_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_EyeFrame.AutoSize = true;
+            lbl_EyeFrame.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_EyeFrame.Location = new System.Drawing.Point(14, 6);
+            lbl_EyeFrame.Name = "lbl_EyeFrame";
+            lbl_EyeFrame.Size = new System.Drawing.Size(53, 40);
+            lbl_EyeFrame.TabIndex = 4;
+            lbl_EyeFrame.Text = "Eye Frame:";
             // 
             // num_MouthFrame
             // 
-            this.num_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_MouthFrame.Location = new System.Drawing.Point(213, 10);
-            this.num_MouthFrame.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.num_MouthFrame.Name = "num_MouthFrame";
-            this.num_MouthFrame.Size = new System.Drawing.Size(64, 22);
-            this.num_MouthFrame.TabIndex = 3;
-            this.num_MouthFrame.ValueChanged += new System.EventHandler(this.MouthFrame_Changed);
+            num_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_MouthFrame.Location = new System.Drawing.Point(213, 13);
+            num_MouthFrame.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_MouthFrame.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
+            num_MouthFrame.Name = "num_MouthFrame";
+            num_MouthFrame.Size = new System.Drawing.Size(64, 27);
+            num_MouthFrame.TabIndex = 3;
+            num_MouthFrame.ValueChanged += MouthFrame_Changed;
             // 
             // lbl_MouthFrame
             // 
-            this.lbl_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_MouthFrame.AutoSize = true;
-            this.lbl_MouthFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_MouthFrame.Location = new System.Drawing.Point(158, 5);
-            this.lbl_MouthFrame.Name = "lbl_MouthFrame";
-            this.lbl_MouthFrame.Size = new System.Drawing.Size(49, 32);
-            this.lbl_MouthFrame.TabIndex = 1;
-            this.lbl_MouthFrame.Text = "Mouth Frame:";
+            lbl_MouthFrame.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_MouthFrame.AutoSize = true;
+            lbl_MouthFrame.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_MouthFrame.Location = new System.Drawing.Point(151, 6);
+            lbl_MouthFrame.Name = "lbl_MouthFrame";
+            lbl_MouthFrame.Size = new System.Drawing.Size(56, 40);
+            lbl_MouthFrame.TabIndex = 1;
+            lbl_MouthFrame.Text = "Mouth Frame:";
             // 
             // num_EyeFrame
             // 
-            this.num_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_EyeFrame.Location = new System.Drawing.Point(73, 10);
-            this.num_EyeFrame.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.num_EyeFrame.Name = "num_EyeFrame";
-            this.num_EyeFrame.Size = new System.Drawing.Size(64, 22);
-            this.num_EyeFrame.TabIndex = 2;
-            this.num_EyeFrame.ValueChanged += new System.EventHandler(this.EyeFrame_Changed);
+            num_EyeFrame.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_EyeFrame.Location = new System.Drawing.Point(73, 13);
+            num_EyeFrame.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_EyeFrame.Maximum = new decimal(new int[] { 2, 0, 0, 0 });
+            num_EyeFrame.Name = "num_EyeFrame";
+            num_EyeFrame.Size = new System.Drawing.Size(64, 27);
+            num_EyeFrame.TabIndex = 2;
+            num_EyeFrame.ValueChanged += EyeFrame_Changed;
             // 
             // lbl_Scale
             // 
-            this.lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_Scale.AutoSize = true;
-            this.lbl_Scale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbl_Scale.Location = new System.Drawing.Point(313, 5);
-            this.lbl_Scale.Name = "lbl_Scale";
-            this.lbl_Scale.Size = new System.Drawing.Size(58, 32);
-            this.lbl_Scale.TabIndex = 5;
-            this.lbl_Scale.Text = "Preview Scale:";
+            lbl_Scale.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_Scale.AutoSize = true;
+            lbl_Scale.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_Scale.Location = new System.Drawing.Point(307, 6);
+            lbl_Scale.Name = "lbl_Scale";
+            lbl_Scale.Size = new System.Drawing.Size(64, 40);
+            lbl_Scale.TabIndex = 5;
+            lbl_Scale.Text = "Preview Scale:";
             // 
             // num_Scale
             // 
-            this.num_Scale.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.num_Scale.Location = new System.Drawing.Point(377, 10);
-            this.num_Scale.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num_Scale.Name = "num_Scale";
-            this.num_Scale.Size = new System.Drawing.Size(64, 22);
-            this.num_Scale.TabIndex = 6;
-            this.num_Scale.Tag = "";
-            this.num_Scale.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.num_Scale.ValueChanged += new System.EventHandler(this.PreviewScale_Changed);
+            num_Scale.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            num_Scale.Location = new System.Drawing.Point(377, 13);
+            num_Scale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_Scale.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            num_Scale.Name = "num_Scale";
+            num_Scale.Size = new System.Drawing.Size(64, 27);
+            num_Scale.TabIndex = 6;
+            num_Scale.Tag = "";
+            num_Scale.Value = new decimal(new int[] { 50, 0, 0, 0 });
+            num_Scale.ValueChanged += PreviewScale_Changed;
             // 
             // darkMenuStrip_MainMenu
             // 
-            this.darkMenuStrip_MainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkMenuStrip_MainMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkMenuStrip_MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
-            this.darkMenuStrip_MainMenu.Location = new System.Drawing.Point(0, 0);
-            this.darkMenuStrip_MainMenu.Name = "darkMenuStrip_MainMenu";
-            this.darkMenuStrip_MainMenu.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
-            this.darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 28);
-            this.darkMenuStrip_MainMenu.TabIndex = 1;
-            this.darkMenuStrip_MainMenu.Text = "darkMenuStrip1";
+            darkMenuStrip_MainMenu.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            darkMenuStrip_MainMenu.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            darkMenuStrip_MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem });
+            darkMenuStrip_MainMenu.Location = new System.Drawing.Point(0, 0);
+            darkMenuStrip_MainMenu.Name = "darkMenuStrip_MainMenu";
+            darkMenuStrip_MainMenu.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
+            darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 28);
+            darkMenuStrip_MainMenu.TabIndex = 1;
+            darkMenuStrip_MainMenu.Text = "darkMenuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newProjectToolStripMenuItem,
-            this.loadToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.importToolStripMenuItem,
-            this.exportToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.loadToolStripMenuItem.Text = "Load Project";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadProject_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveToolStripMenuItem.Text = "Save Project";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveProject_Click);
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.Import_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.Export_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem,
-            this.renameToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem});
-            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.Remove_Click);
-            // 
-            // renameToolStripMenuItem
-            // 
-            this.renameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.renameToolStripMenuItem.Text = "Rename";
-            this.renameToolStripMenuItem.Click += new System.EventHandler(this.Rename_Click);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.copyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.copyToolStripMenuItem.Text = "Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.Copy_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pasteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.Paste_Click);
+            fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem });
+            fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
             // 
             // newProjectToolStripMenuItem
             // 
-            this.newProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.newProjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.p5RToolStripMenuItem,
-            this.p5PS3ToolStripMenuItem});
-            this.newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.newProjectToolStripMenuItem.Text = "New Project...";
+            newProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            newProjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { p5RToolStripMenuItem, p5PS3ToolStripMenuItem });
+            newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
+            newProjectToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            newProjectToolStripMenuItem.Text = "New Project...";
             // 
             // p5RToolStripMenuItem
             // 
-            this.p5RToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.p5RToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventBustupProjectToolStripMenuItem,
-            this.naviBustupProjectToolStripMenuItem});
-            this.p5RToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.p5RToolStripMenuItem.Name = "p5RToolStripMenuItem";
-            this.p5RToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.p5RToolStripMenuItem.Text = "P5R";
-            // 
-            // p5PS3ToolStripMenuItem
-            // 
-            this.p5PS3ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.p5PS3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventBustupProjectToolStripMenuItem1,
-            this.naviBustupProjectToolStripMenuItem1});
-            this.p5PS3ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.p5PS3ToolStripMenuItem.Name = "p5PS3ToolStripMenuItem";
-            this.p5PS3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.p5PS3ToolStripMenuItem.Text = "P5 PS3";
+            p5RToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            p5RToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { eventBustupProjectToolStripMenuItem, naviBustupProjectToolStripMenuItem });
+            p5RToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            p5RToolStripMenuItem.Name = "p5RToolStripMenuItem";
+            p5RToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            p5RToolStripMenuItem.Text = "P5R";
             // 
             // eventBustupProjectToolStripMenuItem
             // 
-            this.eventBustupProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.eventBustupProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.eventBustupProjectToolStripMenuItem.Name = "eventBustupProjectToolStripMenuItem";
-            this.eventBustupProjectToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.eventBustupProjectToolStripMenuItem.Text = "Event Bustup Project";
-            this.eventBustupProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProj_P5R_Event_Click);
+            eventBustupProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            eventBustupProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            eventBustupProjectToolStripMenuItem.Name = "eventBustupProjectToolStripMenuItem";
+            eventBustupProjectToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            eventBustupProjectToolStripMenuItem.Text = "Event Bustup Project";
+            eventBustupProjectToolStripMenuItem.Click += NewProj_P5R_Event_Click;
             // 
             // naviBustupProjectToolStripMenuItem
             // 
-            this.naviBustupProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.naviBustupProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.naviBustupProjectToolStripMenuItem.Name = "naviBustupProjectToolStripMenuItem";
-            this.naviBustupProjectToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.naviBustupProjectToolStripMenuItem.Text = "Navi Bustup Project";
-            this.naviBustupProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProj_P5R_Navi_Click);
+            naviBustupProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            naviBustupProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            naviBustupProjectToolStripMenuItem.Name = "naviBustupProjectToolStripMenuItem";
+            naviBustupProjectToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            naviBustupProjectToolStripMenuItem.Text = "Navi Bustup Project";
+            naviBustupProjectToolStripMenuItem.Click += NewProj_P5R_Navi_Click;
+            // 
+            // p5PS3ToolStripMenuItem
+            // 
+            p5PS3ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            p5PS3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { eventBustupProjectToolStripMenuItem1, naviBustupProjectToolStripMenuItem1 });
+            p5PS3ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            p5PS3ToolStripMenuItem.Name = "p5PS3ToolStripMenuItem";
+            p5PS3ToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            p5PS3ToolStripMenuItem.Text = "P5 PS3";
             // 
             // eventBustupProjectToolStripMenuItem1
             // 
-            this.eventBustupProjectToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.eventBustupProjectToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.eventBustupProjectToolStripMenuItem1.Name = "eventBustupProjectToolStripMenuItem1";
-            this.eventBustupProjectToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
-            this.eventBustupProjectToolStripMenuItem1.Text = "Event Bustup Project";
-            this.eventBustupProjectToolStripMenuItem1.Click += new System.EventHandler(this.NewProj_P5_PS3_Event_Click);
+            eventBustupProjectToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            eventBustupProjectToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            eventBustupProjectToolStripMenuItem1.Name = "eventBustupProjectToolStripMenuItem1";
+            eventBustupProjectToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            eventBustupProjectToolStripMenuItem1.Text = "Event Bustup Project";
+            eventBustupProjectToolStripMenuItem1.Click += NewProj_P5_PS3_Event_Click;
             // 
             // naviBustupProjectToolStripMenuItem1
             // 
-            this.naviBustupProjectToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.naviBustupProjectToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.naviBustupProjectToolStripMenuItem1.Name = "naviBustupProjectToolStripMenuItem1";
-            this.naviBustupProjectToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
-            this.naviBustupProjectToolStripMenuItem1.Text = "Navi Bustup Project";
-            this.naviBustupProjectToolStripMenuItem1.Click += new System.EventHandler(this.NewProj_P5_PS3_Navi_Click);
+            naviBustupProjectToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            naviBustupProjectToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            naviBustupProjectToolStripMenuItem1.Name = "naviBustupProjectToolStripMenuItem1";
+            naviBustupProjectToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            naviBustupProjectToolStripMenuItem1.Text = "Navi Bustup Project";
+            naviBustupProjectToolStripMenuItem1.Click += NewProj_P5_PS3_Navi_Click;
+            // 
+            // loadToolStripMenuItem
+            // 
+            loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            loadToolStripMenuItem.Text = "Load Project";
+            loadToolStripMenuItem.Click += LoadProject_Click;
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            saveToolStripMenuItem.Text = "Save Project";
+            saveToolStripMenuItem.Click += SaveProject_Click;
+            // 
+            // importToolStripMenuItem
+            // 
+            importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            importToolStripMenuItem.Name = "importToolStripMenuItem";
+            importToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            importToolStripMenuItem.Text = "Import";
+            importToolStripMenuItem.Click += Import_Click;
+            // 
+            // exportToolStripMenuItem
+            // 
+            exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            exportToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            exportToolStripMenuItem.Text = "Export";
+            exportToolStripMenuItem.Click += Export_Click;
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { addToolStripMenuItem, removeToolStripMenuItem, renameToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem });
+            editToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            editToolStripMenuItem.Text = "Edit";
+            // 
+            // addToolStripMenuItem
+            // 
+            addToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            addToolStripMenuItem.Name = "addToolStripMenuItem";
+            addToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            addToolStripMenuItem.Text = "Add";
+            addToolStripMenuItem.Click += Add_Click;
+            // 
+            // removeToolStripMenuItem
+            // 
+            removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            removeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            removeToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            removeToolStripMenuItem.Text = "Remove";
+            removeToolStripMenuItem.Click += Remove_Click;
+            // 
+            // renameToolStripMenuItem
+            // 
+            renameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            renameToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            renameToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            renameToolStripMenuItem.Text = "Rename";
+            // 
+            // copyToolStripMenuItem
+            // 
+            copyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            copyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += Copy_Click;
+            // 
+            // pasteToolStripMenuItem
+            // 
+            pasteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            pasteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            pasteToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            pasteToolStripMenuItem.Text = "Paste";
+            pasteToolStripMenuItem.Click += Paste_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 603);
-            this.Controls.Add(this.tlp_Main);
-            this.Controls.Add(this.darkMenuStrip_MainMenu);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.darkMenuStrip_MainMenu;
-            this.MinimumSize = new System.Drawing.Size(650, 475);
-            this.Name = "MainForm";
-            this.Text = "BustupEditor";
-            this.tlp_Main.ResumeLayout(false);
-            this.darkContextMenu_Sprites.ResumeLayout(false);
-            this.groupBox_BustupSettings.ResumeLayout(false);
-            this.panel_BustupSettings.ResumeLayout(false);
-            this.panel_BustupSettings.PerformLayout();
-            this.pnl_BustupSettings.ResumeLayout(false);
-            this.tlp_BustupSettings.ResumeLayout(false);
-            this.tlp_BustupSettings.PerformLayout();
-            this.tlp_MouthImg3Browse.ResumeLayout(false);
-            this.tlp_MouthImg3Browse.PerformLayout();
-            this.tlp_MouthImg2Browse.ResumeLayout(false);
-            this.tlp_MouthImg2Browse.PerformLayout();
-            this.tlp_MouthImg1Browse.ResumeLayout(false);
-            this.tlp_MouthImg1Browse.PerformLayout();
-            this.tlp_BlinkImg2Browse.ResumeLayout(false);
-            this.tlp_BlinkImg2Browse.PerformLayout();
-            this.tlp_BlinkImg1Browse.ResumeLayout(false);
-            this.tlp_BlinkImg1Browse.PerformLayout();
-            this.tlp_BaseImgBrowse.ResumeLayout(false);
-            this.tlp_BaseImgBrowse.PerformLayout();
-            this.tlp_BustupID.ResumeLayout(false);
-            this.tlp_BustupID.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SubID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MinorID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MajorID)).EndInit();
-            this.tlp_MouthPos.ResumeLayout(false);
-            this.tlp_MouthPos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthPosY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthPosX)).EndInit();
-            this.tlp_EyePos.ResumeLayout(false);
-            this.tlp_EyePos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyePosY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyePosX)).EndInit();
-            this.tlp_BasePos.ResumeLayout(false);
-            this.tlp_BasePos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_BasePosY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_BasePosX)).EndInit();
-            this.groupBox_Texture.ResumeLayout(false);
-            this.groupBox_Texture.PerformLayout();
-            this.pnl_ImgPreview.ResumeLayout(false);
-            this.pnl_ImgPreview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tex)).EndInit();
-            this.darkContextMenu_Texture.ResumeLayout(false);
-            this.groupBox_PreviewSettings.ResumeLayout(false);
-            this.panel_PreviewSettings.ResumeLayout(false);
-            this.panel_PreviewSettings.PerformLayout();
-            this.tlp_PreviewSettings.ResumeLayout(false);
-            this.tlp_PreviewSettings.PerformLayout();
-            this.tlp_ImagesPath.ResumeLayout(false);
-            this.tlp_ImagesPath.PerformLayout();
-            this.tlp_PreviewFrame.ResumeLayout(false);
-            this.tlp_PreviewFrame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_MouthFrame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_EyeFrame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_Scale)).EndInit();
-            this.darkMenuStrip_MainMenu.ResumeLayout(false);
-            this.darkMenuStrip_MainMenu.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            ClientSize = new System.Drawing.Size(982, 754);
+            Controls.Add(tlp_Main);
+            Controls.Add(darkMenuStrip_MainMenu);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = darkMenuStrip_MainMenu;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            MinimumSize = new System.Drawing.Size(650, 582);
+            Name = "MainForm";
+            Text = "BustupEditor";
+            tlp_Main.ResumeLayout(false);
+            darkContextMenu_Sprites.ResumeLayout(false);
+            groupBox_BustupSettings.ResumeLayout(false);
+            panel_BustupSettings.ResumeLayout(false);
+            panel_BustupSettings.PerformLayout();
+            pnl_BustupSettings.ResumeLayout(false);
+            tlp_BustupSettings.ResumeLayout(false);
+            tlp_BustupSettings.PerformLayout();
+            tlp_MouthImg3Browse.ResumeLayout(false);
+            tlp_MouthImg3Browse.PerformLayout();
+            tlp_MouthImg2Browse.ResumeLayout(false);
+            tlp_MouthImg2Browse.PerformLayout();
+            tlp_MouthImg1Browse.ResumeLayout(false);
+            tlp_MouthImg1Browse.PerformLayout();
+            tlp_BlinkImg2Browse.ResumeLayout(false);
+            tlp_BlinkImg2Browse.PerformLayout();
+            tlp_BlinkImg1Browse.ResumeLayout(false);
+            tlp_BlinkImg1Browse.PerformLayout();
+            tlp_BaseImgBrowse.ResumeLayout(false);
+            tlp_BaseImgBrowse.PerformLayout();
+            tlp_BustupID.ResumeLayout(false);
+            tlp_BustupID.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_SubID).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_MinorID).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_MajorID).EndInit();
+            tlp_MouthPos.ResumeLayout(false);
+            tlp_MouthPos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_MouthPosY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_MouthPosX).EndInit();
+            tlp_EyePos.ResumeLayout(false);
+            tlp_EyePos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_EyePosY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_EyePosX).EndInit();
+            tlp_BasePos.ResumeLayout(false);
+            tlp_BasePos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_BasePosY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_BasePosX).EndInit();
+            groupBox_Texture.ResumeLayout(false);
+            groupBox_Texture.PerformLayout();
+            pnl_ImgPreview.ResumeLayout(false);
+            pnl_ImgPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Tex).EndInit();
+            darkContextMenu_Texture.ResumeLayout(false);
+            groupBox_PreviewSettings.ResumeLayout(false);
+            panel_PreviewSettings.ResumeLayout(false);
+            panel_PreviewSettings.PerformLayout();
+            tlp_PreviewSettings.ResumeLayout(false);
+            tlp_PreviewSettings.PerformLayout();
+            tlp_ImagesPath.ResumeLayout(false);
+            tlp_ImagesPath.PerformLayout();
+            tlp_PreviewFrame.ResumeLayout(false);
+            tlp_PreviewFrame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_MouthFrame).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_EyeFrame).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_Scale).EndInit();
+            darkMenuStrip_MainMenu.ResumeLayout(false);
+            darkMenuStrip_MainMenu.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -1618,7 +1642,6 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSpriteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeSelectedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renameSelectedToolStripMenuItem;
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Sprites;
         private DarkUI.Controls.DarkGroupBox groupBox_Texture;
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Texture;
@@ -1710,6 +1733,12 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem p5PS3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventBustupProjectToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem naviBustupProjectToolStripMenuItem1;
+        private DarkUI.Controls.DarkLabel lbl_CharaName;
+        private DarkUI.Controls.DarkTextBox txt_ExpressionName;
+        private DarkUI.Controls.DarkTextBox txt_CharaName;
+        private DarkUI.Controls.DarkLabel lbl_ExpressionName;
+        private DarkUI.Controls.DarkLabel lbl_OutfitName;
+        private DarkUI.Controls.DarkTextBox txt_OutfitName;
     }
 }
 

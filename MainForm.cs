@@ -20,6 +20,25 @@ namespace BustupEditor
             InitializeComponent();
             SetMenuStripIcons();
             SetOverlayImages();
+            SetupSpriteList();
+        }
+
+        public static BindingSource bindingSource_ListBox = new BindingSource();
+
+        private void SetupSpriteList()
+        {
+            bindingSource_ListBox.DataSource = bustupProject.Bustups;
+
+            listBox_Sprites.DataSource = bindingSource_ListBox;
+            listBox_Sprites.DisplayMember = "Name";
+            listBox_Sprites.FormattingEnabled = true;
+            listBox_Sprites.Format += ListBoxFormat;
+        }
+
+        private void ListBoxFormat(object sender, ListControlConvertEventArgs e)
+        {
+            Bustup bustup = (Bustup)e.ListItem;
+            e.Value = $"{bustup.MajorID.ToString("000")}_{bustup.MinorID.ToString("000")}_{bustup.SubID.ToString("00")} | {bustup.CharaName} {bustup.ExpressionName} ({bustup.OutfitName})";
         }
 
         public Bustup copiedParams = new Bustup(); // holds parameters for the last copied bustup
@@ -28,19 +47,12 @@ namespace BustupEditor
         {
             MenuStripHelper.SetMenuStripIcons(MenuStripHelper.GetMenuStripIconPairs("./Dependencies/Icons.txt"), this);
         }
-    }
 
-    public static class ControlExtensions
-    {
-        public static IEnumerable<Control> FlattenChildren<T>(this Control control)
+        private void UpdateSpriteList()
         {
-            return control.FlattenChildren().OfType<T>().Cast<Control>();
-        }
-
-        public static IEnumerable<Control> FlattenChildren(this Control control)
-        {
-            var children = control.Controls.Cast<Control>();
-            return children.SelectMany(c => FlattenChildren(c)).Concat(children);
+            bindingSource_ListBox.DataSource = null;
+            bindingSource_ListBox.DataSource = bustupProject.Bustups;
+            bindingSource_ListBox.ResetBindings(false);
         }
     }
 }

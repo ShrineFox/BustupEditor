@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BustupEditor.MainForm;
 
 namespace BustupEditor
 {
@@ -28,6 +29,9 @@ namespace BustupEditor
         public class Bustup
         {
             public string Name = "Untitled";
+            public string CharaName = "";
+            public string ExpressionName = "";
+            public string OutfitName = "";
             public ushort MajorID = 0;
             public ushort MinorID = 0;
             public ushort SubID = 0;
@@ -44,6 +48,7 @@ namespace BustupEditor
             public string MouthImg1Path = "";
             public string MouthImg2Path = "";
             public string MouthImg3Path = "";
+            public bool AutoScaleImg = false;
         }
 
         public enum PlatformType
@@ -97,7 +102,7 @@ namespace BustupEditor
         private void LoadJson(string jsonPath)
         {
             bustupProject = JsonConvert.DeserializeObject<BustupProject>(File.ReadAllText(jsonPath));
-
+            
             UpdateSpriteList();
         }
 

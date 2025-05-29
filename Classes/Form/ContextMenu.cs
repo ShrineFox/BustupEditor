@@ -13,46 +13,9 @@ namespace BustupEditor
 {
     public partial class MainForm : DarkForm
     {
-        private void Rename_Click(object sender, EventArgs e)
-        {
-            if (listBox_Sprites.SelectedIndex != -1 && bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-            {
-                RenameForm renameForm = new RenameForm(listBox_Sprites.SelectedItem.ToString());
-                var result = renameForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string newName = renameForm.RenameText;
-                    if (string.IsNullOrEmpty(newName))
-                    {
-                        MessageBox.Show("The name you provided is either null or empty.",
-                            "Error: Invalid name");
-                        return;
-                    }
-
-                    if (bustupProject.Bustups.Any(x => x.Name.Equals(renameForm.RenameText)))
-                    {
-                        MessageBox.Show("There is already an item with the same name! Please choose a different one.",
-                            "Error: Duplicate entry name");
-                        return;
-                    }
-                    else
-                    {
-                        bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).Name = renameForm.RenameText;
-                    }
-                }
-                else
-                    return;
-
-                UpdateSpriteList();
-            }
-        }
         private void OpenImageFolder_Click(object sender, EventArgs e)
         {
-            Bustup selectedBustup = null;
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
-            else
-                return;
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
 
@@ -66,10 +29,8 @@ namespace BustupEditor
 
         private void Copy_Click(object sender, EventArgs e)
         {
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                copiedParams = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).Copy();
-            else
-                return;
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem.Copy();
+            copiedParams = selectedBustup.Copy();
         }
 
         private void Paste_Click(object sender, EventArgs e)
@@ -78,33 +39,34 @@ namespace BustupEditor
             {
                 foreach (var selection in listBox_Sprites.SelectedItems)
                 {
-                    if (bustupProject.Bustups.Any(x => x.Name.Equals(selection.ToString())))
+                    Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem.Copy();
+                    Bustup newBustup = copiedParams.Copy();
+
+                    // Preserve bustup names and IDs
+                    newBustup.Name = selectedBustup.Name;
+                    newBustup.MajorID = selectedBustup.MajorID;
+                    newBustup.MinorID = selectedBustup.MinorID;
+                    newBustup.SubID = selectedBustup.SubID;
+
+                    int bustupIndex = bustupProject.Bustups.IndexOf(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
+                    if (bustupIndex != -1)
                     {
-                        Bustup selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())).Copy();
-                        Bustup newBustup = copiedParams.Copy();
-
-                        // Preserve bustup names and IDs
-                        newBustup.Name = selectedBustup.Name;
-                        newBustup.MajorID = selectedBustup.MajorID;
-                        newBustup.MinorID = selectedBustup.MinorID;
-                        newBustup.SubID = selectedBustup.SubID;
-
-                        int bustupIndex = bustupProject.Bustups.IndexOf(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
-                        if (bustupIndex != -1)
-                        {
-                            bustupProject.Bustups[bustupIndex] = newBustup;
-                        }
+                        bustupProject.Bustups[bustupIndex] = newBustup;
                     }
                 }
+                
                 UpdateFormCtrlValues();
+                UpdateSpriteList();
             }
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
             bustupProject.Bustups.Add(new Bustup());
-            UpdateSpriteList();
+            bindingSource_ListBox.ResetBindings(false);
             listBox_Sprites.SelectedIndex = listBox_Sprites.Items.Count - 1;
+
+            UpdateSpriteList();
         }
 
         private void Remove_Click(object sender, EventArgs e)
@@ -115,8 +77,10 @@ namespace BustupEditor
 
                 // Remove all highlighted bustup entries
                 foreach (var selection in listBox_Sprites.SelectedItems)
-                    if (bustupProject.Bustups.Any(x => x.Name.Equals(selection.ToString())))
-                        bustupProject.Bustups.Remove(bustupProject.Bustups.First(x => x.Name.Equals(selection.ToString())));
+                {
+                    Bustup selectedBustup = (Bustup)selection;
+                    bustupProject.Bustups.Remove(selectedBustup);
+                }
 
                 UpdateSpriteList();
 
@@ -130,8 +94,6 @@ namespace BustupEditor
         {
             if (e.KeyCode == Keys.Delete)
                 Remove_Click(sender, e);
-            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.R)
-                Rename_Click(sender, e);
             else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)
                 Copy_Click(sender, e);
             else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.V)

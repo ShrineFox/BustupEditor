@@ -24,7 +24,7 @@ namespace BustupEditor
 
             ImportBustupData(selection[0]);
             ExtractBustupImages(selection[0]);
-            UpdateSpriteList();
+            bindingSource_ListBox.ResetBindings(false);
         }
 
         private void ExtractBustupImages(string bustupDatPath)

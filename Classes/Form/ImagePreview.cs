@@ -1,4 +1,5 @@
 ﻿using DarkUI.Forms;
+using GFDLibrary.Textures;
 using Newtonsoft.Json;
 using ShrineFox.IO;
 using System;
@@ -35,8 +36,8 @@ namespace BustupEditor
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
                 if (ddsFiles.Length > 0)
                 {
-                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(ddsFiles[0])));
-                    pictureBox_Tex.Image = ddsBitmap;
+                    Bitmap bmp = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(ddsFiles[0])));
+                    pictureBox_Tex.Image = bmp;
                     return;
                 }
             }
@@ -47,6 +48,12 @@ namespace BustupEditor
         private Bitmap ScaleBitmap(Bitmap bmp)
         {
             return new Bitmap(bmp, new Size((int)Math.Ceiling((double)bmp.Width * ((double)bustupProject.Scale / (double)100)), (int)Math.Ceiling(((double)bmp.Height * ((double)bustupProject.Scale / (double)100)))));
+        }
+
+        private Bitmap ConvertDDSToBitmap(byte[] ddsBytes)
+        {
+            var texture = new Texture() { Data = ddsBytes, Format = TextureFormat.DDS };
+            return TextureDecoder.Decode(texture);
         }
     }
 }

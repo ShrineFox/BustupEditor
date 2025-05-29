@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,13 +16,6 @@ namespace BustupEditor
 {
     public partial class MainForm : DarkForm
     {
-        private void UpdateSpriteList()
-        {
-            listBox_Sprites.Items.Clear();
-            foreach (var bustup in bustupProject.Bustups)
-                listBox_Sprites.Items.Add(bustup.Name);
-        }
-
         private void DragEnter(object sender, DragEventArgs e)
         {
 
@@ -42,11 +36,9 @@ namespace BustupEditor
             num_EyeFrame.Value = 0;
             num_MouthFrame.Value = 0;
 
-            Bustup selectedBustup = null;
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
-            else
+            if (selectedBustup == null)
                 return;
 
             ToggleControls();
@@ -79,6 +71,10 @@ namespace BustupEditor
             txt_MouthImg2Browse.Text = selectedBustup.MouthImg2Path;
             txt_MouthImg3Browse.Text = selectedBustup.MouthImg3Path;
 
+            txt_CharaName.Text = selectedBustup.CharaName;
+            txt_ExpressionName.Text = selectedBustup.ExpressionName;
+            txt_OutfitName.Text = selectedBustup.OutfitName;
+
             LoadBustupPreview(selectedBustup.MajorID, selectedBustup.MinorID, selectedBustup.SubID);
 
             ToggleControls(true);
@@ -94,7 +90,7 @@ namespace BustupEditor
                 "num_MouthPosX", "num_MouthPosY", "comboBox_Animation", "txt_ImagesPath",
                 "num_EyeFrame", "num_MouthFrame", "txt_BaseImgBrowse", "txt_BlinkImg1Browse",
                 "txt_BlinkImg2Browse", "txt_MouthImg1Browse", "txt_MouthImg2Browse",
-                "txt_MouthImg3Browse" })
+                "txt_MouthImg3Browse", "txt_CharaName", "txt_ExpressionName", "txt_OutfitName" })
             {
                 WinForms.GetControl(this, str).Enabled = enabled;
             }
@@ -104,54 +100,60 @@ namespace BustupEditor
         {
             if (!num_MajorID.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MajorID = Convert.ToUInt16(num_MajorID.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.MajorID = Convert.ToUInt16(num_MajorID.Value);
         }
 
         private void MinorID_Changed(object sender, EventArgs e)
         {
             if (!num_MinorID.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MinorID = Convert.ToUInt16(num_MinorID.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.MinorID = Convert.ToUInt16(num_MinorID.Value);
         }
 
         private void SubID_Changed(object sender, EventArgs e)
         {
             if (!num_SubID.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).SubID = Convert.ToUInt16(num_SubID.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.SubID = Convert.ToUInt16(num_SubID.Value);
         }
 
         private void BasePosX_Changed(object sender, EventArgs e)
         {
             if (!num_BasePosX.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BasePos_X = Convert.ToSingle(num_BasePosX.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.BasePos_X = Convert.ToSingle(num_BasePosX.Value);
         }
 
         private void BasePosY_Changed(object sender, EventArgs e)
         {
             if (!num_BasePosY.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BasePos_Y = Convert.ToSingle(num_BasePosY.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.BasePos_Y = Convert.ToSingle(num_BasePosY.Value);
         }
 
         private void EyePosX_Changed(object sender, EventArgs e)
         {
             if (!num_EyePosX.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).EyePos_X = Convert.ToSingle(num_EyePosX.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.EyePos_X = Convert.ToSingle(num_EyePosX.Value);
 
             pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
         }
@@ -160,9 +162,10 @@ namespace BustupEditor
         {
             if (!num_EyePosY.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).EyePos_Y = Convert.ToSingle(num_EyePosY.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.EyePos_Y = Convert.ToSingle(num_EyePosY.Value);
 
             pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
         }
@@ -171,9 +174,10 @@ namespace BustupEditor
         {
             if (!num_MouthPosX.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthPos_X = Convert.ToSingle(num_MouthPosX.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.MouthPos_X = Convert.ToSingle(num_MouthPosX.Value);
 
             pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
         }
@@ -182,9 +186,10 @@ namespace BustupEditor
         {
             if (!num_MouthPosY.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthPos_Y = Convert.ToSingle(num_MouthPosY.Value);
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.MouthPos_Y = Convert.ToSingle(num_MouthPosY.Value);
 
             pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
         }
@@ -193,15 +198,17 @@ namespace BustupEditor
         {
             if (!comboBox_Animation.Enabled)
                 return;
-            if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                return;
 
-            bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).AnimType = (AnimationType)Enum.Parse(typeof(AnimationType), comboBox_Animation.SelectedItem.ToString());
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.AnimType = (AnimationType)Enum.Parse(typeof(AnimationType), comboBox_Animation.SelectedItem.ToString());
         }
 
         private void ImagePath_Changed(object sender, EventArgs e)
         {
             DarkTextBox txtBox = sender as DarkTextBox;
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             if (!txtBox.Enabled)
                 return;
@@ -209,34 +216,32 @@ namespace BustupEditor
             switch (txtBox.Name)
             {
                 case "txt_BaseImgBrowse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BaseImgPath = txtBox.Text;
+                    selectedBustup.BaseImgPath = txtBox.Text;
                     break;
                 case "txt_BlinkImg1Browse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BlinkImg1Path = txtBox.Text;
+                    selectedBustup.BlinkImg1Path = txtBox.Text;
                     break;
                 case "txt_BlinkImg2Browse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).BlinkImg2Path = txtBox.Text;
+                    selectedBustup.BlinkImg2Path = txtBox.Text;
                     break;
                 case "txt_MouthImg1Browse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg1Path = txtBox.Text;
+                    selectedBustup.MouthImg1Path = txtBox.Text;
                     break;
                 case "txt_MouthImg2Browse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg2Path = txtBox.Text;
+                    selectedBustup.MouthImg2Path = txtBox.Text;
                     break;
                 case "txt_MouthImg3Browse":
-                    if (!bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                        return;
-                    bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())).MouthImg3Path = txtBox.Text;
+                    selectedBustup.MouthImg3Path = txtBox.Text;
+                    break;
+                case "txt_CharaName":
+                    foreach(var bustup in bustupProject.Bustups.Where(x => x.MajorID == selectedBustup.MajorID))
+                        bustup.CharaName = txtBox.Text;
+                    break;
+                case "txt_ExpressionName":
+                    selectedBustup.ExpressionName = txtBox.Text;
+                    break;
+                case "txt_OutfitName":
+                    selectedBustup.OutfitName = txtBox.Text;
                     break;
                 case "txt_ImagesPath":
                     bustupProject.ImagesPath = txt_ImagesPath.Text;
@@ -275,11 +280,7 @@ namespace BustupEditor
                 return;
             }
 
-            Bustup selectedBustup = null;
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
-            else
-                return;
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
             if (bustupProject.Type == BustupType.Portrait)
@@ -294,7 +295,7 @@ namespace BustupEditor
                 if (ddsFiles.Length >= eyeFrame + 1)
                 {
                     string dds = ddsFiles[eyeFrame];
-                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(dds)));
+                    Bitmap ddsBitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(dds)));
                     pictureBox_Eyes.Image = ddsBitmap;
                     pictureBox_Eyes.Size = ddsBitmap.Size;
                     pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
@@ -321,11 +322,7 @@ namespace BustupEditor
             }
             mouthFrame = mouthFrame + 2;
 
-            Bustup selectedBustup = null;
-            if (bustupProject.Bustups.Any(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString())))
-                selectedBustup = bustupProject.Bustups.First(x => x.Name.Equals(listBox_Sprites.SelectedItem.ToString()));
-            else
-                return;
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
 
@@ -340,7 +337,7 @@ namespace BustupEditor
                 if (ddsFiles.Length >= mouthFrame + 1)
                 {
                     string dds = ddsFiles[mouthFrame];
-                    Bitmap ddsBitmap = ScaleBitmap(DDS.Decode(File.ReadAllBytes(dds)));
+                    Bitmap ddsBitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(dds)));
                     pictureBox_Mouth.Image = ddsBitmap;
                     pictureBox_Mouth.Size = ddsBitmap.Size;
                     pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));
