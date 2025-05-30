@@ -20,6 +20,8 @@ namespace BustupEditor
 {
     public partial class MainForm : DarkForm
     {
+        List<Tuple<string, byte[]>> UniqueExportedBins = new List<Tuple<string, byte[]>>();
+
         private void Export_Click(object sender, EventArgs e)
         {
             string exportFolder = WinFormsDialogs.SelectFolder("Choose Output folder...");
@@ -77,10 +79,19 @@ namespace BustupEditor
 
             Directory.CreateDirectory(exportFolder);
 
-            // TO DO: More performant way to do this, maybe pre-convert images to DDS
-            // and keep them in a list to avoid making duplicates in memory?
+            // Only export BINs with base images defined
             foreach (var bustup in bustupProject.Bustups.Where(x => !string.IsNullOrEmpty(x.BaseImgPath)))
             {
+                string exportBinPath = Path.Combine(exportFolder, "B" + bustup.Name + ".BIN");
+
+                // This is to avoid exporting the same BIN multiple times if the same image is used
+                if (UniqueExportedBins.Any(x => x.Item1.Equals(bustup.BaseImgPath)))
+                {
+                    File.WriteAllBytes(exportBinPath, UniqueExportedBins.First(x => x.Item1.Equals(bustup.BaseImgPath)).Item2);
+                    continue;
+                }
+
+                // Create DDS files from custom images, use transparent dummy DDS when none are supplied
                 byte[] baseImg = GetDDSDataFromImagePath(bustup.BaseImgPath);
                 byte[] blinkImg1 = GetBlankDDS();
                 byte[] blinkImg2 = GetBlankDDS();
@@ -99,8 +110,8 @@ namespace BustupEditor
                 if (!string.IsNullOrEmpty(bustup.MouthImg3Path))
                     mouthImg3 = GetDDSDataFromImagePath(bustup.MouthImg3Path);
 
-                string exportBin = Path.Combine(exportFolder, "B" + bustup.Name + ".BIN");
-                using (FileStream stream = new FileStream(exportBin, FileMode.OpenOrCreate))
+                // Construct BIN file in memory
+                using (MemoryStream stream = new MemoryStream())
                 using (EndianBinaryWriter writer = new EndianBinaryWriter(stream, Endianness.BigEndian))
                 {
                     writer.Write(6); // image count
@@ -138,12 +149,19 @@ namespace BustupEditor
                                 WriteName(writer, "b" + bustup.Name + "_m3.dds");
                                 writer.Write(mouthImg3.Length);
                                 writer.Write(mouthImg3);
-                                break;
-
+                                break;    
                         }
                     }
+
+                    // Write BIN to output destination
+                    stream.WriteTo(File.Create(exportBinPath));
+
+                    // Add to list of unique BINs
+                    UniqueExportedBins.Add(new Tuple<string, byte[]>(bustup.BaseImgPath, stream.ToArray()));
                 }
             }
+
+            UniqueExportedBins.Clear();
         }
 
         private byte[] GetBlankDDS()
