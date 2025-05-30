@@ -23,7 +23,7 @@ namespace BustupEditor
             bustupProject = new BustupProject();
 
             ImportBustupData(selection[0]);
-            ExtractBustupImages(selection[0]);
+
             bindingSource_ListBox.ResetBindings(false);
         }
 

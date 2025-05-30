@@ -32,6 +32,24 @@ namespace BustupEditor
             MessageBox.Show($"Done exporting new files to:\n\n{exportFolder}");
         }
 
+        private void ExportDAT_Click(object sender, EventArgs e)
+        {
+            string exportFolder = WinFormsDialogs.SelectFolder("Choose .DAT Output folder...");
+
+            ExportDat(exportFolder);
+
+            MessageBox.Show($"Done exporting new .DAT file to:\n\n{exportFolder}");
+        }
+
+        private void ExportBINs_Click(object sender, EventArgs e)
+        {
+            string exportFolder = WinFormsDialogs.SelectFolder("Choose .BIN Output folder...");
+
+            ExportP5RPCBustupBins(exportFolder);
+
+            MessageBox.Show($"Done exporting new .BIN files to:\n\n{exportFolder}");
+        }
+
         private void ExportDat(string exportFolder)
         {
             string outputFile = exportFolder;
