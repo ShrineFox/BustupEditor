@@ -143,6 +143,7 @@ namespace BustupEditor
             toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             extractBustupBINsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             applyImgPathToAllWithSameExpressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importNamesFromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tlp_Main.SuspendLayout();
             darkContextMenu_Sprites.SuspendLayout();
             groupBox_BustupSettings.SuspendLayout();
@@ -1582,7 +1583,7 @@ namespace BustupEditor
             // toolsToolStripMenuItem
             // 
             toolsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { extractBustupBINsToolStripMenuItem, applyImgPathToAllWithSameExpressionToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { extractBustupBINsToolStripMenuItem, applyImgPathToAllWithSameExpressionToolStripMenuItem, importNamesFromJSONToolStripMenuItem });
             toolsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
@@ -1595,7 +1596,7 @@ namespace BustupEditor
             extractBustupBINsToolStripMenuItem.Name = "extractBustupBINsToolStripMenuItem";
             extractBustupBINsToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
             extractBustupBINsToolStripMenuItem.Text = "Extract Bustup .BINs";
-            extractBustupBINsToolStripMenuItem.Click += this.ExtractBustups_Click;
+            extractBustupBINsToolStripMenuItem.Click += ExtractBustups_Click;
             // 
             // applyImgPathToAllWithSameExpressionToolStripMenuItem
             // 
@@ -1605,6 +1606,15 @@ namespace BustupEditor
             applyImgPathToAllWithSameExpressionToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
             applyImgPathToAllWithSameExpressionToolStripMenuItem.Text = "Apply Img Path To All With Same Expression";
             applyImgPathToAllWithSameExpressionToolStripMenuItem.Click += ApplyImagesToAll_SameExpression_Click;
+            // 
+            // importNamesFromJSONToolStripMenuItem
+            // 
+            importNamesFromJSONToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            importNamesFromJSONToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            importNamesFromJSONToolStripMenuItem.Name = "importNamesFromJSONToolStripMenuItem";
+            importNamesFromJSONToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
+            importNamesFromJSONToolStripMenuItem.Text = "Import Names From JSON";
+            importNamesFromJSONToolStripMenuItem.Click += importNamesFromJSONToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -1795,6 +1805,7 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem extractBustupBINsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applyImgPathToAllWithSameExpressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importNamesFromJSONToolStripMenuItem;
     }
 }
 

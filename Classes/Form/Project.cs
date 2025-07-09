@@ -86,8 +86,8 @@ namespace BustupEditor
             if (!outPath.ToLower().EndsWith(".json"))
                 outPath = outPath + ".json";
 
-            File.WriteAllText(selection.First(), JsonConvert.SerializeObject(bustupProject, Newtonsoft.Json.Formatting.Indented));
-            MessageBox.Show($"Saved project file to:\n{selection.First()}", "Project Saved Successfully");
+            File.WriteAllText(outPath, JsonConvert.SerializeObject(bustupProject, Newtonsoft.Json.Formatting.Indented));
+            MessageBox.Show($"Saved project file to:\n{outPath}", "Project Saved Successfully");
         }
 
         private void LoadProject_Click(object sender, EventArgs e)
@@ -124,6 +124,29 @@ namespace BustupEditor
         private void NewProj_P5_PS3_Navi_Click(object sender, EventArgs e)
         {
             LoadJson("./Dependencies/Json/ps3_navi.json");
+        }
+
+        private void importNamesFromJSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selection = WinFormsDialogs.SelectFile("Get Names from project file...", true, new string[] { "json (.json)" });
+            if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
+                return;
+
+            var importNamesProj = JsonConvert.DeserializeObject<BustupProject>(File.ReadAllText(selection.First()));
+
+            foreach (var bup in bustupProject.Bustups)
+            {
+                if (importNamesProj.Bustups.Any(x => x.MajorID == bup.MajorID && x.MinorID == bup.MinorID && x.SubID == bup.SubID))
+                {
+                    var importNamesBup = importNamesProj.Bustups.First(x => x.MajorID == bup.MajorID && x.MinorID == bup.MinorID && x.SubID == bup.SubID);
+                    bup.CharaName = importNamesBup.CharaName;
+                    bup.OutfitName = importNamesBup.OutfitName;
+                    bup.ExpressionName = importNamesBup.ExpressionName;
+                }
+            }
+
+            bindingSource_ListBox.ResetBindings(false);
+            MessageBox.Show("Done importing names from JSON.");
         }
     }
 }

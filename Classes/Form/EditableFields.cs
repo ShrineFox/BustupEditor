@@ -38,6 +38,11 @@ namespace BustupEditor
 
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
+            if (listBox_Sprites.SelectedIndex == -1 || listBox_Sprites.SelectedIndex == 0)
+                return;
+
+            lastSelectedIndex = listBox_Sprites.SelectedIndex;
+
             if (selectedBustup == null)
                 return;
 

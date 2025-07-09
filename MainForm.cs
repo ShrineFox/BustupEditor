@@ -24,6 +24,7 @@ namespace BustupEditor
         }
 
         public static BindingSource bindingSource_ListBox = new BindingSource();
+        public static int lastSelectedIndex = -1;
 
         private void SetupSpriteList()
         {
@@ -53,6 +54,9 @@ namespace BustupEditor
             bindingSource_ListBox.DataSource = null;
             bindingSource_ListBox.DataSource = bustupProject.Bustups;
             bindingSource_ListBox.ResetBindings(false);
+
+            if (lastSelectedIndex != -1 && lastSelectedIndex < bustupProject.Bustups.Count) 
+                listBox_Sprites.SelectedIndex = lastSelectedIndex;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace BustupEditor
 {
     public partial class MainForm : DarkForm
     {
+
         private void OpenImageFolder_Click(object sender, EventArgs e)
         {
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
