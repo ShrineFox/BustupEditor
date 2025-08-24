@@ -1628,7 +1628,7 @@ namespace BustupEditor
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MinimumSize = new System.Drawing.Size(650, 582);
             Name = "MainForm";
-            Text = "BustupEditor";
+            Text = "BustupEditor v2.1";
             tlp_Main.ResumeLayout(false);
             darkContextMenu_Sprites.ResumeLayout(false);
             groupBox_BustupSettings.ResumeLayout(false);

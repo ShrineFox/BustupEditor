@@ -138,7 +138,7 @@ namespace BustupEditor
                     reader.BaseStream.Position = 0;
                 }
 
-                var entryCount = reader.BaseStreamLength;
+                var entryCount = reader.BaseStream.Length;
                 if (bustupProject.Type == BustupType.Portrait)
                     entryCount = entryCount / 40;
                 else if (bustupProject.Type == BustupType.Navigator)

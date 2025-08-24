@@ -50,7 +50,9 @@
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GFD-Studio\GFDLibrary\GFDLibrary.csproj" />
+    <ProjectReference Include="..\..\tge-was-taken\GFD-Studio\Dependencies\Scarlet\Scarlet.IO.ImageFormats\Scarlet.IO.ImageFormats.csproj" />
+    <ProjectReference Include="..\..\tge-was-taken\GFD-Studio\Dependencies\Scarlet\Scarlet\Scarlet.csproj" />
+    <ProjectReference Include="..\..\tge-was-taken\GFD-Studio\GFDLibrary\GFDLibrary.csproj" />
     <ProjectReference Include="..\ShrineFox.IO\ShrineFox.IO.csproj" />
   </ItemGroup>
   <ItemGroup>

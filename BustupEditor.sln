@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShrineFox.IO", "..\ShrineFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BustupEditor", "BustupEditor.csproj", "{24A4BEC0-CFFA-47D2-B012-71004D1EB74E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFDLibrary", "..\GFD-Studio\GFDLibrary\GFDLibrary.csproj", "{021812FD-423B-A749-C5E9-847703F912D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scarlet", "..\..\tge-was-taken\GFD-Studio\Dependencies\Scarlet\Scarlet\Scarlet.csproj", "{B1CC2B0E-4226-4AC5-9940-900A8847201A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scarlet.IO.ImageFormats", "..\GFD-Studio\Dependencies\Scarlet\Scarlet.IO.ImageFormats\Scarlet.IO.ImageFormats.csproj", "{4E7B19C8-1983-41FE-98E4-0532137638FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scarlet.IO.ImageFormats", "..\..\tge-was-taken\GFD-Studio\Dependencies\Scarlet\Scarlet.IO.ImageFormats\Scarlet.IO.ImageFormats.csproj", "{4E7B19C8-1983-41FE-98E4-0532137638FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scarlet", "..\GFD-Studio\Dependencies\Scarlet\Scarlet\Scarlet.csproj", "{B1CC2B0E-4226-4AC5-9940-900A8847201A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFDLibrary", "..\..\tge-was-taken\GFD-Studio\GFDLibrary\GFDLibrary.csproj", "{17546283-37C7-266C-9AFB-2AC9798F744F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +27,18 @@ Global
 		{24A4BEC0-CFFA-47D2-B012-71004D1EB74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A4BEC0-CFFA-47D2-B012-71004D1EB74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A4BEC0-CFFA-47D2-B012-71004D1EB74E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{021812FD-423B-A749-C5E9-847703F912D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{021812FD-423B-A749-C5E9-847703F912D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{021812FD-423B-A749-C5E9-847703F912D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{021812FD-423B-A749-C5E9-847703F912D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B1CC2B0E-4226-4AC5-9940-900A8847201A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1CC2B0E-4226-4AC5-9940-900A8847201A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1CC2B0E-4226-4AC5-9940-900A8847201A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1CC2B0E-4226-4AC5-9940-900A8847201A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7B19C8-1983-41FE-98E4-0532137638FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17546283-37C7-266C-9AFB-2AC9798F744F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17546283-37C7-266C-9AFB-2AC9798F744F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17546283-37C7-266C-9AFB-2AC9798F744F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17546283-37C7-266C-9AFB-2AC9798F744F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
