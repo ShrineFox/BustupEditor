@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
+	<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <OutputType>WinExe</OutputType>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -22,6 +23,16 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <StartupObject>BustupEditor.Program</StartupObject>
     <ApplicationIcon>bup.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <generateassemblyconfigurationattribute>false</generateassemblyconfigurationattribute>
+    <generateassemblydescriptionattribute>false</generateassemblydescriptionattribute>
+    <generateassemblyproductattribute>false</generateassemblyproductattribute>
+    <generateassemblytitleattribute>false</generateassemblytitleattribute>
+    <generateassemblycompanyattribute>false</generateassemblycompanyattribute>
+    <generateassemblyfileversionattribute>false</generateassemblyfileversionattribute>
+    <generateassemblyinformationalversionattribute>false</generateassemblyinformationalversionattribute>
+    <generateassemblyversionattribute>false</generateassemblyversionattribute>
   </PropertyGroup>
   <ItemGroup>
 	<RuntimeHostConfigurationOption Include="Switch.System.Windows.DoNotScaleForDpiChanges" Value="true" />
