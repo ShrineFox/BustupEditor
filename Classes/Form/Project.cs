@@ -148,5 +148,38 @@ namespace BustupEditor
             bindingSource_ListBox.ResetBindings(false);
             MessageBox.Show("Done importing names from JSON.");
         }
+
+        private void ApplyNamesToSameIDs_Click(object sender, EventArgs e)
+        {
+            ApplyNamesToSameIDs(false);
+        }
+
+        private void ApplyNamesToSameIDs_ThisCharaOnly_Click(object sender, EventArgs e)
+        {
+            ApplyNamesToSameIDs(true);
+        }
+
+        private void ApplyNamesToSameIDs(bool thisCharaOnly)
+        {
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            if (listBox_Sprites.SelectedIndex == -1 || listBox_Sprites.SelectedIndex == 0)
+                return;
+
+            var bups = bustupProject.Bustups;
+            if (thisCharaOnly)
+                bups = bups.Where(x => x.MajorID == selectedBustup.MajorID).ToList();
+
+            foreach (var bup in bups)
+            {
+                if (bup.MinorID == selectedBustup.MinorID)
+                    bup.ExpressionName = selectedBustup.ExpressionName.Copy();
+                if (bup.SubID == selectedBustup.SubID)
+                    bup.OutfitName = selectedBustup.OutfitName.Copy();
+            }
+
+            bindingSource_ListBox.ResetBindings(false);
+            MessageBox.Show("Done applying names to matching IDs.");
+        }
     }
 }

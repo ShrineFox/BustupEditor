@@ -55,7 +55,7 @@ namespace BustupEditor
             bindingSource_ListBox.DataSource = bustupProject.Bustups;
             bindingSource_ListBox.ResetBindings(false);
 
-            if (lastSelectedIndex != -1 && lastSelectedIndex < bustupProject.Bustups.Count) 
+            if (lastSelectedIndex != -1 && lastSelectedIndex < bustupProject.Bustups.Count)
                 listBox_Sprites.SelectedIndex = lastSelectedIndex;
         }
     }
