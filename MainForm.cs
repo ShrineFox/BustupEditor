@@ -19,7 +19,6 @@ namespace BustupEditor
         {
             InitializeComponent();
             SetMenuStripIcons();
-            SetOverlayImages();
             SetupSpriteList();
         }
 

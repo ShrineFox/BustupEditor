@@ -139,6 +139,7 @@ namespace BustupEditor
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             selectedBustup.BasePos_X = Convert.ToSingle(num_BasePosX.Value);
+            UpdatePictureBox();
         }
 
         private void BasePosY_Changed(object sender, EventArgs e)
@@ -149,6 +150,8 @@ namespace BustupEditor
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             selectedBustup.BasePos_Y = Convert.ToSingle(num_BasePosY.Value);
+
+            UpdatePictureBox();
         }
 
         private void EyePosX_Changed(object sender, EventArgs e)
@@ -160,7 +163,7 @@ namespace BustupEditor
 
             selectedBustup.EyePos_X = Convert.ToSingle(num_EyePosX.Value);
 
-            pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
+            UpdatePictureBox();
         }
 
         private void EyePosY_Changed(object sender, EventArgs e)
@@ -172,7 +175,7 @@ namespace BustupEditor
 
             selectedBustup.EyePos_Y = Convert.ToSingle(num_EyePosY.Value);
 
-            pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(num_EyePosX.Value), Convert.ToDouble(num_EyePosY.Value));
+            UpdatePictureBox();
         }
 
         private void MouthPosX_Changed(object sender, EventArgs e)
@@ -184,7 +187,7 @@ namespace BustupEditor
 
             selectedBustup.MouthPos_X = Convert.ToSingle(num_MouthPosX.Value);
 
-            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
+            UpdatePictureBox();
         }
 
         private void MouthPosY_Changed(object sender, EventArgs e)
@@ -196,7 +199,7 @@ namespace BustupEditor
 
             selectedBustup.MouthPos_Y = Convert.ToSingle(num_MouthPosY.Value);
 
-            pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(num_MouthPosX.Value), Convert.ToDouble(num_MouthPosY.Value));
+            UpdatePictureBox();
         }
 
         private void Animation_Changed(object sender, EventArgs e)
@@ -278,38 +281,7 @@ namespace BustupEditor
 
         private void EyeFrame_Changed(object sender, EventArgs e)
         {
-            int eyeFrame = Convert.ToInt32(num_EyeFrame.Value);
-            if (eyeFrame == 0)
-            {
-                pictureBox_Eyes.Visible = false;
-                return;
-            }
-
-            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
-
-            string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
-            if (bustupProject.Type == BustupType.Portrait)
-                ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
-
-            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
-
-            if (Directory.Exists(ddsPath))
-            {
-                var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
-
-                if (ddsFiles.Length >= eyeFrame + 1)
-                {
-                    string dds = ddsFiles[eyeFrame];
-                    Bitmap ddsBitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(dds)));
-                    pictureBox_Eyes.Image = ddsBitmap;
-                    pictureBox_Eyes.Size = ddsBitmap.Size;
-                    pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
-                    pictureBox_Eyes.Visible = true;
-                    return;
-                }
-            }
-
-            pictureBox_Eyes.Visible = false;
+            UpdatePictureBox();
         }
 
         private Point ScalePoint(double x, double y)
@@ -319,39 +291,7 @@ namespace BustupEditor
 
         private void MouthFrame_Changed(object sender, EventArgs e)
         {
-            int mouthFrame = Convert.ToInt32(num_MouthFrame.Value);
-            if (mouthFrame == 0)
-            {
-                pictureBox_Mouth.Visible = false;
-                return;
-            }
-            mouthFrame = mouthFrame + 2;
-
-            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
-
-            string ddsPath = $"B{selectedBustup.MajorID.ToString("000")}_{selectedBustup.MinorID.ToString("000")}";
-
-            if (bustupProject.Type == BustupType.Portrait)
-                ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
-
-            ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
-            if (Directory.Exists(ddsPath))
-            {
-                var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
-
-                if (ddsFiles.Length >= mouthFrame + 1)
-                {
-                    string dds = ddsFiles[mouthFrame];
-                    Bitmap ddsBitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(dds)));
-                    pictureBox_Mouth.Image = ddsBitmap;
-                    pictureBox_Mouth.Size = ddsBitmap.Size;
-                    pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));
-                    pictureBox_Mouth.Visible = true;
-                    return;
-                }
-            }
-
-            pictureBox_Mouth.Visible = false;
+            UpdatePictureBox();
         }
 
         private void PreviewScale_Changed(object sender, EventArgs e)
