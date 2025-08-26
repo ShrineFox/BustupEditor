@@ -134,14 +134,22 @@ namespace BustupEditor
 
             var importNamesProj = JsonConvert.DeserializeObject<BustupProject>(File.ReadAllText(selection.First()));
 
-            foreach (var bup in bustupProject.Bustups)
+            foreach (var bup in bustupProject.Bustups) 
             {
-                if (importNamesProj.Bustups.Any(x => x.MajorID == bup.MajorID && x.MinorID == bup.MinorID && x.SubID == bup.SubID))
+                foreach (var importBup in importNamesProj.Bustups)
                 {
-                    var importNamesBup = importNamesProj.Bustups.First(x => x.MajorID == bup.MajorID && x.MinorID == bup.MinorID && x.SubID == bup.SubID);
-                    bup.CharaName = importNamesBup.CharaName;
-                    bup.OutfitName = importNamesBup.OutfitName;
-                    bup.ExpressionName = importNamesBup.ExpressionName;
+                    if (bup.MajorID == importBup.MajorID)
+                    {
+                        bup.CharaName = importBup.CharaName.Copy();
+
+                        if (bup.MinorID == importBup.MinorID)
+                        {
+                            bup.ExpressionName = importBup.ExpressionName.Copy();
+
+                            if (bup.SubID == importBup.SubID)
+                                bup.OutfitName = importBup.OutfitName.Copy();
+                        }
+                    }
                 }
             }
 
@@ -179,7 +187,46 @@ namespace BustupEditor
             }
 
             bindingSource_ListBox.ResetBindings(false);
-            MessageBox.Show("Done applying names to matching IDs.");
+        }
+
+        private void ImportNamesFromWiki_Click(object sender, EventArgs e)
+        {
+            var selection = WinFormsDialogs.SelectFile("Get Names from Wiki Table...", true, new string[] { "txt (.txt)" });
+            if (selection.Count == 0 || string.IsNullOrEmpty(selection[0]))
+                return;
+
+            var wikiText = File.ReadAllLines(selection.First());
+            var bups = bustupProject.Bustups;
+
+            foreach (var line in wikiText.Where(x => x.StartsWith("| b")))
+            {
+                var splitLine = line.Split("||");
+                var splitId = splitLine[0].Split("_");
+                ushort majorId = ushort.Parse(splitId[0].Replace("| b",""));
+                ushort minorId = ushort.Parse(splitId[1]);
+                ushort subId = ushort.Parse(splitId[2].Trim());
+
+                string charaName = splitLine[1].Trim();
+                string expressionName = splitLine[2].Trim();
+                string outfitName = splitLine[3].Trim();
+
+                foreach(var bup in bups.Where(x => x.MajorID == majorId))
+                    bup.CharaName = charaName.Copy();
+
+                foreach (var bup in bups.Where(x => x.MinorID == minorId))
+                    bup.ExpressionName = expressionName.Copy();
+
+                foreach (var bup in bups.Where(x => x.SubID == subId))
+                    bup.OutfitName = outfitName.Copy();
+            }
+
+            MessageBox.Show("Done importing names from Wiki Table.");
+            bindingSource_ListBox.ResetBindings(false);
+        }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            bindingSource_ListBox.ResetBindings(false);
         }
     }
 }

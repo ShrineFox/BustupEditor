@@ -1,9 +1,12 @@
 {
   "Name": "Untitled",
-  "ImagesPath": "./Images",
+  "ImagesPath": "D:\\CPK\\BASE.CPK_unpacked\\FONT\\ASSIST\\BUSTUP\\Extracted",
   "Bustups": [
     {
       "Name": "000_000",
+      "CharaName": "",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 0,
       "MinorID": 0,
       "SubID": 0,
@@ -19,10 +22,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "001_000",
+      "CharaName": "",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 1,
       "MinorID": 0,
       "SubID": 0,
@@ -38,10 +45,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 0,
       "SubID": 0,
@@ -57,10 +68,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 1,
       "SubID": 0,
@@ -76,10 +91,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 2,
       "SubID": 0,
@@ -95,10 +114,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_003",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 3,
       "SubID": 0,
@@ -114,10 +137,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_004",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 4,
       "SubID": 0,
@@ -133,10 +160,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_005",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 5,
       "SubID": 0,
@@ -152,10 +183,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_006",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 2,
       "MinorID": 6,
       "SubID": 0,
@@ -171,10 +206,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "002_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 2,
       "MinorID": 7,
       "SubID": 0,
@@ -190,10 +229,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_000",
+      "CharaName": "Morgana",
+      "ExpressionName": "",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 0,
       "SubID": 0,
@@ -209,10 +252,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_001",
+      "CharaName": "Morgana",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 1,
       "SubID": 0,
@@ -228,10 +275,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_002",
+      "CharaName": "Morgana",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 2,
       "SubID": 0,
@@ -247,10 +298,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_003",
+      "CharaName": "Morgana",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 3,
       "SubID": 0,
@@ -266,10 +321,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_004",
+      "CharaName": "Morgana",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 4,
       "SubID": 0,
@@ -285,10 +344,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_005",
+      "CharaName": "Morgana",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 5,
       "SubID": 0,
@@ -304,10 +367,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_006",
+      "CharaName": "Morgana",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 3,
       "MinorID": 6,
       "SubID": 0,
@@ -323,10 +390,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "003_007",
+      "CharaName": "Morgana",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 3,
       "MinorID": 7,
       "SubID": 0,
@@ -342,10 +413,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 4,
       "MinorID": 0,
       "SubID": 0,
@@ -361,10 +436,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 1,
       "SubID": 0,
@@ -380,10 +459,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 2,
       "SubID": 0,
@@ -399,10 +482,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_003",
+      "CharaName": "Ann",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 3,
       "SubID": 0,
@@ -418,10 +505,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_004",
+      "CharaName": "Ann",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 4,
       "SubID": 0,
@@ -437,10 +528,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_005",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 5,
       "SubID": 0,
@@ -456,10 +551,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_006",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 4,
       "MinorID": 6,
       "SubID": 0,
@@ -475,10 +574,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "004_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 4,
       "MinorID": 7,
       "SubID": 0,
@@ -494,10 +597,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 5,
       "MinorID": 0,
       "SubID": 0,
@@ -513,10 +620,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 1,
       "SubID": 0,
@@ -532,10 +643,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 2,
       "SubID": 0,
@@ -551,10 +666,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_003",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 3,
       "SubID": 0,
@@ -570,10 +689,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_004",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 4,
       "SubID": 0,
@@ -589,10 +712,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_005",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 5,
       "SubID": 0,
@@ -608,10 +735,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_006",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 6,
       "SubID": 0,
@@ -627,10 +758,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "005_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 5,
       "MinorID": 7,
       "SubID": 0,
@@ -646,10 +781,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 6,
       "MinorID": 0,
       "SubID": 0,
@@ -665,10 +804,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 1,
       "SubID": 0,
@@ -684,10 +827,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 2,
       "SubID": 0,
@@ -703,10 +850,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_003",
+      "CharaName": "Makoto",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 3,
       "SubID": 0,
@@ -722,10 +873,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_004",
+      "CharaName": "Makoto",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 4,
       "SubID": 0,
@@ -741,10 +896,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_005",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 5,
       "SubID": 0,
@@ -760,10 +919,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_006",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 6,
       "SubID": 0,
@@ -779,10 +942,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "006_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning (Eyes closed)",
+      "OutfitName": "Phantom Thief",
       "MajorID": 6,
       "MinorID": 7,
       "SubID": 0,
@@ -798,10 +965,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 0,
       "SubID": 0,
@@ -817,10 +988,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 1,
       "SubID": 0,
@@ -836,10 +1011,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 2,
       "SubID": 0,
@@ -855,10 +1034,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_003",
+      "CharaName": "Haru",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 3,
       "SubID": 0,
@@ -874,10 +1057,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_004",
+      "CharaName": "Haru",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 4,
       "SubID": 0,
@@ -893,10 +1080,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_005",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 5,
       "SubID": 0,
@@ -912,10 +1103,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_006",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 7,
       "MinorID": 6,
       "SubID": 0,
@@ -931,10 +1126,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "007_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 7,
       "MinorID": 7,
       "SubID": 0,
@@ -950,10 +1149,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_000",
+      "CharaName": "Futaba",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 8,
       "MinorID": 0,
       "SubID": 0,
@@ -969,10 +1172,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_001",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 1,
       "SubID": 0,
@@ -988,10 +1195,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_002",
+      "CharaName": "Futaba",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 2,
       "SubID": 0,
@@ -1007,10 +1218,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_003",
+      "CharaName": "Futaba",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 3,
       "SubID": 0,
@@ -1026,10 +1241,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_004",
+      "CharaName": "Futaba",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 4,
       "SubID": 0,
@@ -1045,10 +1264,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_005",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 5,
       "SubID": 0,
@@ -1064,10 +1287,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_006",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 8,
       "MinorID": 6,
       "SubID": 0,
@@ -1083,10 +1310,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "008_007",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 8,
       "MinorID": 7,
       "SubID": 0,
@@ -1102,10 +1333,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 9,
       "MinorID": 0,
       "SubID": 0,
@@ -1121,10 +1356,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 1,
       "SubID": 0,
@@ -1140,10 +1379,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 2,
       "SubID": 0,
@@ -1159,10 +1402,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_003",
+      "CharaName": "Akechi",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 3,
       "SubID": 0,
@@ -1178,10 +1425,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_004",
+      "CharaName": "Akechi",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 4,
       "SubID": 0,
@@ -1197,10 +1448,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_005",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 5,
       "SubID": 0,
@@ -1216,10 +1471,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_006",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief (Darkened)",
       "MajorID": 9,
       "MinorID": 6,
       "SubID": 0,
@@ -1235,10 +1494,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning 2",
+      "OutfitName": "Phantom Thief",
       "MajorID": 9,
       "MinorID": 7,
       "SubID": 0,
@@ -1254,10 +1517,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_100",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 9,
       "MinorID": 100,
       "SubID": 0,
@@ -1273,10 +1540,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_101",
+      "CharaName": "Akechi",
+      "ExpressionName": "Smiling",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 101,
       "SubID": 0,
@@ -1292,10 +1563,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_102",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 102,
       "SubID": 0,
@@ -1311,10 +1586,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_103",
+      "CharaName": "Akechi",
+      "ExpressionName": "Sad (new pose)",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 103,
       "SubID": 0,
@@ -1330,10 +1609,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_104",
+      "CharaName": "Akechi",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 104,
       "SubID": 0,
@@ -1349,10 +1632,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_105",
+      "CharaName": "Akechi",
+      "ExpressionName": "Hurt (new pose)",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 105,
       "SubID": 0,
@@ -1368,10 +1655,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "009_107",
+      "CharaName": "Akechi",
+      "ExpressionName": "Looking To The Side",
+      "OutfitName": "Black Mask",
       "MajorID": 9,
       "MinorID": 107,
       "SubID": 0,
@@ -1387,10 +1678,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_000",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 10,
       "MinorID": 0,
       "SubID": 0,
@@ -1406,10 +1701,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_001",
+      "CharaName": "Sumire",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 1,
       "SubID": 0,
@@ -1425,10 +1724,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_002",
+      "CharaName": "Sumire",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 2,
       "SubID": 0,
@@ -1444,10 +1747,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_003",
+      "CharaName": "Sumire",
+      "ExpressionName": "Angry",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 3,
       "SubID": 0,
@@ -1463,10 +1770,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_004",
+      "CharaName": "Sumire",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 4,
       "SubID": 0,
@@ -1482,10 +1793,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_005",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 5,
       "SubID": 0,
@@ -1501,10 +1816,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "010_007",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Phantom Thief",
       "MajorID": 10,
       "MinorID": 7,
       "SubID": 0,
@@ -1520,10 +1839,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "012_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 12,
       "MinorID": 0,
       "SubID": 0,
@@ -1539,10 +1862,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "012_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 12,
       "MinorID": 1,
       "SubID": 0,
@@ -1558,10 +1885,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "012_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 12,
       "MinorID": 2,
       "SubID": 0,
@@ -1577,10 +1908,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "012_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 12,
       "MinorID": 7,
       "SubID": 0,
@@ -1596,10 +1931,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "014_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 14,
       "MinorID": 0,
       "SubID": 0,
@@ -1615,10 +1954,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "014_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 14,
       "MinorID": 1,
       "SubID": 0,
@@ -1634,10 +1977,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "014_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 14,
       "MinorID": 2,
       "SubID": 0,
@@ -1653,10 +2000,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "014_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 14,
       "MinorID": 7,
       "SubID": 0,
@@ -1672,10 +2023,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "015_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 15,
       "MinorID": 0,
       "SubID": 0,
@@ -1691,10 +2046,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "015_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 15,
       "MinorID": 1,
       "SubID": 0,
@@ -1710,10 +2069,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "015_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 15,
       "MinorID": 2,
       "SubID": 0,
@@ -1729,10 +2092,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "015_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 15,
       "MinorID": 7,
       "SubID": 0,
@@ -1748,10 +2115,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "016_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 16,
       "MinorID": 0,
       "SubID": 0,
@@ -1767,10 +2138,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "016_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 16,
       "MinorID": 1,
       "SubID": 0,
@@ -1786,10 +2161,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "016_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 16,
       "MinorID": 2,
       "SubID": 0,
@@ -1805,10 +2184,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "016_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 16,
       "MinorID": 7,
       "SubID": 0,
@@ -1824,10 +2207,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "017_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 17,
       "MinorID": 0,
       "SubID": 0,
@@ -1843,10 +2230,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "017_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 17,
       "MinorID": 1,
       "SubID": 0,
@@ -1862,10 +2253,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "017_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 17,
       "MinorID": 2,
       "SubID": 0,
@@ -1881,10 +2276,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "017_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 17,
       "MinorID": 7,
       "SubID": 0,
@@ -1900,10 +2299,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "019_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 19,
       "MinorID": 0,
       "SubID": 0,
@@ -1919,10 +2322,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "019_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform",
       "MajorID": 19,
       "MinorID": 1,
       "SubID": 0,
@@ -1938,10 +2345,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "019_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 19,
       "MinorID": 2,
       "SubID": 0,
@@ -1957,10 +2368,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "019_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform",
       "MajorID": 19,
       "MinorID": 7,
       "SubID": 0,
@@ -1976,10 +2391,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "019_000 (2)",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 19,
       "MinorID": 0,
       "SubID": 0,
@@ -1995,10 +2414,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_001",
+      "CharaName": "Sumire",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Uniform (Hair Down)",
       "MajorID": 20,
       "MinorID": 1,
       "SubID": 0,
@@ -2014,10 +2437,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_002",
+      "CharaName": "Sumire",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Uniform (Hair Down)",
       "MajorID": 20,
       "MinorID": 2,
       "SubID": 0,
@@ -2033,10 +2460,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_007",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Uniform (Hair Down)",
       "MajorID": 20,
       "MinorID": 7,
       "SubID": 0,
@@ -2052,10 +2483,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_100",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 20,
       "MinorID": 100,
       "SubID": 0,
@@ -2071,10 +2506,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_101",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 20,
       "MinorID": 101,
       "SubID": 0,
@@ -2090,10 +2529,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_102",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 20,
       "MinorID": 102,
       "SubID": 0,
@@ -2109,10 +2552,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "020_107",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Uniform",
       "MajorID": 20,
       "MinorID": 107,
       "SubID": 0,
@@ -2128,10 +2575,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "022_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 22,
       "MinorID": 0,
       "SubID": 0,
@@ -2147,10 +2598,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "022_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 22,
       "MinorID": 1,
       "SubID": 0,
@@ -2166,10 +2621,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "022_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 22,
       "MinorID": 2,
       "SubID": 0,
@@ -2185,10 +2644,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "022_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 22,
       "MinorID": 7,
       "SubID": 0,
@@ -2204,10 +2667,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "024_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "",
       "MajorID": 24,
       "MinorID": 0,
       "SubID": 0,
@@ -2223,10 +2690,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "024_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 24,
       "MinorID": 1,
       "SubID": 0,
@@ -2242,10 +2713,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "024_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 24,
       "MinorID": 2,
       "SubID": 0,
@@ -2261,10 +2736,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "024_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 24,
       "MinorID": 7,
       "SubID": 0,
@@ -2280,10 +2759,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "025_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Summer Uniform",
       "MajorID": 25,
       "MinorID": 0,
       "SubID": 0,
@@ -2299,10 +2782,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "025_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 25,
       "MinorID": 1,
       "SubID": 0,
@@ -2318,10 +2805,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "025_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 25,
       "MinorID": 2,
       "SubID": 0,
@@ -2337,10 +2828,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "025_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 25,
       "MinorID": 7,
       "SubID": 0,
@@ -2356,10 +2851,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "026_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "Summer Uniform",
       "MajorID": 26,
       "MinorID": 0,
       "SubID": 0,
@@ -2375,10 +2874,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "026_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 26,
       "MinorID": 1,
       "SubID": 0,
@@ -2394,10 +2897,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "026_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 26,
       "MinorID": 2,
       "SubID": 0,
@@ -2413,10 +2920,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "026_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 26,
       "MinorID": 7,
       "SubID": 0,
@@ -2432,10 +2943,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "027_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Summer Uniform",
       "MajorID": 27,
       "MinorID": 0,
       "SubID": 0,
@@ -2451,10 +2966,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "027_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 27,
       "MinorID": 1,
       "SubID": 0,
@@ -2470,10 +2989,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "027_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 27,
       "MinorID": 2,
       "SubID": 0,
@@ -2489,10 +3012,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "027_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 27,
       "MinorID": 7,
       "SubID": 0,
@@ -2508,10 +3035,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "029_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Summer Uniform",
       "MajorID": 29,
       "MinorID": 0,
       "SubID": 0,
@@ -2527,10 +3058,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "029_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Uniform",
       "MajorID": 29,
       "MinorID": 1,
       "SubID": 0,
@@ -2546,10 +3081,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "029_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 29,
       "MinorID": 2,
       "SubID": 0,
@@ -2565,10 +3104,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "029_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Uniform",
       "MajorID": 29,
       "MinorID": 7,
       "SubID": 0,
@@ -2584,10 +3127,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "032_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 32,
       "MinorID": 0,
       "SubID": 0,
@@ -2603,10 +3150,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "032_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 32,
       "MinorID": 1,
       "SubID": 0,
@@ -2622,10 +3173,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "032_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 32,
       "MinorID": 2,
       "SubID": 0,
@@ -2641,10 +3196,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "032_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 32,
       "MinorID": 7,
       "SubID": 0,
@@ -2660,10 +3219,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "034_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 34,
       "MinorID": 0,
       "SubID": 0,
@@ -2679,10 +3242,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "034_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 34,
       "MinorID": 1,
       "SubID": 0,
@@ -2698,10 +3265,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "034_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 34,
       "MinorID": 2,
       "SubID": 0,
@@ -2717,10 +3288,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "034_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 34,
       "MinorID": 7,
       "SubID": 0,
@@ -2736,10 +3311,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "035_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 35,
       "MinorID": 0,
       "SubID": 0,
@@ -2755,10 +3334,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "035_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 35,
       "MinorID": 1,
       "SubID": 0,
@@ -2774,10 +3357,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "035_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 35,
       "MinorID": 2,
       "SubID": 0,
@@ -2793,10 +3380,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "035_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 35,
       "MinorID": 7,
       "SubID": 0,
@@ -2812,10 +3403,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "036_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 36,
       "MinorID": 0,
       "SubID": 0,
@@ -2831,10 +3426,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "036_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 36,
       "MinorID": 1,
       "SubID": 0,
@@ -2850,10 +3449,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "036_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 36,
       "MinorID": 2,
       "SubID": 0,
@@ -2869,10 +3472,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "036_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 36,
       "MinorID": 7,
       "SubID": 0,
@@ -2888,10 +3495,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "037_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 37,
       "MinorID": 0,
       "SubID": 0,
@@ -2907,10 +3518,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "037_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 37,
       "MinorID": 1,
       "SubID": 0,
@@ -2926,10 +3541,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "037_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 37,
       "MinorID": 2,
       "SubID": 0,
@@ -2945,10 +3564,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "037_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 37,
       "MinorID": 7,
       "SubID": 0,
@@ -2964,10 +3587,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "038_000",
+      "CharaName": "Futaba",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 38,
       "MinorID": 0,
       "SubID": 0,
@@ -2983,10 +3610,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "038_001",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 38,
       "MinorID": 1,
       "SubID": 0,
@@ -3002,10 +3633,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "038_002",
+      "CharaName": "Futaba",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 38,
       "MinorID": 2,
       "SubID": 0,
@@ -3021,10 +3656,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "038_007",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 38,
       "MinorID": 7,
       "SubID": 0,
@@ -3040,10 +3679,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "039_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Winter Casual",
       "MajorID": 39,
       "MinorID": 0,
       "SubID": 0,
@@ -3059,10 +3702,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "039_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Casual",
       "MajorID": 39,
       "MinorID": 1,
       "SubID": 0,
@@ -3078,10 +3725,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "039_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Casual",
       "MajorID": 39,
       "MinorID": 2,
       "SubID": 0,
@@ -3097,10 +3748,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "039_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Casual",
       "MajorID": 39,
       "MinorID": 7,
       "SubID": 0,
@@ -3116,10 +3771,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "042_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 42,
       "MinorID": 0,
       "SubID": 0,
@@ -3135,10 +3794,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "042_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 42,
       "MinorID": 1,
       "SubID": 0,
@@ -3154,10 +3817,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "042_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 42,
       "MinorID": 2,
       "SubID": 0,
@@ -3173,10 +3840,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "042_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 42,
       "MinorID": 7,
       "SubID": 0,
@@ -3192,10 +3863,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "044_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 44,
       "MinorID": 0,
       "SubID": 0,
@@ -3211,10 +3886,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "044_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 44,
       "MinorID": 1,
       "SubID": 0,
@@ -3230,10 +3909,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "044_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 44,
       "MinorID": 2,
       "SubID": 0,
@@ -3249,10 +3932,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "044_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 44,
       "MinorID": 7,
       "SubID": 0,
@@ -3268,10 +3955,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "045_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 45,
       "MinorID": 0,
       "SubID": 0,
@@ -3287,10 +3978,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "045_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 45,
       "MinorID": 1,
       "SubID": 0,
@@ -3306,10 +4001,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "045_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 45,
       "MinorID": 2,
       "SubID": 0,
@@ -3325,10 +4024,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "045_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 45,
       "MinorID": 7,
       "SubID": 0,
@@ -3344,10 +4047,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "046_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 46,
       "MinorID": 0,
       "SubID": 0,
@@ -3363,10 +4070,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "046_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 46,
       "MinorID": 1,
       "SubID": 0,
@@ -3382,10 +4093,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "046_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 46,
       "MinorID": 2,
       "SubID": 0,
@@ -3401,10 +4116,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "046_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 46,
       "MinorID": 7,
       "SubID": 0,
@@ -3420,10 +4139,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "047_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 47,
       "MinorID": 0,
       "SubID": 0,
@@ -3439,10 +4162,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "047_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 47,
       "MinorID": 1,
       "SubID": 0,
@@ -3458,10 +4185,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "047_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 47,
       "MinorID": 2,
       "SubID": 0,
@@ -3477,10 +4208,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "047_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 47,
       "MinorID": 7,
       "SubID": 0,
@@ -3496,10 +4231,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "048_000",
+      "CharaName": "Futaba",
+      "ExpressionName": "",
+      "OutfitName": "Summer Casual",
       "MajorID": 48,
       "MinorID": 0,
       "SubID": 0,
@@ -3515,10 +4254,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "048_001",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Summer Casual",
       "MajorID": 48,
       "MinorID": 1,
       "SubID": 0,
@@ -3534,10 +4277,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "048_002",
+      "CharaName": "Futaba",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Summer Casual",
       "MajorID": 48,
       "MinorID": 2,
       "SubID": 0,
@@ -3553,10 +4300,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "048_007",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Summer Casual",
       "MajorID": 48,
       "MinorID": 7,
       "SubID": 0,
@@ -3572,10 +4323,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "052_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 52,
       "MinorID": 0,
       "SubID": 0,
@@ -3591,10 +4346,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "052_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 52,
       "MinorID": 1,
       "SubID": 0,
@@ -3610,10 +4369,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "052_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 52,
       "MinorID": 2,
       "SubID": 0,
@@ -3629,10 +4392,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "052_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 52,
       "MinorID": 7,
       "SubID": 0,
@@ -3648,10 +4415,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "054_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 54,
       "MinorID": 0,
       "SubID": 0,
@@ -3667,10 +4438,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "054_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 54,
       "MinorID": 1,
       "SubID": 0,
@@ -3686,10 +4461,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "054_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 54,
       "MinorID": 2,
       "SubID": 0,
@@ -3705,10 +4484,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "054_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 54,
       "MinorID": 7,
       "SubID": 0,
@@ -3724,10 +4507,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "055_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 55,
       "MinorID": 0,
       "SubID": 0,
@@ -3743,10 +4530,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "055_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 55,
       "MinorID": 1,
       "SubID": 0,
@@ -3762,10 +4553,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "055_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 55,
       "MinorID": 2,
       "SubID": 0,
@@ -3781,10 +4576,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "055_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 55,
       "MinorID": 7,
       "SubID": 0,
@@ -3800,10 +4599,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "056_000",
+      "CharaName": "Makoto",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 56,
       "MinorID": 0,
       "SubID": 0,
@@ -3819,10 +4622,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "056_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 56,
       "MinorID": 1,
       "SubID": 0,
@@ -3838,10 +4645,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "056_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 56,
       "MinorID": 2,
       "SubID": 0,
@@ -3857,10 +4668,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "056_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 56,
       "MinorID": 7,
       "SubID": 0,
@@ -3876,10 +4691,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "057_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 57,
       "MinorID": 0,
       "SubID": 0,
@@ -3895,10 +4714,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "057_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 57,
       "MinorID": 1,
       "SubID": 0,
@@ -3914,10 +4737,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "057_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 57,
       "MinorID": 2,
       "SubID": 0,
@@ -3933,10 +4760,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "057_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 57,
       "MinorID": 7,
       "SubID": 0,
@@ -3952,10 +4783,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "058_000",
+      "CharaName": "Futaba",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 58,
       "MinorID": 0,
       "SubID": 0,
@@ -3971,10 +4806,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "058_001",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 58,
       "MinorID": 1,
       "SubID": 0,
@@ -3990,10 +4829,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "058_002",
+      "CharaName": "Futaba",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 58,
       "MinorID": 2,
       "SubID": 0,
@@ -4009,10 +4852,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "058_007",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 58,
       "MinorID": 7,
       "SubID": 0,
@@ -4028,10 +4875,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "059_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 59,
       "MinorID": 0,
       "SubID": 0,
@@ -4047,10 +4898,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "059_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 59,
       "MinorID": 1,
       "SubID": 0,
@@ -4066,10 +4921,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "059_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 59,
       "MinorID": 2,
       "SubID": 0,
@@ -4085,10 +4944,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "059_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 59,
       "MinorID": 7,
       "SubID": 0,
@@ -4104,10 +4967,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_000",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat",
       "MajorID": 60,
       "MinorID": 0,
       "SubID": 0,
@@ -4123,10 +4990,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_001",
+      "CharaName": "Sumire",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat (Hair Down)",
       "MajorID": 60,
       "MinorID": 1,
       "SubID": 0,
@@ -4142,10 +5013,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_002",
+      "CharaName": "Sumire",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat (Hair Down)",
       "MajorID": 60,
       "MinorID": 2,
       "SubID": 0,
@@ -4161,10 +5036,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_007",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat (Hair Down)",
       "MajorID": 60,
       "MinorID": 7,
       "SubID": 0,
@@ -4180,10 +5059,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_101",
+      "CharaName": "Sumire",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat",
       "MajorID": 60,
       "MinorID": 101,
       "SubID": 0,
@@ -4199,10 +5082,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_102",
+      "CharaName": "Sumire",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat",
       "MajorID": 60,
       "MinorID": 102,
       "SubID": 0,
@@ -4218,10 +5105,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "060_107",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat",
       "MajorID": 60,
       "MinorID": 107,
       "SubID": 0,
@@ -4237,10 +5128,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "062_000",
+      "CharaName": "Ryuji",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 62,
       "MinorID": 0,
       "SubID": 0,
@@ -4256,10 +5151,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "062_001",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 62,
       "MinorID": 1,
       "SubID": 0,
@@ -4275,10 +5174,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "062_002",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 62,
       "MinorID": 2,
       "SubID": 0,
@@ -4294,10 +5197,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "062_007",
+      "CharaName": "Ryuji",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 62,
       "MinorID": 7,
       "SubID": 0,
@@ -4313,10 +5220,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "064_000",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 64,
       "MinorID": 0,
       "SubID": 0,
@@ -4332,10 +5243,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "064_001",
+      "CharaName": "Ann",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 64,
       "MinorID": 1,
       "SubID": 0,
@@ -4351,10 +5266,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "064_002",
+      "CharaName": "Ann",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 64,
       "MinorID": 2,
       "SubID": 0,
@@ -4370,10 +5289,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "064_007",
+      "CharaName": "Ann",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 64,
       "MinorID": 7,
       "SubID": 0,
@@ -4389,10 +5312,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "064_000 (2)",
+      "CharaName": "Ann",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 64,
       "MinorID": 0,
       "SubID": 0,
@@ -4408,10 +5335,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "065_001",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 65,
       "MinorID": 1,
       "SubID": 0,
@@ -4427,10 +5358,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "065_002",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 65,
       "MinorID": 2,
       "SubID": 0,
@@ -4446,10 +5381,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "065_007",
+      "CharaName": "Yusuke",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 65,
       "MinorID": 7,
       "SubID": 0,
@@ -4465,10 +5404,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "065_000",
+      "CharaName": "Yusuke",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 65,
       "MinorID": 0,
       "SubID": 0,
@@ -4484,10 +5427,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "066_001",
+      "CharaName": "Makoto",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 66,
       "MinorID": 1,
       "SubID": 0,
@@ -4503,10 +5450,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "066_002",
+      "CharaName": "Makoto",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 66,
       "MinorID": 2,
       "SubID": 0,
@@ -4522,10 +5473,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "066_007",
+      "CharaName": "Makoto",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 66,
       "MinorID": 7,
       "SubID": 0,
@@ -4541,10 +5496,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "067_000",
+      "CharaName": "Haru",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 67,
       "MinorID": 0,
       "SubID": 0,
@@ -4560,10 +5519,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "067_001",
+      "CharaName": "Haru",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 67,
       "MinorID": 1,
       "SubID": 0,
@@ -4579,10 +5542,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "067_002",
+      "CharaName": "Haru",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 67,
       "MinorID": 2,
       "SubID": 0,
@@ -4598,10 +5565,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "067_007",
+      "CharaName": "Haru",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 67,
       "MinorID": 7,
       "SubID": 0,
@@ -4617,10 +5588,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "068_000",
+      "CharaName": "Futaba",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 68,
       "MinorID": 0,
       "SubID": 0,
@@ -4636,10 +5611,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "068_001",
+      "CharaName": "Futaba",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 68,
       "MinorID": 1,
       "SubID": 0,
@@ -4655,10 +5634,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "068_002",
+      "CharaName": "Futaba",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 68,
       "MinorID": 2,
       "SubID": 0,
@@ -4674,10 +5657,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "068_007",
+      "CharaName": "Futaba",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 68,
       "MinorID": 7,
       "SubID": 0,
@@ -4693,10 +5680,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "069_000",
+      "CharaName": "Akechi",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 69,
       "MinorID": 0,
       "SubID": 0,
@@ -4712,10 +5703,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "069_001",
+      "CharaName": "Akechi",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 69,
       "MinorID": 1,
       "SubID": 0,
@@ -4731,10 +5726,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "069_002",
+      "CharaName": "Akechi",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 69,
       "MinorID": 2,
       "SubID": 0,
@@ -4750,10 +5749,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "069_007",
+      "CharaName": "Akechi",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 69,
       "MinorID": 7,
       "SubID": 0,
@@ -4769,10 +5772,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_001",
+      "CharaName": "Sumire",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Winter Coat 2 (Hair Down)",
       "MajorID": 70,
       "MinorID": 1,
       "SubID": 0,
@@ -4788,10 +5795,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_002",
+      "CharaName": "Sumire",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Winter Coat 2 (Hair Down)",
       "MajorID": 70,
       "MinorID": 2,
       "SubID": 0,
@@ -4807,10 +5818,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_007",
+      "CharaName": "Sumire",
+      "ExpressionName": "Frowning",
+      "OutfitName": "Winter Coat 2 (Hair Down)",
       "MajorID": 70,
       "MinorID": 7,
       "SubID": 0,
@@ -4826,10 +5841,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_101",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 70,
       "MinorID": 101,
       "SubID": 0,
@@ -4845,10 +5864,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_102",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 70,
       "MinorID": 102,
       "SubID": 0,
@@ -4864,10 +5887,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "070_107",
+      "CharaName": "Sumire",
+      "ExpressionName": "",
+      "OutfitName": "Winter Coat 2",
       "MajorID": 70,
       "MinorID": 107,
       "SubID": 0,
@@ -4883,10 +5910,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "100_001",
+      "CharaName": "Kamoshida",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 100,
       "MinorID": 1,
       "SubID": 0,
@@ -4902,10 +5933,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "100_002",
+      "CharaName": "Kamoshida",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 100,
       "MinorID": 2,
       "SubID": 0,
@@ -4921,10 +5956,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "100_003",
+      "CharaName": "Kamoshida",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 100,
       "MinorID": 3,
       "SubID": 0,
@@ -4940,10 +5979,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "100_004",
+      "CharaName": "Kamoshida",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Shadow",
       "MajorID": 100,
       "MinorID": 4,
       "SubID": 0,
@@ -4959,10 +6002,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "101_001",
+      "CharaName": "Madarame",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 101,
       "MinorID": 1,
       "SubID": 0,
@@ -4978,10 +6025,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "101_002",
+      "CharaName": "Madarame",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 101,
       "MinorID": 2,
       "SubID": 0,
@@ -4997,10 +6048,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "101_003",
+      "CharaName": "Madarame",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 101,
       "MinorID": 3,
       "SubID": 0,
@@ -5016,10 +6071,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "101_004",
+      "CharaName": "Madarame",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Shadow",
       "MajorID": 101,
       "MinorID": 4,
       "SubID": 0,
@@ -5035,10 +6094,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "102_001",
+      "CharaName": "Kaneshiro",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 102,
       "MinorID": 1,
       "SubID": 0,
@@ -5054,10 +6117,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "102_002",
+      "CharaName": "Kaneshiro",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 102,
       "MinorID": 2,
       "SubID": 0,
@@ -5073,10 +6140,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "102_003",
+      "CharaName": "Kaneshiro",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 102,
       "MinorID": 3,
       "SubID": 0,
@@ -5092,10 +6163,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "102_004",
+      "CharaName": "Kaneshiro",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Shadow",
       "MajorID": 102,
       "MinorID": 4,
       "SubID": 0,
@@ -5111,10 +6186,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "103_001",
+      "CharaName": "Sojiro",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Phantom Thief",
       "MajorID": 103,
       "MinorID": 1,
       "SubID": 0,
@@ -5130,10 +6209,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "104_001",
+      "CharaName": "Okumura",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 104,
       "MinorID": 1,
       "SubID": 0,
@@ -5149,10 +6232,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "104_002",
+      "CharaName": "Okumura",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 104,
       "MinorID": 2,
       "SubID": 0,
@@ -5168,10 +6255,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "104_003",
+      "CharaName": "Okumura",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 104,
       "MinorID": 3,
       "SubID": 0,
@@ -5187,10 +6278,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "104_004",
+      "CharaName": "Okumura",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Shadow",
       "MajorID": 104,
       "MinorID": 4,
       "SubID": 0,
@@ -5206,10 +6301,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "105_001",
+      "CharaName": "Sae",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 105,
       "MinorID": 1,
       "SubID": 0,
@@ -5225,10 +6324,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "105_002",
+      "CharaName": "Sae",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 105,
       "MinorID": 2,
       "SubID": 0,
@@ -5244,10 +6347,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "105_003",
+      "CharaName": "Sae",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 105,
       "MinorID": 3,
       "SubID": 0,
@@ -5263,10 +6370,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "105_004",
+      "CharaName": "Sae",
+      "ExpressionName": "Surprised",
+      "OutfitName": "Shadow",
       "MajorID": 105,
       "MinorID": 4,
       "SubID": 0,
@@ -5282,10 +6393,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "106_001",
+      "CharaName": "Shido",
+      "ExpressionName": "Neutral",
+      "OutfitName": "Shadow",
       "MajorID": 106,
       "MinorID": 1,
       "SubID": 0,
@@ -5301,10 +6416,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "106_002",
+      "CharaName": "Shido",
+      "ExpressionName": "Grinning",
+      "OutfitName": "Shadow",
       "MajorID": 106,
       "MinorID": 2,
       "SubID": 0,
@@ -5320,10 +6439,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "106_003",
+      "CharaName": "Shido",
+      "ExpressionName": "Angry",
+      "OutfitName": "Shadow",
       "MajorID": 106,
       "MinorID": 3,
       "SubID": 0,
@@ -5339,10 +6462,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "200_001",
+      "CharaName": "Lavenza",
+      "ExpressionName": "Neutral",
+      "OutfitName": "",
       "MajorID": 200,
       "MinorID": 1,
       "SubID": 0,
@@ -5358,10 +6485,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "200_002",
+      "CharaName": "Lavenza",
+      "ExpressionName": "Grinning",
+      "OutfitName": "",
       "MajorID": 200,
       "MinorID": 2,
       "SubID": 0,
@@ -5377,10 +6508,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "200_004",
+      "CharaName": "Lavenza",
+      "ExpressionName": "Surprised",
+      "OutfitName": "",
       "MajorID": 200,
       "MinorID": 4,
       "SubID": 0,
@@ -5396,10 +6531,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "201_001",
+      "CharaName": "Caroline",
+      "ExpressionName": "Neutral",
+      "OutfitName": "",
       "MajorID": 201,
       "MinorID": 1,
       "SubID": 0,
@@ -5415,10 +6554,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "201_002",
+      "CharaName": "Caroline",
+      "ExpressionName": "Grinning",
+      "OutfitName": "",
       "MajorID": 201,
       "MinorID": 2,
       "SubID": 0,
@@ -5434,10 +6577,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "201_004",
+      "CharaName": "Caroline",
+      "ExpressionName": "Surprised",
+      "OutfitName": "",
       "MajorID": 201,
       "MinorID": 4,
       "SubID": 0,
@@ -5453,10 +6600,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "202_001",
+      "CharaName": "Justine",
+      "ExpressionName": "Neutral",
+      "OutfitName": "",
       "MajorID": 202,
       "MinorID": 1,
       "SubID": 0,
@@ -5472,10 +6623,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "202_002",
+      "CharaName": "Justine",
+      "ExpressionName": "Grinning",
+      "OutfitName": "",
       "MajorID": 202,
       "MinorID": 2,
       "SubID": 0,
@@ -5491,10 +6646,14 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     },
     {
       "Name": "202_004",
+      "CharaName": "Justine",
+      "ExpressionName": "Surprised",
+      "OutfitName": "",
       "MajorID": 202,
       "MinorID": 4,
       "SubID": 0,
@@ -5510,10 +6669,11 @@
       "BlinkImg2Path": "",
       "MouthImg1Path": "",
       "MouthImg2Path": "",
-      "MouthImg3Path": ""
+      "MouthImg3Path": "",
+      "AutoScaleImg": false
     }
   ],
   "Type": 2,
   "Platform": 3,
-  "Scale": 50
+  "Scale": 48
 }

@@ -144,8 +144,10 @@ namespace BustupEditor
             extractBustupBINsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             applyImgPathToAllWithSameExpressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             applyNamesToAllWithSameIDsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            importNamesFromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             forThisCharacterOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importNamesFromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importNamesFromWikiTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tlp_Main.SuspendLayout();
             darkContextMenu_Sprites.SuspendLayout();
             groupBox_BustupSettings.SuspendLayout();
@@ -197,14 +199,14 @@ namespace BustupEditor
             tlp_Main.Controls.Add(groupBox_Texture, 1, 0);
             tlp_Main.Controls.Add(groupBox_PreviewSettings, 1, 2);
             tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            tlp_Main.Location = new System.Drawing.Point(0, 28);
+            tlp_Main.Location = new System.Drawing.Point(0, 30);
             tlp_Main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tlp_Main.Name = "tlp_Main";
             tlp_Main.RowCount = 3;
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tlp_Main.Size = new System.Drawing.Size(982, 726);
+            tlp_Main.Size = new System.Drawing.Size(982, 724);
             tlp_Main.TabIndex = 0;
             // 
             // listBox_Sprites
@@ -219,7 +221,7 @@ namespace BustupEditor
             listBox_Sprites.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             listBox_Sprites.Name = "listBox_Sprites";
             listBox_Sprites.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            listBox_Sprites.Size = new System.Drawing.Size(485, 355);
+            listBox_Sprites.Size = new System.Drawing.Size(485, 354);
             listBox_Sprites.TabIndex = 1;
             listBox_Sprites.SelectedIndexChanged += SelectedBustup_Changed;
             listBox_Sprites.KeyDown += KeyDown;
@@ -282,12 +284,12 @@ namespace BustupEditor
             groupBox_BustupSettings.Controls.Add(panel_BustupSettings);
             groupBox_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox_BustupSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            groupBox_BustupSettings.Location = new System.Drawing.Point(3, 367);
+            groupBox_BustupSettings.Location = new System.Drawing.Point(3, 366);
             groupBox_BustupSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             groupBox_BustupSettings.Name = "groupBox_BustupSettings";
             groupBox_BustupSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tlp_Main.SetRowSpan(groupBox_BustupSettings, 2);
-            groupBox_BustupSettings.Size = new System.Drawing.Size(485, 355);
+            groupBox_BustupSettings.Size = new System.Drawing.Size(485, 354);
             groupBox_BustupSettings.TabIndex = 2;
             groupBox_BustupSettings.TabStop = false;
             groupBox_BustupSettings.Text = "Bustup Parameters";
@@ -301,7 +303,7 @@ namespace BustupEditor
             panel_BustupSettings.Location = new System.Drawing.Point(3, 24);
             panel_BustupSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel_BustupSettings.Name = "panel_BustupSettings";
-            panel_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            panel_BustupSettings.Size = new System.Drawing.Size(479, 326);
             panel_BustupSettings.TabIndex = 0;
             // 
             // pnl_BustupSettings
@@ -313,7 +315,7 @@ namespace BustupEditor
             pnl_BustupSettings.Location = new System.Drawing.Point(0, 0);
             pnl_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
             pnl_BustupSettings.Name = "pnl_BustupSettings";
-            pnl_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            pnl_BustupSettings.Size = new System.Drawing.Size(479, 326);
             pnl_BustupSettings.TabIndex = 2;
             // 
             // tlp_BustupSettings
@@ -371,7 +373,7 @@ namespace BustupEditor
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlp_BustupSettings.Size = new System.Drawing.Size(479, 327);
+            tlp_BustupSettings.Size = new System.Drawing.Size(479, 326);
             tlp_BustupSettings.TabIndex = 1;
             // 
             // txt_OutfitName
@@ -1144,7 +1146,7 @@ namespace BustupEditor
             groupBox_Texture.Name = "groupBox_Texture";
             groupBox_Texture.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tlp_Main.SetRowSpan(groupBox_Texture, 2);
-            groupBox_Texture.Size = new System.Drawing.Size(485, 536);
+            groupBox_Texture.Size = new System.Drawing.Size(485, 535);
             groupBox_Texture.TabIndex = 4;
             groupBox_Texture.TabStop = false;
             groupBox_Texture.Text = "Bustup Texture";
@@ -1160,7 +1162,7 @@ namespace BustupEditor
             pnl_ImgPreview.Location = new System.Drawing.Point(3, 24);
             pnl_ImgPreview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pnl_ImgPreview.Name = "pnl_ImgPreview";
-            pnl_ImgPreview.Size = new System.Drawing.Size(479, 508);
+            pnl_ImgPreview.Size = new System.Drawing.Size(479, 507);
             pnl_ImgPreview.TabIndex = 0;
             // 
             // pictureBox_Tex
@@ -1198,11 +1200,11 @@ namespace BustupEditor
             groupBox_PreviewSettings.Controls.Add(panel_PreviewSettings);
             groupBox_PreviewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox_PreviewSettings.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 548);
+            groupBox_PreviewSettings.Location = new System.Drawing.Point(494, 547);
             groupBox_PreviewSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             groupBox_PreviewSettings.Name = "groupBox_PreviewSettings";
             groupBox_PreviewSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 174);
+            groupBox_PreviewSettings.Size = new System.Drawing.Size(485, 173);
             groupBox_PreviewSettings.TabIndex = 3;
             groupBox_PreviewSettings.TabStop = false;
             groupBox_PreviewSettings.Text = "Preview Settings";
@@ -1216,7 +1218,7 @@ namespace BustupEditor
             panel_PreviewSettings.Location = new System.Drawing.Point(3, 24);
             panel_PreviewSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel_PreviewSettings.Name = "panel_PreviewSettings";
-            panel_PreviewSettings.Size = new System.Drawing.Size(479, 146);
+            panel_PreviewSettings.Size = new System.Drawing.Size(479, 145);
             panel_PreviewSettings.TabIndex = 0;
             // 
             // tlp_PreviewSettings
@@ -1394,11 +1396,11 @@ namespace BustupEditor
             darkMenuStrip_MainMenu.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             darkMenuStrip_MainMenu.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             darkMenuStrip_MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem });
+            darkMenuStrip_MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, refreshToolStripMenuItem });
             darkMenuStrip_MainMenu.Location = new System.Drawing.Point(0, 0);
             darkMenuStrip_MainMenu.Name = "darkMenuStrip_MainMenu";
             darkMenuStrip_MainMenu.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
-            darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 28);
+            darkMenuStrip_MainMenu.Size = new System.Drawing.Size(982, 30);
             darkMenuStrip_MainMenu.TabIndex = 1;
             darkMenuStrip_MainMenu.Text = "darkMenuStrip1";
             // 
@@ -1408,7 +1410,7 @@ namespace BustupEditor
             fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem });
             fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             fileToolStripMenuItem.Text = "File";
             // 
             // newProjectToolStripMenuItem
@@ -1535,7 +1537,7 @@ namespace BustupEditor
             editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { addToolStripMenuItem, removeToolStripMenuItem, renameToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem });
             editToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
@@ -1585,10 +1587,10 @@ namespace BustupEditor
             // toolsToolStripMenuItem
             // 
             toolsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { extractBustupBINsToolStripMenuItem, applyImgPathToAllWithSameExpressionToolStripMenuItem, applyNamesToAllWithSameIDsToolStripMenuItem, importNamesFromJSONToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { extractBustupBINsToolStripMenuItem, applyImgPathToAllWithSameExpressionToolStripMenuItem, applyNamesToAllWithSameIDsToolStripMenuItem, importNamesFromJSONToolStripMenuItem, importNamesFromWikiTableToolStripMenuItem });
             toolsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 26);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // extractBustupBINsToolStripMenuItem
@@ -1619,6 +1621,15 @@ namespace BustupEditor
             applyNamesToAllWithSameIDsToolStripMenuItem.Text = "Apply Names To All With Same IDs";
             applyNamesToAllWithSameIDsToolStripMenuItem.Click += ApplyNamesToSameIDs_Click;
             // 
+            // forThisCharacterOnlyToolStripMenuItem
+            // 
+            forThisCharacterOnlyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            forThisCharacterOnlyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            forThisCharacterOnlyToolStripMenuItem.Name = "forThisCharacterOnlyToolStripMenuItem";
+            forThisCharacterOnlyToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            forThisCharacterOnlyToolStripMenuItem.Text = "... For this character only";
+            forThisCharacterOnlyToolStripMenuItem.Click += ApplyNamesToSameIDs_ThisCharaOnly_Click;
+            // 
             // importNamesFromJSONToolStripMenuItem
             // 
             importNamesFromJSONToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
@@ -1628,14 +1639,23 @@ namespace BustupEditor
             importNamesFromJSONToolStripMenuItem.Text = "Import Names From JSON";
             importNamesFromJSONToolStripMenuItem.Click += importNamesFromJSONToolStripMenuItem_Click;
             // 
-            // forThisCharacterOnlyToolStripMenuItem
+            // refreshToolStripMenuItem
             // 
-            forThisCharacterOnlyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            forThisCharacterOnlyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
-            forThisCharacterOnlyToolStripMenuItem.Name = "forThisCharacterOnlyToolStripMenuItem";
-            forThisCharacterOnlyToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
-            forThisCharacterOnlyToolStripMenuItem.Text = "... For this character only";
-            forThisCharacterOnlyToolStripMenuItem.Click += ApplyNamesToSameIDs_ThisCharaOnly_Click;
+            refreshToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            refreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            refreshToolStripMenuItem.Size = new System.Drawing.Size(72, 26);
+            refreshToolStripMenuItem.Text = "Refresh";
+            refreshToolStripMenuItem.Click += Refresh_Click;
+            // 
+            // importNamesFromWikiTableToolStripMenuItem
+            // 
+            importNamesFromWikiTableToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            importNamesFromWikiTableToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            importNamesFromWikiTableToolStripMenuItem.Name = "importNamesFromWikiTableToolStripMenuItem";
+            importNamesFromWikiTableToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
+            importNamesFromWikiTableToolStripMenuItem.Text = "Import Names From Wiki Table";
+            importNamesFromWikiTableToolStripMenuItem.Click += ImportNamesFromWiki_Click;
             // 
             // MainForm
             // 
@@ -1829,6 +1849,8 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem importNamesFromJSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applyNamesToAllWithSameIDsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forThisCharacterOnlyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importNamesFromWikiTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
 
