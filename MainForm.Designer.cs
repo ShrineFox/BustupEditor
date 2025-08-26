@@ -100,6 +100,14 @@ namespace BustupEditor
             lbl_CharaName = new DarkUI.Controls.DarkLabel();
             lbl_ExpressionName = new DarkUI.Controls.DarkLabel();
             lbl_OutfitName = new DarkUI.Controls.DarkLabel();
+            groupBox_NaviIDs = new System.Windows.Forms.GroupBox();
+            tlp_NaviIDs = new System.Windows.Forms.TableLayoutPanel();
+            num_Navi_SubID = new DarkUI.Controls.DarkNumericUpDown();
+            num_Navi_MinorID = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_NaviCharID = new DarkUI.Controls.DarkLabel();
+            lbl_NaviExpID = new DarkUI.Controls.DarkLabel();
+            num_Navi_MajorID = new DarkUI.Controls.DarkNumericUpDown();
+            lbl_NaviOutfitID = new DarkUI.Controls.DarkLabel();
             groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
             pnl_ImgPreview = new System.Windows.Forms.Panel();
             pictureBox_Tex = new System.Windows.Forms.PictureBox();
@@ -146,8 +154,9 @@ namespace BustupEditor
             applyNamesToAllWithSameIDsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             forThisCharacterOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             importNamesFromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             importNamesFromWikiTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            convertToNaviProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tlp_Main.SuspendLayout();
             darkContextMenu_Sprites.SuspendLayout();
             groupBox_BustupSettings.SuspendLayout();
@@ -173,6 +182,11 @@ namespace BustupEditor
             tlp_BasePos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)num_BasePosY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)num_BasePosX).BeginInit();
+            groupBox_NaviIDs.SuspendLayout();
+            tlp_NaviIDs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_SubID).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_MinorID).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_MajorID).BeginInit();
             groupBox_Texture.SuspendLayout();
             pnl_ImgPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Tex).BeginInit();
@@ -353,11 +367,12 @@ namespace BustupEditor
             tlp_BustupSettings.Controls.Add(lbl_CharaName, 0, 11);
             tlp_BustupSettings.Controls.Add(lbl_ExpressionName, 0, 12);
             tlp_BustupSettings.Controls.Add(lbl_OutfitName, 0, 13);
+            tlp_BustupSettings.Controls.Add(groupBox_NaviIDs, 0, 14);
             tlp_BustupSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             tlp_BustupSettings.Location = new System.Drawing.Point(0, 0);
             tlp_BustupSettings.Margin = new System.Windows.Forms.Padding(0);
             tlp_BustupSettings.Name = "tlp_BustupSettings";
-            tlp_BustupSettings.RowCount = 15;
+            tlp_BustupSettings.RowCount = 16;
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
@@ -372,6 +387,7 @@ namespace BustupEditor
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             tlp_BustupSettings.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlp_BustupSettings.Size = new System.Drawing.Size(479, 326);
             tlp_BustupSettings.TabIndex = 1;
@@ -1136,6 +1152,110 @@ namespace BustupEditor
             lbl_OutfitName.TabIndex = 23;
             lbl_OutfitName.Text = "Outfit Name:";
             // 
+            // groupBox_NaviIDs
+            // 
+            tlp_BustupSettings.SetColumnSpan(groupBox_NaviIDs, 2);
+            groupBox_NaviIDs.Controls.Add(tlp_NaviIDs);
+            groupBox_NaviIDs.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupBox_NaviIDs.Enabled = false;
+            groupBox_NaviIDs.ForeColor = System.Drawing.Color.Silver;
+            groupBox_NaviIDs.Location = new System.Drawing.Point(3, 871);
+            groupBox_NaviIDs.Name = "groupBox_NaviIDs";
+            groupBox_NaviIDs.Size = new System.Drawing.Size(472, 74);
+            groupBox_NaviIDs.TabIndex = 27;
+            groupBox_NaviIDs.TabStop = false;
+            groupBox_NaviIDs.Text = "Matching Navi IDs";
+            // 
+            // tlp_NaviIDs
+            // 
+            tlp_NaviIDs.ColumnCount = 6;
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.83333F));
+            tlp_NaviIDs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            tlp_NaviIDs.Controls.Add(num_Navi_SubID, 5, 0);
+            tlp_NaviIDs.Controls.Add(num_Navi_MinorID, 3, 0);
+            tlp_NaviIDs.Controls.Add(lbl_NaviCharID, 0, 0);
+            tlp_NaviIDs.Controls.Add(lbl_NaviExpID, 2, 0);
+            tlp_NaviIDs.Controls.Add(num_Navi_MajorID, 1, 0);
+            tlp_NaviIDs.Controls.Add(lbl_NaviOutfitID, 4, 0);
+            tlp_NaviIDs.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_NaviIDs.Location = new System.Drawing.Point(3, 23);
+            tlp_NaviIDs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_NaviIDs.Name = "tlp_NaviIDs";
+            tlp_NaviIDs.RowCount = 1;
+            tlp_NaviIDs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlp_NaviIDs.Size = new System.Drawing.Size(466, 48);
+            tlp_NaviIDs.TabIndex = 9;
+            // 
+            // num_Navi_SubID
+            // 
+            num_Navi_SubID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_Navi_SubID.Location = new System.Drawing.Point(410, 10);
+            num_Navi_SubID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_Navi_SubID.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            num_Navi_SubID.Name = "num_Navi_SubID";
+            num_Navi_SubID.Size = new System.Drawing.Size(53, 27);
+            num_Navi_SubID.TabIndex = 5;
+            num_Navi_SubID.ValueChanged += NaviSubID_Changed;
+            // 
+            // num_Navi_MinorID
+            // 
+            num_Navi_MinorID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_Navi_MinorID.Location = new System.Drawing.Point(255, 10);
+            num_Navi_MinorID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_Navi_MinorID.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            num_Navi_MinorID.Name = "num_Navi_MinorID";
+            num_Navi_MinorID.Size = new System.Drawing.Size(52, 27);
+            num_Navi_MinorID.TabIndex = 3;
+            num_Navi_MinorID.ValueChanged += NaviMinorID_Changed;
+            // 
+            // lbl_NaviCharID
+            // 
+            lbl_NaviCharID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_NaviCharID.AutoSize = true;
+            lbl_NaviCharID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_NaviCharID.Location = new System.Drawing.Point(18, 4);
+            lbl_NaviCharID.Name = "lbl_NaviCharID";
+            lbl_NaviCharID.Size = new System.Drawing.Size(76, 40);
+            lbl_NaviCharID.TabIndex = 0;
+            lbl_NaviCharID.Text = "Character ID:";
+            // 
+            // lbl_NaviExpID
+            // 
+            lbl_NaviExpID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_NaviExpID.AutoSize = true;
+            lbl_NaviExpID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_NaviExpID.Location = new System.Drawing.Point(166, 4);
+            lbl_NaviExpID.Name = "lbl_NaviExpID";
+            lbl_NaviExpID.Size = new System.Drawing.Size(83, 40);
+            lbl_NaviExpID.TabIndex = 1;
+            lbl_NaviExpID.Text = "Expression ID:";
+            // 
+            // num_Navi_MajorID
+            // 
+            num_Navi_MajorID.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            num_Navi_MajorID.Location = new System.Drawing.Point(100, 10);
+            num_Navi_MajorID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            num_Navi_MajorID.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            num_Navi_MajorID.Name = "num_Navi_MajorID";
+            num_Navi_MajorID.Size = new System.Drawing.Size(52, 27);
+            num_Navi_MajorID.TabIndex = 2;
+            num_Navi_MajorID.ValueChanged += NaviMajorID_Changed;
+            // 
+            // lbl_NaviOutfitID
+            // 
+            lbl_NaviOutfitID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            lbl_NaviOutfitID.AutoSize = true;
+            lbl_NaviOutfitID.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            lbl_NaviOutfitID.Location = new System.Drawing.Point(335, 14);
+            lbl_NaviOutfitID.Name = "lbl_NaviOutfitID";
+            lbl_NaviOutfitID.Size = new System.Drawing.Size(69, 20);
+            lbl_NaviOutfitID.TabIndex = 4;
+            lbl_NaviOutfitID.Text = "Outfit ID:";
+            // 
             // groupBox_Texture
             // 
             groupBox_Texture.BorderColor = System.Drawing.Color.FromArgb(60, 63, 65);
@@ -1407,7 +1527,7 @@ namespace BustupEditor
             // fileToolStripMenuItem
             // 
             fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newProjectToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem, importToolStripMenuItem, exportToolStripMenuItem, convertToNaviProjectToolStripMenuItem });
             fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
@@ -1419,7 +1539,7 @@ namespace BustupEditor
             newProjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { p5RToolStripMenuItem, p5PS3ToolStripMenuItem });
             newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            newProjectToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            newProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             newProjectToolStripMenuItem.Text = "New Project...";
             // 
             // p5RToolStripMenuItem
@@ -1481,7 +1601,7 @@ namespace BustupEditor
             loadToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             loadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            loadToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             loadToolStripMenuItem.Text = "Load Project";
             loadToolStripMenuItem.Click += LoadProject_Click;
             // 
@@ -1490,7 +1610,7 @@ namespace BustupEditor
             saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             saveToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            saveToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             saveToolStripMenuItem.Text = "Save Project";
             saveToolStripMenuItem.Click += SaveProject_Click;
             // 
@@ -1499,7 +1619,7 @@ namespace BustupEditor
             importToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
             importToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            importToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             importToolStripMenuItem.Text = "Import .DAT";
             importToolStripMenuItem.Click += Import_Click;
             // 
@@ -1509,7 +1629,7 @@ namespace BustupEditor
             exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { paramsDATToolStripMenuItem, bustupBINsToolStripMenuItem });
             exportToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            exportToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             exportToolStripMenuItem.Text = "Export...";
             exportToolStripMenuItem.Click += Export_Click;
             // 
@@ -1639,6 +1759,15 @@ namespace BustupEditor
             importNamesFromJSONToolStripMenuItem.Text = "Import Names From JSON";
             importNamesFromJSONToolStripMenuItem.Click += importNamesFromJSONToolStripMenuItem_Click;
             // 
+            // importNamesFromWikiTableToolStripMenuItem
+            // 
+            importNamesFromWikiTableToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            importNamesFromWikiTableToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            importNamesFromWikiTableToolStripMenuItem.Name = "importNamesFromWikiTableToolStripMenuItem";
+            importNamesFromWikiTableToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
+            importNamesFromWikiTableToolStripMenuItem.Text = "Import Names From Wiki Table";
+            importNamesFromWikiTableToolStripMenuItem.Click += ImportNamesFromWiki_Click;
+            // 
             // refreshToolStripMenuItem
             // 
             refreshToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
@@ -1648,14 +1777,15 @@ namespace BustupEditor
             refreshToolStripMenuItem.Text = "Refresh";
             refreshToolStripMenuItem.Click += Refresh_Click;
             // 
-            // importNamesFromWikiTableToolStripMenuItem
+            // convertToNaviProjectToolStripMenuItem
             // 
-            importNamesFromWikiTableToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            importNamesFromWikiTableToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
-            importNamesFromWikiTableToolStripMenuItem.Name = "importNamesFromWikiTableToolStripMenuItem";
-            importNamesFromWikiTableToolStripMenuItem.Size = new System.Drawing.Size(385, 26);
-            importNamesFromWikiTableToolStripMenuItem.Text = "Import Names From Wiki Table";
-            importNamesFromWikiTableToolStripMenuItem.Click += ImportNamesFromWiki_Click;
+            convertToNaviProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            convertToNaviProjectToolStripMenuItem.Enabled = false;
+            convertToNaviProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(153, 153, 153);
+            convertToNaviProjectToolStripMenuItem.Name = "convertToNaviProjectToolStripMenuItem";
+            convertToNaviProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            convertToNaviProjectToolStripMenuItem.Text = "Convert To Navi Project";
+            convertToNaviProjectToolStripMenuItem.Click += ConvertToNaviProject_Click;
             // 
             // MainForm
             // 
@@ -1707,6 +1837,12 @@ namespace BustupEditor
             tlp_BasePos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)num_BasePosY).EndInit();
             ((System.ComponentModel.ISupportInitialize)num_BasePosX).EndInit();
+            groupBox_NaviIDs.ResumeLayout(false);
+            tlp_NaviIDs.ResumeLayout(false);
+            tlp_NaviIDs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_SubID).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_MinorID).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_Navi_MajorID).EndInit();
             groupBox_Texture.ResumeLayout(false);
             groupBox_Texture.PerformLayout();
             pnl_ImgPreview.ResumeLayout(false);
@@ -1851,6 +1987,15 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem forThisCharacterOnlyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importNamesFromWikiTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox_NaviIDs;
+        private System.Windows.Forms.TableLayoutPanel tlp_NaviIDs;
+        private DarkUI.Controls.DarkNumericUpDown num_Navi_SubID;
+        private DarkUI.Controls.DarkNumericUpDown num_Navi_MinorID;
+        private DarkUI.Controls.DarkLabel lbl_NaviCharID;
+        private DarkUI.Controls.DarkLabel lbl_NaviExpID;
+        private DarkUI.Controls.DarkNumericUpDown num_Navi_MajorID;
+        private DarkUI.Controls.DarkLabel lbl_NaviOutfitID;
+        private System.Windows.Forms.ToolStripMenuItem convertToNaviProjectToolStripMenuItem;
     }
 }
 

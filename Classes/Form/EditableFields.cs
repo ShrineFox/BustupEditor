@@ -50,9 +50,14 @@ namespace BustupEditor
 
             txt_ImagesPath.Text = bustupProject.ImagesPath;
 
+            // Actual Bustup
             num_MajorID.Value = selectedBustup.MajorID;
             num_MinorID.Value = selectedBustup.MinorID;
             num_SubID.Value = selectedBustup.SubID;
+            // Matching Navi IDs (for auto-converting event to navi)
+            num_Navi_MajorID.Value = selectedBustup.Navi_MajorID;
+            num_Navi_MinorID.Value = selectedBustup.Navi_MinorID;
+            num_Navi_SubID.Value = selectedBustup.Navi_SubID;
 
             if (bustupProject.Type == BustupType.Navigator)
                 num_SubID.Enabled = false;
@@ -83,6 +88,18 @@ namespace BustupEditor
             LoadBustupPreview(selectedBustup);
 
             ToggleControls(true);
+
+            if (bustupProject.Type == BustupType.Portrait)
+            {
+                groupBox_NaviIDs.Enabled = true;
+                convertToNaviProjectToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                groupBox_NaviIDs.Enabled = false;
+                convertToNaviProjectToolStripMenuItem.Enabled = false;
+            }
+
         }
 
         private void ToggleControls(bool enabled = false)
@@ -129,6 +146,37 @@ namespace BustupEditor
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
             selectedBustup.SubID = Convert.ToUInt16(num_SubID.Value);
+        }
+
+
+        private void NaviMajorID_Changed(object sender, EventArgs e)
+        {
+            if (!num_Navi_MajorID.Enabled)
+                return;
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.Navi_MajorID = Convert.ToUInt16(num_Navi_MajorID.Value);
+        }
+
+        private void NaviMinorID_Changed(object sender, EventArgs e)
+        {
+            if (!num_Navi_MinorID.Enabled)
+                return;
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.Navi_MinorID = Convert.ToUInt16(num_Navi_MinorID.Value);
+        }
+
+        private void NaviSubID_Changed(object sender, EventArgs e)
+        {
+            if (!num_Navi_SubID.Enabled)
+                return;
+
+            Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
+
+            selectedBustup.Navi_SubID = Convert.ToUInt16(num_Navi_SubID.Value);
         }
 
         private void BasePosX_Changed(object sender, EventArgs e)

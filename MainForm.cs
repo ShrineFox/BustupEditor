@@ -1,4 +1,9 @@
-﻿using System;
+﻿using DarkUI.Controls;
+using DarkUI.Forms;
+using GFDLibrary.Textures;
+using Newtonsoft.Json;
+using ShrineFox.IO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -6,10 +11,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DarkUI.Controls;
-using DarkUI.Forms;
-using Newtonsoft.Json;
-using ShrineFox.IO;
 
 namespace BustupEditor
 {
@@ -58,5 +59,7 @@ namespace BustupEditor
             if (lastSelectedIndex != -1 && lastSelectedIndex < bustupProject.Bustups.Count)
                 listBox_Sprites.SelectedIndex = lastSelectedIndex;
         }
+
+       
     }
 }
