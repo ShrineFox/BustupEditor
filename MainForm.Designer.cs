@@ -142,6 +142,7 @@ namespace BustupEditor
             exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             paramsDATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             bustupBINsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            convertToNaviProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,7 +157,6 @@ namespace BustupEditor
             importNamesFromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             importNamesFromWikiTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            convertToNaviProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tlp_Main.SuspendLayout();
             darkContextMenu_Sprites.SuspendLayout();
             groupBox_BustupSettings.SuspendLayout();
@@ -1651,6 +1651,16 @@ namespace BustupEditor
             bustupBINsToolStripMenuItem.Text = "Bustup .BINs";
             bustupBINsToolStripMenuItem.Click += ExportBINs_Click;
             // 
+            // convertToNaviProjectToolStripMenuItem
+            // 
+            convertToNaviProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            convertToNaviProjectToolStripMenuItem.Enabled = false;
+            convertToNaviProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(153, 153, 153);
+            convertToNaviProjectToolStripMenuItem.Name = "convertToNaviProjectToolStripMenuItem";
+            convertToNaviProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            convertToNaviProjectToolStripMenuItem.Text = "Convert To Navi Project";
+            convertToNaviProjectToolStripMenuItem.Click += ConvertToNaviProject_Click;
+            // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
@@ -1777,16 +1787,6 @@ namespace BustupEditor
             refreshToolStripMenuItem.Text = "Refresh";
             refreshToolStripMenuItem.Click += Refresh_Click;
             // 
-            // convertToNaviProjectToolStripMenuItem
-            // 
-            convertToNaviProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            convertToNaviProjectToolStripMenuItem.Enabled = false;
-            convertToNaviProjectToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(153, 153, 153);
-            convertToNaviProjectToolStripMenuItem.Name = "convertToNaviProjectToolStripMenuItem";
-            convertToNaviProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            convertToNaviProjectToolStripMenuItem.Text = "Convert To Navi Project";
-            convertToNaviProjectToolStripMenuItem.Click += ConvertToNaviProject_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1799,7 +1799,7 @@ namespace BustupEditor
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MinimumSize = new System.Drawing.Size(650, 582);
             Name = "MainForm";
-            Text = "BustupEditor v2.1";
+            Text = "BustupEditor v2.1.1";
             tlp_Main.ResumeLayout(false);
             darkContextMenu_Sprites.ResumeLayout(false);
             groupBox_BustupSettings.ResumeLayout(false);

@@ -1,6 +1,8 @@
-﻿using DarkUI.Controls;
+﻿using BCnEncoder.Shared.ImageFiles;
+using DarkUI.Controls;
 using DarkUI.Forms;
 using Newtonsoft.Json;
+using Scarlet.IO.ImageFormats;
 using ShrineFox.IO;
 using System;
 using System.Collections.Generic;
@@ -341,7 +343,32 @@ namespace BustupEditor
 
             ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
 
-            if (Directory.Exists(ddsPath))
+            if (File.Exists(selectedBustup.BlinkImg1Path) || File.Exists(selectedBustup.BlinkImg2Path))
+            {
+                string sourceImg = selectedBustup.BlinkImg1Path;
+                if (eyeFrame == 2)
+                    sourceImg = selectedBustup.BlinkImg2Path;
+
+                if (Path.GetExtension(sourceImg).ToLower() == ".dds")
+                {
+                    Bitmap bitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(sourceImg)));
+                    pictureBox_Eyes.Image = bitmap;
+                    pictureBox_Eyes.Size = bitmap.Size;
+                    pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
+                    pictureBox_Eyes.Visible = true;
+                    return;
+                }
+                else if (Path.GetExtension(sourceImg).ToLower() == ".png")
+                {
+                    Bitmap bitmap = ScaleBitmap(new Bitmap(sourceImg));
+                    pictureBox_Eyes.Image = bitmap;
+                    pictureBox_Eyes.Size = bitmap.Size;
+                    pictureBox_Eyes.Location = ScalePoint(Convert.ToDouble(selectedBustup.EyePos_X), Convert.ToDouble(selectedBustup.EyePos_Y));
+                    pictureBox_Eyes.Visible = true;
+                    return;
+                }
+            }
+            else if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
 
@@ -367,13 +394,13 @@ namespace BustupEditor
 
         private void MouthFrame_Changed(object sender, EventArgs e)
         {
-            int mouthFrame = Convert.ToInt32(num_MouthFrame.Value);
-            if (mouthFrame == 0)
+            int selectedMouthFrame = Convert.ToInt32(num_MouthFrame.Value);
+            if (selectedMouthFrame == 0)
             {
                 pictureBox_Mouth.Visible = false;
                 return;
             }
-            mouthFrame = mouthFrame + 2;
+            int mouthFrame = selectedMouthFrame + 2;
 
             Bustup selectedBustup = (Bustup)listBox_Sprites.SelectedItem;
 
@@ -383,7 +410,35 @@ namespace BustupEditor
                 ddsPath += $"_{selectedBustup.SubID.ToString("00")}";
 
             ddsPath = Path.Combine(txt_ImagesPath.Text, ddsPath);
-            if (Directory.Exists(ddsPath))
+
+            if (File.Exists(selectedBustup.MouthImg1Path) || File.Exists(selectedBustup.MouthImg2Path) || File.Exists(selectedBustup.MouthImg3Path))
+            {
+                string sourceImg = selectedBustup.MouthImg1Path;
+                if (selectedMouthFrame == 2)
+                    sourceImg = selectedBustup.MouthImg2Path;
+                else if (selectedMouthFrame == 3)
+                    sourceImg = selectedBustup.MouthImg3Path;
+
+                if (Path.GetExtension(sourceImg).ToLower() == ".dds")
+                {
+                    Bitmap bitmap = ScaleBitmap(ConvertDDSToBitmap(File.ReadAllBytes(sourceImg)));
+                    pictureBox_Mouth.Image = bitmap;
+                    pictureBox_Mouth.Size = bitmap.Size;
+                    pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));
+                    pictureBox_Mouth.Visible = true;
+                    return;
+                }
+                else if (Path.GetExtension(sourceImg).ToLower() == ".png")
+                {
+                    Bitmap bitmap = ScaleBitmap(new Bitmap(sourceImg));
+                    pictureBox_Mouth.Image = bitmap;
+                    pictureBox_Mouth.Size = bitmap.Size;
+                    pictureBox_Mouth.Location = ScalePoint(Convert.ToDouble(selectedBustup.MouthPos_X), Convert.ToDouble(selectedBustup.MouthPos_Y));
+                    pictureBox_Mouth.Visible = true;
+                    return;
+                }
+            }
+            else if (Directory.Exists(ddsPath))
             {
                 var ddsFiles = Directory.GetFiles(ddsPath, "*.DDS", SearchOption.TopDirectoryOnly);
 
