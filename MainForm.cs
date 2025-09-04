@@ -6,6 +6,7 @@ using ShrineFox.IO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -60,6 +61,41 @@ namespace BustupEditor
                 listBox_Sprites.SelectedIndex = lastSelectedIndex;
         }
 
-       
+        private void Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            string searchTxt = txt_Search.Text.ToLower();
+            if (string.IsNullOrEmpty(searchTxt))
+                return;
+            if (e.KeyData == Keys.Enter)
+            {
+                // stop windows ding noise
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                int i = listBox_Sprites.SelectedIndex + 1;
+                while (i < listBox_Sprites.Items.Count)
+                {
+                    if (i == listBox_Sprites.SelectedIndex)
+                        return;
+
+                    var bup = (Bustup)listBox_Sprites.Items[i];
+
+                    if (bup.CharaName.ToLower().Contains(searchTxt.ToLower()) ||
+                        bup.ExpressionName.ToLower().Contains(searchTxt.ToLower()) ||
+                        bup.OutfitName.ToLower().Contains(searchTxt.ToLower()) ||
+                        bup.Name.ToLower().Contains(searchTxt.ToLower())
+                        )
+                    {
+                        listBox_Sprites.SelectedIndex = i;
+                        return;
+                    }
+
+                    if (i == listBox_Sprites.Items.Count - 1)
+                        i = 0;
+                    else
+                        i++;
+                }
+            }
+        }
     }
 }

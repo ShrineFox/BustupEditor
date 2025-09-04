@@ -126,15 +126,15 @@ namespace BustupEditor
                 byte[] mouthImg2 = GetBlankDDS();
                 byte[] mouthImg3 = GetBlankDDS();
 
-                if (!string.IsNullOrEmpty(bustup.BlinkImg1Path))
+                if (File.Exists(bustup.BlinkImg1Path))
                     blinkImg1 = GetDDSDataFromImagePath(bustup.BlinkImg1Path);
-                if (!string.IsNullOrEmpty(bustup.BlinkImg2Path))
+                if (File.Exists(bustup.BlinkImg2Path))
                     blinkImg2 = GetDDSDataFromImagePath(bustup.BlinkImg2Path);
-                if (!string.IsNullOrEmpty(bustup.MouthImg1Path))
+                if (File.Exists(bustup.MouthImg1Path))
                     mouthImg1 = GetDDSDataFromImagePath(bustup.MouthImg1Path);
-                if (!string.IsNullOrEmpty(bustup.MouthImg2Path))
+                if (File.Exists(bustup.MouthImg2Path))
                     mouthImg2 = GetDDSDataFromImagePath(bustup.MouthImg2Path);
-                if (!string.IsNullOrEmpty(bustup.MouthImg3Path))
+                if (File.Exists(bustup.MouthImg3Path))
                     mouthImg3 = GetDDSDataFromImagePath(bustup.MouthImg3Path);
 
                 // Construct BIN file in memory

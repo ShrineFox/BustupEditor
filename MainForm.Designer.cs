@@ -108,11 +108,13 @@ namespace BustupEditor
             lbl_NaviExpID = new DarkUI.Controls.DarkLabel();
             num_Navi_MajorID = new DarkUI.Controls.DarkNumericUpDown();
             lbl_NaviOutfitID = new DarkUI.Controls.DarkLabel();
-            groupBox_Texture = new DarkUI.Controls.DarkGroupBox();
+            tlp_Texture = new System.Windows.Forms.TableLayoutPanel();
             pnl_ImgPreview = new System.Windows.Forms.Panel();
             pictureBox_Tex = new System.Windows.Forms.PictureBox();
             darkContextMenu_Texture = new DarkUI.Controls.DarkContextMenu();
             openImageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            lbl_Texture = new System.Windows.Forms.Label();
+            txt_Search = new System.Windows.Forms.TextBox();
             groupBox_PreviewSettings = new System.Windows.Forms.GroupBox();
             panel_PreviewSettings = new System.Windows.Forms.Panel();
             tlp_PreviewSettings = new System.Windows.Forms.TableLayoutPanel();
@@ -149,6 +151,7 @@ namespace BustupEditor
             renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            withImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             extractBustupBINsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             applyImgPathToAllWithSameExpressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,7 +190,7 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)num_Navi_SubID).BeginInit();
             ((System.ComponentModel.ISupportInitialize)num_Navi_MinorID).BeginInit();
             ((System.ComponentModel.ISupportInitialize)num_Navi_MajorID).BeginInit();
-            groupBox_Texture.SuspendLayout();
+            tlp_Texture.SuspendLayout();
             pnl_ImgPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Tex).BeginInit();
             darkContextMenu_Texture.SuspendLayout();
@@ -210,7 +213,7 @@ namespace BustupEditor
             tlp_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlp_Main.Controls.Add(listBox_Sprites, 0, 0);
             tlp_Main.Controls.Add(groupBox_BustupSettings, 0, 1);
-            tlp_Main.Controls.Add(groupBox_Texture, 1, 0);
+            tlp_Main.Controls.Add(tlp_Texture, 1, 0);
             tlp_Main.Controls.Add(groupBox_PreviewSettings, 1, 2);
             tlp_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             tlp_Main.Location = new System.Drawing.Point(0, 30);
@@ -220,6 +223,8 @@ namespace BustupEditor
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tlp_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             tlp_Main.Size = new System.Drawing.Size(982, 724);
             tlp_Main.TabIndex = 0;
             // 
@@ -1256,20 +1261,25 @@ namespace BustupEditor
             lbl_NaviOutfitID.TabIndex = 4;
             lbl_NaviOutfitID.Text = "Outfit ID:";
             // 
-            // groupBox_Texture
+            // tlp_Texture
             // 
-            groupBox_Texture.BorderColor = System.Drawing.Color.FromArgb(60, 63, 65);
-            groupBox_Texture.Controls.Add(pnl_ImgPreview);
-            groupBox_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
-            groupBox_Texture.Location = new System.Drawing.Point(494, 4);
-            groupBox_Texture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            groupBox_Texture.Name = "groupBox_Texture";
-            groupBox_Texture.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            tlp_Main.SetRowSpan(groupBox_Texture, 2);
-            groupBox_Texture.Size = new System.Drawing.Size(485, 535);
-            groupBox_Texture.TabIndex = 4;
-            groupBox_Texture.TabStop = false;
-            groupBox_Texture.Text = "Bustup Texture";
+            tlp_Texture.ColumnCount = 2;
+            tlp_Texture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tlp_Texture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            tlp_Texture.Controls.Add(pnl_ImgPreview, 0, 1);
+            tlp_Texture.Controls.Add(lbl_Texture, 0, 0);
+            tlp_Texture.Controls.Add(txt_Search, 1, 0);
+            tlp_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlp_Texture.Location = new System.Drawing.Point(494, 4);
+            tlp_Texture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_Texture.Name = "tlp_Texture";
+            tlp_Texture.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tlp_Texture.RowCount = 1;
+            tlp_Main.SetRowSpan(tlp_Texture, 2);
+            tlp_Texture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            tlp_Texture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            tlp_Texture.Size = new System.Drawing.Size(485, 535);
+            tlp_Texture.TabIndex = 4;
             // 
             // pnl_ImgPreview
             // 
@@ -1277,12 +1287,13 @@ namespace BustupEditor
             pnl_ImgPreview.AutoScroll = true;
             pnl_ImgPreview.AutoSize = true;
             pnl_ImgPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlp_Texture.SetColumnSpan(pnl_ImgPreview, 2);
             pnl_ImgPreview.Controls.Add(pictureBox_Tex);
             pnl_ImgPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnl_ImgPreview.Location = new System.Drawing.Point(3, 24);
+            pnl_ImgPreview.Location = new System.Drawing.Point(6, 34);
             pnl_ImgPreview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pnl_ImgPreview.Name = "pnl_ImgPreview";
-            pnl_ImgPreview.Size = new System.Drawing.Size(479, 507);
+            pnl_ImgPreview.Size = new System.Drawing.Size(473, 493);
             pnl_ImgPreview.TabIndex = 0;
             // 
             // pictureBox_Tex
@@ -1314,6 +1325,29 @@ namespace BustupEditor
             openImageFolderToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             openImageFolderToolStripMenuItem.Text = "Open Image Folder";
             openImageFolderToolStripMenuItem.Click += OpenImageFolder_Click;
+            // 
+            // lbl_Texture
+            // 
+            lbl_Texture.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            lbl_Texture.AutoSize = true;
+            lbl_Texture.ForeColor = System.Drawing.Color.Silver;
+            lbl_Texture.Location = new System.Drawing.Point(6, 10);
+            lbl_Texture.Name = "lbl_Texture";
+            lbl_Texture.Size = new System.Drawing.Size(112, 20);
+            lbl_Texture.TabIndex = 1;
+            lbl_Texture.Text = "Texture Preview";
+            // 
+            // txt_Search
+            // 
+            txt_Search.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt_Search.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txt_Search.ForeColor = System.Drawing.Color.Silver;
+            txt_Search.Location = new System.Drawing.Point(125, 7);
+            txt_Search.Name = "txt_Search";
+            txt_Search.Size = new System.Drawing.Size(354, 27);
+            txt_Search.TabIndex = 2;
+            txt_Search.KeyDown += Search_KeyDown;
             // 
             // groupBox_PreviewSettings
             // 
@@ -1708,11 +1742,21 @@ namespace BustupEditor
             // pasteToolStripMenuItem
             // 
             pasteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            pasteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { withImagesToolStripMenuItem });
             pasteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             pasteToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             pasteToolStripMenuItem.Text = "Paste";
             pasteToolStripMenuItem.Click += Paste_Click;
+            // 
+            // withImagesToolStripMenuItem
+            // 
+            withImagesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(60, 63, 65);
+            withImagesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
+            withImagesToolStripMenuItem.Name = "withImagesToolStripMenuItem";
+            withImagesToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            withImagesToolStripMenuItem.Text = "...With Images";
+            withImagesToolStripMenuItem.Click += PasteWithImages_Click;
             // 
             // toolsToolStripMenuItem
             // 
@@ -1799,7 +1843,7 @@ namespace BustupEditor
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MinimumSize = new System.Drawing.Size(650, 582);
             Name = "MainForm";
-            Text = "BustupEditor v2.1.1";
+            Text = "BustupEditor v2.1.2";
             tlp_Main.ResumeLayout(false);
             darkContextMenu_Sprites.ResumeLayout(false);
             groupBox_BustupSettings.ResumeLayout(false);
@@ -1843,8 +1887,8 @@ namespace BustupEditor
             ((System.ComponentModel.ISupportInitialize)num_Navi_SubID).EndInit();
             ((System.ComponentModel.ISupportInitialize)num_Navi_MinorID).EndInit();
             ((System.ComponentModel.ISupportInitialize)num_Navi_MajorID).EndInit();
-            groupBox_Texture.ResumeLayout(false);
-            groupBox_Texture.PerformLayout();
+            tlp_Texture.ResumeLayout(false);
+            tlp_Texture.PerformLayout();
             pnl_ImgPreview.ResumeLayout(false);
             pnl_ImgPreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Tex).EndInit();
@@ -1881,7 +1925,7 @@ namespace BustupEditor
         private System.Windows.Forms.ToolStripMenuItem addSpriteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeSelectedToolStripMenuItem;
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Sprites;
-        private DarkUI.Controls.DarkGroupBox groupBox_Texture;
+        private System.Windows.Forms.TableLayoutPanel tlp_Texture;
         private DarkUI.Controls.DarkContextMenu darkContextMenu_Texture;
         private System.Windows.Forms.Panel panel_BustupSettings;
         private System.Windows.Forms.TableLayoutPanel tlp_BustupSettings;
@@ -1996,6 +2040,9 @@ namespace BustupEditor
         private DarkUI.Controls.DarkNumericUpDown num_Navi_MajorID;
         private DarkUI.Controls.DarkLabel lbl_NaviOutfitID;
         private System.Windows.Forms.ToolStripMenuItem convertToNaviProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem withImagesToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_Texture;
+        private System.Windows.Forms.TextBox txt_Search;
     }
 }
 

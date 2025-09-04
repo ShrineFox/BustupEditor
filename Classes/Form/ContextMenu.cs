@@ -36,6 +36,11 @@ namespace BustupEditor
 
         private void Paste_Click(object sender, EventArgs e)
         {
+            HandlePaste();
+        }
+
+        private void HandlePaste(bool withImages = false)
+        {
             if (listBox_Sprites.SelectedItems.Count > 0 && copiedParams != null)
             {
                 Bustup tempBustup = copiedParams.Copy();
@@ -52,11 +57,26 @@ namespace BustupEditor
                     selectedBustup.EyePos_Y = tempBustup.EyePos_Y;
                     selectedBustup.MouthPos_X = tempBustup.MouthPos_X;
                     selectedBustup.MouthPos_Y = tempBustup.MouthPos_Y;
+
+                    if (withImages)
+                    {
+                        selectedBustup.BaseImgPath = tempBustup.BaseImgPath;
+                        selectedBustup.BlinkImg1Path = tempBustup.BlinkImg1Path;
+                        selectedBustup.BlinkImg2Path = tempBustup.BlinkImg2Path;
+                        selectedBustup.MouthImg1Path = tempBustup.MouthImg1Path;
+                        selectedBustup.MouthImg2Path = tempBustup.MouthImg2Path;
+                        selectedBustup.MouthImg3Path = tempBustup.MouthImg3Path;
+                    }
                 }
-                
+
                 UpdateFormCtrlValues();
                 UpdateSpriteList();
             }
+        }
+
+        private void PasteWithImages_Click(object sender, EventArgs e)
+        {
+            HandlePaste(true);
         }
 
         private void Add_Click(object sender, EventArgs e)
