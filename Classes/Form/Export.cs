@@ -109,7 +109,7 @@ namespace BustupEditor
             // Only export BINs with base images defined
             foreach (var bustup in bustupProject.Bustups.Where(x => !string.IsNullOrEmpty(x.BaseImgPath)))
             {
-                string exportBinPath = Path.Combine(exportFolder, "B" + bustup.Name + ".BIN");
+                string exportBinPath = Path.Combine( exportFolder, $"B{bustup.MajorID.ToString("000")}_{bustup.MinorID.ToString("000")}_{bustup.SubID.ToString("00")}.BIN" );
 
                 // This is to avoid exporting the same BIN multiple times if the same image is used
                 if (UniqueExportedBins.Any(x => x.Item1.Equals(bustup.BaseImgPath)))
